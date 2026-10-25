@@ -4,6 +4,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { resolveImagePath } from '../utils/image-artifacts.js';
+import { analyzeInlineMath, findInlineMath } from './latex-math-layout.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -556,6 +557,36 @@ async function writeIssuesCsv(issues, outputPath) {
   await fs.writeFile(outputPath, `${rows.join('\n')}\n`, 'utf8');
 }
 
+/**
+ * Avertissements de mise en page des formules en ligne (voir latex-math-layout.js).
+ *
+ * Ce ne sont pas des erreurs de structure : `validateSource` n'en tient pas
+ * compte et le code de sortie du contrôle non plus. Ils signalent une formule
+ * qui ne peut pas se replier et dépassera de la colonne sur un téléphone.
+ *
+ * @param {string} source
+ * @param {string} [filePath]
+ * @returns {{ filePath: string, line: number, column: number, code: string, message: string, fixable: boolean, fixableWithOption: boolean }[]}
+ */
+export function validateMathLayout(source, filePath = '<source>') {
+  const warnings = [];
+  for (const formula of findInlineMath(source)) {
+    for (const issue of analyzeInlineMath(formula.text)) {
+      const { line, column } = lineAndColumn(source, formula.start);
+      warnings.push({
+        filePath,
+        line,
+        column,
+        code: `inline-math-${issue.code}`,
+        message: issue.message,
+        fixable: issue.fixable,
+        fixableWithOption: Boolean(issue.fixableWithOption)
+      });
+    }
+  }
+  return warnings;
+}
+
 export function validateSource(source, filePath = '<source>') {
   const issues = [];
   const cleanSource = stripCommentsPreserveLength(source);
@@ -649,10 +680,13 @@ async function main() {
   let inputArg = null;
   let maxErrors = DEFAULT_MAX_ERRORS;
   let csvOutput = null;
+  let showWarnings = false;
 
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
-    if (arg === '--max-errors') {
+    if (arg === '--warnings') {
+      showWarnings = true;
+    } else if (arg === '--max-errors') {
       maxErrors = Number.parseInt(args[++i], 10);
     } else if (arg.startsWith('--max-errors=')) {
       maxErrors = Number.parseInt(arg.slice('--max-errors='.length), 10);
@@ -676,6 +710,7 @@ async function main() {
   const input = path.resolve(inputArg || DEFAULT_INPUT);
   const files = (await listTexFiles(input)).sort();
   const allIssues = [];
+  const allWarnings = [];
   const sources = [];
   const validatedSources = [];
 
@@ -686,6 +721,7 @@ async function main() {
     sources.push(entry);
     validatedSources.push(entry);
     allIssues.push(...validateSource(source, relativePath));
+    allWarnings.push(...validateMathLayout(source, relativePath));
   }
 
   // Lorsqu'un seul fichier sous content/exercises est contrôlé, il doit tout de
@@ -717,6 +753,21 @@ async function main() {
     console.error(`Rapport CSV écrit: ${path.relative(ROOT, outputPath)}`);
   }
 
+  // Les avertissements ne changent pas le code de sortie : on les résume, ou on
+  // les détaille avec --warnings.
+  const reportWarnings = () => {
+    if (allWarnings.length === 0) return;
+    if (showWarnings) {
+      for (const warning of allWarnings) {
+        console.error(`${warning.filePath}:${warning.line}:${warning.column} [${warning.code}] ${warning.message}`);
+      }
+    }
+    const fixable = allWarnings.filter(warning => warning.fixable).length;
+    const withOption = allWarnings.filter(warning => warning.fixableWithOption).length;
+    console.error(`${allWarnings.length} avertissement(s) de mise en page des formules en ligne dans ${new Set(allWarnings.map(w => w.filePath)).size} fichier(s)`
+      + ` (${fixable} corrigeable(s) par fix:tex:det${withOption ? `, ${withOption} de plus avec --left-right` : ''})${showWarnings ? '' : ' ; --warnings pour le détail'}.`);
+  };
+
   if (allIssues.length > 0) {
     const visibleIssues = allIssues.slice(0, maxErrors);
     for (const issue of visibleIssues) {
@@ -730,11 +781,13 @@ async function main() {
       }
     }
     console.error(`\n${allIssues.length} problème(s) détecté(s) dans ${files.length} fichier(s) LaTeX.`);
+    reportWarnings();
     process.exitCode = 1;
     return;
   }
 
   console.log(`Sources LaTeX OK (${files.length} fichier(s) vérifié(s)).`);
+  reportWarnings();
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
