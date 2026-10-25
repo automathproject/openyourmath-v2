@@ -39,6 +39,11 @@ export const COMMA_LIST_MIN_VISIBLE = 35;
 export const COMMA_LIST_MIN_COMMAS = 3;
 /** Longueur visible minimale d'un groupe \left…\right pour le réécrire. */
 export const LEFT_RIGHT_MIN_VISIBLE = 30;
+/**
+ * Longueur visible au-delà de laquelle des \hskip répétés font un « tableau » à repenser. En deçà,
+ * ce sont des espaces fines entre les chiffres d'une notation (« (1 3 7 5)(2 6 4) » en cycles).
+ */
+export const HSKIP_LAYOUT_MIN_VISIBLE = 40;
 /** Longueur minimale d'un \text{…} de plusieurs mots pour le couper. */
 export const LONG_TEXT_MIN_LENGTH = 35;
 
@@ -380,7 +385,7 @@ export function analyzeInlineMath(text) {
   const features = inlineMathFeatures(text);
   const issues = [];
 
-  if (features.hskips >= 4) {
+  if (features.hskips >= 4 && features.unbreakableVisible > HSKIP_LAYOUT_MIN_VISIBLE) {
     issues.push({
       code: 'hskip-layout',
       fixable: false,

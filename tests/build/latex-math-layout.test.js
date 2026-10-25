@@ -70,6 +70,8 @@ describe('findInlineMath', () => {
 describe('analyzeInlineMath', () => {
   it('ne signale ni une formule courte ni une formule qui se coupe déjà', () => {
     expect(codes(String.raw`x^2+y^2=1`)).toEqual([]);
+    // des \hskip qui espacent les chiffres d'une notation en cycles ne font pas un tableau
+    expect(codes(String.raw`(1\hskip 2pt 3\hskip 2pt 7\hskip 2pt 5)\hskip 2pt (2\hskip 2pt 6\hskip 2pt 4)`)).toEqual([]);
     expect(codes(String.raw`a_1+a_2+a_3+a_4+a_5+a_6+a_7+a_8+a_9+a_{10}+a_{11}+a_{12}+a_{13}+a_{14}=0`)).toEqual([]);
   });
 
