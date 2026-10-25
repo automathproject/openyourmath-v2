@@ -279,10 +279,12 @@ import {
   analyzeDisplayMath,
   findDisplayMath,
   relationChainFeatures,
-  splitAtRelations
+  relationChainToAlign,
+  splitAtRelations,
+  splitForAlign
 } from '../../scripts/quality/latex-math-layout.js';
 
-// uG4x : onze relations d'implication et d'égalité, sur une seule ligne.
+// uG4x : quatre implications entre énoncés (qui contiennent eux-mêmes onze relations), sur une seule ligne.
 const CHAIN_IMPLICATIONS = String.raw`A{^t\mbox{com}A}=0\Rightarrow\mbox{com}A{^tA}=0\Rightarrow\mbox{Im}({^tA})\subset\mbox{Ker}(\mbox{com}A) \Rightarrow\mbox{dim}(\mbox{Ker}(\mbox{com}A))\geq\mbox{rg}({^tA})=\mbox{rg}A=n-1\Rightarrow\mbox{rg}(\mbox{com}A)\leq1,`;
 // 5PeK : égalités et inégalités mêlées.
 const CHAIN_MIXED = String.raw`\left|\int_{a}^{b}f(t)\;dt\right|=|F(b)-F(a)|\leq|F(b)-F(\frac{a+b}{2})|+|F(\frac{a+b}{2})-F(a)|\leq\frac{1}{2}M\frac{(b-a)^2}{4}+\frac{1}{2}M\frac{(b-a)^2}{4}=M\frac{(b-a)^2}{4}.`;
@@ -337,10 +339,11 @@ describe('relationChainFeatures', () => {
 
   it('mesure la chaîne et la plus longue ligne d\'un align*', () => {
     const features = relationChainFeatures(CHAIN_IMPLICATIONS);
-    expect(features.relations).toBe(11);
+    // quatre implications : les égalités, inégalités et inclusions restent dans leur énoncé
+    expect(features.relations).toBe(4);
     expect(features.visible).toBeGreaterThan(60);
-    // premier membre court : chaque ligne alignée est bien plus courte que la chaîne
-    expect(features.alignedVisible).toBeLessThan(features.visible / 2);
+    // chaque ligne alignée fait au plus la moitié de la chaîne
+    expect(features.alignedVisible).toBeLessThanOrEqual(features.visible / 2);
   });
 });
 
@@ -398,5 +401,41 @@ et que $x=1$.
     const fixed = applyDeterministicFixes(source);
     expect(fixed).toBe(source);
     expect(validateMathLayout(fixed, 'sample.tex').map(w => w.code)).toEqual(['display-math-relation-chain']);
+  });
+});
+
+describe('splitForAlign et relationChainToAlign', () => {
+  it('coupe à toutes les relations quand il n\'y a que des égalités et des inégalités', () => {
+    expect(splitForAlign('a=b\\leq c<d').relations).toEqual(['=', String.raw`\leq`, '<']);
+  });
+
+  it('ne coupe qu\'aux implications et équivalences quand il y en a : les égalités restent dans leur énoncé', () => {
+    const { members, relations } = splitForAlign(String.raw`x=0\Rightarrow y=1\Leftrightarrow z\leq 2`);
+    expect(relations).toEqual([String.raw`\Rightarrow`, String.raw`\Leftrightarrow`]);
+    expect(members).toEqual(['x=0', 'y=1', String.raw`z\leq 2`]);
+  });
+
+  it('écrit l\'enchaînement en align*, aligné sur la première relation', () => {
+    expect(relationChainToAlign('a=b=c=d')).toBe('\\begin{align*}\na &= b \\\\\n&= c \\\\\n&= d\n\\end{align*}');
+    expect(relationChainToAlign(String.raw`x=0\Rightarrow y=1\Rightarrow z=2`))
+      .toBe('\\begin{align*}\nx=0 &\\Rightarrow y=1 \\\\\n&\\Rightarrow z=2\n\\end{align*}');
+  });
+
+  it('garde la ponctuation finale sur la dernière ligne', () => {
+    expect(relationChainToAlign('a=b=c,')).toMatch(/&= c,\n\\end\{align\*\}$/);
+  });
+
+  it('renvoie null pour ce qui n\'est pas un enchaînement', () => {
+    expect(relationChainToAlign('a=b')).toBeNull();
+    expect(relationChainToAlign(String.raw`y_1 = 0 = z_1, \quad y_2 = 1 = z_2`)).toBeNull();
+    expect(relationChainToAlign(String.raw`\begin{align*} a&=b=c \end{align*}`)).toBeNull();
+  });
+
+  it('produit un align* que KaTeX rend, plus étroit que l\'enchaînement d\'origine', () => {
+    for (const chain of [CHAIN_IMPLICATIONS, CHAIN_MIXED, CHAIN_FRACTIONS]) {
+      const align = relationChainToAlign(chain);
+      expect(() => katex.renderToString(prepareMathForKatex(align), { throwOnError: true, strict: false, displayMode: true, macros: { ...katexMacros } })).not.toThrow();
+      expect(align.split('\n').length).toBeGreaterThan(3);
+    }
   });
 });

@@ -452,10 +452,10 @@ export function analyzeInlineMath(text) {
 // même enchaînement se lit ligne à ligne, aligné sur sa première relation.
 /** Nombre minimal de relations de premier niveau d'un enchaînement. */
 export const RELATION_CHAIN_MIN_RELATIONS = 2;
-// Réglé sur la largeur mesurée (KaTeX) des 2 594 enchaînements en formule affichée du
-// corpus. Avec ces deux seuils, 378 sont signalés ; 61 % d'entre eux dépassent 560 px (la
+// Réglé sur la largeur mesurée (KaTeX) des 2 476 enchaînements en formule affichée du
+// corpus. Avec ces deux seuils, 367 sont signalés ; 60 % d'entre eux dépassent 560 px (la
 // largeur d'une colonne de lecture sur ordinateur : 592 à 720 px selon la fenêtre) et
-// tiennent dans un align*, et 108 des 138 enchaînements qui dépassent 664 px et que
+// tiennent dans un align*, et 106 des 137 enchaînements qui dépassent 664 px et que
 // logerait un align* sont repérés. Tous dépassent la colonne d'un téléphone (300 px).
 /** Longueur visible d'un enchaînement au-delà de laquelle on alerte. */
 export const RELATION_CHAIN_MIN_VISIBLE = 60;
@@ -544,9 +544,10 @@ export function findDisplayMath(source) {
  * crochets, \left…\right et environnements).
  *
  * @param {string} text
+ * @param {((relation: string) => boolean) | null} [keep] ne coupe qu'aux relations acceptées
  * @returns {{ members: string[], relations: string[] }}
  */
-export function splitAtRelations(text) {
+export function splitAtRelations(text, keep = null) {
   const members = [];
   const relations = [];
   let brace = 0;
@@ -564,7 +565,7 @@ export function splitAtRelations(text) {
         else if (name === 'right' || name === 'end') brace = Math.max(0, brace - 1);
         else if (GROUP_OPENERS.has(name)) paren++;
         else if (GROUP_CLOSERS.has(name)) paren = Math.max(0, paren - 1);
-        if (brace === 0 && paren === 0 && RELATION_COMMANDS.has(name)) {
+        if (brace === 0 && paren === 0 && RELATION_COMMANDS.has(name) && (!keep || keep(word[0]))) {
           members.push(current);
           relations.push(word[0]);
           current = '';
@@ -591,7 +592,7 @@ export function splitAtRelations(text) {
     else if (c === '}') brace = Math.max(0, brace - 1);
     else if (c === '(' || c === '[') paren++;
     else if (c === ')' || c === ']') paren = Math.max(0, paren - 1);
-    if (brace === 0 && paren === 0 && (c === '=' || c === '<' || c === '>')) {
+    if (brace === 0 && paren === 0 && (c === '=' || c === '<' || c === '>') && (!keep || keep(c))) {
       members.push(current);
       relations.push(c);
       current = '';
@@ -603,6 +604,24 @@ export function splitAtRelations(text) {
   }
   members.push(current);
   return { members: members.map(member => member.trim()), relations };
+}
+
+const LOGICAL_ARROW = /^\\(?:Leftrightarrow|iff|Rightarrow|implies|Leftarrow|impliedby)$/;
+
+/**
+ * Découpe d'un enchaînement tel qu'un align* l'écrirait. Quand la formule enchaîne des
+ * implications ou des équivalences, chaque membre est un énoncé (« x = 0 ⇒ y = 0 ⇒ … ») :
+ * on ne coupe qu'aux flèches, et les égalités restent dans leur énoncé. Sinon on coupe à
+ * toutes les relations.
+ *
+ * @param {string} text
+ * @returns {{ members: string[], relations: string[] }}
+ */
+export function splitForAlign(text) {
+  const all = splitAtRelations(text);
+  return all.relations.some(relation => LOGICAL_ARROW.test(relation))
+    ? splitAtRelations(text, relation => LOGICAL_ARROW.test(relation))
+    : all;
 }
 
 /** Une virgule ou un \quad de premier niveau : plusieurs énoncés côte à côte, pas une chaîne. */
@@ -648,7 +667,7 @@ function hasListSeparator(member) {
 export function relationChainFeatures(text) {
   const compact = text.replace(/\s+/g, ' ').trim();
   if (/\\begin|\\\\|&|\\tag|\\label|\\cr\b/.test(compact)) return null;
-  const { members, relations } = splitAtRelations(compact);
+  const { members, relations } = splitForAlign(compact);
   if (relations.length < RELATION_CHAIN_MIN_RELATIONS) return null;
   if (members.some(member => !member) || members.some(hasListSeparator)) return null;
 
@@ -660,6 +679,23 @@ export function relationChainFeatures(text) {
     // Plus longue ligne d'un align* : le premier membre, la relation, puis un membre.
     alignedVisible: first + 1 + Math.max(...others)
   };
+}
+
+/**
+ * L'enchaînement réécrit en align* : le premier membre, la première relation et le
+ * deuxième membre sur la première ligne, puis une relation et un membre par ligne,
+ * alignés sur la première relation. Null si la formule n'est pas un enchaînement.
+ *
+ * @param {string} text contenu de la formule affichée, sans délimiteurs
+ * @returns {string | null}
+ */
+export function relationChainToAlign(text) {
+  if (!relationChainFeatures(text)) return null;
+  const { members, relations } = splitForAlign(text.replace(/\s+/g, ' ').trim());
+  return '\\begin{align*}\n'
+    + `${members[0]} &${relations[0]} ${members[1]}`
+    + relations.slice(1).map((relation, k) => ` \\\\\n&${relation} ${members[k + 2]}`).join('')
+    + '\n\\end{align*}';
 }
 
 /**
