@@ -1064,3 +1064,90 @@
 
 /* list page component styles moved to src/routes/exercise/list/+page.svelte */
 /* Exercise header, badges and actions moved to components */
+
+/* ==============================================
+   ANIMATIONS - lecteur d'une animation d'exercice
+   (src/lib/actions/animationFrames.js)
+   ============================================== */
+
+.oym-animation {
+  margin: 1.25rem 0;
+  border: 1px solid var(--color-interface-border-primary);
+  border-radius: 0.5rem;
+  background: #fffdf8;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.oym-animation__play {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  background: var(--color-brand-50);
+  cursor: pointer;
+}
+
+.oym-animation__play:hover {
+  background: var(--color-brand-100);
+}
+
+.oym-animation__play:focus-visible,
+.oym-animation__action:focus-visible {
+  outline: 3px solid var(--color-brand-600);
+  outline-offset: -3px;
+}
+
+.oym-animation__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  background: var(--color-brand-600);
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.oym-animation__label {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.oym-animation__label strong {
+  color: var(--color-brand-700);
+}
+
+.oym-animation__frame {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: #fffdf8;
+}
+
+.oym-animation__bar {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  padding: 0.35rem 0.75rem;
+  border-top: 1px solid var(--color-interface-border-primary);
+  font-size: 0.875rem;
+}
+
+.oym-animation__action {
+  padding: 0.15rem 0.6rem;
+  border-radius: 0.25rem;
+  color: var(--color-brand-700);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.oym-animation__caption {
+  padding: 0.25rem 0.75rem 0.6rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}

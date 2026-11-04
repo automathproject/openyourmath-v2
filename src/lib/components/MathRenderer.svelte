@@ -2,6 +2,7 @@
 <script>
   import { katexMacros, prepareMathForKatex } from '../katexCompat.js';
   import { onMount, afterUpdate } from 'svelte';
+  import { mountAnimations } from '../actions/animationFrames.js';
 
   export let content = '';
   export let inline = false;
@@ -40,6 +41,8 @@
   };
 
   const renderMath = () => {
+    // Les emplacements d'animation sont rendus interactifs même quand les formules sont déjà composées.
+    if (content.includes('oym-animation')) mountAnimations(mathContainer);
     if (prerendered || !/\$|\\\(|\\\[/.test(content)) return;
     if (renderMathInElement) {
       renderNow();

@@ -6,6 +6,7 @@
 // disponible à l'affichage KaTeX comme à l'export .tex, sans recopie.
 import { latexMacroDefinitions as MACRO_DEFS } from '$lib/macros.js';
 import { NOTEBOOK_BASE_URL, NOTEBOOK_LINK_LABEL } from '$lib/notebooks.js';
+import { ANIMATION_PUBLIC_BASE_URL } from '$lib/animations.js';
 
 /**
  * Extrait le contenu textuel/LaTeX brut d'un bloc de contenu.
@@ -610,7 +611,7 @@ function buildPreamble(body, docTitle, options) {
   // l'espace que LaTeX avale après un nom de macro.
   if (has(/\\xspace\b/)) lines.push('\\usepackage{xspace}');
   lines.push(`\\usepackage[margin=${margin}]{geometry}`);
-  if (has(/\\url\{|\\href\{|\\insertnotebook\b/)) lines.push('\\usepackage[hidelinks]{hyperref}');
+  if (has(/\\url\{|\\href\{|\\insertnotebook\b|\\animation\b/)) lines.push('\\usepackage[hidelinks]{hyperref}');
 
   if (theorems.length > 0) {
     lines.push('');
@@ -647,6 +648,15 @@ function buildPreamble(body, docTitle, options) {
     lines.push('');
     lines.push('% Notebooks archivés dans le dépôt Exercices, comme dans son préambule');
     lines.push(`\\newcommand{\\insertnotebook}[1]{\\href{${NOTEBOOK_BASE_URL}#1.ipynb}{${NOTEBOOK_LINK_LABEL}}}`);
+  }
+
+  if (has(/\\animation\b/)) {
+    lines.push('');
+    lines.push("% Les animations ne s'ouvrent qu'en ligne : la page en donne l'adresse");
+    lines.push(
+      '\\newcommand{\\animation}[2]{\\par\\noindent\\fbox{\\parbox{0.94\\linewidth}{' +
+        `\\emph{Animation interactive : #2}\\\\\\url{${ANIMATION_PUBLIC_BASE_URL}#1}}}\\par}`,
+    );
   }
 
   if (has(/\\pythoncode\b/)) {

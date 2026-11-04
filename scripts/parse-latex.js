@@ -22,6 +22,7 @@ import {
 
 import { extractIncludegraphicsImages } from './utils/image-artifacts.js';
 import { expandInsertNotebook } from '../src/lib/notebooks.js';
+import { replaceAnimationsWithPlaceholders } from '../src/lib/animations.js';
 import { CacheManager } from './utils/cache-manager.js';
 import { generatePreview } from './utils/previewUtils.js';
 import {
@@ -323,6 +324,19 @@ async function parseLatexFile(filePath) {
       }
       // Pandoc ignore \insertnotebook : le lien disparaissait du HTML.
       contentForConversion = expandInsertNotebook(contentForConversion);
+      // Pandoc ignore aussi \animation : un emplacement le remplace après coup.
+      if (contentForConversion.includes('\\animation')) {
+        const result = replaceAnimationsWithPlaceholders(
+          contentForConversion,
+          () => crypto.randomBytes(4).toString('hex'),
+        );
+        contentForConversion = result.content;
+        codeReplacements = [...codeReplacements, ...result.replacements];
+        for (const name of result.names) {
+          const animations = (mainData.artifacts.animations ??= []);
+          if (!animations.includes(name)) animations.push(name);
+        }
+      }
       if (contentForConversion.includes('\\pythoncode')) {
         const result = replacePythonCodeWithPlaceholders(contentForConversion, codeBlocks);
         contentForConversion = result.content;
