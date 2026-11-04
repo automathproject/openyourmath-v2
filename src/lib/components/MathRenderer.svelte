@@ -5,11 +5,14 @@
 
   export let content = '';
   export let inline = false;
+  // Formules déjà composées par le serveur (voir katexRender.js) : rien à faire
+  // ici, et KaTeX n'est même pas chargé.
+  export let prerendered = false;
 
   let mathContainer;
 
-  // KaTeX ne se charge qu'au premier texte qui en a besoin : une page dont les
-  // titres n'ont aucune formule ne le télécharge pas.
+  // KaTeX ne se charge qu'au premier texte qui en a besoin : une page qui ne
+  // montre que du contenu pré-composé, ou des titres sans formule, ne le télécharge pas.
   let renderMathInElement = null;
   let loading = null;
 
@@ -37,7 +40,7 @@
   };
 
   const renderMath = () => {
-    if (!/\$|\\\(|\\\[/.test(content)) return;
+    if (prerendered || !/\$|\\\(|\\\[/.test(content)) return;
     if (renderMathInElement) {
       renderNow();
     } else {

@@ -65,6 +65,8 @@
     
     let html = '';
     let type = block.type || 'text';
+    // Le serveur a déjà composé les formules du HTML : MathRenderer n'y touche pas.
+    const prerendered = Boolean(block.html && block.mathRendered);
     
     if (block.html) {
       html = block.html;
@@ -75,7 +77,7 @@
       html = `<p>${block.text}</p>`;
     }
     
-    return { html, type };
+    return { html, type, prerendered };
   }
   
   // Nouvelle logique d'organisation : tri global puis regroupement intelligent
@@ -238,7 +240,7 @@
         {@const processed = processContentBlock(block)}
         <!-- Bloc de texte standalone -->
         <div class="content-block" id={!isPreview ? `section-${blockIndex + 1}` : undefined}>
-          <MathRenderer content={processed.html} />
+          <MathRenderer content={processed.html} prerendered={processed.prerendered} />
         </div>
       {/each}
       
@@ -255,7 +257,7 @@
           </summary>
           <div class="collapsible-content">
             <div class="content-block">
-              <MathRenderer content={processed.html} />
+              <MathRenderer content={processed.html} prerendered={processed.prerendered} />
             </div>
           </div>
         </details>
@@ -274,7 +276,7 @@
           </summary>
           <div class="collapsible-content">
             <div class="content-block">
-              <MathRenderer content={processed.html} />
+              <MathRenderer content={processed.html} prerendered={processed.prerendered} />
             </div>
           </div>
         </details>
@@ -299,7 +301,7 @@
                   </span>
                 </div>
                 <div class="question-content" class:question-content--preview={isPreview}>
-                  <MathRenderer content={processedQ.html} />
+                  <MathRenderer content={processedQ.html} prerendered={processedQ.prerendered} />
                 </div>
               </div>
               {#if showInlineControls}
@@ -346,7 +348,7 @@
             {#each contentBlock.hints as hint}
               {@const processedH = processContentBlock(hint)}
               <div class="inline-hint-content">
-                <MathRenderer content={processedH.html} />
+                <MathRenderer content={processedH.html} prerendered={processedH.prerendered} />
               </div>
             {/each}
           </div>
@@ -358,7 +360,7 @@
             {#each contentBlock.solutions as solution}
               {@const processedS = processContentBlock(solution)}
               <div class="inline-solution-content">
-                <MathRenderer content={processedS.html} />
+                <MathRenderer content={processedS.html} prerendered={processedS.prerendered} />
               </div>
             {/each}
           </div>
