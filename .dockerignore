@@ -1,7 +1,10 @@
 # ./dockerignore
 
-# Ignorer TOUT le code source LaTeX. 
-/content/
+# Ignorer TOUT le code source LaTeX, sauf les animations : leurs pages sont
+# incluses dans le paquet du serveur par import.meta.glob (routes/animation),
+# donc absentes de l'image si ce dossier n'est pas copié pour le build.
+/content/*
+!/content/animations/
 
 # Ignorer le dossier Git, les dépendances locales, etc.
 .git
