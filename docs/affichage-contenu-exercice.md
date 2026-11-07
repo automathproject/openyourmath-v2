@@ -261,3 +261,11 @@ Dans `ExerciseHeader`, les boutons "Voir les indications / solutions" n'apparais
 ### 3. Re-render KaTeX potentiellement coûteux
 
 `MathRenderer` relance KaTeX à chaque `afterUpdate`. Ouvrir/fermer une solution déclenche un re-render de tous les `MathRenderer` présents dans le composant parent.
+
+## Figures
+
+Les figures (`\includegraphics` et TikZ compilé) sont des `<img>` de classe `includegraphics-image` ou `tikz-svg-image`.
+
+- **À l'envoi** ([exerciseFigures.js](../src/lib/server/exerciseFigures.js)) : chaque `<img src="/artifacts/…">` reçoit `width` et `height` (lus dans l'en-tête du fichier par [imageSize.js](../src/lib/imageSize.js)), `loading="lazy"` et `decoding="async"`. La page ne saute plus quand la figure arrive. Fait à l'envoi et non à l'analyse des sources, parce que les SVG TikZ n'existent qu'après le cache.
+- **Dans le navigateur** ([figureViewer.js](../src/lib/actions/figureViewer.js)) : un clic ou Entrée ouvre la figure dans un `<dialog>` modal (molette, pincement, glissement, double clic, touches `+` `-` `0` et flèches, Échap). La figure y est posée sur le papier du site, car les tracés TikZ sont noirs sur fond transparent.
+- Le texte alternatif reste générique (« Image 1 », « Diagramme TikZ 1 ») : les sources n'en portent pas.

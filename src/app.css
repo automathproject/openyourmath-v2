@@ -1151,3 +1151,108 @@
   font-size: 0.9rem;
   color: #4b5563;
 }
+
+/* ==============================================
+   VISIONNEUSE DE FIGURES
+   (src/lib/actions/figureViewer.js)
+   ============================================== */
+
+.oym-figure-zoomable {
+  cursor: zoom-in;
+}
+
+.oym-figure-zoomable:focus-visible {
+  outline: 3px solid var(--color-brand-600);
+  outline-offset: 3px;
+}
+
+.oym-viewer {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgb(13 60 77 / 0.94);
+  overflow: hidden;
+}
+
+.oym-viewer::backdrop {
+  background: transparent;
+}
+
+.oym-viewer__stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  touch-action: none; /* le pincement et le glissement sont gérés par le script */
+  cursor: grab;
+}
+
+.oym-viewer__stage:active {
+  cursor: grabbing;
+}
+
+/* Sur le papier du site : les tracés TikZ sont noirs sur fond transparent. */
+.oym-viewer__image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: none;
+  background: #fffdf8;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 32px rgb(0 0 0 / 0.35);
+  transform-origin: 50% 50%;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.oym-viewer__toolbar {
+  position: absolute;
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.3rem;
+  border-radius: 0.75rem;
+  background: #fffdf8;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.3);
+  transform: translateX(-50%);
+}
+
+.oym-viewer__button {
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.6rem;
+  border-radius: 0.5rem;
+  color: var(--color-brand-700);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.oym-viewer__button:hover {
+  background: var(--color-brand-100);
+}
+
+.oym-viewer__button:focus-visible {
+  outline: 3px solid var(--color-brand-600);
+  outline-offset: -3px;
+}
+
+.oym-viewer__readout {
+  min-width: 3.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #4b5563;
+  font-variant-numeric: tabular-nums;
+}
+
+@media print {
+  .oym-viewer {
+    display: none;
+  }
+}

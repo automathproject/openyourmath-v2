@@ -3,6 +3,7 @@ import { error } from '@sveltejs/kit';
 import { getExerciseByUuid, getSimilarExercises } from '$lib/db/queries.js';
 import { getExerciseCpge } from '$lib/db/cpge.js';
 import { withRenderedMath } from '$lib/server/exerciseMath.js';
+import { withFigureAttributes } from '$lib/server/exerciseFigures.js';
 
 export async function load({ params }) {
   try {
@@ -26,7 +27,7 @@ export async function load({ params }) {
     const cpge = await getExerciseCpge(uuid);
 
     return {
-      exercise: withRenderedMath(exercise),
+      exercise: withFigureAttributes(withRenderedMath(exercise)),
       similar: similar || [],
       cpge
     };
