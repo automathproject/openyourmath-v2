@@ -4,7 +4,7 @@
  * Imports versioned editorial content from exobase.
  *
  * exobase is the shared editorial factory: it owns the .tex sources, images,
- * code snippets, exercise sheets, the referentials and the author registry,
+ * code snippets, interactive animations, exercise sheets, the referentials and the author registry,
  * for every source it carries.
  * OpenYourMath owns the derived data and semantic metadata. Editorial fixes
  * discovered here may be sent back explicitly with --push; nothing is ever
@@ -33,6 +33,7 @@ const LABELS = {
   sources: 'Sources .tex',
   images: 'Images et sources graphiques',
   code: 'Extraits Python',
+  animations: 'Animations interactives',
   fiches: "Fiches d'exercices",
   referentiels: 'Référentiels',
   auteurs: 'Référentiel auteurs'
@@ -93,6 +94,7 @@ function mappingsFor(sources) {
       { source, kind: 'sources', dir: `exercises/${source}`, accept: name => name.endsWith('.tex') },
       { source, kind: 'images', dir: `images/${source}`, accept: () => true },
       { source, kind: 'code', dir: `code/${source}/python`, accept: name => name.endsWith('.py') },
+      { source, kind: 'animations', dir: `animations/${source}`, accept: name => name.endsWith('.html') },
       { source, kind: 'fiches', dir: `fiches/${source}`, accept: name => name.endsWith('.txt') }
     ]),
     // Taxonomies communes à toutes les sources : référentiels AMSCC et Exo7,
@@ -391,6 +393,10 @@ async function main() {
 
   const buildCommand = copies.some(entry => entry.kind === 'code') ? 'pnpm build:content:full' : 'pnpm build:content';
   if (copies.length) console.log(`\nExécutez ensuite ${buildCommand} et préparez les exercices modifiés.`);
+  // Les pages d'animation sont incluses dans le paquet du serveur, pas dans la base.
+  if (copies.some(entry => entry.kind === 'animations')) {
+    console.log('Animations modifiées : vérifiez-les (pnpm check:animations) puis reconstruisez l\'application.');
+  }
 }
 
 main().catch(error => {

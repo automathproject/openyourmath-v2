@@ -1,5 +1,5 @@
 // src/routes/animation/[name]/+server.js
-// Sert une animation de content/animations/<name>.html, isolée du site.
+// Sert une animation de content/animations/<source>/<name>.html, isolée du site.
 //
 // Le HTML d'une animation est du JavaScript arbitraire : la politique CSP le
 // place dans un bac à sable sans « allow-same-origin ». Il tourne alors dans une
@@ -7,10 +7,13 @@
 // vaut aussi pour une ouverture directe de l'adresse, pas seulement pour l'iframe.
 
 import { error } from '@sveltejs/kit';
-import { ANIMATION_NAME } from '$lib/animations.js';
+import { ANIMATION_NAME, indexAnimationPages } from '$lib/animations.js';
 
 // Les pages sont incluses dans le paquet du serveur : aucun chemin à retrouver en production.
-const pages = import.meta.glob('/content/animations/*.html', { query: '?raw', import: 'default' });
+const loaders = import.meta.glob('/content/animations/*/*.html', { query: '?raw', import: 'default' });
+// L'adresse ne porte que le nom : la source est retrouvée ici, un nom ambigu
+// n'est pas servi (pnpm check:animations le signale).
+const { pages } = indexAnimationPages(Object.keys(loaders));
 
 const CSP = [
   'sandbox allow-scripts',
@@ -24,7 +27,7 @@ const CSP = [
 
 export async function GET({ params }) {
   const { name } = params;
-  const load = ANIMATION_NAME.test(name) ? pages[`/content/animations/${name}.html`] : undefined;
+  const load = ANIMATION_NAME.test(name) && pages.has(name) ? loaders[pages.get(name)] : undefined;
   if (!load) throw error(404, 'Animation introuvable');
 
   return new Response(await load(), {

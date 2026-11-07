@@ -1,9 +1,11 @@
 #!/usr/bin/env node
-// Extrait une figure d'un diaporama OPTRN en une page autonome, prête pour
-// content/animations/<nom>.html (voir src/lib/animations.js).
+// Extrait une figure d'un diaporama OPTRN en une page autonome, à déposer dans
+// le dossier animations/ du dépôt d'édition des exercices (Exercices pour AMSCC),
+// d'où elle rejoint exobase puis content/animations/<source>/<nom>.html par les
+// synchronisations, comme un extrait Python (voir src/lib/animations.js).
 //
-//   node scripts/extract-animation.js --deck ../cours-OPTRN/slides/td1-s1-fonctions \
-//     --widget directionnelle --name ebva-directionnelle
+//   node scripts/extract-animation.js --deck ../../cours/cours-OPTRN/slides/td1-s1-fonctions \
+//     --widget directionnelle --name ebva-directionnelle --out ../../exercices/Exercices/animations
 //
 // Un diaporama (voir slides/README.md du cours) range ses figures dans widgets.js,
 // enregistrées dans W[nom] et appelées par <div data-w="nom"> ; le noyau commun
@@ -21,7 +23,6 @@ import { parseArgs } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import { ANIMATION_NAME } from '../src/lib/animations.js';
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const NATURAL_WIDTH = 1160;
 
 // Charte d'OpenYourMath (src/app.css, @theme) à la place de celle des diaporamas.
@@ -142,8 +143,8 @@ function main() {
       out: { type: 'string' },
     },
   });
-  if (!values.deck || !values.widget || !values.name) {
-    console.error('Usage : node scripts/extract-animation.js --deck <dossier du diaporama> --widget <nom> --name <nom de l\'animation> [--title <titre>]');
+  if (!values.deck || !values.widget || !values.name || !values.out) {
+    console.error('Usage : node scripts/extract-animation.js --deck <dossier du diaporama> --widget <nom> --name <nom de l\'animation> --out <dossier animations/> [--title <titre>]');
     process.exit(1);
   }
   if (!ANIMATION_NAME.test(values.name)) {
@@ -179,10 +180,13 @@ function main() {
     widgets: applyOymTheme(widgets),
     source: path.basename(deck),
   });
-  const out = values.out ? path.resolve(values.out) : path.join(ROOT, 'content/animations', `${values.name}.html`);
+  // --out désigne le dossier, ou directement le fichier <nom>.html.
+  const out = values.out.endsWith('.html')
+    ? path.resolve(values.out)
+    : path.join(path.resolve(values.out), `${values.name}.html`);
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, page);
-  console.log(`${path.relative(ROOT, out)} : ${Math.round(page.length / 1024)} Kio`);
+  console.log(`${out} : ${Math.round(page.length / 1024)} Kio`);
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main();

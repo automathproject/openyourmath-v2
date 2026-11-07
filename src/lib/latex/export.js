@@ -612,6 +612,7 @@ function buildPreamble(body, docTitle, options) {
   if (has(/\\xspace\b/)) lines.push('\\usepackage{xspace}');
   lines.push(`\\usepackage[margin=${margin}]{geometry}`);
   if (has(/\\url\{|\\href\{|\\insertnotebook\b|\\animation\b/)) lines.push('\\usepackage[hidelinks]{hyperref}');
+  if (has(/\\animation\b/)) lines.push('\\usepackage{qrcode}');
 
   if (theorems.length > 0) {
     lines.push('');
@@ -652,10 +653,13 @@ function buildPreamble(body, docTitle, options) {
 
   if (has(/\\animation\b/)) {
     lines.push('');
-    lines.push("% Les animations ne s'ouvrent qu'en ligne : la page en donne l'adresse");
+    lines.push("% Les animations ne s'ouvrent qu'en ligne : la page en donne l'adresse et");
+    lines.push("% son QR code, comme le préambule d'Exercices (_preambules/general.tex)");
     lines.push(
-      '\\newcommand{\\animation}[2]{\\par\\noindent\\fbox{\\parbox{0.94\\linewidth}{' +
-        `\\emph{Animation interactive : #2}\\\\\\url{${ANIMATION_PUBLIC_BASE_URL}#1}}}\\par}`,
+      '\\newcommand{\\animation}[2]{\\par\\medskip\\noindent\\fbox{\\parbox{0.94\\linewidth}{' +
+        '\\parbox[c]{\\dimexpr\\linewidth-2.4cm\\relax}{' +
+        `\\emph{Animation interactive : #2}\\\\\\url{${ANIMATION_PUBLIC_BASE_URL}#1}}\\hfill` +
+        `\\parbox[c]{2cm}{\\qrcode[height=2cm]{${ANIMATION_PUBLIC_BASE_URL}#1}}}}\\par\\medskip}`,
     );
   }
 

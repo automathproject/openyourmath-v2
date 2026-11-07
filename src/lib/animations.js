@@ -2,10 +2,14 @@
 // Animations interactives associées aux exercices.
 //
 // Une source déclare une animation par \animation{nom}{légende}. Le nom désigne
-// content/animations/<nom>.html, une page autonome que le site sert isolée
-// (voir routes/animation/[name]) et que l'exercice ouvre à la demande dans une
-// iframe. La légende est du texte simple : elle sert d'étiquette et de titre. Le parseur, l'aperçu, l'export LaTeX et le contrôle des sources
-// s'appuient sur ce seul fichier pour reconnaître la commande.
+// content/animations/<source>/<nom>.html, une page autonome que le site sert
+// isolée (voir routes/animation/[name]) et que l'exercice ouvre à la demande dans
+// une iframe. Comme les extraits Python, les pages viennent d'exobase, rangées
+// par source ; l'adresse, elle, ne dépend que du nom, unique toutes sources
+// confondues, car elle est imprimée dans les PDF. La légende est du texte
+// simple : elle sert d'étiquette et de titre. Le parseur, l'aperçu, l'export
+// LaTeX et le contrôle des sources s'appuient sur ce seul fichier pour
+// reconnaître la commande.
 
 /** Un nom d'animation : lettres, chiffres, tiret et souligné, comme un nom de fichier sûr. */
 export const ANIMATION_NAME = /^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/;
@@ -16,6 +20,32 @@ export const ANIMATION_PUBLIC_BASE_URL = 'https://openyourmath.org/animation/';
 /** Adresse de la page qui sert l'animation. */
 export function animationUrl(name) {
   return `/animation/${encodeURIComponent(String(name).trim())}`;
+}
+
+/** Chemin d'une page d'animation : …/animations/<source>/<nom>.html. */
+const PAGE_PATH = /(?:^|\/)animations\/([^/]+)\/([^/]+)\.html$/;
+
+/**
+ * Range les pages d'animation par nom. Un nom présent dans deux sources est
+ * signalé et n'est servi par aucune : l'adresse /animation/<nom> serait ambiguë.
+ *
+ * @param {string[]} paths  chemins de la forme …/animations/<source>/<nom>.html
+ * @returns {{ pages: Map<string, string>, duplicates: Map<string, string[]> }}
+ */
+export function indexAnimationPages(paths) {
+  const byName = new Map();
+  for (const pagePath of paths) {
+    const match = PAGE_PATH.exec(String(pagePath).replaceAll('\\', '/'));
+    if (!match || !ANIMATION_NAME.test(match[2])) continue;
+    byName.set(match[2], [...(byName.get(match[2]) ?? []), pagePath]);
+  }
+  const pages = new Map();
+  const duplicates = new Map();
+  for (const [name, found] of byName) {
+    if (found.length === 1) pages.set(name, found[0]);
+    else duplicates.set(name, found.sort());
+  }
+  return { pages, duplicates };
 }
 
 /** Début d'un appel : « \animation », suivi d'un « { » (espaces permis). */

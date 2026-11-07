@@ -1,17 +1,18 @@
 #!/usr/bin/env node
 // Vérifie que chaque \animation{nom}{légende} des sources désigne une page
-// existante de content/animations/ et porte une légende (texte alternatif de la
-// figure, et seule trace de l'animation dans l'export PDF).
+// existante de content/animations/<source>/ et porte une légende (texte
+// alternatif de la figure, et seule trace de l'animation dans l'export PDF), et
+// qu'aucun nom de page n'est employé par deux sources.
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { ANIMATION_NAME, findAnimations } from '../../src/lib/animations.js';
+import { ANIMATION_NAME, findAnimations, indexAnimationPages } from '../../src/lib/animations.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 
 async function listFiles(directory, extension) {
-  const entries = await fs.readdir(directory, { withFileTypes: true });
+  const entries = await fs.readdir(directory, { withFileTypes: true }).catch(() => []);
   const nested = await Promise.all(entries.map(async (entry) => {
     const entryPath = path.join(directory, entry.name);
     if (entry.isDirectory()) return listFiles(entryPath, extension);
@@ -25,19 +26,36 @@ async function listFiles(directory, extension) {
  * @returns {Promise<{ filePath: string, name: string, code: string, message: string }[]>}
  */
 export async function checkAnimations({ exercisesRoot, animationsRoot }) {
-  const available = new Set(
-    (await fs.readdir(animationsRoot).catch(() => []))
-      .filter((file) => file.endsWith('.html'))
-      .map((file) => file.slice(0, -'.html'.length)),
-  );
+  const pagePaths = (await listFiles(animationsRoot, '.html'))
+    .map((file) => `animations/${path.relative(animationsRoot, file).split(path.sep).join('/')}`);
+  const { pages, duplicates } = indexAnimationPages(pagePaths);
   const issues = [];
+  const indexed = new Set([...pages.values(), ...[...duplicates.values()].flat()]);
+  for (const pagePath of pagePaths.filter((page) => !indexed.has(page))) {
+    issues.push({
+      filePath: path.join(animationsRoot, pagePath.slice('animations/'.length)),
+      name: path.basename(pagePath, '.html'),
+      code: 'unserved-animation',
+      message: `${pagePath} ne sera pas servie : attendu content/animations/<source>/<nom>.html.`,
+    });
+  }
+  for (const [name, found] of duplicates) {
+    issues.push({
+      filePath: path.join(animationsRoot, found[0].slice('animations/'.length)),
+      name,
+      code: 'duplicate-animation',
+      message: `« ${name} » existe dans plusieurs sources (${found.join(', ')}) : l'adresse /animation/${name} serait ambiguë.`,
+    });
+  }
   for (const filePath of await listFiles(exercisesRoot, '.tex')) {
     const source = await fs.readFile(filePath, 'utf8');
     if (!source.includes('\\animation')) continue;
     for (const { name, caption } of findAnimations(source)) {
       const problem = (code, message) => issues.push({ filePath, name, code, message });
       if (!ANIMATION_NAME.test(name)) problem('invalid-name', `Nom d'animation invalide : « ${name} ».`);
-      else if (!available.has(name)) problem('missing-animation', `content/animations/${name}.html n'existe pas.`);
+      else if (!pages.has(name) && !duplicates.has(name)) {
+        problem('missing-animation', `Aucune page content/animations/<source>/${name}.html.`);
+      }
       if (!caption) problem('missing-caption', `L'animation « ${name} » n'a pas de légende.`);
       // La légende sert d'attribut, de titre d'iframe et d'étiquette : du texte simple.
       else if (/[$\\]/.test(caption)) problem('formula-in-caption', `La légende de « ${name} » doit être du texte simple, sans formule.`);

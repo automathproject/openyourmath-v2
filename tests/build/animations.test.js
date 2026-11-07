@@ -9,6 +9,7 @@ import {
   ANIMATION_NAME,
   animationUrl,
   findAnimations,
+  indexAnimationPages,
   replaceAnimationsWithPlaceholders,
 } from '../../src/lib/animations.js';
 import { buildLatexExport } from '../../src/lib/latex/export.js';
@@ -51,6 +52,38 @@ describe('noms et adresses', () => {
   });
 });
 
+describe('indexAnimationPages', () => {
+  it('retrouve la source de chaque page à partir de son nom', () => {
+    const { pages, duplicates } = indexAnimationPages([
+      '/content/animations/amscc/ebva-directionnelle.html',
+      '/content/animations/exo7/autre.html',
+    ]);
+    expect([...pages]).toEqual([
+      ['ebva-directionnelle', '/content/animations/amscc/ebva-directionnelle.html'],
+      ['autre', '/content/animations/exo7/autre.html'],
+    ]);
+    expect(duplicates.size).toBe(0);
+  });
+
+  it("n'attribue pas un nom présent dans deux sources", () => {
+    const { pages, duplicates } = indexAnimationPages([
+      '/content/animations/exo7/x.html',
+      '/content/animations/amscc/x.html',
+    ]);
+    expect(pages.has('x')).toBe(false);
+    expect(duplicates.get('x')).toEqual(['/content/animations/amscc/x.html', '/content/animations/exo7/x.html']);
+  });
+
+  it('ignore les pages hors de animations/<source>/ et les noms invalides', () => {
+    const { pages } = indexAnimationPages([
+      '/content/animations/plat.html',
+      '/content/animations/amscc/sous/x.html',
+      '/content/animations/amscc/x.y.html',
+    ]);
+    expect(pages.size).toBe(0);
+  });
+});
+
 describe('replaceAnimationsWithPlaceholders', () => {
   it('isole chaque appel en paragraphe et fournit un emplacement HTML', () => {
     let n = 0;
@@ -83,6 +116,8 @@ describe('export LaTeX et aperçu', () => {
     expect(source).toContain('\\usepackage[hidelinks]{hyperref}');
     expect(source).toContain('\\newcommand{\\animation}[2]');
     expect(source).toContain('\\url{https://openyourmath.org/animation/#1}');
+    expect(source).toContain('\\usepackage{qrcode}');
+    expect(source).toContain('\\qrcode[height=2cm]{https://openyourmath.org/animation/#1}');
     expect(source).toContain('\\animation{ebva-directionnelle}{Dérivée}');
   });
 
@@ -91,6 +126,7 @@ describe('export LaTeX et aperçu', () => {
       uuid: 'u', title: 'U', content: [{ type: 'question', order: 1, latex: 'Bonjour' }],
     }], 'T');
     expect(source).not.toContain('\\animation');
+    expect(source).not.toContain('qrcode');
   });
 
   it("annonce l'animation dans l'aperçu de /create", () => {
@@ -148,22 +184,48 @@ describe('checkAnimations', () => {
     const root = fs.mkdtempSync(path.join(os.tmpdir(), 'oym-anim-'));
     fs.mkdirSync(path.join(root, 'ex'));
     fs.mkdirSync(path.join(root, 'anim'));
-    for (const [file, text] of Object.entries(files)) fs.writeFileSync(path.join(root, file), text);
+    for (const [file, text] of Object.entries(files)) {
+      fs.mkdirSync(path.dirname(path.join(root, file)), { recursive: true });
+      fs.writeFileSync(path.join(root, file), text);
+    }
     return { exercisesRoot: path.join(root, 'ex'), animationsRoot: path.join(root, 'anim') };
   };
 
   it('accepte une référence valide', async () => {
-    const roots = setup({ 'ex/a.tex': '\\animation{ok}{Légende}', 'anim/ok.html': '<html></html>' });
+    const roots = setup({ 'ex/amscc/a.tex': '\\animation{ok}{Légende}', 'anim/amscc/ok.html': '<html></html>' });
     expect(await checkAnimations(roots)).toEqual([]);
   });
 
   it("signale une page absente, un nom invalide, une légende vide ou avec formule", async () => {
     const roots = setup({
       'ex/a.tex': '\\animation{absente}{L}\n\\animation{../x}{L}\n\\animation{ok}{}\n\\animation{ok}{Une $f$}',
-      'anim/ok.html': '<html></html>',
+      'anim/amscc/ok.html': '<html></html>',
     });
     const codes = (await checkAnimations(roots)).map((i) => i.code);
     expect(codes).toEqual(['missing-animation', 'invalid-name', 'missing-caption', 'formula-in-caption']);
+  });
+
+  it('signale un nom employé par deux sources et une page mal rangée', async () => {
+    const roots = setup({
+      'ex/a.tex': '\\animation{double}{L}\n\\animation{plat}{L}',
+      'anim/amscc/double.html': '<html></html>',
+      'anim/exo7/double.html': '<html></html>',
+      'anim/plat.html': '<html></html>',
+    });
+    const issues = await checkAnimations(roots);
+    expect(issues.map((i) => [i.code, i.name])).toEqual([
+      ['unserved-animation', 'plat'],
+      ['duplicate-animation', 'double'],
+      ['missing-animation', 'plat'],
+    ]);
+  });
+
+  it('accepte la page ebva rangée dans sa source', async () => {
+    const issues = await checkAnimations({
+      exercisesRoot: path.join(process.cwd(), 'content/exercises/amscc'),
+      animationsRoot: path.join(process.cwd(), 'content/animations'),
+    });
+    expect(issues).toEqual([]);
   });
 
   it('ne se plaint pas quand le dossier des animations n’existe pas', async () => {
