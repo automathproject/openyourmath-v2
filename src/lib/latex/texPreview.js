@@ -193,7 +193,7 @@ export function latexToPreviewHtml(latex) {
   src = src.replace(/\\geogebra\{([^}]*)\}/g, (_, id) =>
     artifactNotice(`📐 Animation GeoGebra : ${escapeHtml(id)}`),
   );
-  src = src.replace(/\\animation\{([^}]*)\}\{([^}]*)\}/g, (_, name, caption) =>
+  src = src.replace(/\\animation\s*(?:\[[^\]]*\]\s*)?\{([^}]*)\}\{([^}]*)\}/g, (_, name, caption) =>
     artifactNotice(`▶ Animation : ${escapeHtml(caption)} (${escapeHtml(name)})`),
   );
   src = src.replace(/\\BUseVerbatim\{([^}]*)\}/g, (_, name) =>

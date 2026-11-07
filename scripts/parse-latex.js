@@ -329,6 +329,7 @@ async function parseLatexFile(filePath) {
         const result = replaceAnimationsWithPlaceholders(
           contentForConversion,
           () => crypto.randomBytes(4).toString('hex'),
+          (image) => includedImages.find((img) => img.originalPath === image)?.url,
         );
         contentForConversion = result.content;
         codeReplacements = [...codeReplacements, ...result.replacements];

@@ -7,7 +7,10 @@
 // une iframe. Comme les extraits Python, les pages viennent d'exobase, rangées
 // par source ; l'adresse, elle, ne dépend que du nom, unique toutes sources
 // confondues, car elle est imprimée dans les PDF. La légende est du texte
-// simple : elle sert d'étiquette et de titre. Le parseur, l'aperçu, l'export
+// simple : elle sert d'étiquette et de titre. Un argument optionnel,
+// \animation[image]{nom}{légende}, donne une image fixe de l'animation, écrite
+// comme le chemin d'un \includegraphics : le PDF l'imprime dans l'encadré, le
+// site en fait la vignette du lecteur. Le parseur, l'aperçu, l'export
 // LaTeX et le contrôle des sources s'appuient sur ce seul fichier pour
 // reconnaître la commande.
 
@@ -48,8 +51,11 @@ export function indexAnimationPages(paths) {
   return { pages, duplicates };
 }
 
-/** Début d'un appel : « \animation », suivi d'un « { » (espaces permis). */
-const CALL = /\\animation\s*\{/g;
+/**
+ * Début d'un appel : « \animation », l'image fixe facultative entre crochets,
+ * puis un « { » (espaces permis).
+ */
+const CALL = /\\animation\s*(?:\[([^\]]*)\]\s*)?\{/g;
 
 /** Lit le groupe entre accolades qui commence à `start` (juste après « { »). */
 function readGroup(source, start) {
@@ -66,11 +72,12 @@ function readGroup(source, start) {
 }
 
 /**
- * Appels \animation{nom}{légende} d'un texte LaTeX, hors commentaires.
- * La légende peut contenir des accolades et des formules.
+ * Appels \animation[image]{nom}{légende} d'un texte LaTeX, hors commentaires.
+ * La légende peut contenir des accolades et des formules ; `image` vaut '' sans
+ * image fixe.
  *
  * @param {string} latex
- * @returns {{ name: string, caption: string, start: number, end: number }[]}
+ * @returns {{ name: string, caption: string, image: string, start: number, end: number }[]}
  */
 export function findAnimations(latex) {
   const source = String(latex || '');
@@ -87,7 +94,13 @@ export function findAnimations(latex) {
     if (source[cursor] !== '{') continue;
     const caption = readGroup(source, cursor + 1);
     if (!caption) continue;
-    calls.push({ name: name.text.trim(), caption: caption.text.trim(), start: match.index, end: caption.end });
+    calls.push({
+      name: name.text.trim(),
+      caption: caption.text.trim(),
+      image: (match[1] ?? '').trim(),
+      start: match.index,
+      end: caption.end,
+    });
     CALL.lastIndex = caption.end;
   }
   return calls;
@@ -99,11 +112,13 @@ const escapeAttribute = (text) =>
 /**
  * Emplacement que le navigateur remplace par le lecteur d'animation. Sans
  * JavaScript, le lien reste utilisable : la page de l'animation fonctionne seule.
+ * `poster`, l'adresse publiée de l'image fixe, sert de vignette au lecteur.
  */
-export function animationPlaceholderHtml(name, caption) {
+export function animationPlaceholderHtml(name, caption, poster = '') {
   const label = escapeAttribute(caption);
+  const posterAttribute = poster ? ` data-poster="${escapeAttribute(poster)}"` : '';
   return (
-    `<div class="oym-animation" data-animation="${escapeAttribute(name)}" data-caption="${label}">` +
+    `<div class="oym-animation" data-animation="${escapeAttribute(name)}" data-caption="${label}"${posterAttribute}>` +
     `<a href="${animationUrl(name)}">Animation : ${label}</a></div>`
   );
 }
@@ -116,9 +131,11 @@ export function animationPlaceholderHtml(name, caption) {
  *
  * @param {string} latex
  * @param {() => string} makeId  fournit un identifiant unique de placeholder
+ * @param {(image: string) => string | undefined} [posterUrl]  adresse publiée
+ *   d'une image fixe, à partir de son chemin dans la source
  * @returns {{ content: string, replacements: { placeholder: string, html: string }[], names: string[] }}
  */
-export function replaceAnimationsWithPlaceholders(latex, makeId) {
+export function replaceAnimationsWithPlaceholders(latex, makeId, posterUrl = () => undefined) {
   const source = String(latex || '');
   const replacements = [];
   const names = [];
@@ -130,7 +147,7 @@ export function replaceAnimationsWithPlaceholders(latex, makeId) {
     replacements.push({
       placeholder,
       html: valid
-        ? animationPlaceholderHtml(call.name, call.caption)
+        ? animationPlaceholderHtml(call.name, call.caption, call.image ? posterUrl(call.image) : '')
         : `<div class="code-error">Animation invalide : ${escapeAttribute(call.name)}</div>`,
     });
     if (valid) names.push(call.name);

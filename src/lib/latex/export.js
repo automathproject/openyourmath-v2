@@ -205,14 +205,14 @@ function exerciseRawLatex(ex) {
 }
 
 /**
- * Indique si un exercice référence des ressources externes (images, blocs de
- * code SaveVerbatim, extraits \pythoncode) nécessitant le chargement de son
- * fichier d'artifacts.
+ * Indique si un exercice référence des ressources externes (images, image
+ * fixe d'une animation, blocs de code SaveVerbatim, extraits \pythoncode)
+ * nécessitant le chargement de son fichier d'artifacts.
  * @param {Object} ex
  * @returns {boolean}
  */
 export function exerciseNeedsArtifacts(ex) {
-  return /\\(?:BUseVerbatim|includegraphics|pythoncode)\b/.test(exerciseRawLatex(ex));
+  return /\\(?:BUseVerbatim|includegraphics|pythoncode)\b|\\animation\s*\[/.test(exerciseRawLatex(ex));
 }
 
 /**
@@ -430,6 +430,12 @@ function tikzFigure(code, options = '') {
  * transporter voient leur inclusion remplacée par un encart : sans cela, la
  * compilation échouerait sur un fichier introuvable, sans indiquer lequel.
  *
+ * L'image fixe d'une animation, \animation[chemin]{nom}{légende}, suit les
+ * mêmes règles. Sa source TikZ passe par \animationcadre, dont le premier
+ * argument est la figure elle-même ; faute de source et de format transportable,
+ * l'animation garde son encadré sans image, que l'adresse et le QR code
+ * suffisent à rendre utile.
+ *
  * @param {string} latex
  * @param {Object} artifacts
  * @param {'files'|'remote'} imageMode
@@ -443,6 +449,23 @@ function rewriteImagePaths(latex, artifacts, imageMode) {
 
   for (const img of images) {
     if (!img?.originalPath || !img?.url) continue;
+
+    const still = new RegExp(`\\\\animation\\s*\\[\\s*${escapeRegExp(img.originalPath)}\\s*\\]`, 'g');
+    if (still.test(out)) {
+      const extension = imageExtension(img.url);
+      if (img.tikz) {
+        out = out.replace(still, () => `\\animationcadre{${tikzFigure(img.tikz, 'width=0.6\\linewidth')}}`);
+      } else if (remote && !REMOTE_IMAGE_EXTENSIONS.includes(extension)) {
+        out = out.replace(still, () => '\\animation');
+      } else {
+        const localPath = remote
+          ? flatAssetName(img.url)
+          : img.url.replace(/^\/artifacts\/images\//, 'images/');
+        out = out.replace(still, () => `\\animation[${localPath}]`);
+        if (!required.some((r) => r.localPath === localPath)) required.push({ localPath, url: img.url });
+      }
+    }
+
     if (!out.includes(`{${img.originalPath}}`)) continue;
 
     const inclusion = new RegExp(
@@ -566,7 +589,7 @@ function buildPreamble(body, docTitle, options) {
   if (theorems.length > 0 || has(/\\qed\b|\\begin\{proof\}/)) lines.push('\\usepackage{amsthm}');
   if (has(/\\mathscr\b/)) lines.push('\\usepackage{mathrsfs}');
   if (has(/\\llbracket|\\rrbracket|\\llparenthesis/)) lines.push('\\usepackage{stmaryrd}');
-  if (has(/\\includegraphics\b/)) lines.push('\\usepackage{graphicx}');
+  if (has(/\\includegraphics\b|\\animation(?:cadre)?\b/)) lines.push('\\usepackage{graphicx}');
   if (has(/\\begin\{(?:SaveVerbatim|Verbatim|BVerbatim)\}|\\BUseVerbatim\b|\\pythoncode\b/)) {
     lines.push('\\usepackage{fancyvrb}');
   }
@@ -611,8 +634,8 @@ function buildPreamble(body, docTitle, options) {
   // l'espace que LaTeX avale après un nom de macro.
   if (has(/\\xspace\b/)) lines.push('\\usepackage{xspace}');
   lines.push(`\\usepackage[margin=${margin}]{geometry}`);
-  if (has(/\\url\{|\\href\{|\\insertnotebook\b|\\animation\b/)) lines.push('\\usepackage[hidelinks]{hyperref}');
-  if (has(/\\animation\b/)) lines.push('\\usepackage{qrcode}');
+  if (has(/\\url\{|\\href\{|\\insertnotebook\b|\\animation(?:cadre)?\b/)) lines.push('\\usepackage[hidelinks]{hyperref}');
+  if (has(/\\animation(?:cadre)?\b/)) lines.push('\\usepackage{qrcode}');
 
   if (theorems.length > 0) {
     lines.push('');
@@ -651,15 +674,21 @@ function buildPreamble(body, docTitle, options) {
     lines.push(`\\newcommand{\\insertnotebook}[1]{\\href{${NOTEBOOK_BASE_URL}#1.ipynb}{${NOTEBOOK_LINK_LABEL}}}`);
   }
 
-  if (has(/\\animation\b/)) {
+  if (has(/\\animation(?:cadre)?\b/)) {
     lines.push('');
-    lines.push("% Les animations ne s'ouvrent qu'en ligne : la page en donne l'adresse et");
-    lines.push("% son QR code, comme le préambule d'Exercices (_preambules/general.tex)");
+    lines.push("% Les animations ne s'ouvrent qu'en ligne : la page en donne l'adresse, son");
+    lines.push("% QR code et, s'il y en a une, une image fixe, comme le préambule d'Exercices");
+    lines.push('% (_preambules/general.tex). \\animationcadre{figure}{nom}{légende}.');
     lines.push(
-      '\\newcommand{\\animation}[2]{\\par\\medskip\\noindent\\fbox{\\parbox{0.94\\linewidth}{' +
+      '\\newcommand{\\animationcadre}[3]{\\par\\medskip\\noindent\\fbox{\\parbox{0.94\\linewidth}{' +
+        '\\if\\relax\\detokenize{#1}\\relax\\else{\\centering#1\\par}\\medskip\\fi' +
         '\\parbox[c]{\\dimexpr\\linewidth-2.4cm\\relax}{' +
-        `\\emph{Animation interactive : #2}\\\\\\url{${ANIMATION_PUBLIC_BASE_URL}#1}}\\hfill` +
-        `\\parbox[c]{2cm}{\\qrcode[height=2cm]{${ANIMATION_PUBLIC_BASE_URL}#1}}}}\\par\\medskip}`,
+        `\\emph{Animation interactive : #3}\\\\\\url{${ANIMATION_PUBLIC_BASE_URL}#2}}\\hfill` +
+        `\\parbox[c]{2cm}{\\qrcode[height=2cm]{${ANIMATION_PUBLIC_BASE_URL}#2}}}}\\par\\medskip}`,
+    );
+    lines.push(
+      '\\newcommand{\\animation}[3][]{\\animationcadre{\\if\\relax\\detokenize{#1}\\relax\\else' +
+        '\\includegraphics[width=0.6\\linewidth]{#1}\\fi}{#2}{#3}}',
     );
   }
 

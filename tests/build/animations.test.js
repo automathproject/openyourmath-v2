@@ -20,8 +20,13 @@ import { applyOymTheme, buildAnimationPage, findWidgetIntro, OYM_PALETTE } from 
 describe('findAnimations', () => {
   it('lit le nom et la légende', () => {
     expect(findAnimations('Avant \\animation{ebva-directionnelle}{Dérivée en 0} après')).toEqual([
-      { name: 'ebva-directionnelle', caption: 'Dérivée en 0', start: 6, end: 51 },
+      { name: 'ebva-directionnelle', caption: 'Dérivée en 0', image: '', start: 6, end: 51 },
     ]);
+  });
+
+  it("lit l'image fixe facultative", () => {
+    const [call] = findAnimations('\\animation [\\exercisespath img/pdf/ebva-tikz-1] {ebva-directionnelle}{L}');
+    expect(call).toMatchObject({ name: 'ebva-directionnelle', caption: 'L', image: '\\exercisespath img/pdf/ebva-tikz-1' });
   });
 
   it('accepte des accolades dans la légende et un saut de ligne entre les groupes', () => {
@@ -99,6 +104,16 @@ describe('replaceAnimationsWithPlaceholders', () => {
     );
   });
 
+  it("fait de l'image fixe la vignette du lecteur", () => {
+    const { replacements } = replaceAnimationsWithPlaceholders(
+      '\\animation[img/a]{a}{A}\n\\animation[img/inconnue]{b}{B}',
+      () => 'z',
+      (image) => (image === 'img/a' ? '/artifacts/images/u/img_1.svg' : undefined),
+    );
+    expect(replacements[0].html).toContain('data-poster="/artifacts/images/u/img_1.svg"');
+    expect(replacements[1].html).not.toContain('data-poster');
+  });
+
   it('signale un nom invalide au lieu de produire un lien', () => {
     const { replacements, names } = replaceAnimationsWithPlaceholders('\\animation{../x}{Légende}', () => 'z');
     expect(names).toEqual([]);
@@ -114,10 +129,10 @@ describe('export LaTeX et aperçu', () => {
       content: [{ type: 'reponse', order: 1, latex: '\\animation{ebva-directionnelle}{Dérivée}' }],
     }], 'T', { includeSolutions: true });
     expect(source).toContain('\\usepackage[hidelinks]{hyperref}');
-    expect(source).toContain('\\newcommand{\\animation}[2]');
-    expect(source).toContain('\\url{https://openyourmath.org/animation/#1}');
+    expect(source).toContain('\\newcommand{\\animation}[3][]');
+    expect(source).toContain('\\url{https://openyourmath.org/animation/#2}');
     expect(source).toContain('\\usepackage{qrcode}');
-    expect(source).toContain('\\qrcode[height=2cm]{https://openyourmath.org/animation/#1}');
+    expect(source).toContain('\\qrcode[height=2cm]{https://openyourmath.org/animation/#2}');
     expect(source).toContain('\\animation{ebva-directionnelle}{Dérivée}');
   });
 
@@ -131,6 +146,41 @@ describe('export LaTeX et aperçu', () => {
 
   it("annonce l'animation dans l'aperçu de /create", () => {
     expect(latexToPreviewHtml('\\animation{ebva-directionnelle}{Dérivée en 0}')).toContain('Animation : Dérivée en 0');
+    expect(latexToPreviewHtml('\\animation[img/x]{ebva-directionnelle}{Dérivée en 0}')).toContain('Animation : Dérivée en 0');
+  });
+
+  describe('image fixe', () => {
+    const exercise = {
+      uuid: 'ebva', title: 'E',
+      content: [{ type: 'reponse', order: 1, latex: '\\animation[\\exercisespath img/pdf/ebva-tikz-1]{ebva-directionnelle}{Dérivée}' }],
+    };
+    const artifacts = (image) => ({ ebva: { images: [{ originalPath: '\\exercisespath img/pdf/ebva-tikz-1', ...image }] } });
+    const build = (image, imageMode) =>
+      buildLatexExport([exercise], 'T', { includeSolutions: true, artifactsMap: artifacts(image), imageMode });
+
+    it('recopie la source TikZ dans le cadre, transportable partout', () => {
+      const tikz = '\\begin{tikzpicture}\\draw[thick] (0,0) -- (1,1);\\end{tikzpicture}';
+      const { source, images } = build({ url: '/artifacts/images/ebva/img_1.svg', tikz }, 'remote');
+      expect(source).toContain('\\newcommand{\\animationcadre}[3]');
+      expect(source).toContain('\\animationcadre{\\resizebox{0.6\\linewidth}{!}{%');
+      expect(source).toContain('\\draw[thick] (0,0)');
+      expect(source).toContain('{ebva-directionnelle}{Dérivée}');
+      expect(source).not.toContain('img/pdf');
+      expect(images).toEqual([]);
+    });
+
+    it("joint le fichier quand il n'y a pas de source TikZ", () => {
+      const { source, images } = build({ url: '/artifacts/images/ebva/img_1.png' }, 'files');
+      expect(source).toContain('\\animation[images/ebva/img_1.png]{ebva-directionnelle}{Dérivée}');
+      expect(images).toEqual([{ localPath: 'images/ebva/img_1.png', url: '/artifacts/images/ebva/img_1.png' }]);
+    });
+
+    it("garde l'encadré sans image quand le compilateur distant ne peut pas la recevoir", () => {
+      const { source, images, skippedImages } = build({ url: '/artifacts/images/ebva/img_1.png' }, 'remote');
+      expect(source).toContain('\\animation{ebva-directionnelle}{Dérivée}');
+      expect(images).toEqual([]);
+      expect(skippedImages).toEqual([]);
+    });
   });
 });
 
@@ -192,7 +242,10 @@ describe('checkAnimations', () => {
   };
 
   it('accepte une référence valide', async () => {
-    const roots = setup({ 'ex/amscc/a.tex': '\\animation{ok}{Légende}', 'anim/amscc/ok.html': '<html></html>' });
+    const roots = setup({
+      'ex/amscc/a.tex': '\\animation{ok}{Légende}\n\\animation[img/pdf/ok]{ok}{Légende}',
+      'anim/amscc/ok.html': '<html></html>',
+    });
     expect(await checkAnimations(roots)).toEqual([]);
   });
 

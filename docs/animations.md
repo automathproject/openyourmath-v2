@@ -22,7 +22,7 @@ animations/<nom>.html    →    content/animations/amscc/<nom>.html → content/
 ```latex
 \reponse{
   …
-  \animation{ebva-directionnelle}{Dérivée directionnelle en l'origine : la formule du gradient donne une valeur fausse}
+  \animation[\exercisespath img/pdf/ebva-tikz-1]{ebva-directionnelle}{Dérivée directionnelle en l'origine : la formule du gradient donne une valeur fausse}
 }
 ```
 
@@ -31,8 +31,12 @@ animations/<nom>.html    →    content/animations/amscc/<nom>.html → content/
   toutes sources confondues** : l'adresse publique `/animation/<nom>`, imprimée
   dans les PDF, ne porte pas la source. On le préfixe par l'uuid de l'exercice
   (`ebva-directionnelle`).
-- **Légende** : texte simple, sans formule. Elle sert de titre à l'iframe et c'est
-  la seule trace de l'animation dans un PDF, avec son adresse et son QR code.
+- **Légende** : texte simple, sans formule. Elle sert de titre à l'iframe ; dans un
+  PDF, elle accompagne l'image fixe, l'adresse et son QR code.
+- **Image fixe** (facultative, entre crochets) : chemin écrit comme pour un
+  `\includegraphics` d'Exercices (`\exercisespath img/pdf/<uuid>-tikz-<n>`, source
+  dans `img/tikz/`). Le PDF l'imprime dans l'encadré ; le site en fait la vignette
+  du lecteur, sur laquelle un clic ouvre aussi l'animation.
 - La commande se place dans le bloc que l'animation illustre : elle s'affiche à sa position.
 
 ## Charte de création
@@ -58,9 +62,13 @@ animations/<nom>.html    →    content/animations/amscc/<nom>.html → content/
 - Énoncé et correction sont complets sans l'animation : elle illustre, elle ne
   démontre pas. Aucune question ne s'appuie sur une information que seule
   l'animation donne.
-- Sur papier, il ne reste que la légende, l'adresse et le QR code. Si une figure
-  est nécessaire à la compréhension, une figure fixe (TikZ ou image)
-  l'accompagne, comme la surface TikZ d'ebva.
+- Sur papier, il ne reste que l'encadré. On lui donne une **image fixe**
+  (`\animation[image]`) : un état parlant de l'animation, de préférence son état
+  initial, avec les valeurs qu'elle affiche (pour ebva, les deux courbes en
+  fonction de θ et la direction u ∝ (1,2)). On la dessine en **TikZ ou
+  pgfplots** : vectorielle, elle passe aussi dans l'export PDF d'OpenYourMath,
+  où une image matricielle sans source TikZ est omise. Couleurs du site et
+  styles de trait distincts (plein, tirets), pour rester lisible en noir et blanc.
 
 ### Nom et légende
 
@@ -68,7 +76,8 @@ animations/<nom>.html    →    content/animations/amscc/<nom>.html → content/
   et on ne le réutilise pas pour une autre figure.
 - La légende dit ce que l'on observe, pas seulement le sujet : « la formule du
   gradient donne une valeur fausse, bien que les dérivées partielles existent »
-  plutôt que « Dérivée directionnelle ». C'est tout ce que lit le lecteur du PDF.
+  plutôt que « Dérivée directionnelle ». Avec l'image fixe, c'est ce que lit le
+  lecteur du PDF.
 
 ### Contenu de la page
 
@@ -101,35 +110,40 @@ Elles découlent de l'isolation de la page (voir « Isolation ») :
 ### Avant de proposer une animation
 
 1. `python3 scripts/check_animation_assets.py` dans Exercices.
-2. Le PDF d'Exercices compile et l'encadré se lit sans la page.
+2. Le PDF d'Exercices compile ; l'encadré et son image fixe se lisent sans la page.
 3. La page s'ouvre seule (`/animation/<nom>`), puis dans l'exercice, sur
    ordinateur et sur téléphone en portrait.
 
 ## Version imprimée
 
-`\animation` produit un encadré avec la légende, l'adresse
-`https://openyourmath.org/animation/<nom>` et un QR code de cette adresse
-(paquet `qrcode`), placé là où la commande apparaît. La définition existe en deux
-exemplaires, à garder identiques :
+`\animation` produit un encadré placé là où la commande apparaît : l'image fixe
+s'il y en a une (centrée, à 0,6 de la largeur), puis la légende, l'adresse
+`https://openyourmath.org/animation/<nom>` et un QR code de cette adresse (paquet
+`qrcode`). `\animationcadre{figure}{nom}{légende}` compose l'encadré ;
+`\animation[chemin]{nom}{légende}` l'appelle avec `\includegraphics`. La définition
+existe en deux exemplaires, à garder identiques :
 
 - `Exercices/_preambules/general.tex`, pour les PDF d'Exercices ;
 - `src/lib/latex/export.js`, pour l'export LaTeX et PDF des listes d'OpenYourMath,
-  qui n'ajoute `hyperref`, `qrcode` et la définition que si une animation est
-  présente.
+  qui n'ajoute `graphicx`, `hyperref`, `qrcode` et la définition que si une
+  animation est présente.
 
-Aucune image de l'animation n'est produite : d'où la règle d'une figure fixe à
-côté quand elle est nécessaire.
+À l'export, l'image fixe suit les règles des figures : sa source TikZ, quand le
+parseur l'a retrouvée, est recopiée dans `\animationcadre` ; sinon le fichier
+accompagne le document. Pour le compilateur en ligne, qui ne reçoit que du
+texte, une image sans source TikZ est omise : l'encadré garde la légende,
+l'adresse et le QR code.
 
 ## Ce que fait chaque maillon
 
 | Étape | Fichier | Rôle |
 |---|---|---|
-| Parseur | `scripts/parse-latex.js`, `src/lib/animations.js` | pandoc ignore la commande : un emplacement `.oym-animation` la remplace dans le HTML, `artifacts.animations` liste les noms |
-| Lecteur | `src/lib/actions/animationFrames.js` (appelé par `MathRenderer`) | une vignette ▶ ; l'iframe ne s'ouvre, et la page ne se charge, qu'au clic |
+| Parseur | `scripts/parse-latex.js`, `src/lib/animations.js`, `scripts/utils/image-artifacts.js` | pandoc ignore la commande : un emplacement `.oym-animation` la remplace dans le HTML, `artifacts.animations` liste les noms ; l'image fixe est publiée comme une figure et devient `data-poster` |
+| Lecteur | `src/lib/actions/animationFrames.js` (appelé par `MathRenderer`) | une vignette (l'image fixe) et un bouton ▶ ; l'iframe ne s'ouvre, et la page ne se charge, qu'au clic |
 | Synchronisation | `scripts/sync-exobase.js` | importe `animations/<source>/` d'exobase, comme `code/<source>/python/` |
 | Page isolée | `src/routes/animation/[name]/+server.js` | retrouve la source du nom (`indexAnimationPages`) et sert la page avec une politique CSP `sandbox allow-scripts` |
 | KaTeX | `src/routes/animation-vendor/katex/[...path]/+server.js` | copie de KaTeX du site, avec `Access-Control-Allow-Origin` |
-| Export LaTeX | `src/lib/latex/export.js` | définit `\animation` : encadré avec la légende, l'adresse et son QR code (voir « Version imprimée ») |
+| Export LaTeX | `src/lib/latex/export.js` | définit `\animation` : encadré avec l'image fixe, la légende, l'adresse et son QR code (voir « Version imprimée ») |
 | Contrôle | `pnpm check:animations` | page existante, nom valide et propre à une seule source, page bien rangée, légende présente et sans formule |
 
 ## Isolation
@@ -164,10 +178,13 @@ générée : on la régénère plutôt que de la modifier.
 
 1. Générer la page dans `Exercices/animations/` (ci-dessus), ou y déposer une
    page écrite à la main qui respecte la charte de création.
-2. Ajouter `\animation{<nom>}{<légende>}` dans le bloc de l'exercice qu'elle
-   illustre ; le PDF d'Exercices compile la commande (`_preambules/general.tex`).
-3. Committer dans Exercices, puis synchroniser exobase et OpenYourMath.
-4. Ici : `pnpm check:animations`, `pnpm build:content`, reconstruire l'application.
+2. Dessiner l'image fixe dans `Exercices/img/tikz/<uuid>-tikz-<n>.tex` et la
+   compiler (`make img/pdf/<…>.pdf img/svg/<…>.svg`).
+3. Ajouter `\animation[\exercisespath img/pdf/<uuid>-tikz-<n>]{<nom>}{<légende>}`
+   dans le bloc de l'exercice qu'elle illustre ; le PDF d'Exercices compile la
+   commande (`_preambules/general.tex`).
+4. Committer dans Exercices, puis synchroniser exobase et OpenYourMath.
+5. Ici : `pnpm check:animations`, `pnpm build:content`, reconstruire l'application.
 
 ### Charte graphique
 

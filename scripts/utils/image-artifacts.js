@@ -202,10 +202,8 @@ export async function extractIncludegraphicsImages({
   let match;
   let index = 1;
 
-  while ((match = regex.exec(latexContent)) !== null) {
-    const options = match[1] || '';
-    const rawPath = match[2].trim();
-
+  /** Publie une image de la source ; renvoie son entrée, ou null si introuvable. */
+  async function publishImage(rawPath, options) {
     const resolvedPath = await resolveImagePath({
       imagePath: rawPath,
       sourceFilePath,
@@ -214,7 +212,7 @@ export async function extractIncludegraphicsImages({
     });
 
     if (!resolvedPath) {
-      continue;
+      return null;
     }
 
     const ext = path.extname(resolvedPath).slice(1).toLowerCase();
@@ -222,7 +220,7 @@ export async function extractIncludegraphicsImages({
       if (logger?.warn) {
         logger.warn(`⚠️  Unsupported format for artifacts: ${ext}`);
       }
-      continue;
+      return null;
     }
 
     const imgId = `img_${index}`;
@@ -243,7 +241,7 @@ export async function extractIncludegraphicsImages({
     // n'a pas à accompagner le document ni à franchir le compilateur en ligne.
     const tikz = await findTikzSource(resolvedPath);
 
-    images.push({
+    const image = {
       id: imgId,
       url: publicUrl,
       originalPath: rawPath,
@@ -252,11 +250,25 @@ export async function extractIncludegraphicsImages({
       format: ext,
       ...(options && { options }),
       ...(tikz && { tikz })
-    });
-
-    const imgTag = `<img src="${publicUrl}" alt="Image ${index}" class="includegraphics-image">`;
-    replacements.set(match[0], imgTag);
+    };
+    images.push(image);
     index++;
+    return image;
+  }
+
+  while ((match = regex.exec(latexContent)) !== null) {
+    const image = await publishImage(match[2].trim(), match[1] || '');
+    if (!image) continue;
+    const imgTag = `<img src="${image.url}" alt="Image ${index - 1}" class="includegraphics-image">`;
+    replacements.set(match[0], imgTag);
+  }
+
+  // Image fixe d'une animation, \animation[chemin]{nom}{légende} : publiée comme
+  // une figure, mais sans remplacement dans le HTML, où elle sert de vignette.
+  const animationStill = /\\animation\s*\[([^\]]+)\]/g;
+  while ((match = animationStill.exec(latexContent)) !== null) {
+    const rawPath = match[1].trim();
+    if (!images.some((image) => image.originalPath === rawPath)) await publishImage(rawPath, '');
   }
 
   if (logger?.info) {

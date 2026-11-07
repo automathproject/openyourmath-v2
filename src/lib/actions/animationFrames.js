@@ -74,5 +74,18 @@ export function mountAnimations(root) {
     play.append(label);
     play.addEventListener('click', () => openPlayer(host, name, caption));
     host.replaceChildren(play);
+
+    // L'image fixe de l'animation, quand la source en donne une, sert de
+    // vignette : un clic dessus ouvre aussi l'animation. Elle double la légende,
+    // d'où un texte alternatif vide.
+    if (host.dataset.poster) {
+      const poster = element('img', 'oym-animation__poster');
+      poster.src = host.dataset.poster;
+      poster.alt = '';
+      poster.loading = 'lazy';
+      poster.decoding = 'async';
+      poster.addEventListener('click', () => openPlayer(host, name, caption));
+      host.prepend(poster);
+    }
   }
 }
