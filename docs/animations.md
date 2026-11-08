@@ -239,9 +239,14 @@ KaTeX (facultatif) et le fichier de la figure peut l'afficher.
 ```
 
 `mountAll` affiche chaque `[data-widget]` une seule fois ; `mount(élément)`
-affiche un élément ajouté plus tard. Pour un diaporama autonome, `build.py`
-recopie ces fichiers en ligne, comme il le fait aujourd'hui de
-`_commun/kit.js`.
+affiche un élément ajouté plus tard. Le texte de la figure (hors repère SVG)
+suit la variable `--oym-font-size` (16 px) : une slide la porte par exemple à
+18 px par `.slide .oym-widget { --oym-font-size: 18px; }`.
+
+Les diaporamas OPTRN (`cours-OPTRN/slides`) le font : la liste `oym_widgets`
+de `deck.json` fait recopier en ligne par `build.py` `kit.css`, `kit.js` et
+chaque figure, lue dans `Exercices/animations/` ; une slide l'affiche par
+`<div data-widget="nom">`.
 
 ## Ajouter une animation à un exercice
 

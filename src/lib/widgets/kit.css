@@ -2,7 +2,9 @@
  * Aspect des figures interactives : couleurs et police du site (src/app.css),
  * limité aux éléments .oym-widget pour ne pas toucher la page qui les accueille.
  * Le texte teinté prend brand-700 et accent-700 : brand-600 et accent-600
- * n'atteignent que 3,8:1 et 4,4:1 sur le fond ; le gris (#557583) tient 4,9:1. */
+ * n'atteignent que 3,8:1 et 4,4:1 sur le fond ; le gris (#557583) tient 4,9:1.
+ * Les tailles de texte suivent --oym-font-size (16 px) : une page qui l'agrandit,
+ * comme une slide, agrandit tout le texte de la figure hors repère SVG. */
 
 .oym-widget {
   --oym-ink: #0d3c4d;              /* interface-text-primary */
@@ -19,10 +21,11 @@
   --oym-level: #8fcaca;
   --oym-red: #a3322f;
   --oym-red-soft: #fbeeec;
+  --oym-font-size: 16px;
 
   container: oym-widget / inline-size;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 16px;
+  font-size: var(--oym-font-size);
   line-height: 1.4;
   color: var(--oym-ink);
 }
@@ -38,7 +41,7 @@
 .oym-widget .katex { font-size: 1.05em; }
 
 .oym-intro { margin: 0 0 12px; }
-.oym-legend { font-size: 15px; color: var(--oym-muted); }
+.oym-legend { font-size: calc(0.9375 * var(--oym-font-size)); color: var(--oym-muted); }
 .oym-widget .t { color: var(--oym-brand-text); }
 .oym-widget .o { color: var(--oym-accent-text); }
 
@@ -87,7 +90,7 @@
 .oym-widget .fo-in.m { color: var(--oym-muted); }
 
 /* Commandes */
-.oym-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 8px 0; font-size: 15px; }
+.oym-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 8px 0; font-size: calc(0.9375 * var(--oym-font-size)); }
 .oym-controls.column { flex-direction: column; align-items: flex-start; }
 .oym-controls label { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .oym-controls input[type="range"] { width: 200px; max-width: 100%; accent-color: var(--oym-brand); }
@@ -104,7 +107,7 @@
 .oym-seg button.on { background: var(--oym-brand); color: #fff; }
 
 /* Lecture des valeurs */
-.oym-readout { font-variant-numeric: tabular-nums; font-size: 15px; }
+.oym-readout { font-variant-numeric: tabular-nums; font-size: calc(0.9375 * var(--oym-font-size)); }
 .oym-readout table { border-collapse: collapse; width: 100%; }
 .oym-readout td,
 .oym-readout th { padding: 4px 8px; border-bottom: 1px solid var(--oym-line); text-align: left; vertical-align: middle; }
