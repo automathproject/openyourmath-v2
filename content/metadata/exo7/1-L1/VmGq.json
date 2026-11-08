@@ -1,27 +1,27 @@
 {
   "uuid": "VmGq",
   "source_path": "exo7/1-L1/VmGq.tex",
-  "summary": "L'exercice demande d'exprimer une application linéaire de ℝ² sous forme matricielle générale, puis de montrer qu'elle peut s'écrire sous forme complexe z' = az + b̅z, et réciproquement que cette forme complexe définit un endomorphisme unique de ℝ².",
+  "summary": "L'exercice demande d'exprimer une application linéaire de ℝ² sous forme complexe et de montrer la réciproque. Il s'agit de relier la représentation matricielle d'une application linéaire à une expression complexe.",
   "concepts": [
     "application linéaire",
     "espace vectoriel ℝ²",
-    "représentation matricielle",
     "nombre complexe",
     "conjugaison complexe",
-    "isomorphisme ℝ² ≅ ℂ"
+    "matrice d'application linéaire",
+    "endomorphisme"
   ],
   "methods": [
+    "représentation matricielle",
     "décomposition en parties réelles et imaginaires",
-    "identification des coefficients",
-    "passage de la forme complexe à la forme matricielle"
+    "identification de coefficients"
   ],
   "objects": [
-    "application linéaire",
-    "nombre complexe",
-    "matrice 2x2",
-    "conjugué d'un nombre complexe"
+    "application linéaire de ℝ²",
+    "nombre complexe z",
+    "conjugué d'un nombre complexe",
+    "matrice 2x2"
   ],
-  "content_hash": "4b426de4ee7555da60166680d4324f4e4cbcf4bb829623de82de221842394ec1",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:33:38.636Z"
+  "content_hash": "4c7baa7bb2743ded3c9ef07fa502a24b0dd4d997bfc3d6071797da2a84c95cb9",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:57:05.884Z"
 }

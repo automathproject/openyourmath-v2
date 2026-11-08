@@ -1,7 +1,7 @@
 {
   "uuid": "pmQu",
   "source_path": "exo7/15-L3/pmQu.tex",
-  "summary": "L'exercice demande de montrer qu'une norme est bien définie sur l'espace des polynômes et d'étudier la continuité de deux applications linéaires (U et V) de cet espace dans lui-même.",
+  "summary": "L'exercice demande de montrer qu'une norme est bien définie sur l'espace des polynômes et d'examiner la continuité de deux applications linéaires agissant sur ces polynômes.",
   "concepts": [
     "norme",
     "espace vectoriel normé",
@@ -13,15 +13,15 @@
   "methods": [
     "calcul de norme d'application linéaire",
     "comparaison de normes",
-    "étude de la bornitude"
+    "test de continuité par bornitude"
   ],
   "objects": [
     "polynôme",
     "application linéaire",
-    "norme sup",
-    "espace des polynômes"
+    "norme",
+    "boule unité"
   ],
-  "content_hash": "6663bc96f42164cab455d8efff073f19535b04ad65024ad30292c25e74761256",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:34:16.675Z"
+  "content_hash": "ad98e62f243276bd3b15b35d1172bcc658376763c907a4b607e5a3a6a9a65cdd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:58:16.000Z"
 }

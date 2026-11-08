@@ -1,33 +1,29 @@
 {
   "uuid": "Db6I",
   "source_path": "exo7/15-L3/Db6I.tex",
-  "summary": "L'exercice demande de démontrer une inégalité quadratique pour des réels, puis de déterminer l'infimum d'une expression produit de sommes de réels strictement positifs, et enfin le supremum d'une forme linéaire sous contrainte quadratique.",
+  "summary": "L'exercice demande de démontrer une inégalité quadratique pour des réels, puis de déterminer l'infimum d'une expression impliquant des sommes de termes positifs et leur inverse, et enfin de trouver le supremum d'une forme linéaire sous contrainte quadratique.",
   "concepts": [
     "inégalité de Cauchy-Schwarz",
     "infimum",
     "supremum",
     "forme quadratique",
     "optimisation sous contrainte",
-    "norme euclidienne",
-    "inégalité de Minkowski"
+    "norme euclidienne"
   ],
   "methods": [
-    "développement algébrique",
     "utilisation de l'inégalité de Cauchy-Schwarz",
-    "optimisation par méthode des multiplicateurs de Lagrange",
-    "majoration par norme"
+    "optimisation de forme linéaire",
+    "calcul de bornes"
   ],
   "objects": [
-    "somme de réels",
-    "produit de sommes",
-    "forme linéaire",
+    "somme de carrés",
+    "expression algébrique",
     "contrainte quadratique",
-    "infimum d'un ensemble",
-    "supremum d'un ensemble"
+    "forme linéaire"
   ],
-  "content_hash": "57be7f34d6af853add5192233c0ec329b4410454a17849434d1d3de062ccea02",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:23:39.852Z",
+  "content_hash": "eee63629636ece3a38d7da64ffd30a0db7c88147142fa8639371d74168fd477b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T17:00:18.020Z",
   "previous_content_hash": "48fa4e084d1ac1de47451993a6e7af71283d131b3f82c8fa33e76d16403909c3",
   "revalidated_at": "2026-09-01T13:56:28.616Z"
 }

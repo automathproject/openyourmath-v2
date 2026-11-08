@@ -6,27 +6,25 @@
     "fonction partie entière",
     "logarithme",
     "somme des chiffres",
-    "suite bornée",
-    "convergence de suites",
-    "inégalités"
+    "suite numérique",
+    "bornitude",
+    "convergence"
   ],
   "methods": [
     "décomposition en base 10",
     "encadrement",
     "étude de suites extraites",
-    "limite de suites",
-    "calcul de logarithme"
+    "limite de suites"
   ],
   "objects": [
     "entier naturel",
-    "suite numérique",
+    "suite de termes rationnels",
     "somme des chiffres",
-    "nombre de chiffres",
-    "fonction logarithme"
+    "nombre de chiffres"
   ],
-  "content_hash": "5399938817a718c72be16abe35315190c22b3bece283d06c7b009dd1860dd0ae",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:34:21.850Z",
+  "content_hash": "d49dab4863530fbbd9aaeeedeb6b45e4ba92acf670c8fbfe410a24a49a176f10",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:59:02.872Z",
   "previous_content_hash": "0c5057a4f655df9ae5740d4ef47f104b52341c4f5508f8e4b97466ce7ec4db20",
   "revalidated_at": "2026-09-01T13:56:30.823Z"
 }

@@ -3,13 +3,12 @@
   "source_path": "exo7/1-L1/LIN2.tex",
   "summary": "Montrer que pour un projecteur dans un espace vectoriel de dimension finie, la trace de sa matrice est égale à son rang.",
   "concepts": [
-    "application linéaire",
+    "espace vectoriel de dimension finie",
     "projecteur",
     "trace d'une matrice",
     "rang d'une matrice",
     "décomposition en somme directe",
-    "base adaptée",
-    "espace vectoriel de dimension finie"
+    "base adaptée"
   ],
   "methods": [
     "choix d'une base adaptée",
@@ -19,13 +18,12 @@
   "objects": [
     "projecteur",
     "matrice carrée",
-    "espace vectoriel",
     "trace",
     "rang"
   ],
-  "content_hash": "692f8c82d106a8108c72b8f897f3f4fdcf99498271255a1d66d419f282f67620",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:33:30.288Z",
+  "content_hash": "c75211243a7d543dcfe21ee987c2ad85dace963c36cc6ba203b82edcd923b416",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:55:51.930Z",
   "previous_content_hash": "7e2b98c0a9e7cfcfad35e818bc6439c2ed7781895a8887466cee65315e6e11bf",
   "revalidated_at": "2026-09-01T13:56:29.198Z"
 }

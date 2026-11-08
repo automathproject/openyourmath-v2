@@ -1,34 +1,33 @@
 {
   "uuid": "Mpnl",
   "source_path": "exo7/1-L1/Mpnl.tex",
-  "summary": "L'exercice demande de déterminer l'unique application linéaire de ℝ³ dans ℝ² vérifiant trois conditions sur les images des vecteurs de la base canonique, puis de calculer l'image d'un vecteur spécifique et l'expression générale de l'application. Ensuite, il faut déterminer le noyau de cette application, en fournir une base, et donner un supplémentaire du noyau dans ℝ³ en vérifiant son isomorphisme avec l'image.",
+  "summary": "L'exercice demande de vérifier l'existence et l'unicité d'une application linéaire de ℝ³ dans ℝ² définie par son action sur une base canonique, puis de calculer son image sur un vecteur spécifique et de déterminer son noyau ainsi qu'un supplémentaire. L'exercice illustre le théorème du rang.",
   "concepts": [
     "application linéaire",
-    "image d'une application linéaire",
     "noyau d'une application linéaire",
+    "image d'une application linéaire",
     "théorème du rang",
-    "base d'un sous-espace vectoriel",
+    "base d'un espace vectoriel",
     "supplémentaire d'un sous-espace vectoriel",
     "isomorphisme d'espaces vectoriels"
   ],
   "methods": [
-    "détermination d'une application linéaire par ses images sur une base",
-    "calcul de l'image d'un vecteur",
-    "résolution d'un système linéaire",
-    "détermination du noyau par résolution d'équations",
+    "détermination d'une application linéaire par son action sur une base",
+    "calcul de noyau et image",
     "vérification de la linéarité",
-    "construction d'un supplémentaire"
+    "détermination d'un supplémentaire",
+    "vérification d'un isomorphisme"
   ],
   "objects": [
     "application linéaire de ℝ³ dans ℝ²",
-    "vecteurs de la base canonique de ℝ³",
     "noyau d'une application linéaire",
-    "supplémentaire d'un sous-espace vectoriel",
-    "système d'équations linéaires"
+    "image d'une application linéaire",
+    "base canonique de ℝ³",
+    "supplémentaire d'un sous-espace vectoriel"
   ],
-  "content_hash": "06a17881388c278bfcfb089e7354ff44eb4538d6d5e93dc4d0896c1499f6ea28",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:11:18.722Z",
+  "content_hash": "b160ee8ae711596beb89a5ff944b6cc383cec730e661162e7cca9db5fcfe7bc8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:56:19.700Z",
   "previous_content_hash": "7141414cce500b0cd118f2dd8bbdd43a25cfd1b7892c57bb0b9a7d0555cc8a7b",
   "revalidated_at": "2026-09-01T13:56:29.335Z"
 }

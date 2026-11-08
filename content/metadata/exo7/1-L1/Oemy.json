@@ -1,32 +1,31 @@
 {
   "uuid": "Oemy",
   "source_path": "exo7/1-L1/Oemy.tex",
-  "summary": "L'exercice demande de démontrer l'équivalence entre une condition sur les applications linéaires et la bijectivité d'une application linéaire f, puis de calculer la dimension d'un ensemble d'applications linéaires g vérifiant une condition spécifique. L'énoncé s'appuie sur des espaces vectoriels E et F et une application linéaire f entre eux.",
+  "summary": "L'exercice demande de prouver qu'une application linéaire est bijective si et seulement si toute application linéaire composée avec elle de manière spécifique est nulle. Il demande ensuite de calculer la dimension d'un ensemble d'applications linéaires vérifiant une condition donnée.",
   "concepts": [
     "application linéaire",
     "noyau d'une application linéaire",
     "image d'une application linéaire",
     "isomorphisme d'espaces vectoriels",
-    "sous-espace vectoriel",
-    "dimension d'un espace vectoriel",
     "théorème du rang",
-    "supplémentaire d'un sous-espace"
+    "sous-espace vectoriel",
+    "dimension d'un espace vectoriel"
   ],
   "methods": [
     "raisonnement par l'absurde",
-    "utilisation de la dimension",
-    "construction d'un supplémentaire",
-    "calcul de dimension d'un espace d'applications linéaires"
+    "utilisation de supplémentaires",
+    "calcul de dimension d'espace de matrices",
+    "décomposition d'application linéaire"
   ],
   "objects": [
-    "application linéaire f",
-    "espace vectoriel E",
-    "espace vectoriel F",
-    "ensemble d'applications linéaires g",
-    "noyau de f",
-    "image de f"
+    "application linéaire",
+    "espace vectoriel",
+    "noyau",
+    "image",
+    "sous-espace vectoriel",
+    "matrice"
   ],
-  "content_hash": "d3c5438585bb8a6c5bbbc522f9b82fc2ce82a6d24c509dc4da0764b9691c652b",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:33:33.611Z"
+  "content_hash": "7555eef7fc6288022f4ffdb1e7838927ac35715a01f9312ee1c3ed93dc64d69f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:56:36.996Z"
 }

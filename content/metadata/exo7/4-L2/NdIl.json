@@ -1,30 +1,28 @@
 {
   "uuid": "NdIl",
   "source_path": "exo7/4-L2/NdIl.tex",
-  "summary": "L'exercice demande de calculer la somme des chiffres du nombre 4444^4444, puis d'itérer ce processus sur le résultat obtenu, et enfin de déterminer la valeur finale modulo 9.",
+  "summary": "L'exercice demande de calculer la somme des chiffres de B, où B est la somme des chiffres de A, elle-même somme des chiffres de 4444^4444. L'objectif est de déterminer cette somme finale en utilisant des majorations et des propriétés arithmétiques.",
   "concepts": [
-    "somme des chiffres d'un nombre",
+    "somme des chiffres d'un entier",
+    "majoration",
     "arithmétique modulaire",
-    "inégalité triangulaire",
     "logarithme",
     "congruence",
-    "propriétés des puissances modulo 9"
+    "propriété multiplicative"
   ],
   "methods": [
-    "estimation par majoration",
-    "calcul de congruence",
-    "itération de la somme des chiffres",
-    "développement en base 10"
+    "majoration de la somme des chiffres",
+    "calcul modulo 9",
+    "utilisation des propriétés exponentielles"
   ],
   "objects": [
     "nombre entier",
     "somme des chiffres",
-    "puissance entière",
-    "congruence modulo 9"
+    "puissance d'un entier"
   ],
-  "content_hash": "31e28b1fc35c3a255e056a3647f52c5be00d4d17e2e6618b38c61c0eadc53e88",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:16:02.554Z",
+  "content_hash": "04ea1a9e446769ff5be68c2ac952cd2be960f4a5c03d5ee58fe26b9ea7d886df",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:58:47.069Z",
   "previous_content_hash": "d610f3beee0e45209ea6ddbe07c2e5c3bc2a1710b8eecd254012148428bc6a15",
   "revalidated_at": "2026-09-01T13:56:29.387Z"
 }

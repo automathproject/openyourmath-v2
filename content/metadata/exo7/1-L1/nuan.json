@@ -1,31 +1,30 @@
 {
   "uuid": "nuan",
   "source_path": "exo7/1-L1/nuan.tex",
-  "summary": "L'exercice demande de démontrer une équivalence entre trois conditions pour un endomorphisme d'un espace vectoriel de dimension finie, puis d'établir l'existence d'une base particulière lorsque le noyau et l'image de l'endomorphisme coïncident.",
+  "summary": "L'exercice demande de démontrer une équivalence entre trois conditions sur un endomorphisme d'un espace vectoriel de dimension finie, puis d'établir l'existence d'une base particulière lorsque l'image et le noyau de l'endomorphisme coïncident.",
   "concepts": [
     "endomorphisme",
-    "noyau d'une application linéaire",
+    "espace vectoriel de dimension finie",
     "image d'une application linéaire",
+    "noyau d'une application linéaire",
     "théorème du rang",
     "supplémentaire d'un sous-espace vectoriel",
-    "base d'un espace vectoriel",
-    "dimension d'un espace vectoriel"
+    "base d'un espace vectoriel"
   ],
   "methods": [
     "décomposition en somme directe",
     "construction explicite d'un endomorphisme",
-    "utilisation de la liberté d'une famille de vecteurs",
-    "application du théorème du rang"
+    "utilisation de bases adaptées",
+    "manipulation de matrices"
   ],
   "objects": [
     "endomorphisme",
-    "espace vectoriel de dimension finie",
+    "espace vectoriel",
     "noyau",
     "image",
-    "base",
-    "supplémentaire"
+    "base"
   ],
-  "content_hash": "f108bd33bab21da8d8cce06908ae67409c8dc28a767f98b55a7999d4b7799ec4",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:33:50.436Z"
+  "content_hash": "512d427d06650d64922f3348d64953ea029af2e8ccf04d71c6a68166ceccb126",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:57:25.849Z"
 }

@@ -12,19 +12,17 @@
   ],
   "methods": [
     "décomposition en noyaux",
-    "résolution de système linéaire",
-    "utilisation de l'équation polynomiale",
-    "vérification de l'intersection des noyaux"
+    "vérification de l'intersection des noyaux",
+    "construction explicite de la somme directe"
   ],
   "objects": [
     "endomorphisme",
     "espace vectoriel",
-    "noyau d'un endomorphisme",
-    "somme directe"
+    "noyaux de f-2Id et f-3Id"
   ],
-  "content_hash": "d7d13a8a7c97caa1a86d11beb6114f206b2de140765eca01f2b4853df26dd435",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:33:17.452Z",
+  "content_hash": "417b7a6b270e8bd1a6e51fa238a68f8c9b2bf2404771674727efa57e87aa4f1d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:54:59.508Z",
   "previous_content_hash": "4829a5c2eec432fa3cace2723bf9ec4ead62c10b9648e498595119b571232af1",
   "revalidated_at": "2026-09-01T13:56:28.129Z"
 }

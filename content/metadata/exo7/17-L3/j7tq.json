@@ -1,31 +1,29 @@
 {
   "uuid": "j7tq",
   "source_path": "exo7/17-L3/j7tq.tex",
-  "summary": "L'exercice demande de déterminer des coefficients B et c pour une relation de récurrence sur une suite de matrices, puis de vérifier des relations algébriques impliquant des inverses de matrices. Il s'agit ensuite de prouver qu'une combinaison de matrices est définie positive et d'en déduire une condition de convergence d'une méthode itérative.",
+  "summary": "L'exercice demande de déterminer les matrices B et c pour exprimer x_{2k+2} en fonction de x_{2k}, puis de montrer que M^*+N est définie positive et d'en déduire une condition de convergence pour la méthode itérative proposée.",
   "concepts": [
-    "matrice inversible",
-    "définie positive",
+    "matrice définie positive",
     "convergence de méthode itérative",
-    "algèbre linéaire",
+    "décomposition matricielle",
     "produit matriciel",
-    "inégalité de Cauchy-Schwarz",
+    "inverse de matrice",
     "norme matricielle"
   ],
   "methods": [
-    "calcul matriciel",
-    "manipulation algébrique",
-    "détermination de condition de convergence",
-    "utilisation de l'inégalité de Cauchy-Schwarz",
-    "factorisation de matrices"
+    "décomposition en matrices M et N",
+    "calcul de produit matriciel",
+    "inversion de matrice",
+    "analyse de positivité définie",
+    "utilisation d'inégalités vectorielles"
   ],
   "objects": [
-    "suite de matrices",
-    "matrice A",
-    "matrice M",
-    "matrice N",
-    "matrice E"
+    "matrice carrée",
+    "matrice strictement triangulaire inférieure",
+    "système linéaire",
+    "suite de matrices"
   ],
-  "content_hash": "c138d7710dea8ca1970e27cf4d9509264fc3d7529ab519ea6a238a20d6ec33c1",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:27:45.388Z"
+  "content_hash": "5edbbee79b1c807275041380969bf9b175ea500afdfffbc3824be1154d7336f7",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T17:01:15.018Z"
 }

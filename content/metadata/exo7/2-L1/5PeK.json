@@ -1,28 +1,29 @@
 {
   "uuid": "5PeK",
   "source_path": "exo7/2-L1/5PeK.tex",
-  "summary": "L'exercice demande d'estimer l'intégrale d'une fonction f sur [a,b] en utilisant ses propriétés de dérivabilité et l'inégalité de Taylor-Lagrange, avec f(a) = f(b) = 0.",
+  "summary": "On considère une fonction de classe C¹ sur un intervalle [a, b] avec f(a) = f(b) = 0. On demande de majorer l'intégrale de f sur [a, b] en utilisant la borne supérieure de la dérivée de f.",
   "concepts": [
+    "intégrale",
+    "fonction dérivable",
     "inégalité de Taylor-Lagrange",
-    "primitive d'une fonction",
-    "classe C²",
-    "dérivée seconde",
-    "intégrale définie"
+    "primitive",
+    "classe C¹",
+    "borne supérieure"
   ],
   "methods": [
     "développement de Taylor",
-    "estimation d'erreur",
-    "utilisation de la dérivée seconde"
+    "majoration",
+    "utilisation de la primitive"
   ],
   "objects": [
-    "fonction dérivable",
-    "primitive F",
-    "segment [a,b]",
-    "dérivée seconde F''"
+    "fonction f",
+    "intervalle [a, b]",
+    "dérivée f'",
+    "primitive F"
   ],
-  "content_hash": "b612847863166c3a5cca7124bde026a34594790786919d55f62b138950b8de8b",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:30:21.495Z",
+  "content_hash": "808e4924b3291050441912ab75786d57e4e9d7d8126e8b203eea9a6682c2a51b",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T17:02:12.602Z",
   "previous_content_hash": "ee2739da52388c51a8747a9f939e0b75092b8fd3ca2d97f6801deab68147297a",
   "revalidated_at": "2026-09-01T13:56:28.074Z"
 }

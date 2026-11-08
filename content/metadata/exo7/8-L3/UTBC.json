@@ -1,35 +1,33 @@
 {
   "uuid": "UTBC",
   "source_path": "exo7/8-L3/UTBC.tex",
-  "summary": "L'exercice étudie les propriétés des actions de groupes sur des ensembles, notamment la notion de k-transitivité. Il demande de démontrer des relations entre transitivité, primitivité et 2-transitivité, ainsi que des propriétés spécifiques des groupes symétriques et cycliques.",
+  "summary": "L'exercice étudie les propriétés des G-ensembles k-transitifs, où k est un entier positif. Il demande de prouver plusieurs propriétés sur ces ensembles, notamment leur transitivité pour différents valeurs de k, leur relation avec les actions imprimitives, et des exemples concrets avec des groupes cycliques et symétriques.",
   "concepts": [
     "action de groupe",
-    "transitivité",
-    "k-transitivité",
-    "primitivité",
-    "fixateur d'un élément",
-    "sous-groupe propre maximal",
-    "isomorphisme de groupes",
-    "partition d'ensemble"
-  ],
-  "methods": [
-    "démonstration par transitivité",
-    "utilisation de la conjugaison",
-    "analyse de la structure de groupe",
-    "identification de sous-groupes",
-    "application de la définition de primitivité"
-  ],
-  "objects": [
     "G-ensemble",
-    "groupe fini",
+    "transitivité",
+    "fixateur d'un élément",
+    "action imprimitive",
     "groupe cyclique",
     "groupe symétrique",
-    "fixateur d'un élément",
-    "partition d'ensemble"
+    "sous-groupe maximal"
   ],
-  "content_hash": "b73086e45d933f296705f66f0174de0c96fecb6842211f73a0a3f22b5956641d",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:32:21.574Z",
+  "methods": [
+    "preuve par transitivité",
+    "identification de sous-groupes",
+    "analyse de partitions",
+    "utilisation de la définition de k-transitivité"
+  ],
+  "objects": [
+    "G-ensemble k-transitif",
+    "fixateur d'un élément",
+    "partition de X",
+    "groupe cyclique d'ordre premier",
+    "groupe symétrique Sn"
+  ],
+  "content_hash": "32c78461234095efdb90a4a6946ad01356a2115583d4d04357c9e8823d02d3da",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:51:42.582Z",
   "previous_content_hash": "3d4595bb289aedfef81311907222d4b7efe442fff138213731ec2984f97dacf0",
   "revalidated_at": "2026-09-01T13:56:29.929Z"
 }

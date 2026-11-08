@@ -1,31 +1,28 @@
 {
   "uuid": "P6Td",
   "source_path": "exo7/6-L2/P6Td.tex",
-  "summary": "Calculer l'intégrale d'une forme différentielle le long d'un contour orienté, puis en déduire la valeur de l'intégrale de $\\frac{\\sin x}{x}$ sur $[0, +\\infty[$. L'exercice utilise des techniques d'analyse vectorielle et de calcul intégral.",
+  "summary": "Calculer l'intégrale d'une forme différentielle le long d'un contour orienté, puis en déduire la valeur de l'intégrale de sin(x)/x de 0 à l'infini.",
   "concepts": [
-    "forme différentielle",
-    "intégrale curviligne",
+    "forme différentielle exacte",
     "théorème de Schwarz",
-    "forme exacte",
-    "forme fermée",
-    "théorème de continuité des intégrales à paramètres",
-    "convergence d'intégrales impropres"
+    "intégrale de contour",
+    "convergence d'intégrale",
+    "théorème de continuité des intégrales à paramètres"
   ],
   "methods": [
-    "calcul des dérivées partielles",
+    "calcul de dérivées partielles",
     "intégration par parties",
-    "utilisation de la parité d'une fonction",
-    "passage à la limite dans une intégrale",
-    "application du théorème de Schwarz"
+    "étude de la limite d'une intégrale",
+    "utilisation de la parité d'une fonction"
   ],
   "objects": [
-    "forme différentielle $\\omega$",
-    "contour $\\Gamma$",
-    "intégrale $\\int_{0}^{+\\infty} \\frac{\\sin x}{x}\\;dx$",
-    "fonction $F(r,t)$",
-    "arcs $\\Gamma_1$, $\\Gamma_2$, $\\Gamma_3$, $\\Gamma_4$"
+    "forme différentielle",
+    "contour orienté",
+    "intégrale impropre",
+    "fonction exponentielle",
+    "fonction trigonométrique"
   ],
-  "content_hash": "8bd7aa1956908c51a52abca432a35fef2c16779c5fabb8dfe5e52901cbb32f0e",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:32:30.667Z"
+  "content_hash": "eac4b9acf922b52fa8e6fb0a9dcc0ca07a2881b56a83262c62a659bde075e4ed",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:52:11.191Z"
 }

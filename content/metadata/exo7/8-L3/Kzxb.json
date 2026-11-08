@@ -1,33 +1,33 @@
 {
   "uuid": "Kzxb",
   "source_path": "exo7/8-L3/Kzxb.tex",
-  "summary": "L'exercice étudie les propriétés des actions de groupes sur des ensembles transitifs. Il introduit les notions d'actions imprimitives et primitives, et explore leurs relations avec les sous-groupes du groupe agissant. Les questions demandent de prouver des propriétés sur les partitions des ensembles, les sous-groupes et les fixateurs.",
+  "summary": "L'exercice étudie les propriétés des G-ensembles transitifs, en particulier la notion d'action imprimitive. Il demande de prouver des propriétés structurelles sur les partitions et les sous-groupes associés, ainsi que des conditions pour qu'une action soit primitive.",
   "concepts": [
     "action de groupe",
     "G-ensemble transitif",
-    "partition invariante",
     "sous-groupe distingué",
+    "partition d'ensemble",
     "fixateur d'un élément",
     "isomorphisme de G-ensembles",
     "théorème d'isomorphisme"
   ],
   "methods": [
     "utilisation de la transitivité",
-    "construction de sous-groupes",
-    "analyse des partitions",
-    "application du théorème d'isomorphisme",
-    "étude des fixateurs"
+    "analyse de partitions",
+    "étude des sous-groupes",
+    "isomorphisme de G-ensembles",
+    "théorème d'isomorphisme"
   ],
   "objects": [
-    "groupe fini",
-    "G-ensemble",
-    "partition de l'ensemble",
+    "G-ensemble transitif",
     "sous-groupe propre",
-    "fixateur d'un élément"
+    "fixateur d'un élément",
+    "partition d'ensemble",
+    "sous-groupe distingué"
   ],
-  "content_hash": "fc3fd982d44b2eea4cb2fb89b651e52911429a55cf63fa1bc85389ab16b44a6f",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:32:18.870Z",
+  "content_hash": "c74420d595beaf7229670ba906fab08675708e0b82900729c82ed315873624b8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:51:10.258Z",
   "previous_content_hash": "b7e0b98c0eeb7e37ffc1c5d27e9979c61f6a07efc75405039d91100f316a8ddd",
   "revalidated_at": "2026-09-01T13:56:29.153Z"
 }

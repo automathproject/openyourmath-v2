@@ -1,35 +1,32 @@
 {
   "uuid": "7Gfm",
   "source_path": "exo7/2-L1/7Gfm.tex",
-  "summary": "L'exercice propose une série d'intégrales impliquant des fonctions trigonométriques et hyperboliques, avec des changements de variables et des simplifications algébriques. Il couvre des cas variés comme les intégrales de 1/cos(x), 1/sin(x), 1/tanh(x), et d'autres expressions rationnelles en sin(x) et cos(x).",
+  "summary": "Calculer les primitives de 18 fonctions trigonométriques et hyperboliques, en précisant les intervalles de définition. Les fonctions incluent des combinaisons de cosinus, sinus, tangente, cosinus hyperbolique, sinus hyperbolique et tangente hyperbolique.",
   "concepts": [
-    "changement de variable",
-    "intégration rationnelle",
     "fonctions trigonométriques",
     "fonctions hyperboliques",
-    "décomposition en éléments simples",
+    "primitive d'une fonction",
+    "changement de variable",
+    "intégration par parties",
     "identités trigonométriques",
-    "intégrales impropres"
+    "identités hyperboliques"
   ],
   "methods": [
-    "substitution trigonométrique",
-    "décomposition en fractions partielles",
-    "simplification algébrique",
+    "changement de variable",
     "intégration par parties",
-    "standardisation",
-    "changement de variable hyperbolique"
+    "décomposition en éléments simples",
+    "utilisation d'identités trigonométriques",
+    "utilisation d'identités hyperboliques"
   ],
   "objects": [
-    "intégrale indéfinie",
-    "fonction rationnelle",
-    "fonction trigonométrique",
-    "fonction hyperbolique",
-    "polynôme caractéristique",
-    "expression logarithmique"
+    "fonctions trigonométriques",
+    "fonctions hyperboliques",
+    "primitives",
+    "intervalles de définition"
   ],
-  "content_hash": "f18e0a2d141f0a98350fe3a6d22585f3314b891edc9a9d0b3e5511a1a2bbb088",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:30:44.412Z",
+  "content_hash": "b0cf1a67f17a1a51be7747cf60c363e95247f821d4f0d7bd739ad12d940dd09d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T17:02:33.556Z",
   "previous_content_hash": "3e1d12b64097611ca3f22946bd14e63472b033ec6ce3c10ccf561c90359d2546",
   "revalidated_at": "2026-09-01T13:56:28.199Z"
 }

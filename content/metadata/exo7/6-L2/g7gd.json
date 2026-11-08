@@ -1,26 +1,25 @@
 {
   "uuid": "g7gd",
   "source_path": "exo7/6-L2/g7gd.tex",
-  "summary": "L'exercice demande de déterminer la condition pour qu'une forme différentielle soit exacte, puis de trouver une condition nécessaire sur les coefficients P, Q, R pour qu'il existe un facteur intégrant rendant la forme exacte.",
+  "summary": "L'exercice demande de déterminer la condition pour qu'une forme différentielle soit exacte, puis de trouver une condition nécessaire sur les composantes P, Q, R pour qu'il existe un facteur intégrant lorsque la forme n'est pas exacte.",
   "concepts": [
     "forme différentielle exacte",
     "facteur intégrant",
-    "condition d'intégration",
-    "différentiabilité de classe C^1",
-    "champ de vecteurs",
-    "intégration de formes différentielles"
+    "condition nécessaire",
+    "classe C^1",
+    "ouvert étoilé"
   ],
   "methods": [
-    "calcul de la différentielle extérieure",
+    "analyse des conditions d'exactitude",
     "élimination de variables",
-    "analyse des conditions d'intégration"
+    "condition nécessaire et suffisante"
   ],
   "objects": [
     "forme différentielle",
-    "coefficient de forme différentielle",
-    "facteur intégrant"
+    "composantes P, Q, R",
+    "facteur intégrant λ"
   ],
-  "content_hash": "c2b3927db65b9c494b051cd5e71a09be814d0b678d0e60455f8c3e74749136de",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:32:38.654Z"
+  "content_hash": "d76fcbefd27215644dba412b71f6bb4ef2798249c66b88b731e54b8647cad0fc",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:52:37.687Z"
 }

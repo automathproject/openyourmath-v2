@@ -4,26 +4,26 @@
   "summary": "L'exercice demande de déterminer le noyau et l'image d'un endomorphisme u défini sur l'espace vectoriel des polynômes de degré au plus n, puis de trouver une base dans laquelle la matrice de u est une matrice de permutation circulaire.",
   "concepts": [
     "endomorphisme",
+    "espace vectoriel de polynômes",
     "noyau d'une application linéaire",
     "image d'une application linéaire",
     "théorème du rang",
     "base d'un espace vectoriel",
-    "polynôme",
-    "espace vectoriel de polynômes"
+    "matrice d'une application linéaire"
   ],
   "methods": [
-    "détermination du noyau par annulation",
-    "détermination de l'image par dimension",
-    "construction explicite d'une base adaptée",
-    "calcul de coefficients par identification"
+    "détermination du noyau",
+    "détermination de l'image",
+    "construction explicite de base",
+    "calcul de coefficients polynomiaux"
   ],
   "objects": [
-    "endomorphisme de l'espace des polynômes",
-    "polynôme de degré n",
+    "polynôme",
+    "endomorphisme",
     "matrice de permutation circulaire",
-    "famille de polynômes échelonnés"
+    "base de polynômes"
   ],
-  "content_hash": "c51fdacefe1a18161dd4b35ce8766b0f7cfcc7d1e25c4e904af72898c122f7c0",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:33:25.962Z"
+  "content_hash": "074cb61f3e9bd38bb982be2ae763f3de3065fe72c953a12fb01b7056d7caf6a1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:55:39.924Z"
 }

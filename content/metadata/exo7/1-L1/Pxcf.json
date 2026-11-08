@@ -1,32 +1,30 @@
 {
   "uuid": "Pxcf",
   "source_path": "exo7/1-L1/Pxcf.tex",
-  "summary": "Soit un espace vectoriel non nul E et un endomorphisme f de E tel que pour tout vecteur x de E, la famille (x, f(x)) soit liée. Montrer que f est une homothétie.",
+  "summary": "Montrer qu'un endomorphisme d'un espace vectoriel non nul est une homothétie si pour tout vecteur, la famille formée du vecteur et de son image est liée.",
   "concepts": [
     "endomorphisme",
+    "espace vectoriel",
     "famille liée",
     "homothétie",
-    "espace vectoriel",
-    "base d'un sous-espace vectoriel",
-    "linéarité",
+    "base d'un espace vectoriel",
+    "droite vectorielle",
     "scalaire"
   ],
   "methods": [
-    "raisonnement par cas",
+    "manipulation de familles vectorielles",
     "utilisation de la linéarité",
-    "définition de famille liée",
-    "détermination de la constante d'homothétie"
+    "analyse par cas"
   ],
   "objects": [
-    "espace vectoriel E",
-    "endomorphisme f",
-    "famille (x, f(x))",
-    "scalaires λ_x",
-    "vecteurs x"
+    "endomorphisme",
+    "espace vectoriel",
+    "famille de vecteurs",
+    "vecteur non nul"
   ],
-  "content_hash": "67daa47e1236544cce243c94b97eba3f2004abec19d5e2b7fdfed801244795cb",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:33:36.166Z",
+  "content_hash": "57d01f92102ff22f73764a5c0d0930f509a614a891f413a6c791ee9a842c91b2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:56:50.085Z",
   "previous_content_hash": "11de92d9b83f46b8361631307d2d271c7a5755dc43da0785ba8f1a23ba7289a9",
   "revalidated_at": "2026-09-01T13:56:29.580Z"
 }

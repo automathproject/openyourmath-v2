@@ -1,30 +1,27 @@
 {
   "uuid": "Qu5f",
   "source_path": "exo7/1-L1/Qu5f.tex",
-  "summary": "L'exercice demande de démontrer par récurrence une formule de factorisation pour la différence de puissances de deux réels, puis d'utiliser cette formule pour établir des propriétés de divisibilité dans ℕ. La dernière question généralise ces résultats à des puissances supérieures.",
+  "summary": "L'exercice demande de démontrer par récurrence une formule de factorisation pour la différence de puissances de deux réels, puis d'utiliser cette formule pour établir des propriétés de divisibilité dans les entiers naturels.",
   "concepts": [
+    "divisibilité dans Z",
     "division euclidienne",
-    "divisibilité dans ℤ",
     "récurrence",
     "factorisation",
-    "congruences arithmétiques",
-    "propriétés des puissances"
+    "propriétés arithmétiques des puissances"
   ],
   "methods": [
     "récurrence",
     "factorisation algébrique",
-    "manipulation d'équations",
-    "utilisation de congruences"
+    "manipulation d'équations"
   ],
   "objects": [
     "entiers naturels",
-    "puissances de nombres",
-    "somme de termes factorisés",
-    "relation de divisibilité"
+    "puissances de nombres réels",
+    "somme de termes factorisés"
   ],
-  "content_hash": "5383180291cf1c0423e3135a290a7ec8a31930b97086649e9a8feb7aff990547",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:34:29.748Z",
+  "content_hash": "346c4ecbd1c9d20c28cdf914739a8e22f5d6c312644e5bf5e895baa2bae3d1a2",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:59:17.439Z",
   "previous_content_hash": "15ad27e73d89234e5d76cb6f6f683f7dce7ce54ecb3d43065a445e575e0c5774",
   "revalidated_at": "2026-09-01T13:56:29.653Z"
 }

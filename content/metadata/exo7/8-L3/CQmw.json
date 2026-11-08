@@ -1,19 +1,19 @@
 {
   "uuid": "CQmw",
   "source_path": "exo7/8-L3/CQmw.tex",
-  "summary": "L'exercice demande de montrer que le produit de deux transpositions distinctes est un 3-cycle ou un produit de deux 3-cycles, puis d'en déduire que le groupe alterné An est engendré par les 3-cycles. La deuxième partie consiste à prouver que An est engendré par les 3-cycles de la forme (123), (124), ..., (12n).",
+  "summary": "L'exercice demande de montrer que le produit de deux transpositions distinctes est un 3-cycle ou un produit de deux 3-cycles, puis d'en déduire que le groupe alterné An est engendré par les 3-cycles. Ensuite, il faut prouver que An est engendré par les 3-cycles de la forme (123), (124), ..., (12n).",
   "concepts": [
+    "groupe alterné",
     "transposition",
     "3-cycle",
-    "groupe alterné",
     "générateur de groupe",
     "permutation paire",
-    "conjugaison dans un groupe"
+    "conjugaison"
   ],
   "methods": [
-    "décomposition en produit de transpositions",
+    "décomposition en produits de transpositions",
     "conjugaison de permutations",
-    "vérification de relations de groupe"
+    "génération de groupe"
   ],
   "objects": [
     "transpositions",
@@ -21,9 +21,9 @@
     "groupe alterné An",
     "permutations paires"
   ],
-  "content_hash": "078413769fd644655389bda51fe4042557339686219d6c7056c25627673628c2",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:32:09.954Z",
+  "content_hash": "de922c25c326b070517ca7d5f69c5c0a84b5a4589216341a37c5b9f1e2cf53a1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:49:39.545Z",
   "previous_content_hash": "5c5f183434926e6e7d21161cc00537fd605e091bcd374687085813b258f6d9e6",
   "revalidated_at": "2026-09-01T13:56:28.519Z"
 }

@@ -1,30 +1,29 @@
 {
   "uuid": "8TNT",
   "source_path": "exo7/4-L2/8TNT.tex",
-  "summary": "Montrer que pour tout entier relatif n, 6 divise 5n³ + n. L'exercice demande de prouver une divisibilité universelle en utilisant des propriétés arithmétiques des entiers.",
+  "summary": "L'exercice demande de prouver deux propriétés de divisibilité : que 6 divise 5n³ + n pour tout entier relatif n, et que 7 divise 4^(2^n) + 2^(2^n) + 1 pour tout entier naturel n.",
   "concepts": [
     "divisibilité dans Z",
     "congruences",
     "récurrence",
-    "décomposition en facteurs",
-    "arithmétique modulaire"
+    "arithmétique modulaire",
+    "propriétés des puissances"
   ],
   "methods": [
     "raisonnement par cas",
-    "décomposition factorielle",
     "récurrence forte",
-    "calcul de congruences"
+    "calcul modulaire",
+    "décomposition en facteurs"
   ],
   "objects": [
     "entier relatif",
+    "entier naturel",
     "expression polynomiale",
-    "suite récurrente",
-    "congruence modulo 2",
-    "congruence modulo 3"
+    "puissance itérée"
   ],
-  "content_hash": "2407e14318015f143b6edb0e19e12a8ec3907cf1f37433db22b93b750dc8a1dd",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:15:48.629Z",
+  "content_hash": "6b4cf80af069eb79a671d412469fb227f90082729c90402c86f1d0555f71c2a8",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:58:31.593Z",
   "previous_content_hash": "b5b563b42230273028506c3be6e6ddc93b22c30cd89c2f880be63842730a9d8e",
   "revalidated_at": "2026-09-01T13:56:28.278Z"
 }

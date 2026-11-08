@@ -1,30 +1,28 @@
 {
   "uuid": "avVb",
   "source_path": "exo7/10-L3/avVb.tex",
-  "summary": "Démontrer que tout anneau intègre fini est un corps. L'exercice porte sur les propriétés structurelles des anneaux et des corps.",
+  "summary": "Démontrer que tout anneau intègre fini est un corps. L'exercice demande de prouver une propriété structurelle sur les anneaux.",
   "concepts": [
     "anneau intègre",
     "corps",
     "application linéaire",
     "injectivité",
     "surjectivité",
-    "cardinal fini",
-    "inversibilité"
+    "propriété de finitude"
   ],
   "methods": [
     "utilisation de l'application de multiplication",
     "preuve par injectivité et surjectivité",
-    "raisonnement par l'absurde"
+    "argument de cardinalité"
   ],
   "objects": [
-    "anneau",
-    "corps",
-    "application",
-    "élément non nul"
+    "anneau fini",
+    "élément non nul",
+    "application de multiplication"
   ],
-  "content_hash": "a2c8c80de80745765dea51fbae07388dec932222264c383252fef04abdcc750d",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:33:02.780Z",
+  "content_hash": "36bdad79d990e1e08867924e99ada419d71a90efe793ed2c79ffd83f5eeddbb4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:53:54.153Z",
   "previous_content_hash": "f0bae2bd918cf9f4279f61cc3a0753b15641a8f72292cd2a51e766ec079fee2c",
   "revalidated_at": "2026-09-01T13:56:30.487Z"
 }

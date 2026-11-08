@@ -1,30 +1,30 @@
 {
   "uuid": "wFUP",
   "source_path": "exo7/1-L1/wFUP.tex",
-  "summary": "Soient p₁,...,pₙ n projecteurs d'un espace vectoriel complexe de dimension finie. Montrer l'équivalence entre la somme de ces projecteurs étant un projecteur et la condition que tout couple de projecteurs distincts soit composé.",
+  "summary": "L'exercice demande de démontrer l'équivalence entre la somme de plusieurs projecteurs étant elle-même un projecteur et la condition que ces projecteurs soient deux à deux orthogonaux en composition.",
   "concepts": [
     "projecteur",
     "espace vectoriel de dimension finie",
     "somme directe",
-    "trace d'une application linéaire",
     "rang d'une application linéaire",
-    "composée d'applications linéaires"
+    "trace d'une matrice",
+    "orthogonalité de projecteurs"
   ],
   "methods": [
     "calcul de la trace",
-    "démonstration par double implication",
     "utilisation de la linéarité de la trace",
-    "décomposition en somme directe"
+    "démonstration par double implication",
+    "manipulation d'images de projecteurs"
   ],
   "objects": [
     "projecteurs",
     "somme de projecteurs",
-    "image d'une application linéaire",
-    "espace vectoriel complexe"
+    "image d'un projecteur",
+    "somme directe d'espaces vectoriels"
   ],
-  "content_hash": "21d7cb670c147ac1a42cbf861ecbfe457f9b61e1a86b039b9e98da9a9675cc64",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:34:06.693Z",
+  "content_hash": "8f28ab71f6f777e83363681b271383a3e0c1b92b710043ec3b21a67e0543cbb3",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:57:42.912Z",
   "previous_content_hash": "c91c8986d32c1ae10e9a9089d9a03ee16bd8093b6f56ccb7d1d4c473cef488f9",
   "revalidated_at": "2026-09-01T13:56:32.809Z"
 }

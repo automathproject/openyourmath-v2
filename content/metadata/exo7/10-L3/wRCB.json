@@ -1,31 +1,29 @@
 {
   "uuid": "wRCB",
   "source_path": "exo7/10-L3/wRCB.tex",
-  "summary": "L'exercice demande de déterminer si des sous-ensembles donnés de ℂ sont des anneaux ou des corps. Les sous-ensembles considérés incluent des ensembles de nombres à développement décimal fini, des fractions avec conditions sur le dénominateur, et des extensions d'anneaux et de corps par des racines carrées.",
+  "summary": "L'exercice demande de déterminer si des sous-ensembles donnés de ℂ sont des anneaux ou des corps. Les sous-ensembles incluent des ensembles de nombres avec des propriétés spécifiques comme des développements décimaux finis, des fractions irréductibles excluant un facteur premier, et des extensions simples de ℤ et ℚ.",
   "concepts": [
     "anneau",
     "corps",
     "stabilité par addition",
-    "stabilité par multiplication",
-    "élément inversible",
-    "extension d'anneau",
-    "extension de corps",
-    "division euclidienne"
+    "inversibilité",
+    "développement décimal fini",
+    "fraction irréductible",
+    "extension simple"
   ],
   "methods": [
-    "vérification des axiomes d'anneau",
-    "vérification des axiomes de corps",
-    "analyse des éléments inversibles",
-    "décomposition en facteurs premiers"
+    "vérification de la stabilité par addition",
+    "analyse de l'inversibilité des éléments",
+    "utilisation de la condition de développement décimal fini",
+    "exclusion de facteurs premiers"
   ],
   "objects": [
     "sous-ensemble de ℂ",
     "nombres à développement décimal fini",
-    "fractions avec conditions sur le dénominateur",
-    "extensions par racines carrées",
-    "éléments inversibles"
+    "fractions irréductibles",
+    "extensions simples de ℤ et ℚ"
   ],
-  "content_hash": "7e06b9082901a22530cf8b489aee1dac155ccaca976ca2a0c1426e3a7213a4b2",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:33:15.027Z"
+  "content_hash": "de0873a60ffe622744813420f6b743b41625afa19e3e33c9ab79a878cf7d280d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:54:43.224Z"
 }

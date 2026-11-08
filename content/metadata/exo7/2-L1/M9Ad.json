@@ -1,29 +1,29 @@
 {
   "uuid": "M9Ad",
   "source_path": "exo7/2-L1/M9Ad.tex",
-  "summary": "Calcul des primitives de fractions rationnelles en utilisant la décomposition en éléments simples et les techniques d'intégration associées.",
+  "summary": "Exercice de calcul de primitives de fractions rationnelles. Les fractions sont données sous forme brute et doivent être décomposées en éléments simples avant intégration.",
   "concepts": [
-    "décomposition en éléments simples",
     "intégration de fractions rationnelles",
-    "polynômes du second degré",
+    "décomposition en éléments simples",
+    "primitive d'une fonction",
+    "polynôme du second degré",
     "racines complexes",
     "logarithme naturel",
-    "fonction arctangente"
+    "arctangente"
   ],
   "methods": [
-    "décomposition en fractions partielles",
+    "décomposition en éléments simples",
     "intégration par parties",
     "changement de variable",
-    "utilisation de formules standard"
+    "utilisation de tables d'intégrales"
   ],
   "objects": [
     "fraction rationnelle",
-    "polynôme du second degré",
-    "fonction arctangente",
-    "logarithme naturel",
+    "polynôme",
+    "fonction rationnelle",
     "primitive"
   ],
-  "content_hash": "b529602d24e018756538769fbe3de1cdc53b0df2e6103bc32d74a848cff11d8c",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:32:26.217Z"
+  "content_hash": "5a59b438ce6c0d30d08e21fa445de1c6192dd0833a315f2a93ac315b8a411db4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T17:03:19.365Z"
 }

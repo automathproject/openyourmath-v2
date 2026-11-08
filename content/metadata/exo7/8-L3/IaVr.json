@@ -1,19 +1,19 @@
 {
   "uuid": "IaVr",
   "source_path": "exo7/8-L3/IaVr.tex",
-  "summary": "L'exercice demande de démontrer des propriétés des cycles dans les permutations, de décomposer des permutations en cycles, et d'étudier les classes de conjugaison et les sous-groupes distingués dans le groupe symétrique S₅. Il aborde notamment la structure des orbites sous l'action d'un sous-groupe engendré par une permutation.",
+  "summary": "L'exercice demande de démontrer des propriétés des cycles dans les permutations et de décomposer des permutations en cycles. Il aborde également les classes de conjugaison et les sous-groupes distingués dans le groupe symétrique.",
   "concepts": [
     "action de groupe",
+    "permutation",
+    "cycle",
     "orbite",
-    "cycle dans une permutation",
-    "sous-groupe engendré",
-    "conjugaison de permutations",
-    "classe de conjugaison",
+    "conjugaison",
+    "sous-groupe distingué",
     "groupe symétrique",
-    "sous-groupe distingué"
+    "décomposition en cycles"
   ],
   "methods": [
-    "décomposition en cycles disjoints",
+    "décomposition en cycles",
     "analyse des orbites",
     "conjugaison de permutations",
     "classification des types de permutations"
@@ -21,13 +21,13 @@
   "objects": [
     "permutation",
     "cycle",
-    "sous-groupe de Sₙ",
+    "sous-groupe engendré",
     "classe de conjugaison",
-    "groupe symétrique S₅"
+    "groupe symétrique Sn"
   ],
-  "content_hash": "0c669684b1192a790b21146e8b4fa4ae1c5f9352af97ef0ea399035adf0000f7",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:32:12.973Z",
+  "content_hash": "43fc20bd2c3428c2e0b1016ba970e1b77b92455fff079f7f162dccdaf0e8be38",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:50:09.456Z",
   "previous_content_hash": "788adcb189da2d157ca70d92431719c99107a6430c94b4faf8e7e9816e5d0d32",
   "revalidated_at": "2026-09-01T13:56:28.976Z"
 }

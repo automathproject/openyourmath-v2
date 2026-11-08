@@ -1,7 +1,7 @@
 {
   "uuid": "5bCi",
   "source_path": "exo7/14-L3/5bCi.tex",
-  "summary": "L'exercice demande de démontrer une relation entre la fonction Bêta et une intégrale impliquant une puissance de 1-r², puis d'établir la formule liant la fonction Bêta aux fonctions Gamma, et enfin de calculer une intégrale sur ℝⁿ en utilisant la fonction Bêta.",
+  "summary": "L'exercice demande de démontrer une relation entre la fonction Bêta et une intégrale spécifique, puis d'établir une formule liant la fonction Bêta aux fonctions Gamma, et enfin de calculer une intégrale en dimension n en utilisant la fonction Bêta.",
   "concepts": [
     "fonction Bêta",
     "fonction Gamma",
@@ -16,16 +16,16 @@
     "intégration par parties",
     "théorème de Fubini",
     "intégration en coordonnées polaires",
-    "calcul de volume de boule"
+    "substitution"
   ],
   "objects": [
     "fonction Bêta",
     "fonction Gamma",
     "intégrale multiple",
-    "boule de rayon variable",
-    "mesure de Lebesgue"
+    "boule en dimension n",
+    "mesure de volume"
   ],
-  "content_hash": "ae78990e291ff7f8780abba8fe28be4e647dec7b1f590b83bdd9d5a6d8882ec3",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:34:45.297Z"
+  "content_hash": "a14531428a0f5d25753a5e81ef6996771356a8fb6c5427cc902e3a6a7b040a9d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:59:53.907Z"
 }

@@ -1,33 +1,30 @@
 {
   "uuid": "572U",
   "source_path": "exo7/8-L3/572U.tex",
-  "summary": "L'exercice demande de montrer que les permutations circulaires engendrent le groupe symétrique Sn si n est pair, et le groupe alterné An si n est impair.",
+  "summary": "L'exercice demande de démontrer que les permutations circulaires engendrent le groupe symétrique Sn si n est pair, et le groupe alterné An si n est impair.",
   "concepts": [
     "action de groupe",
+    "permutation circulaire",
     "groupe symétrique",
     "groupe alterné",
-    "permutation circulaire",
-    "3-cycle",
     "signature d'une permutation",
-    "groupe engendré",
+    "3-cycles",
     "indice d'un sous-groupe"
   ],
   "methods": [
     "décomposition en cycles",
-    "calcul de signature",
-    "analyse de l'indice d'un sous-groupe",
-    "génération de sous-groupes"
+    "analyse de la signature",
+    "étude de l'indice d'un sous-groupe"
   ],
   "objects": [
-    "permutation circulaire",
-    "groupe symétrique Sn",
-    "groupe alterné An",
-    "3-cycle",
-    "sous-groupe engendré"
+    "permutations circulaires",
+    "groupe Sn",
+    "groupe An",
+    "3-cycles"
   ],
-  "content_hash": "032938d8e5fc3a145494878c588a6ec7c41e01cedaded2753889296ac03d2139",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:32:01.476Z",
+  "content_hash": "11296930aa18c40f4dae5753d263ddc2ac3fdde8998b970ca2c19f623c22acee",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:48:04.183Z",
   "previous_content_hash": "f98b6743dc01c61f0addff02b6734adf3912dd74218f0d0397813dc12a574399",
   "revalidated_at": "2026-09-01T13:56:28.056Z"
 }

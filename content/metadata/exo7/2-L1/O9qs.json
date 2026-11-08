@@ -1,33 +1,32 @@
 {
   "uuid": "O9qs",
   "source_path": "exo7/2-L1/O9qs.tex",
-  "summary": "Calculer l'intégrale impropre ∫₀¹ (ln t)/(t-1) dt en utilisant le développement en série de 1/(1-t). L'énoncé demande d'exploiter une série entière pour transformer l'intégrande.",
+  "summary": "Calculer l'intégrale impropre ∫₀¹ (ln t)/(t-1) dt en utilisant un développement de 1/(1-t). L'énoncé demande d'exploiter une série pour évaluer cette intégrale.",
   "concepts": [
     "intégrale impropre",
     "série entière",
-    "développement en série",
     "convergence uniforme",
     "intégration terme à terme",
-    "théorème de convergence dominée",
-    "fonction continue"
+    "développement en série",
+    "fonction intégrable",
+    "négligeabilité"
   ],
   "methods": [
     "développement en série",
     "intégration par parties",
-    "passage à la limite sous le signe intégrale",
     "majoration d'intégrale",
-    "convergence de série"
+    "passage à la limite sous le signe intégrale",
+    "somme de série"
   ],
   "objects": [
-    "intégrale impropre",
+    "intégrale de fonction logarithmique",
     "série de fonctions",
-    "fonction logarithme",
-    "fonction rationnelle",
-    "série numérique"
+    "fonction continue par morceaux",
+    "fonction négligeable"
   ],
-  "content_hash": "d3145d5997b1d4dde0dc96f2668639420fb868183b5fa752535a8400139180c7",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:35:45.736Z",
+  "content_hash": "a945a7bd5a679ffcc66b9a3e27eeba60b5cc8d33d3dddfa573e00e31c7055195",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T17:03:48.665Z",
   "previous_content_hash": "620cba9e052668aa97ee7094521a99a2e000f156131a471e637563128409d21e",
   "revalidated_at": "2026-09-01T13:56:29.429Z"
 }

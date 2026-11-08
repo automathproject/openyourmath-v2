@@ -14,19 +14,19 @@
   "methods": [
     "analyse de l'orbite",
     "utilisation du fixateur",
-    "génération de sous-groupe",
-    "conjugaison de transpositions"
+    "conjugaison de transpositions",
+    "démonstration par transitivité"
   ],
   "objects": [
-    "sous-groupe de Sn",
-    "transposition (1 2)",
-    "fixateur H(1)",
-    "orbite H(1)·2",
-    "ensemble {1, ..., n}"
+    "sous-groupe primitif",
+    "transposition",
+    "groupe symétrique Sn",
+    "fixateur",
+    "orbite"
   ],
-  "content_hash": "8ea7b6cdae6238ee80181668b0a621ab51c7285fa1f7e4b164860a97e616adab",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:32:06.827Z",
+  "content_hash": "ae95f65bf796827c635adc4f8e66ee842da440e78f7f18457bb2be2fdc226284",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:49:13.017Z",
   "previous_content_hash": "bf4051b2388f8070b0bd3e5443659ab52fe2a97ed48a63be281b967004dc817a",
   "revalidated_at": "2026-09-01T13:56:28.346Z"
 }

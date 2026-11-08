@@ -1,28 +1,26 @@
 {
   "uuid": "iWtV",
   "source_path": "exo7/16-L3/iWtV.tex",
-  "summary": "L'exercice demande de déterminer les automorphismes du disque unité D(0,1) dans le plan complexe qui fixent l'origine.",
+  "summary": "L'exercice demande de déterminer les automorphismes du disque unité D(0,1) dans le plan complexe qui laissent le point 0 invariant.",
   "concepts": [
     "automorphisme",
     "disque unité",
     "point fixe",
     "fonction holomorphe",
-    "théorème de Schwarz",
-    "théorème de Riemann sur les automorphismes"
+    "transformations conformes"
   ],
   "methods": [
-    "classification des automorphismes",
-    "utilisation des transformations de Möbius",
-    "analyse des conditions de point fixe"
+    "analyse des transformations",
+    "propriétés des automorphismes"
   ],
   "objects": [
     "disque unité D(0,1)",
-    "automorphisme holomorphe",
+    "automorphisme",
     "point fixe"
   ],
-  "content_hash": "89d5ac56f33be1a42070a57fc14c83634357984910f6b8418b0cc077db23dc68",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:35:19.116Z",
+  "content_hash": "789a3da87a707b34b0835093342d99abc092abc83e59069616e7094a7193cd36",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T17:00:38.764Z",
   "previous_content_hash": "fa9f98d279809bf0fccc6bc6da1e6893b80fc449ac89ab8d44956afa013b9e60",
   "revalidated_at": "2026-09-01T13:56:31.489Z"
 }

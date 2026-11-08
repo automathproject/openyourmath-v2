@@ -1,22 +1,20 @@
 {
   "uuid": "Kkeo",
   "source_path": "exo7/8-L3/Kkeo.tex",
-  "summary": "L'exercice demande de montrer que tout 3-cycle est un carré dans le groupe symétrique, puis d'en déduire que le groupe alterné est engendré par les carrés de permutations. Ensuite, il faut prouver que le groupe alterné est le seul sous-groupe d'indice 2 du groupe symétrique.",
+  "summary": "L'exercice demande de montrer que tout 3-cycle est un carré dans le groupe symétrique, puis d'en déduire que le groupe alterné An est engendré par les carrés de permutations. Ensuite, il faut prouver que An est le seul sous-groupe de Sn d'indice 2.",
   "concepts": [
     "action de groupe",
     "groupe alterné",
     "groupe symétrique",
-    "sous-groupe d'indice 2",
-    "permutation paire",
     "sous-groupe distingué",
+    "permutation paire",
     "ordre d'un élément",
     "génération de groupe"
   ],
   "methods": [
-    "calcul d'ordre d'élément",
-    "utilisation de la relation d'ordre",
-    "démonstration d'inclusion de sous-groupes",
-    "propriété des sous-groupes d'indice 2"
+    "étude de l'ordre d'un élément",
+    "analyse des sous-groupes d'indice 2",
+    "utilisation de la parité des permutations"
   ],
   "objects": [
     "3-cycle",
@@ -25,9 +23,9 @@
     "groupe symétrique Sn",
     "sous-groupe distingué"
   ],
-  "content_hash": "d7f6b6c0bab73f56b38c48899cbe054ee512e6c156a2cd693fbd4411eabebe0f",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:32:16.045Z",
+  "content_hash": "e020b57077319b18f9ccc90d051fbc601b44bdd04e9f1a406928740e351b21a4",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:50:37.605Z",
   "previous_content_hash": "24719bf71102b27f643f77cfb1a1c8283ba0c165a1afcd1a43f91f9831320ce0",
   "revalidated_at": "2026-09-01T13:56:29.131Z"
 }

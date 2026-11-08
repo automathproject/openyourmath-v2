@@ -1,7 +1,7 @@
 {
   "uuid": "G7dF",
   "source_path": "exo7/15-L3/G7dF.tex",
-  "summary": "L'exercice demande de montrer que le noyau d'une forme linéaire continue est un sous-espace fermé, puis d'établir une relation entre la distance d'un point à ce noyau et la norme de la forme linéaire. La réciproque est également à démontrer, ainsi qu'une généralisation à des applications linéaires entre espaces normés.",
+  "summary": "L'exercice demande de montrer que le noyau d'une forme linéaire continue est un sous-espace fermé et d'établir une relation entre la distance d'un point à ce noyau et la norme de la forme linéaire. Il explore ensuite la réciproque et la généralisation à des applications linéaires entre espaces normés.",
   "concepts": [
     "espace normé",
     "forme linéaire",
@@ -9,24 +9,22 @@
     "sous-espace fermé",
     "distance à un sous-espace",
     "continuité d'une application linéaire",
-    "norme d'une application linéaire",
-    "décomposition d'espace vectoriel"
+    "norme d'une application linéaire"
   ],
   "methods": [
-    "décomposition en somme directe",
+    "décomposition d'espace vectoriel",
     "calcul de norme d'application linéaire",
     "utilisation de la distance à un sous-espace",
-    "preuve par contraposée",
     "contre-exemple"
   ],
   "objects": [
-    "forme linéaire non nulle",
-    "noyau d'une application linéaire",
+    "forme linéaire",
+    "noyau",
     "sous-espace fermé",
     "espace normé",
-    "application linéaire bornée"
+    "application linéaire"
   ],
-  "content_hash": "b36df77e9c7924e496886f384c72d6a65bd0d45b27a2deb4154084167f570dbb",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:34:12.291Z"
+  "content_hash": "6783be0bf620a17b7d352f8c783506cd13a7895e3ea82e5fc62eaa46f6fa362f",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:58:02.569Z"
 }

@@ -1,29 +1,25 @@
 {
   "uuid": "bI85",
   "source_path": "exo7/10-L3/bI85.tex",
-  "summary": "L'exercice demande de démontrer trois propriétés liées à un nombre premier p et un entier a premier avec p : l'équivalence de congruences, la permutation des multiples de a modulo p, et la généralisation du petit théorème de Fermat.",
+  "summary": "L'exercice demande de démontrer trois propriétés liées à un nombre premier p et un entier a premier avec p. La première propriété concerne la congruence modulo p, la deuxième porte sur la permutation des suites modulo p, et la troisième est une forme du petit théorème de Fermat.",
   "concepts": [
     "petit théorème de Fermat",
     "congruence modulo un nombre premier",
     "permutation d'ensembles",
-    "inverses multiplicatifs",
-    "structure multiplicative des entiers modulo p",
-    "corps fini"
+    "arithmétique modulaire",
+    "nombres premiers"
   ],
   "methods": [
-    "manipulation de congruences",
-    "raisonnement par l'absurde",
-    "utilisation de la structure multiplicative",
-    "application du théorème de Fermat"
+    "raisonnement par équivalence",
+    "utilisation des propriétés des nombres premiers",
+    "manipulation de congruences"
   ],
   "objects": [
-    "nombre premier",
-    "congruence modulo p",
-    "suite de multiples",
-    "inverse multiplicatif",
-    "éléments non nuls de Z/pZ"
+    "nombre premier p",
+    "entier a premier avec p",
+    "suites modulo p"
   ],
-  "content_hash": "dc14dc5bdb3f2e13118b82bf9d3276fd79442367da39f9e001a32ea07bfa2a1d",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:33:05.283Z"
+  "content_hash": "6f40143be71ccb46689907ee2018bba7246c71ab3b348849a0cc3245333cd3ad",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:54:08.105Z"
 }

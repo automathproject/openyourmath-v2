@@ -1,35 +1,34 @@
 {
   "uuid": "5sJw",
   "source_path": "exo7/8-L3/5sJw.tex",
-  "summary": "L'exercice porte sur les actions de groupe et les ensembles quotients. Il demande de démontrer des propriétés d'actions de groupe sur des ensembles quotients, de définir des morphismes entre G-ensembles, et d'établir des conditions d'isomorphisme entre ces ensembles.",
+  "summary": "L'exercice demande de démontrer des propriétés d'actions de groupe et d'isomorphismes entre G-ensembles. Il aborde notamment la définition d'une action de groupe sur un ensemble quotient, les conditions pour qu'une application soit un isomorphisme de G-ensembles, et les relations entre sous-groupes et isomorphisme de G-ensembles transitifs.",
   "concepts": [
     "action de groupe",
     "ensemble quotient",
-    "sous-groupe",
-    "fixateur",
+    "fixateur d'une classe",
+    "G-ensemble",
     "morphisme de G-ensembles",
     "isomorphisme de G-ensembles",
     "action transitive",
-    "conjugaison de sous-groupes"
+    "sous-groupe conjugué"
   ],
   "methods": [
     "définition d'une action de groupe",
     "vérification des propriétés d'action",
-    "construction d'isomorphismes",
+    "construction d'isomorphisme",
     "utilisation de la transitivité",
-    "conjugaison de sous-groupes"
+    "analyse des fixateurs"
   ],
   "objects": [
     "groupe G",
     "sous-groupe H",
     "ensemble quotient G/H",
     "G-ensembles X et Y",
-    "fixateur d'un point",
     "application compatible avec l'action de G"
   ],
-  "content_hash": "fe5ceefb2d78e57a26e9863658de3146cd546b03ddfbaf795cac084ff1697fb3",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-06-05T14:32:04.377Z",
+  "content_hash": "df719b8822f1cf28185b4c4ab184403086f1fd4b11f964150e5375131cb64421",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-08T16:48:48.342Z",
   "previous_content_hash": "3f531126db4691f20ad55cdbe4d86698a583143adabbe64d322b2b1d075e5cbb",
   "revalidated_at": "2026-09-01T13:56:28.104Z"
 }
