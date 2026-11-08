@@ -16,6 +16,7 @@ import { buildLatexExport } from '../../src/lib/latex/export.js';
 import { latexToPreviewHtml } from '../../src/lib/latex/texPreview.js';
 import { checkAnimations } from '../../scripts/quality/check-animations.js';
 import { definedWidgetNames, widgetPage } from '../../src/lib/widgets/page.js';
+import { embedCode } from '../../src/lib/actions/animationFrames.js';
 
 describe('findAnimations', () => {
   it('lit le nom et la légende', () => {
@@ -209,6 +210,18 @@ describe('page d’une figure', () => {
   it('lit le nom sous lequel une figure s’enregistre', () => {
     expect(definedWidgetNames("OYMWidgets.define('a', {});\nOYMWidgets.define( \"b\" , {})")).toEqual(['a', 'b']);
     expect(definedWidgetNames('// rien')).toEqual([]);
+  });
+});
+
+describe('code d’intégration', () => {
+  it('donne une iframe à l’adresse publique, titrée par la légende', () => {
+    expect(embedCode('https://openyourmath.org', 'ebva-directionnelle', 'Dérivée en 0')).toBe(
+      '<iframe src="https://openyourmath.org/animation/ebva-directionnelle" title="Dérivée en 0" style="width:100%; height:700px; border:0"></iframe>'
+    );
+  });
+
+  it('échappe la légende dans l’attribut', () => {
+    expect(embedCode('https://x', 'a', 'f "x" < g & h')).toContain('title="f &quot;x&quot; &lt; g &amp; h"');
   });
 });
 

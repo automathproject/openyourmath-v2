@@ -203,7 +203,7 @@ l'adresse et le QR code.
 |---|---|---|
 | Kit | `src/lib/widgets/kit.js`, `kit.css` | `OYMWidgets` : enregistrement, affichage dans `[data-widget]`, repère, commandes, mise en page, couleurs du site, hauteur signalée au lecteur |
 | Parseur | `scripts/parse-latex.js`, `src/lib/animations.js`, `scripts/utils/image-artifacts.js` | pandoc ignore la commande : un emplacement `.oym-animation` la remplace dans le HTML, `artifacts.animations` liste les noms ; l'image fixe est publiée comme une figure et devient `data-poster` |
-| Lecteur | `src/lib/actions/animationFrames.js` (appelé par `MathRenderer`) | une vignette (l'image fixe) et un bouton ▶ ; l'iframe ne s'ouvre, et la page ne se charge, qu'au clic |
+| Lecteur | `src/lib/actions/animationFrames.js` (appelé par `MathRenderer`) | une vignette (l'image fixe) et un bouton ▶ ; l'iframe ne s'ouvre, et la page ne se charge, qu'au clic ; la barre propose « Intégrer » (code d'iframe), « Plein écran » et « Ouvrir seule » |
 | Synchronisation | `scripts/sync-exobase.js` | importe `animations/<source>/*.js` d'exobase, comme `code/<source>/python/` |
 | Page isolée | `src/routes/animation/[name]/+server.js`, `src/lib/widgets/page.js` | retrouve la source du nom (`indexAnimationPages`), assemble KaTeX, le kit et la figure, et sert la page avec une politique CSP `sandbox allow-scripts` |
 | KaTeX | `src/routes/animation-vendor/katex/[...path]/+server.js` | copie de KaTeX du site, avec `Access-Control-Allow-Origin` |
@@ -232,7 +232,9 @@ rappelle quand il en copie.
 ### En iframe
 
 Le plus simple : un autre document (CodiMD, diaporama HTML, page de cours,
-fichier local) intègre la page publique de la figure.
+fichier local) intègre la page publique de la figure. Le bouton « Intégrer » du
+lecteur, dans l'exercice, copie ce code (ou l'affiche si le navigateur refuse
+le presse-papiers) :
 
 ```html
 <iframe src="https://openyourmath.org/animation/ebva-directionnelle"
