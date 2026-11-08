@@ -217,8 +217,10 @@ bac à sable sans `allow-same-origin` : elle tourne dans une origine opaque, san
 accès aux cookies, au stockage ni à la page qui l'embarque (vérifié dans
 Chromium). Elle ne peut que signaler sa hauteur à la page, par `postMessage`,
 accepté uniquement de cette iframe. Le CSP interdit toute requête réseau autre
-que le site lui-même, et `frame-ancestors 'self'` réserve l'intégration en
-iframe au site.
+que le site lui-même. Il ne pose pas de `frame-ancestors` : n'importe quel
+document peut intégrer la figure en iframe, y compris un fichier ouvert en
+`file://` (que `frame-ancestors *` refuserait). Le bac à sable rend cette
+ouverture sans risque : la page n'a ni session ni action à détourner.
 
 Les figures sont incluses dans le paquet du serveur (`import.meta.glob`) : en
 production, ajouter ou modifier une figure demande de **reconstruire
@@ -227,8 +229,26 @@ rappelle quand il en copie.
 
 ## Réutiliser une figure
 
+### En iframe
+
+Le plus simple : un autre document (CodiMD, diaporama HTML, page de cours,
+fichier local) intègre la page publique de la figure.
+
+```html
+<iframe src="https://openyourmath.org/animation/ebva-directionnelle"
+        title="Dérivée directionnelle en l'origine"
+        style="width:100%; height:700px; border:0"></iframe>
+```
+
+La page hôte fixe la hauteur : la figure n'envoie la sienne (`postMessage`)
+qu'au lecteur d'OpenYourMath. Sous 720 px de large, ses colonnes s'empilent et
+elle devient plus haute ; une iframe trop basse défile. La figure suit sa
+dernière version publiée, sans reconstruire le document.
+
+### Par ses fichiers
+
 Une figure ne dépend que du kit : toute page qui charge `kit.css`, `kit.js`,
-KaTeX (facultatif) et le fichier de la figure peut l'afficher.
+KaTeX (facultatif) et le fichier de la figure peut l'afficher, sans iframe.
 
 ```html
 <link rel="stylesheet" href="kit.css">
@@ -275,9 +295,8 @@ Pour changer l'aspect de toutes les figures, on modifie `kit.css`.
 
 ## Limites connues
 
-- Les diaporamas OPTRN n'utilisent pas encore le kit : leurs figures restent
-  dans leur `widgets.js`, et la slide d'ebva garde sa propre copie.
+- Dans les diaporamas OPTRN, seule la slide d'ebva passe par le kit : les autres
+  figures restent dans le `widgets.js` de chaque diaporama.
 - Les étiquettes d'un repère suivent sa réduction : sur un téléphone, un repère
   large reste lisible mais petit. Le bouton « Plein écran » du lecteur aide.
-- L'intégration en iframe hors du site est interdite (`frame-ancestors 'self'`) ;
-  une autre page réutilise la figure par ses fichiers.
+- Une iframe hors du site n'a pas de hauteur automatique (voir « En iframe »).

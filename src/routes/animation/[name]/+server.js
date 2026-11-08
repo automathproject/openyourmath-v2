@@ -38,6 +38,8 @@ async function loadFromDisk(name) {
   return found ? () => readFile(path.resolve(found.slice(1)), 'utf8') : undefined;
 }
 
+// Pas de frame-ancestors : tout document peut intégrer la figure en iframe
+// (CodiMD, diaporama HTML, fichier ouvert en file://, que « * » exclurait).
 const CSP = [
   'sandbox allow-scripts',
   "default-src 'none'",
@@ -45,7 +47,6 @@ const CSP = [
   "style-src 'self' 'unsafe-inline'",
   "font-src 'self'",
   'img-src data:',
-  "frame-ancestors 'self'",
 ].join('; ');
 
 export async function GET({ params }) {
