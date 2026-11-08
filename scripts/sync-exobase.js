@@ -94,7 +94,7 @@ function mappingsFor(sources) {
       { source, kind: 'sources', dir: `exercises/${source}`, accept: name => name.endsWith('.tex') },
       { source, kind: 'images', dir: `images/${source}`, accept: () => true },
       { source, kind: 'code', dir: `code/${source}/python`, accept: name => name.endsWith('.py') },
-      { source, kind: 'animations', dir: `animations/${source}`, accept: name => name.endsWith('.html') },
+      { source, kind: 'animations', dir: `animations/${source}`, accept: name => name.endsWith('.js') },
       { source, kind: 'fiches', dir: `fiches/${source}`, accept: name => name.endsWith('.txt') }
     ]),
     // Taxonomies communes à toutes les sources : référentiels AMSCC et Exo7,
@@ -393,7 +393,7 @@ async function main() {
 
   const buildCommand = copies.some(entry => entry.kind === 'code') ? 'pnpm build:content:full' : 'pnpm build:content';
   if (copies.length) console.log(`\nExécutez ensuite ${buildCommand} et préparez les exercices modifiés.`);
-  // Les pages d'animation sont incluses dans le paquet du serveur, pas dans la base.
+  // Les figures interactives sont incluses dans le paquet du serveur, pas dans la base.
   if (copies.some(entry => entry.kind === 'animations')) {
     console.log('Animations modifiées : vérifiez-les (pnpm check:animations) puis reconstruisez l\'application.');
   }

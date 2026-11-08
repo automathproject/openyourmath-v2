@@ -15,7 +15,7 @@ import {
 import { buildLatexExport } from '../../src/lib/latex/export.js';
 import { latexToPreviewHtml } from '../../src/lib/latex/texPreview.js';
 import { checkAnimations } from '../../scripts/quality/check-animations.js';
-import { applyOymTheme, buildAnimationPage, findWidgetIntro, OYM_PALETTE } from '../../scripts/extract-animation.js';
+import { definedWidgetNames, widgetPage } from '../../src/lib/widgets/page.js';
 
 describe('findAnimations', () => {
   it('lit le nom et la légende', () => {
@@ -60,30 +60,30 @@ describe('noms et adresses', () => {
 describe('indexAnimationPages', () => {
   it('retrouve la source de chaque page à partir de son nom', () => {
     const { pages, duplicates } = indexAnimationPages([
-      '/content/animations/amscc/ebva-directionnelle.html',
-      '/content/animations/exo7/autre.html',
+      '/content/animations/amscc/ebva-directionnelle.js',
+      '/content/animations/exo7/autre.js',
     ]);
     expect([...pages]).toEqual([
-      ['ebva-directionnelle', '/content/animations/amscc/ebva-directionnelle.html'],
-      ['autre', '/content/animations/exo7/autre.html'],
+      ['ebva-directionnelle', '/content/animations/amscc/ebva-directionnelle.js'],
+      ['autre', '/content/animations/exo7/autre.js'],
     ]);
     expect(duplicates.size).toBe(0);
   });
 
   it("n'attribue pas un nom présent dans deux sources", () => {
     const { pages, duplicates } = indexAnimationPages([
-      '/content/animations/exo7/x.html',
-      '/content/animations/amscc/x.html',
+      '/content/animations/exo7/x.js',
+      '/content/animations/amscc/x.js',
     ]);
     expect(pages.has('x')).toBe(false);
-    expect(duplicates.get('x')).toEqual(['/content/animations/amscc/x.html', '/content/animations/exo7/x.html']);
+    expect(duplicates.get('x')).toEqual(['/content/animations/amscc/x.js', '/content/animations/exo7/x.js']);
   });
 
   it('ignore les pages hors de animations/<source>/ et les noms invalides', () => {
     const { pages } = indexAnimationPages([
-      '/content/animations/plat.html',
-      '/content/animations/amscc/sous/x.html',
-      '/content/animations/amscc/x.y.html',
+      '/content/animations/plat.js',
+      '/content/animations/amscc/sous/x.js',
+      '/content/animations/amscc/x.y.js',
     ]);
     expect(pages.size).toBe(0);
   });
@@ -184,48 +184,48 @@ describe('export LaTeX et aperçu', () => {
   });
 });
 
-describe('page autonome extraite d’un diaporama', () => {
-  it('retrouve le texte d’introduction de la figure', () => {
-    const slide = '<section><div data-w="demo"><template><p>Intro</p></template></div></section>';
-    expect(findWidgetIntro([slide], 'demo')).toBe('<template><p>Intro</p></template>');
-    expect(findWidgetIntro(['<div data-w="demo"></div>'], 'demo')).toBe('');
-    expect(findWidgetIntro(['<div data-w="autre"></div>'], 'demo')).toBe(null);
+describe('page d’une figure', () => {
+  const page = widgetPage({
+    name: 'demo',
+    kitScript: 'globalThis.OYMWidgets = {};',
+    kitStyle: '.oym-widget{}',
+    widgetScript: "OYMWidgets.define('demo', { intro: '</script><b>' });",
   });
 
-  it("charge KaTeX depuis le site, jamais depuis un CDN, et signale sa hauteur", () => {
-    const page = buildAnimationPage({
-      title: 'Démo <1>', widget: 'demo', intro: '', css: 'body{}', kit: 'const kit=1;',
-      widgets: 'W.demo=()=>{};', source: 'deck',
-    });
-    expect(page).toContain('<title>Démo &lt;1&gt;</title>');
+  it('assemble KaTeX du site, le kit, la figure et son conteneur', () => {
     expect(page).toContain('/animation-vendor/katex/katex.min.js');
     expect(page).not.toMatch(/https?:\/\//);
-    expect(page).toContain("parent.postMessage({oym:'animation-size'");
-    expect(page).toContain("{left:'\\\\[',right:'\\\\]',display:true}");
+    expect(page).toContain('<div data-widget="demo"></div>');
+    expect(page).toContain('.oym-widget{}');
+    expect(page.indexOf('globalThis.OYMWidgets')).toBeLessThan(page.indexOf("OYMWidgets.define('demo'"));
+    expect(page).toContain('OYMWidgets.page();');
+  });
+
+  it('empêche le code de la figure de fermer son <script>', () => {
+    expect(page).toContain("intro: '<\\/script><b>'");
+    expect(page.match(/<\/script>/g)).toHaveLength(5);
+  });
+
+  it('lit le nom sous lequel une figure s’enregistre', () => {
+    expect(definedWidgetNames("OYMWidgets.define('a', {});\nOYMWidgets.define( \"b\" , {})")).toEqual(['a', 'b']);
+    expect(definedWidgetNames('// rien')).toEqual([]);
   });
 });
 
-describe('charte graphique', () => {
-  it("remplace la palette et la police des diaporamas par celles du site", () => {
-    const themed = applyOymTheme(
-      ':root{--teal:#087f81;--orange:#B96C23}body{font-family:"Noto Sans","Segoe UI",Arial,sans-serif}' +
-        "const a=`rgba(8,127,129,${x})`,b='#142b3a';",
-    );
-    expect(themed).toContain('--teal:#3a8f8f');
-    expect(themed).toContain('--orange:#b85d3f');
-    expect(themed).toContain('font-family:"Source Sans Pro",sans-serif');
-    expect(themed).toContain('rgba(58,143,143,${x})');
-    expect(themed).toContain("'#0d3c4d'");
-    expect(themed).not.toMatch(/087f81|b96c23|142b3a|Noto Sans/i);
-  });
-
-  it("n'emprunte au site que des jetons qui existent encore dans app.css", () => {
+describe('kit des figures', () => {
+  it("n'emprunte au site que des couleurs qui existent encore dans app.css", () => {
     const css = fs.readFileSync(path.join(process.cwd(), 'src/app.css'), 'utf8').toLowerCase();
-    const tokens = ['#3a8f8f', '#f0fafa', '#b85d3f', '#fbf0eb', '#ead9b8', '#a3322f', '#0d3c4d'];
-    for (const token of tokens) {
-      expect(Object.values(OYM_PALETTE), token).toContain(token);
+    const kit = fs.readFileSync(path.join(process.cwd(), 'src/lib/widgets/kit.css'), 'utf8').toLowerCase();
+    for (const token of ['#3a8f8f', '#2b6b6b', '#f0fafa', '#b85d3f', '#964a32', '#fbf0eb', '#ead9b8', '#a3322f', '#0d3c4d']) {
+      expect(kit, token).toContain(token);
       expect(css, token).toContain(token);
     }
+  });
+
+  it('ne charge rien du réseau', () => {
+    // L'espace de noms SVG est une adresse, pas une requête.
+    const kit = fs.readFileSync(path.join(process.cwd(), 'src/lib/widgets/kit.js'), 'utf8').replace("'http://www.w3.org/2000/svg'", '');
+    expect(kit).not.toMatch(/https?:\/\/|fetch\(|XMLHttpRequest|import\(/);
   });
 });
 
@@ -244,7 +244,7 @@ describe('checkAnimations', () => {
   it('accepte une référence valide', async () => {
     const roots = setup({
       'ex/amscc/a.tex': '\\animation{ok}{Légende}\n\\animation[img/pdf/ok]{ok}{Légende}',
-      'anim/amscc/ok.html': '<html></html>',
+      'anim/amscc/ok.js': "OYMWidgets.define('ok', {});",
     });
     expect(await checkAnimations(roots)).toEqual([]);
   });
@@ -252,7 +252,7 @@ describe('checkAnimations', () => {
   it("signale une page absente, un nom invalide, une légende vide ou avec formule", async () => {
     const roots = setup({
       'ex/a.tex': '\\animation{absente}{L}\n\\animation{../x}{L}\n\\animation{ok}{}\n\\animation{ok}{Une $f$}',
-      'anim/amscc/ok.html': '<html></html>',
+      'anim/amscc/ok.js': "OYMWidgets.define('ok', {});",
     });
     const codes = (await checkAnimations(roots)).map((i) => i.code);
     expect(codes).toEqual(['missing-animation', 'invalid-name', 'missing-caption', 'formula-in-caption']);
@@ -261,9 +261,9 @@ describe('checkAnimations', () => {
   it('signale un nom employé par deux sources et une page mal rangée', async () => {
     const roots = setup({
       'ex/a.tex': '\\animation{double}{L}\n\\animation{plat}{L}',
-      'anim/amscc/double.html': '<html></html>',
-      'anim/exo7/double.html': '<html></html>',
-      'anim/plat.html': '<html></html>',
+      'anim/amscc/double.js': "OYMWidgets.define('double', {});",
+      'anim/exo7/double.js': "OYMWidgets.define('double', {});",
+      'anim/plat.js': "OYMWidgets.define('plat', {});",
     });
     const issues = await checkAnimations(roots);
     expect(issues.map((i) => [i.code, i.name])).toEqual([
@@ -273,7 +273,19 @@ describe('checkAnimations', () => {
     ]);
   });
 
-  it('accepte la page ebva rangée dans sa source', async () => {
+  it('signale une figure enregistrée sous un autre nom que son fichier', async () => {
+    const roots = setup({
+      'anim/amscc/a.js': "OYMWidgets.define('b', {});",
+      'anim/amscc/c.js': '// pas de define',
+    });
+    const issues = await checkAnimations(roots);
+    expect(issues.map((i) => [i.code, i.name])).toEqual([
+      ['widget-name-mismatch', 'a'],
+      ['widget-name-mismatch', 'c'],
+    ]);
+  });
+
+  it('accepte la figure ebva rangée dans sa source', async () => {
     const issues = await checkAnimations({
       exercisesRoot: path.join(process.cwd(), 'content/exercises/amscc'),
       animationsRoot: path.join(process.cwd(), 'content/animations'),

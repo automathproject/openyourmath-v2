@@ -1,13 +1,15 @@
 #!/usr/bin/env node
-// Vérifie que chaque \animation{nom}{légende} des sources désigne une page
-// existante de content/animations/<source>/ et porte une légende (texte
-// alternatif de la figure, et seule trace de l'animation dans l'export PDF), et
-// qu'aucun nom de page n'est employé par deux sources.
+// Vérifie que chaque \animation{nom}{légende} des sources désigne une figure
+// existante de content/animations/<source>/<nom>.js et porte une légende (texte
+// alternatif de la figure, et seule trace de l'animation dans l'export PDF),
+// qu'aucun nom n'est employé par deux sources, et que chaque figure s'enregistre
+// sous le nom de son fichier (OYMWidgets.define('<nom>', …)).
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ANIMATION_NAME, findAnimations, indexAnimationPages } from '../../src/lib/animations.js';
+import { definedWidgetNames } from '../../src/lib/widgets/page.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 
@@ -26,7 +28,7 @@ async function listFiles(directory, extension) {
  * @returns {Promise<{ filePath: string, name: string, code: string, message: string }[]>}
  */
 export async function checkAnimations({ exercisesRoot, animationsRoot }) {
-  const pagePaths = (await listFiles(animationsRoot, '.html'))
+  const pagePaths = (await listFiles(animationsRoot, '.js'))
     .map((file) => `animations/${path.relative(animationsRoot, file).split(path.sep).join('/')}`);
   const { pages, duplicates } = indexAnimationPages(pagePaths);
   const issues = [];
@@ -34,9 +36,9 @@ export async function checkAnimations({ exercisesRoot, animationsRoot }) {
   for (const pagePath of pagePaths.filter((page) => !indexed.has(page))) {
     issues.push({
       filePath: path.join(animationsRoot, pagePath.slice('animations/'.length)),
-      name: path.basename(pagePath, '.html'),
+      name: path.basename(pagePath, '.js'),
       code: 'unserved-animation',
-      message: `${pagePath} ne sera pas servie : attendu content/animations/<source>/<nom>.html.`,
+      message: `${pagePath} ne sera pas servie : attendu content/animations/<source>/<nom>.js.`,
     });
   }
   for (const [name, found] of duplicates) {
@@ -47,6 +49,18 @@ export async function checkAnimations({ exercisesRoot, animationsRoot }) {
       message: `« ${name} » existe dans plusieurs sources (${found.join(', ')}) : l'adresse /animation/${name} serait ambiguë.`,
     });
   }
+  for (const [name, pagePath] of pages) {
+    const filePath = path.join(animationsRoot, pagePath.slice('animations/'.length));
+    const defined = definedWidgetNames(await fs.readFile(filePath, 'utf8'));
+    if (defined.length !== 1 || defined[0] !== name) {
+      issues.push({
+        filePath,
+        name,
+        code: 'widget-name-mismatch',
+        message: `${pagePath} doit enregistrer une seule figure, OYMWidgets.define('${name}', …)${defined.length ? ` (trouvé : ${defined.join(', ')})` : ''}.`,
+      });
+    }
+  }
   for (const filePath of await listFiles(exercisesRoot, '.tex')) {
     const source = await fs.readFile(filePath, 'utf8');
     if (!source.includes('\\animation')) continue;
@@ -54,7 +68,7 @@ export async function checkAnimations({ exercisesRoot, animationsRoot }) {
       const problem = (code, message) => issues.push({ filePath, name, code, message });
       if (!ANIMATION_NAME.test(name)) problem('invalid-name', `Nom d'animation invalide : « ${name} ».`);
       else if (!pages.has(name) && !duplicates.has(name)) {
-        problem('missing-animation', `Aucune page content/animations/<source>/${name}.html.`);
+        problem('missing-animation', `Aucune figure content/animations/<source>/${name}.js.`);
       }
       if (!caption) problem('missing-caption', `L'animation « ${name} » n'a pas de légende.`);
       // La légende sert d'attribut, de titre d'iframe et d'étiquette : du texte simple.

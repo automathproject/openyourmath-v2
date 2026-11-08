@@ -28,7 +28,6 @@
     "check:tex": "node scripts/quality/check-exercise-sources.js",
     "check:artifacts": "node scripts/quality/check-artifacts.js",
     "check:animations": "node scripts/quality/check-animations.js",
-    "extract:animation": "node scripts/extract-animation.js",
     "test:tex": "node scripts/quality/check-exercise-sources.js",
     "fix:tex:det": "node scripts/quality/fix-exercise-sources-deterministic.js",
     "fix:tex:albert": "node scripts/quality/fix-exercise-sources-with-albert.js",

@@ -2,9 +2,10 @@
 // Animations interactives associées aux exercices.
 //
 // Une source déclare une animation par \animation{nom}{légende}. Le nom désigne
-// content/animations/<source>/<nom>.html, une page autonome que le site sert
-// isolée (voir routes/animation/[name]) et que l'exercice ouvre à la demande dans
-// une iframe. Comme les extraits Python, les pages viennent d'exobase, rangées
+// content/animations/<source>/<nom>.js, une figure écrite avec le kit de
+// lib/widgets, que le site sert isolée dans une page (voir routes/animation/[name])
+// et que l'exercice ouvre à la demande dans une iframe. Comme les extraits
+// Python, les figures viennent d'exobase, rangées
 // par source ; l'adresse, elle, ne dépend que du nom, unique toutes sources
 // confondues, car elle est imprimée dans les PDF. La légende est du texte
 // simple : elle sert d'étiquette et de titre. Un argument optionnel,
@@ -25,14 +26,14 @@ export function animationUrl(name) {
   return `/animation/${encodeURIComponent(String(name).trim())}`;
 }
 
-/** Chemin d'une page d'animation : …/animations/<source>/<nom>.html. */
-const PAGE_PATH = /(?:^|\/)animations\/([^/]+)\/([^/]+)\.html$/;
+/** Chemin d'une figure : …/animations/<source>/<nom>.js. */
+const PAGE_PATH = /(?:^|\/)animations\/([^/]+)\/([^/]+)\.js$/;
 
 /**
- * Range les pages d'animation par nom. Un nom présent dans deux sources est
+ * Range les figures interactives par nom. Un nom présent dans deux sources est
  * signalé et n'est servi par aucune : l'adresse /animation/<nom> serait ambiguë.
  *
- * @param {string[]} paths  chemins de la forme …/animations/<source>/<nom>.html
+ * @param {string[]} paths  chemins de la forme …/animations/<source>/<nom>.js
  * @returns {{ pages: Map<string, string>, duplicates: Map<string, string[]> }}
  */
 export function indexAnimationPages(paths) {
