@@ -3,6 +3,20 @@
 // (kit.js, kit.css) et le fichier de la figure, intégrés en ligne, plus KaTeX
 // servi par /animation-vendor. La figure s'affiche dans <div data-widget="nom">.
 
+// Politique de sécurité de la page. Le fichier d'une figure est du JavaScript
+// arbitraire : « sandbox » sans « allow-same-origin » le fait tourner dans une
+// origine opaque, sans accès aux cookies ni à la page qui l'embarque. Pas de
+// frame-ancestors : tout document peut intégrer la figure en iframe (CodiMD,
+// diaporama HTML, fichier ouvert en file://, que « * » exclurait).
+export const WIDGET_CSP = [
+  'sandbox allow-scripts',
+  "default-src 'none'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  "font-src 'self'",
+  'img-src data:',
+].join('; ');
+
 /** Code JavaScript placé dans un <script> en ligne : « </script » le fermerait. */
 function inlineScript(code) {
   return `<script>\n${String(code).replace(/<\/(script)/gi, '<\\/$1')}\n</script>`;
@@ -31,9 +45,4 @@ ${inlineScript(widgetScript)}
 ${inlineScript('OYMWidgets.page();')}
 </body></html>
 `;
-}
-
-/** Nom déclaré par OYMWidgets.define('nom', …) dans le fichier d'une figure. */
-export function definedWidgetNames(source) {
-  return [...String(source).matchAll(/OYMWidgets\.define\(\s*(['"])([^'"]*)\1/g)].map((match) => match[2]);
 }

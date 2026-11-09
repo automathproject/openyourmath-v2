@@ -15,7 +15,8 @@ import {
 import { buildLatexExport } from '../../src/lib/latex/export.js';
 import { latexToPreviewHtml } from '../../src/lib/latex/texPreview.js';
 import { checkAnimations } from '../../scripts/quality/check-animations.js';
-import { definedWidgetNames, widgetPage } from '../../src/lib/widgets/page.js';
+import { widgetPage } from '../../src/lib/widgets/page.js';
+import { KIT_VERSION, metaProblems, readWidgetSource } from '../../src/lib/widgets/source.js';
 import { embedCode } from '../../src/lib/actions/animationFrames.js';
 
 describe('findAnimations', () => {
@@ -207,9 +208,44 @@ describe('page d’une figure', () => {
     expect(page.match(/<\/script>/g)).toHaveLength(5);
   });
 
-  it('lit le nom sous lequel une figure s’enregistre', () => {
-    expect(definedWidgetNames("OYMWidgets.define('a', {});\nOYMWidgets.define( \"b\" , {})")).toEqual(['a', 'b']);
-    expect(definedWidgetNames('// rien')).toEqual([]);
+});
+
+describe('lecture statique d’une figure', () => {
+  it('lit les noms enregistrés et meta sans exécuter le code', () => {
+    const source = `OYMWidgets.define('a', {
+      meta: { title: 'T', description: \`D\`, concepts: ['x', "y"], author: 'mnguyen', kit: 1 },
+      mount() { throw new Error('jamais exécuté'); },
+    });
+    OYMWidgets.define( "b" , {});`;
+    expect(readWidgetSource(source)).toEqual({
+      names: ['a', 'b'],
+      meta: { title: 'T', description: 'D', concepts: ['x', 'y'], author: 'mnguyen', kit: 1 },
+      errors: [],
+    });
+    expect(readWidgetSource('// rien')).toEqual({ names: [], meta: null, errors: [] });
+  });
+
+  it('refuse un meta calculé et un code illisible', () => {
+    expect(readWidgetSource("const t = 'T'; OYMWidgets.define('a', { meta: { title: t, kit: 1 } });").errors)
+      .toEqual(['meta.title doit être écrit en dur (texte, nombre ou liste).']);
+    expect(readWidgetSource("OYMWidgets.define('a', { meta: { description: `x${1}` } });").errors).toHaveLength(1);
+    expect(readWidgetSource("OYMWidgets.define('a', { meta: lire() });").errors).toEqual(['meta doit être un objet écrit en dur.']);
+    expect(readWidgetSource('OYMWidgets.define(').errors[0]).toMatch(/^code illisible/);
+  });
+
+  it('vérifie les champs de meta', () => {
+    const ok = { title: 'T', description: 'D', author: 'a', kit: 1 };
+    expect(metaProblems(ok)).toEqual([]);
+    expect(metaProblems(null)).toHaveLength(1);
+    expect(metaProblems({ title: 'T' })).toEqual(['meta.description manque.', 'meta.author manque.', 'meta.kit manque.']);
+    expect(metaProblems({ ...ok, kit: KIT_VERSION + 1 })[0]).toMatch(/^meta\.kit vaut/);
+    expect(metaProblems({ ...ok, title: 'La dérivée \\(f\\)' })).toEqual(['meta.title doit être du texte simple, sans formule.']);
+    expect(metaProblems({ ...ok, concepts: 'x', licence: 'MIT' })).toEqual(['meta.licence est inconnu.', 'meta.concepts doit être une liste de textes.']);
+  });
+
+  it('garde la version du kit et celle du contrôle égales', () => {
+    const kit = fs.readFileSync(path.join(process.cwd(), 'src/lib/widgets/kit.js'), 'utf8');
+    expect(kit).toContain(`const VERSION = ${KIT_VERSION};`);
   });
 });
 
@@ -251,13 +287,16 @@ describe('checkAnimations', () => {
       fs.mkdirSync(path.dirname(path.join(root, file)), { recursive: true });
       fs.writeFileSync(path.join(root, file), text);
     }
-    return { exercisesRoot: path.join(root, 'ex'), animationsRoot: path.join(root, 'anim') };
+    fs.writeFileSync(path.join(root, 'authors.json'), JSON.stringify([{ pseudo: 'mnguyen' }]));
+    return { exercisesRoot: path.join(root, 'ex'), animationsRoot: path.join(root, 'anim'), authorsPath: path.join(root, 'authors.json') };
   };
+  const META = "meta: { title: 'T', description: 'D', author: 'mnguyen', kit: 1 }";
+  const figure = (name) => `OYMWidgets.define('${name}', { ${META} });`;
 
   it('accepte une référence valide', async () => {
     const roots = setup({
       'ex/amscc/a.tex': '\\animation{ok}{Légende}\n\\animation[img/pdf/ok]{ok}{Légende}',
-      'anim/amscc/ok.js': "OYMWidgets.define('ok', {});",
+      'anim/amscc/ok.js': figure('ok'),
     });
     expect(await checkAnimations(roots)).toEqual([]);
   });
@@ -265,7 +304,7 @@ describe('checkAnimations', () => {
   it("signale une page absente, un nom invalide, une légende vide ou avec formule", async () => {
     const roots = setup({
       'ex/a.tex': '\\animation{absente}{L}\n\\animation{../x}{L}\n\\animation{ok}{}\n\\animation{ok}{Une $f$}',
-      'anim/amscc/ok.js': "OYMWidgets.define('ok', {});",
+      'anim/amscc/ok.js': figure('ok'),
     });
     const codes = (await checkAnimations(roots)).map((i) => i.code);
     expect(codes).toEqual(['missing-animation', 'invalid-name', 'missing-caption', 'formula-in-caption']);
@@ -274,9 +313,9 @@ describe('checkAnimations', () => {
   it('signale un nom employé par deux sources et une page mal rangée', async () => {
     const roots = setup({
       'ex/a.tex': '\\animation{double}{L}\n\\animation{plat}{L}',
-      'anim/amscc/double.js': "OYMWidgets.define('double', {});",
-      'anim/exo7/double.js': "OYMWidgets.define('double', {});",
-      'anim/plat.js': "OYMWidgets.define('plat', {});",
+      'anim/amscc/double.js': figure('double'),
+      'anim/exo7/double.js': figure('double'),
+      'anim/plat.js': figure('plat'),
     });
     const issues = await checkAnimations(roots);
     expect(issues.map((i) => [i.code, i.name])).toEqual([
@@ -288,20 +327,31 @@ describe('checkAnimations', () => {
 
   it('signale une figure enregistrée sous un autre nom que son fichier', async () => {
     const roots = setup({
-      'anim/amscc/a.js': "OYMWidgets.define('b', {});",
+      'anim/amscc/a.js': figure('b'),
       'anim/amscc/c.js': '// pas de define',
     });
     const issues = await checkAnimations(roots);
     expect(issues.map((i) => [i.code, i.name])).toEqual([
       ['widget-name-mismatch', 'a'],
       ['widget-name-mismatch', 'c'],
+      ['widget-meta', 'c'],
     ]);
+  });
+
+  it('signale des métadonnées incomplètes et un auteur inconnu', async () => {
+    const roots = setup({
+      'anim/amscc/a.js': "OYMWidgets.define('a', { meta: { title: 'T', author: 'inconnu', kit: 1 } });",
+    });
+    const issues = await checkAnimations(roots);
+    expect(issues.map((i) => i.code)).toEqual(['widget-meta', 'unknown-author']);
+    expect(issues[0].message).toContain('meta.description manque.');
   });
 
   it('accepte la figure ebva rangée dans sa source', async () => {
     const issues = await checkAnimations({
       exercisesRoot: path.join(process.cwd(), 'content/exercises/amscc'),
       animationsRoot: path.join(process.cwd(), 'content/animations'),
+      authorsPath: path.join(process.cwd(), 'content/authors.json'),
     });
     expect(issues).toEqual([]);
   });

@@ -2,9 +2,7 @@
 // Sert la figure interactive content/animations/<source>/<name>.js, isolée du
 // site, dans une page qui l'assemble avec le kit (voir lib/widgets/page.js).
 //
-// Le fichier d'une figure est du JavaScript arbitraire : la politique CSP le
-// place dans un bac à sable sans « allow-same-origin ». Il tourne alors dans une
-// origine opaque, sans accès aux cookies ni à la page qui l'embarque. L'en-tête
+// La politique CSP (WIDGET_CSP) place la figure dans un bac à sable. L'en-tête
 // vaut aussi pour une ouverture directe de l'adresse, pas seulement pour l'iframe.
 
 import { readdir, readFile } from 'node:fs/promises';
@@ -12,7 +10,7 @@ import path from 'node:path';
 import { error } from '@sveltejs/kit';
 import { dev } from '$app/environment';
 import { ANIMATION_NAME, indexAnimationPages } from '$lib/animations.js';
-import { widgetPage } from '$lib/widgets/page.js';
+import { WIDGET_CSP, widgetPage } from '$lib/widgets/page.js';
 import kitScript from '$lib/widgets/kit.js?raw';
 import kitStyle from '$lib/widgets/kit.css?raw';
 
@@ -38,17 +36,6 @@ async function loadFromDisk(name) {
   return found ? () => readFile(path.resolve(found.slice(1)), 'utf8') : undefined;
 }
 
-// Pas de frame-ancestors : tout document peut intégrer la figure en iframe
-// (CodiMD, diaporama HTML, fichier ouvert en file://, que « * » exclurait).
-const CSP = [
-  'sandbox allow-scripts',
-  "default-src 'none'",
-  "script-src 'self' 'unsafe-inline'",
-  "style-src 'self' 'unsafe-inline'",
-  "font-src 'self'",
-  'img-src data:',
-].join('; ');
-
 export async function GET({ params }) {
   const { name } = params;
   let load;
@@ -58,7 +45,7 @@ export async function GET({ params }) {
   return new Response(widgetPage({ name, kitScript, kitStyle, widgetScript: await load() }), {
     headers: {
       'content-type': 'text/html; charset=utf-8',
-      'content-security-policy': CSP,
+      'content-security-policy': WIDGET_CSP,
       'x-content-type-options': 'nosniff',
       'referrer-policy': 'no-referrer',
       'cache-control': 'public, max-age=300',

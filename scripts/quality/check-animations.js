@@ -2,14 +2,16 @@
 // Vérifie que chaque \animation{nom}{légende} des sources désigne une figure
 // existante de content/animations/<source>/<nom>.js et porte une légende (texte
 // alternatif de la figure, et seule trace de l'animation dans l'export PDF),
-// qu'aucun nom n'est employé par deux sources, et que chaque figure s'enregistre
-// sous le nom de son fichier (OYMWidgets.define('<nom>', …)).
+// qu'aucun nom n'est employé par deux sources, que chaque figure s'enregistre
+// sous le nom de son fichier (OYMWidgets.define('<nom>', …)) et déclare ses
+// métadonnées en dur (meta, voir lib/widgets/source.js), avec un auteur connu
+// de content/authors.json.
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ANIMATION_NAME, findAnimations, indexAnimationPages } from '../../src/lib/animations.js';
-import { definedWidgetNames } from '../../src/lib/widgets/page.js';
+import { metaProblems, readWidgetSource } from '../../src/lib/widgets/source.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 
@@ -23,11 +25,17 @@ async function listFiles(directory, extension) {
   return nested.flat();
 }
 
+async function readAuthorPseudos(authorsPath) {
+  const authors = JSON.parse(await fs.readFile(authorsPath, 'utf8'));
+  return new Set(authors.map((author) => author.pseudo));
+}
+
 /**
- * @param {{ exercisesRoot: string, animationsRoot: string }} roots
+ * @param {{ exercisesRoot: string, animationsRoot: string, authorsPath: string }} roots
  * @returns {Promise<{ filePath: string, name: string, code: string, message: string }[]>}
  */
-export async function checkAnimations({ exercisesRoot, animationsRoot }) {
+export async function checkAnimations({ exercisesRoot, animationsRoot, authorsPath }) {
+  const pseudos = await readAuthorPseudos(authorsPath);
   const pagePaths = (await listFiles(animationsRoot, '.js'))
     .map((file) => `animations/${path.relative(animationsRoot, file).split(path.sep).join('/')}`);
   const { pages, duplicates } = indexAnimationPages(pagePaths);
@@ -51,14 +59,14 @@ export async function checkAnimations({ exercisesRoot, animationsRoot }) {
   }
   for (const [name, pagePath] of pages) {
     const filePath = path.join(animationsRoot, pagePath.slice('animations/'.length));
-    const defined = definedWidgetNames(await fs.readFile(filePath, 'utf8'));
+    const problem = (code, message) => issues.push({ filePath, name, code, message: `${pagePath} : ${message}` });
+    const { names: defined, meta, errors } = readWidgetSource(await fs.readFile(filePath, 'utf8'));
     if (defined.length !== 1 || defined[0] !== name) {
-      issues.push({
-        filePath,
-        name,
-        code: 'widget-name-mismatch',
-        message: `${pagePath} doit enregistrer une seule figure, OYMWidgets.define('${name}', …)${defined.length ? ` (trouvé : ${defined.join(', ')})` : ''}.`,
-      });
+      problem('widget-name-mismatch', `doit enregistrer une seule figure, OYMWidgets.define('${name}', …)${defined.length ? ` (trouvé : ${defined.join(', ')})` : ''}.`);
+    }
+    for (const message of [...errors, ...(errors.length ? [] : metaProblems(meta))]) problem('widget-meta', message);
+    if (typeof meta?.author === 'string' && meta.author && !pseudos.has(meta.author)) {
+      problem('unknown-author', `meta.author « ${meta.author} » n'est pas un pseudo de content/authors.json.`);
     }
   }
   for (const filePath of await listFiles(exercisesRoot, '.tex')) {
@@ -82,6 +90,7 @@ async function main() {
   const issues = await checkAnimations({
     exercisesRoot: path.join(ROOT, 'content/exercises'),
     animationsRoot: path.join(ROOT, 'content/animations'),
+    authorsPath: path.join(ROOT, 'content/authors.json'),
   });
   for (const { filePath, code, message } of issues) {
     console.error(`${path.relative(ROOT, filePath)} : ${code} — ${message}`);

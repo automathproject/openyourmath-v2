@@ -6,7 +6,10 @@
 // diaporama ou une autre page peut le recopier de même, avec kit.css. Une figure
 // s'enregistre par
 //
-//   OYMWidgets.define('nom', { title, intro, state, mount(root, { kit, state }) { … } })
+//   OYMWidgets.define('nom', { meta, intro, state, mount(root, { kit, state }) { … } })
+//
+// meta ({ title, description, author, kit, concepts }) est écrit en dur : le site
+// le lit sans exécuter la figure (voir widgets/source.js).
 //
 // et s'affiche dans tout élément <div data-widget="nom">, dont les attributs
 // data-* remplacent les valeurs de `state` (data-deg="45" donne state.deg = 45).
@@ -18,10 +21,19 @@
 // Le repère (Plot) et les commandes reprennent le noyau des diaporamas OPTRN
 // (slides/_commun/kit.js), aux mêmes noms : une figure de diaporama se convertit
 // sans réécrire son dessin.
+//
+// Contrat de version : meta.kit nomme la version du kit pour laquelle la figure
+// est écrite. Une version ne fait qu'ajouter : les fonctions existantes gardent
+// leur nom, leurs arguments et leur comportement. Un changement incompatible
+// crée la version suivante, et le kit continue d'afficher les figures écrites
+// pour les précédentes. Une figure qui attend une version plus récente que celle
+// chargée affiche un message au lieu de s'exécuter. Garder VERSION égal à
+// KIT_VERSION de widgets/source.js.
 
 (function (global) {
   'use strict';
 
+  const VERSION = 1;
   const doc = global.document;
   const SVGNS = 'http://www.w3.org/2000/svg';
   let uid = 0;
@@ -433,6 +445,11 @@
     registry.set(name, spec);
   }
 
+  /** Version du kit attendue par la figure (1 quand meta ne la donne pas). */
+  function wantedVersion(spec) {
+    return (spec.meta && spec.meta.kit) || 1;
+  }
+
   /** État initial : celui de la figure, remplacé par les attributs data-* de l'élément. */
   function readState(el, base) {
     const state = { ...base };
@@ -453,9 +470,14 @@
       el.textContent = `Figure « ${name} » introuvable.`;
       return null;
     }
+    if (!(wantedVersion(spec) <= VERSION)) {
+      el.textContent = `La figure « ${name} » demande la version ${wantedVersion(spec)} du kit ; cette page charge la version ${VERSION}.`;
+      return null;
+    }
+    const title = (spec.meta && spec.meta.title) || spec.title;
     el.classList.add('oym-widget');
     el.replaceChildren();
-    if (spec.title) el.setAttribute('aria-label', spec.title);
+    if (title) el.setAttribute('aria-label', title);
     if (spec.intro) html('div', { class: 'oym-intro' }, el, spec.intro);
     const body = html('div', { class: 'oym-body' }, el);
     el.oymWidget = spec.mount(body, { kit, state: readState(el, spec.state), root: el }) || {};
@@ -475,7 +497,8 @@
       mountAll();
       const first = doc.querySelector('[data-widget]');
       const spec = first && registry.get(first.dataset.widget);
-      if (spec && spec.title) doc.title = spec.title;
+      const title = spec && ((spec.meta && spec.meta.title) || spec.title);
+      if (title) doc.title = title;
       if (global.parent === global) return;
       const report = () => {
         const height = Math.ceil(doc.documentElement.getBoundingClientRect().height);
@@ -488,5 +511,5 @@
     else start();
   }
 
-  global.OYMWidgets = { version: 1, define, mount, mountAll, page, kit };
+  global.OYMWidgets = { version: VERSION, define, mount, mountAll, page, kit };
 })(globalThis);

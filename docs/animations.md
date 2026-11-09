@@ -52,7 +52,13 @@ textes, et rien d'autre :
 ```js
 // animations/ebva-directionnelle.js
 OYMWidgets.define('ebva-directionnelle', {
-  title: "Dérivée directionnelle en l'origine",        // titre de la page
+  meta: {                                               // écrit en dur (voir « Métadonnées »)
+    title: "Dérivée directionnelle en l'origine",
+    description: "On fait tourner une direction u autour de l'origine…",
+    concepts: ['dérivée directionnelle', 'gradient', 'différentiabilité'],
+    author: 'mnguyen',
+    kit: 1,
+  },
   intro: 'On fait tourner la direction \\(u\\)…',       // texte au-dessus de la figure
   state: { deg: 63.4349 },                              // état initial
 
@@ -74,6 +80,47 @@ OYMWidgets.define('ebva-directionnelle', {
 - Les formules s'écrivent `\\( … \\)` dans les chaînes JavaScript ; KaTeX les rend.
 - Une figure de diaporama OPTRN se convertit en recopiant son dessin : le repère
   et les commandes du kit portent les mêmes noms que ceux de `slides/_commun/kit.js`.
+
+### Métadonnées
+
+`meta` décrit la figure pour le site : la page prend son titre, et le catalogue
+et la recherche s'appuieront sur ces champs. `src/lib/widgets/source.js` le lit
+**sans exécuter la figure** (analyse du code avec acorn) : `meta` doit donc être
+un objet écrit en dur, sans variable ni calcul.
+
+| Champ | Contenu |
+|---|---|
+| `title` | titre, en texte simple (obligatoire) |
+| `description` | ce que l'on voit et manipule, en une ou deux phrases de texte simple : c'est le texte de recherche (obligatoire) |
+| `author` | pseudo de `content/authors.json` ; la licence de la figure est celle de l'auteur (obligatoire) |
+| `kit` | version du kit pour laquelle la figure est écrite (obligatoire, voir « Version du kit ») |
+| `concepts` | notions illustrées, comme les `concepts` des métadonnées d'exercice (facultatif) |
+
+Le chapitre, le niveau et les programmes ne se recopient pas : ce sont ceux des
+exercices qui citent la figure par `\animation`.
+
+### Version du kit
+
+`meta.kit` nomme la version du kit pour laquelle la figure est écrite
+(`VERSION` dans `kit.js`, `KIT_VERSION` dans `source.js`, gardées égales par un
+test). Le contrat :
+
+- une version ne fait qu'**ajouter** : les fonctions existantes gardent leur
+  nom, leurs arguments et leur comportement, les classes CSS leur aspect ;
+- un changement incompatible crée la **version suivante**, et le kit continue
+  d'afficher les figures écrites pour les précédentes (on ne réécrit pas les
+  anciennes figures) ;
+- une figure qui attend une version plus récente que le kit chargé affiche un
+  message au lieu de s'exécuter (cas d'un diaporama qui a recopié un ancien kit).
+
+### Test automatique
+
+`tests/build/widgets-render.test.js` (dans `pnpm test:build`) ouvre chaque figure
+de `content/animations/` dans Chromium, dans la page que sert
+`/animation/<nom>` (même HTML, même CSP, KaTeX compris). La figure doit
+s'afficher sans erreur, sans formule restée en LaTeX, puis survivre à un clic sur
+chaque bouton et aux deux bornes de chaque curseur. Une modification du kit qui
+casse une figure échoue là, avant toute publication.
 
 ### Le kit
 
@@ -208,7 +255,9 @@ l'adresse et le QR code.
 | Page isolée | `src/routes/animation/[name]/+server.js`, `src/lib/widgets/page.js` | retrouve la source du nom (`indexAnimationPages`), assemble KaTeX, le kit et la figure, et sert la page avec une politique CSP `sandbox allow-scripts` |
 | KaTeX | `src/routes/animation-vendor/katex/[...path]/+server.js` | copie de KaTeX du site, avec `Access-Control-Allow-Origin` |
 | Export LaTeX | `src/lib/latex/export.js` | définit `\animation` : encadré avec l'image fixe, la légende, l'adresse et son QR code (voir « Version imprimée ») |
-| Contrôle | `pnpm check:animations` | figure existante, enregistrée sous le nom de son fichier, propre à une seule source et bien rangée ; légende présente et sans formule |
+| Contrôle | `pnpm check:animations` | figure existante, enregistrée sous le nom de son fichier, propre à une seule source et bien rangée ; `meta` écrit en dur et complet, auteur connu, version du kit existante ; légende présente et sans formule |
+| Lecture statique | `src/lib/widgets/source.js` | noms enregistrés et `meta` d'une figure, lus sans l'exécuter |
+| Test de rendu | `tests/build/widgets-render.test.js` | chaque figure s'affiche et réagit sans erreur dans Chromium |
 
 ## Isolation
 
@@ -272,15 +321,16 @@ chaque figure, lue dans `Exercices/animations/` ; une slide l'affiche par
 
 ## Ajouter une animation à un exercice
 
-1. Écrire la figure dans `Exercices/animations/<nom>.js` (voir « Écrire une
-   figure ») et la regarder dans le serveur de développement.
+1. Écrire la figure dans `Exercices/animations/<nom>.js`, avec son `meta` (voir
+   « Écrire une figure »), et la regarder dans le serveur de développement.
 2. Dessiner l'image fixe dans `Exercices/img/tikz/<uuid>-tikz-<n>.tex` et la
    compiler (`make img/pdf/<…>.pdf img/svg/<…>.svg`).
 3. Ajouter `\animation[\exercisespath img/pdf/<uuid>-tikz-<n>]{<nom>}{<légende>}`
    dans le bloc de l'exercice qu'elle illustre ; le PDF d'Exercices compile la
    commande (`_preambules/general.tex`).
 4. Committer dans Exercices, puis synchroniser exobase et OpenYourMath.
-5. Ici : `pnpm check:animations`, `pnpm build:content`, reconstruire l'application.
+5. Ici : `pnpm check:animations`, `pnpm test:build` (rendu de chaque figure),
+   `pnpm build:content`, reconstruire l'application.
 
 ## Charte graphique
 
