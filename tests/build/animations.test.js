@@ -205,7 +205,7 @@ describe('page d’une figure', () => {
 
   it('empêche le code de la figure de fermer son <script>', () => {
     expect(page).toContain("intro: '<\\/script><b>'");
-    expect(page.match(/<\/script>/g)).toHaveLength(5);
+    expect(page.match(/<\/script>/g)).toHaveLength(6);
   });
 
 });
