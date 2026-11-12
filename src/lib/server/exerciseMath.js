@@ -2,6 +2,7 @@
 // Compose côté serveur les formules d'un exercice avant de l'envoyer.
 
 import { renderMathInHtmlCached } from '../katexRender.js';
+import { mapBlockHtml } from '../qcm/blocks.js';
 
 /**
  * Remplace le HTML de chaque bloc par sa version dont les formules sont déjà
@@ -14,7 +15,7 @@ export function withRenderedMath(exercise) {
     ...exercise,
     content: exercise.content.map((block) =>
       block?.html
-        ? { ...block, html: renderMathInHtmlCached(block.html), mathRendered: true }
+        ? { ...mapBlockHtml(block, renderMathInHtmlCached), mathRendered: true }
         : block,
     ),
   };

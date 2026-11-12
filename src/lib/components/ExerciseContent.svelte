@@ -2,6 +2,7 @@
 <script>
   import MathRenderer from './MathRenderer.svelte';
   import ExerciseHeader from './ExerciseHeader.svelte';
+  import QcmQuestion from './qcm/QcmQuestion.svelte';
   
   export let content = [];
   export let showSolution = false;
@@ -21,6 +22,8 @@
   // Masquage individuel explicite (permet de cacher même si le global est actif)
   let hiddenHintStates = {};
   let hiddenSolutionStates = {};
+  // Questions de qcm déjà validées : dans une série, la suivante s'ouvre alors.
+  let qcmDone = {};
 
   // Variables pour tracker les états globaux précédents
   let previousShowSolution = showSolution;
@@ -37,6 +40,7 @@
     hintStates = {};
     hiddenHintStates = {};
     hiddenSolutionStates = {};
+    qcmDone = {};
   }
 
   // Réactivité pour détecter les changements d'états globaux
@@ -182,6 +186,16 @@
     });
   }
   
+  // Une série de qcm se joue dans l'ordre : une question reste fermée tant que
+  // la précédente n'a pas été validée. La correction globale ouvre tout, et un
+  // aperçu montre la série entière.
+  function isLockedQcm(group, done, solutionsShown, shownOneByOne) {
+    if (!group.question?.qcm || group.questionIndex === 0) return false;
+    if (isPreview || solutionsShown || studentMode !== 'normal') return false;
+    const index = group.questionIndex;
+    return !done[index - 1] && !shownOneByOne[index - 1] && !shownOneByOne[index];
+  }
+
   // Fonctions pour basculer l'affichage individuel
   function toggleSolution(index) {
     const visible = (solutionStates[index] || showSolution) && !hiddenSolutionStates[index];
@@ -301,7 +315,21 @@
                   </span>
                 </div>
                 <div class="question-content" class:question-content--preview={isPreview}>
-                  <MathRenderer content={processedQ.html} prerendered={processedQ.prerendered} />
+                  {#if question.qcm && isLockedQcm(contentBlock, qcmDone, showSolution, solutionStates)}
+                    <p class="qcm-locked">Cette question fait suite à la précédente : validez-la d'abord.</p>
+                  {:else if question.qcm}
+                    <QcmQuestion
+                      qcm={question.qcm}
+                      prerendered={processedQ.prerendered}
+                      reveal={(solutionStates[contentBlock.questionIndex] || showSolution) && !hiddenSolutionStates[contentBlock.questionIndex] && studentMode === 'normal'}
+                      allowCheck={studentMode === 'normal'}
+                      readonly={isPreview}
+                      name={`qcm-${exercise?.uuid ?? 'x'}-${contentBlock.questionIndex}`}
+                      on:validated={() => (qcmDone = { ...qcmDone, [contentBlock.questionIndex]: true })}
+                    />
+                  {:else}
+                    <MathRenderer content={processedQ.html} prerendered={processedQ.prerendered} />
+                  {/if}
                 </div>
               </div>
               {#if showInlineControls}
@@ -355,7 +383,7 @@
         {/if}
         
         <!-- Solutions (affichées après les indications si activées) -->
-        {#if contentBlock.solutions.length > 0 && studentMode === 'normal' && (solutionStates[contentBlock.questionIndex] || showSolution) && !hiddenSolutionStates[contentBlock.questionIndex]}
+        {#if !contentBlock.question.qcm && contentBlock.solutions.length > 0 && studentMode === 'normal' && (solutionStates[contentBlock.questionIndex] || showSolution) && !hiddenSolutionStates[contentBlock.questionIndex]}
           <div class="inline-solution">
             {#each contentBlock.solutions as solution}
               {@const processedS = processContentBlock(solution)}
@@ -499,6 +527,11 @@
   .question-content--preview {
     @apply text-gray-900;
     min-width: 0;
+  }
+
+  .qcm-locked {
+    @apply text-sm text-gray-500 italic m-0;
+    padding-top: 0.3rem;
   }
   
   .question-actions {

@@ -25,6 +25,7 @@
       case 'hasSolution':
       case 'hasIndication':
       case 'hasVideo':
+      case 'qcm':
       case 'author':
       case 'organization':
       case 'createdFrom':
@@ -63,6 +64,8 @@
     if ($filters.hasIndication === '0') entries.push({ key: 'hasIndication', label: 'Sans indication' });
     if ($filters.hasVideo === '1') entries.push({ key: 'hasVideo', label: 'Avec vidéo' });
     if ($filters.hasVideo === '0') entries.push({ key: 'hasVideo', label: 'Sans vidéo' });
+    if ($filters.qcm === '1') entries.push({ key: 'qcm', label: 'QCM' });
+    if ($filters.qcm === '0') entries.push({ key: 'qcm', label: 'Sans les QCM' });
     if ($filters.createdFrom) entries.push({ key: 'createdFrom', label: `Créé ≥ ${$filters.createdFrom}` });
     if ($filters.createdTo) entries.push({ key: 'createdTo', label: `Créé ≤ ${$filters.createdTo}` });
     if ($filters.updatedFrom) entries.push({ key: 'updatedFrom', label: `MAJ ≥ ${$filters.updatedFrom}` });

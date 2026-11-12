@@ -93,6 +93,8 @@ export async function GET(event) {
   const hasSolutionParam  = url.searchParams.get('hasSolution');
   const hasIndicationParam = url.searchParams.get('hasIndication');
   const hasVideoParam     = url.searchParams.get('hasVideo');
+  // Type de contenu : 1 = qcm seulement, 0 = exercices seulement.
+  const qcmParam          = url.searchParams.get('qcm');
   // Classification CPGE : filière, nœud du programme (section ou sous-section,
   // descendants compris), ou seulement « rattaché à un programme ».
   const filiere     = url.searchParams.get('filiere')?.trim()      || '';
@@ -122,7 +124,7 @@ export async function GET(event) {
       if (!isNaN(d) && d >= 1 && d <= 5) filters.difficulty = d;
     }
   }
-  for (const [param, key] of [[hasSolutionParam, 'hasSolution'], [hasIndicationParam, 'hasIndication'], [hasVideoParam, 'hasVideo']]) {
+  for (const [param, key] of [[hasSolutionParam, 'hasSolution'], [hasIndicationParam, 'hasIndication'], [hasVideoParam, 'hasVideo'], [qcmParam, 'qcm']]) {
     if (param !== null && param !== undefined && param !== '') {
       const v = param.toLowerCase();
       if (v === '1' || v === 'true')  filters[key] = true;

@@ -99,6 +99,7 @@ export async function load({ url }) {
       .filter(result => result.success)
       .map(result => ({
         uuid: result.uuid,
+        content_type: result.exercise.content_type,
         title: result.exercise.title,
         chapter: result.exercise.chapter,
         theme: result.exercise.theme,

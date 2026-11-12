@@ -24,7 +24,8 @@ export async function GET({ url }) {
         updatedTo: url.searchParams.get('updatedTo') || '',
         hasSolution: url.searchParams.get('hasSolution') || '',
         hasIndication: url.searchParams.get('hasIndication') || '',
-        hasVideo: url.searchParams.get('hasVideo') || ''
+        hasVideo: url.searchParams.get('hasVideo') || '',
+        qcm: url.searchParams.get('qcm') || ''
       };
       for (const key of ['hasSolution', 'hasIndication']) {
         if (filters[key] === '1' || filters[key] === 'true') filters[key] = true;
@@ -61,7 +62,8 @@ export async function GET({ url }) {
         updatedTo: url.searchParams.get('updatedTo') || '',
         hasSolution: url.searchParams.get('hasSolution') || '',
         hasIndication: url.searchParams.get('hasIndication') || '',
-        hasVideo: url.searchParams.get('hasVideo') || ''
+        hasVideo: url.searchParams.get('hasVideo') || '',
+        qcm: url.searchParams.get('qcm') || ''
       };
       for (const key of ['hasSolution', 'hasIndication']) {
         if (filters[key] === '1' || filters[key] === 'true') filters[key] = true;

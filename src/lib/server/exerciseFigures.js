@@ -10,6 +10,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { readImageSize } from '../imageSize.js';
+import { mapBlockHtml } from '../qcm/blocks.js';
 
 const ARTIFACT_URL = /^\/artifacts\/[A-Za-z0-9_\-./]+$/;
 const CACHE_LIMIT = 5000;
@@ -61,7 +62,7 @@ export function withFigureAttributes(exercise) {
   return {
     ...exercise,
     content: exercise.content.map((block) =>
-      block?.html ? { ...block, html: addFigureAttributes(block.html) } : block,
+      block?.html ? mapBlockHtml(block, addFigureAttributes) : block,
     ),
   };
 }

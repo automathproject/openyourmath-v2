@@ -175,7 +175,7 @@ Voir aussi : [docs/embeddings-sync.md](docs/embeddings-sync.md).
 
 ## Structure
 
-- `content/` : Sources LaTeX des exercices + métadonnées LLM versionnées (`content/metadata/`)
+- `content/` : Sources LaTeX des exercices (`content/exercises/`) et des QCM (`content/qcm/`) + métadonnées LLM versionnées (`content/metadata/`)
 - `cache/` : Cache JSON des exercices parsés + embeddings locaux (`cache/embeddings/`)
 - `scripts/` : Pipeline de build (LaTeX → JSON → SQLite) et indexation IA
 - `src/` : Application SvelteKit
@@ -185,7 +185,7 @@ Voir aussi : [docs/embeddings-sync.md](docs/embeddings-sync.md).
 
 À commiter avec un nouvel exercice :
 
-- `content/exercises/**/*.tex` : la source de l'exercice ;
+- `content/exercises/**/*.tex` : la source de l'exercice (`content/qcm/**/*.tex` pour un QCM) ;
 - `content/images/**` : les images sources éventuellement référencées ;
 - `content/metadata/**/*.json` : les métadonnées produites par `pnpm index:exercises` ;
 - `content/authors.json` uniquement si le référentiel d'auteurs a changé.
@@ -198,6 +198,7 @@ générés localement et embarqués dans l'image Docker au moment de la construc
 Voir `/docs` pour plus de détails.
 
 - [Ajouter et déployer un exercice](docs/ajouter-et-deployer-un-exercice.md) : procédure complète de contribution et publication.
+- [QCM et sessions en direct](docs/qcm.md) : type de contenu qcm, listes mixtes, sessions de classe sans compte et plafonds de charge.
 - [Classification CPGE](docs/classification-cpge.md) : conception du rattachement des exercices aux programmes de classes préparatoires (programmes officiels sous `content/referentials/cpge/`, importés d'exobase).
 - Scripts de debug/maintenance: `docs/debug-scripts.md`
 

@@ -25,6 +25,7 @@
       hasSolution: filters?.hasSolution ?? '',
       hasIndication: filters?.hasIndication ?? '',
       hasVideo: filters?.hasVideo ?? '',
+      qcm: filters?.qcm ?? '',
       createdFrom: filters?.createdFrom || '',
       createdTo: filters?.createdTo || '',
       updatedFrom: filters?.updatedFrom || '',
@@ -52,6 +53,7 @@
       if (filters?.hasVideo !== '' && filters?.hasVideo !== undefined && filters?.hasVideo !== null) {
         params.set('hasVideo', String(filters.hasVideo));
       }
+      if (filters?.qcm) params.set('qcm', String(filters.qcm));
       if (filters?.createdFrom) params.set('createdFrom', filters.createdFrom);
       if (filters?.createdTo) params.set('createdTo', filters.createdTo);
       if (filters?.updatedFrom) params.set('updatedFrom', filters.updatedFrom);

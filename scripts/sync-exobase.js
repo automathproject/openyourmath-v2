@@ -31,6 +31,7 @@ const PROVENANCE = path.join(TARGET_CONTENT, 'provenance/exobase.json');
 
 const LABELS = {
   sources: 'Sources .tex',
+  qcm: 'QCM',
   images: 'Images et sources graphiques',
   code: 'Extraits Python',
   animations: 'Animations interactives',
@@ -88,8 +89,22 @@ async function discoverSources() {
   return entries.filter(entry => entry.isDirectory()).map(entry => entry.name).sort();
 }
 
-function mappingsFor(sources) {
+/** Sources that carry qcm content (content/qcm/<source>/), a content type of its own. */
+async function discoverQcmSources() {
+  try {
+    const entries = await fs.readdir(path.join(SOURCE_CONTENT, 'qcm'), { withFileTypes: true });
+    return entries.filter(entry => entry.isDirectory()).map(entry => entry.name).sort();
+  } catch (error) {
+    if (error.code === 'ENOENT') return [];
+    throw error;
+  }
+}
+
+function mappingsFor(sources, qcmSources = []) {
   return [
+    // Les images d'un qcm vivent avec celles de sa source, sous images/<source>/.
+    ...qcmSources.map(source => (
+      { source, kind: 'qcm', dir: `qcm/${source}`, accept: name => name.endsWith('.tex') })),
     ...sources.flatMap(source => [
       { source, kind: 'sources', dir: `exercises/${source}`, accept: name => name.endsWith('.tex') },
       { source, kind: 'images', dir: `images/${source}`, accept: () => true },
@@ -267,7 +282,7 @@ async function main() {
     : 'Référence : aucune — les fichiers divergents seront préservés, jamais écrasés.');
 
   const sources = await discoverSources();
-  const mappings = mappingsFor(sources);
+  const mappings = mappingsFor(sources, await discoverQcmSources());
   console.log(`Sources : ${sources.join(', ')}`);
 
   const entries = await plan(mappings, base);

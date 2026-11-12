@@ -5,6 +5,9 @@ PRAGMA synchronous = NORMAL;
 -- Table principale pour les exercicaes
 CREATE TABLE IF NOT EXISTS exercises (
   uuid TEXT PRIMARY KEY,
+  -- 'exercice' ou 'qcm' : un qcm est un contenu dont les questions portent des
+  -- réponses à cocher (champ qcm des blocs « question » de content_json).
+  content_type TEXT NOT NULL DEFAULT 'exercice',
   title TEXT NOT NULL,
   chapter TEXT NOT NULL,
   subchapter TEXT,
@@ -81,6 +84,7 @@ CREATE INDEX IF NOT EXISTS idx_license_code ON exercises(license_code);
 CREATE INDEX IF NOT EXISTS idx_source_path ON exercises(source_path);
 CREATE INDEX IF NOT EXISTS idx_content_hash ON exercises(content_hash);
 CREATE INDEX IF NOT EXISTS idx_indexed_at ON exercises(indexed_at);
+CREATE INDEX IF NOT EXISTS idx_content_type ON exercises(content_type);
 
 -- Fiches d'exercices : listes thématiques éditorialisées, importées d'exobase
 -- depuis content/fiches/<source>/. Une fiche ne porte aucun énoncé, seulement

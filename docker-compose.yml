@@ -38,6 +38,10 @@ services:
       - GITHUB_OAUTH_CLIENT_ID=${GITHUB_OAUTH_CLIENT_ID:-}
       - GITHUB_OAUTH_CLIENT_SECRET=${GITHUB_OAUTH_CLIENT_SECRET:-}
       - SIGNALEMENT_GITHUB_TOKEN=${SIGNALEMENT_GITHUB_TOKEN:-}
+      # Sessions de QCM en direct : plafonds de charge (docs/qcm.md)
+      - CLASSE_MAX_PARTICIPANTS=${CLASSE_MAX_PARTICIPANTS:-60}
+      - CLASSE_MAX_SESSIONS=${CLASSE_MAX_SESSIONS:-8}
+      - CLASSE_MAX_CONNEXIONS=${CLASSE_MAX_CONNEXIONS:-300}
       # Import PDF/image de l'éditeur d'exercices : pages envoyées en base64
       - BODY_SIZE_LIMIT=8M
 

@@ -7,7 +7,7 @@ import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
 import { generatePreview } from './utils/previewUtils.js';
 import { loadAllAlbertMetadata } from './utils/albert-store.js';
-import { CACHE_ROOT, normalizeContentRelativePath } from './utils/content-paths.js';
+import { CACHE_ROOT, QCM_CACHE_ROOT, normalizeContentRelativePath } from './utils/content-paths.js';
 import { getEmbeddingFromCache, EMBEDDINGS_CACHE_ROOT } from '../src/lib/ia/embedding-cache.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -193,6 +193,7 @@ function runMigrations(db) {
 
   const existing = new Set(db.prepare('PRAGMA table_info(exercises)').all().map(c => c.name));
   const toAdd = [
+    ['content_type', "TEXT NOT NULL DEFAULT 'exercice'"],
     ['content_hash', 'TEXT'],
     ['source_path',   'TEXT'],
     ['summary',      'TEXT'],
@@ -581,13 +582,14 @@ function insertExercises(db, exercises, authorsIdx, albertStore = loadAllAlbertM
   // created_at est préservé pour ne pas écraser la date de création originale.
   const insertExercise = db.prepare(`
     INSERT INTO exercises (
-      uuid, title, chapter, subchapter, theme, level, difficulty, module,
+      uuid, content_type, title, chapter, subchapter, theme, level, difficulty, module,
       author, organization, license_code, license_url, video_id, created_at, updated_at, preview,
       hasIndication, hasSolution,
       content_json, source_path, source_hash, content_hash,
       summary, concepts, methods, objects, indexed_at
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ON CONFLICT(uuid) DO UPDATE SET
+      content_type = excluded.content_type,
       title        = excluded.title,
       chapter      = excluded.chapter,
       subchapter   = excluded.subchapter,
@@ -662,7 +664,9 @@ function insertExercises(db, exercises, authorsIdx, albertStore = loadAllAlbertM
         const resolved = resolveAuthor(exercise.author, exercise.organization, authorsIdx);
 
         // Générer un preview intelligent qui respecte la syntaxe LaTeX
-        const smartPreview = generatePreview(exercise) || exercise.preview || (exercise.title ? `<p>${exercise.title}</p>` : null);
+        // Un qcm fournit son aperçu : l'énoncé seul, sans la liste des réponses.
+        const isQcm = exercise.content_type === 'qcm';
+        const smartPreview = (isQcm && exercise.preview) || generatePreview(exercise) || exercise.preview || (exercise.title ? `<p>${exercise.title}</p>` : null);
 
         // Insérer dans la table principale (upsert Pipeline A + Pipeline B depuis store)
         const contentHash = computeContentHash(exercise.content);
@@ -680,6 +684,7 @@ function insertExercises(db, exercises, authorsIdx, albertStore = loadAllAlbertM
 
         insertExercise.run(
           exercise.uuid,
+          isQcm ? 'qcm' : 'exercice',
           exercise.title,
           exercise.chapter,
           exercise.subchapter || null,
@@ -689,8 +694,9 @@ function insertExercises(db, exercises, authorsIdx, albertStore = loadAllAlbertM
           exercise.module || null,
           resolved.author || null,
           resolved.organization || null,
-          resolved.license_code || null,
-          resolved.license_url || null,
+          // La licence portée par le contenu (\licence{}) prime sur celle de l'auteur.
+          exercise.license_code || resolved.license_code || null,
+          (exercise.license_code ? exercise.license_url : resolved.license_url) || null,
           exercise.video_id || null,
           exercise.created_at || new Date().toISOString(),
           exercise.updated_at || new Date().toISOString(),
@@ -875,6 +881,22 @@ async function main() {
       }
 
       const exercises = await loadExercises(CACHE_DIR);
+
+      // Les qcm rejoignent les exercices dans la même table. Les UUID sont tirés
+      // dans le même espace : un doublon serait une erreur d'import, écartée ici.
+      if (fs.existsSync(QCM_CACHE_ROOT)) {
+        console.log('📖 Loading qcm...');
+        const known = new Set(exercises.map(e => e.uuid));
+        for (const qcm of await loadExercises(QCM_CACHE_ROOT)) {
+          if (qcm.content_type !== 'qcm') continue;
+          if (known.has(qcm.uuid)) {
+            console.warn(`⚠️ QCM ${qcm.uuid} ignoré : UUID déjà porté par un autre contenu`);
+            continue;
+          }
+          known.add(qcm.uuid);
+          exercises.push(qcm);
+        }
+      }
       
       if (exercises.length === 0) {
         console.warn('⚠️ No valid exercises found!');

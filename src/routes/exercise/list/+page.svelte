@@ -16,6 +16,7 @@
   import MathRenderer from '$lib/components/MathRenderer.svelte';
   import StarsRating from '$lib/components/StarsRating.svelte';
   import QRCode from 'qrcode';
+  import LiveSessionButton from '$lib/components/qcm/LiveSessionButton.svelte';
   import { immersiveMode } from '$lib/stores/uiStore.ts';
   import {
     exerciseList,
@@ -426,6 +427,9 @@
 
   // Titre personnalisé
   let listTitle = data.title || '';
+  // Une liste peut mêler exercices et QCM : dès qu'elle contient un QCM, elle
+  // peut être jouée en direct (les exercices n'y prennent pas part).
+  $: qcmCount = $exerciseList.filter((item) => (item.content_type ?? item.fullExercise?.content_type) === 'qcm').length;
   let isEditingTitle = false;
   let titleDraft = '';
   
@@ -1245,6 +1249,15 @@
           </button>
         {/if}
 
+        {#if qcmCount > 0}
+          <LiveSessionButton
+            uuids={$exerciseList.map((item) => item.uuid)}
+            title={listTitle}
+            label="QCM en direct"
+            solid
+          />
+        {/if}
+
         {#if $hasExercises}
           <button 
             on:click={clearList}
@@ -1425,6 +1438,14 @@
         
         {#if $hasExercises}
           <div class="list-action-buttons">
+            {#if qcmCount > 0}
+              <LiveSessionButton
+                uuids={$exerciseList.map((item) => item.uuid)}
+                title={listTitle}
+                label="QCM en direct"
+                solid
+              />
+            {/if}
             <button
               on:click={togglePresentationMode}
               class="list-action-btn list-action-btn--presentation"
@@ -2046,6 +2067,7 @@
                 <MathRenderer content={e.title || `Exercice ${i+1}`} inline={true} />
               </div>
               <div style="display:flex; align-items:center; gap:6px">
+                {#if (e.content_type ?? e.fullExercise?.content_type) === 'qcm'}<span class="consulter-item-qcm">QCM</span>{/if}
                 {#if e.difficulty}<StarsRating n={e.difficulty} total={4} />{/if}
                 {#if e.estimated_time}<span class="consulter-item-time">· {e.estimated_time}</span>{/if}
               </div>
@@ -4066,6 +4088,16 @@
   }
   .consulter-item.is-selected .consulter-num { color: var(--color-brand-700); }
   .consulter-item-body { flex: 1; min-width: 0; }
+  .consulter-item-qcm {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 0.05rem 0.35rem;
+    border-radius: 0.3rem;
+    background: var(--color-brand-700);
+    color: #fff;
+  }
+
   .consulter-item-title {
     font-family: var(--font-heading);
     font-size: 13px;

@@ -1,6 +1,7 @@
 <!-- src/lib/components/LectureSubheader.svelte -->
 <script>
   import AddToListButton from './AddToListButton.svelte';
+  import LiveSessionButton from './qcm/LiveSessionButton.svelte';
   import MathRenderer from './MathRenderer.svelte';
   import StarsRating from './StarsRating.svelte';
   import LatexExport from './LatexExport.svelte';
@@ -113,6 +114,9 @@
           </button>
         {/if}
         {#if showPrimaryAction}
+          {#if exercise?.content_type === 'qcm'}
+            <LiveSessionButton uuids={[exercise.uuid]} title={exercise.title} />
+          {/if}
           <div class="lecture-primary-action">
             <AddToListButton {exercise} size="normal" />
           </div>
@@ -199,6 +203,9 @@
             {/if}
 
             {#if showPrimaryAction}
+              {#if exercise?.content_type === 'qcm'}
+                <LiveSessionButton uuids={[exercise.uuid]} title={exercise.title} />
+              {/if}
               <div class="lecture-primary-action">
                 <AddToListButton {exercise} size="normal" />
               </div>

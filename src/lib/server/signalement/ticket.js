@@ -102,7 +102,9 @@ export function composerTicket({ exercise, signalement, auteur, origine, lienSou
   const titreExercice = (exercise.title || '').replace(/\s+/g, ' ').trim();
   const titre = `${exercise.uuid} · ${type.libelle}${titreExercice ? ` — ${titreExercice}` : ''}`.slice(0, 200);
 
-  const chemin = exercise.source_path ? `content/exercises/${exercise.source_path}` : null;
+  // Un qcm est rangé sous content/qcm/, un exercice sous content/exercises/.
+  const racine = exercise.content_type === 'qcm' ? 'content/qcm' : 'content/exercises';
+  const chemin = exercise.source_path ? `${racine}/${exercise.source_path}` : null;
   const classement = [exercise.level, exercise.module, exercise.chapter, exercise.subchapter].filter(Boolean).join(' › ');
   const lignes = [
     `**Exercice** : [${exercise.uuid}](${origine}/exercise/${exercise.uuid})${titreExercice ? ` — ${titreExercice.replace(/[[\]]/g, '')}` : ''}`,

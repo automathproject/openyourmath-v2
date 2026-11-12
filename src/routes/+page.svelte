@@ -253,6 +253,7 @@
     $filters.hasSolution,
     $filters.hasIndication,
     $filters.hasVideo,
+    $filters.qcm,
     $filters.prepa,
     $filters.filiere,
     $filters.cpge

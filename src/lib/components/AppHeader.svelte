@@ -75,6 +75,12 @@
           <span class="list-counter">{seanceCount}</span>
         {/if}
       </a>
+      <a href="/classe" class:is-active={isActive('/classe')} aria-label="QCM en direct" title="Rejoindre une session de QCM en direct">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 000 9M16.5 7.5a6.4 6.4 0 010 9M4.6 4.6a10.5 10.5 0 000 14.8M19.4 4.6a10.5 10.5 0 010 14.8"/>
+        </svg>
+        <span class="nav-label">En direct</span>
+      </a>
       <a href="/create" class:is-active={isActive('/create')} aria-label="Créer" title="Créer">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path d="M12 20h9"/>

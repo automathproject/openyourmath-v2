@@ -82,6 +82,7 @@
     if (f.hasSolution  != null && f.hasSolution  !== '') p.set('hasSolution',  String(f.hasSolution));
     if (f.hasIndication!= null && f.hasIndication !== '') p.set('hasIndication', String(f.hasIndication));
     if (f.hasVideo     != null && f.hasVideo      !== '') p.set('hasVideo',      String(f.hasVideo));
+    if (f.qcm) p.set('qcm', String(f.qcm));
     if (f.filiere)      p.set('filiere', f.filiere);
     if (f.cpge)         p.set('cpge', f.cpge);
     if (f.prepa)        p.set('prepa', '1');
@@ -114,6 +115,7 @@
       (f?.hasSolution != null && f.hasSolution !== '') ||
       (f?.hasIndication != null && f.hasIndication !== '') ||
       (f?.hasVideo != null && f.hasVideo !== '') ||
+      f?.qcm ||
       f?.filiere ||
       f?.cpge ||
       f?.prepa

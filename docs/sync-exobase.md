@@ -102,6 +102,7 @@ Les sources sont découvertes dans
 `content/exercises/` d'exobase, donc une nouvelle source est prise en compte
 sans toucher au script. Pour chacune, la synchro suit les exercices `.tex`, les
 images, les extraits Python et les fiches `.txt` de `content/fiches/<source>/` ;
+les QCM de `content/qcm/<source>/` sont suivis de la même façon (voir [qcm.md](qcm.md)) ;
 une source sans fiches est simplement ignorée. Les fichiers qui n'existent que
 dans OpenYourMath ne sont jamais supprimés ; les suppressions et renommages
 faits dans exobase depuis la référence sont signalés, jamais répercutés

@@ -1,4 +1,5 @@
 // src/lib/db/hybridSearch.js
+import { qcmFilterClause } from './contentType.js';
 import Database from 'better-sqlite3';
 import { fileURLToPath } from 'url';
 import path from 'path';
@@ -158,6 +159,8 @@ function buildFilterConditions(filters) {
     conditions.push('e.hasIndication = ?');
     params.push(f.hasIndication ? 1 : 0);
   }
+  const qcmClause = qcmFilterClause(f.qcm, 'e');
+  if (qcmClause) conditions.push(qcmClause);
   if (f.hasVideo !== undefined && f.hasVideo !== null && f.hasVideo !== '') {
     let wantsVideo = f.hasVideo;
     if (typeof wantsVideo !== 'boolean') {
@@ -240,7 +243,7 @@ function hydrate(db, merged) {
   const uuids = merged.map(r => r.uuid);
   const placeholders = uuids.map(() => '?').join(',');
   const rows = db.prepare(`
-    SELECT uuid, title, level, module, chapter, subchapter, theme, difficulty,
+    SELECT uuid, content_type, title, level, module, chapter, subchapter, theme, difficulty,
            preview, summary, author, organization, license_code, license_url,
            video_id, created_at, updated_at, hasIndication, hasSolution
     FROM exercises WHERE uuid IN (${placeholders})
@@ -250,6 +253,7 @@ function hydrate(db, merged) {
     const row = byUuid.get(uuid);
     return {
       uuid,
+      content_type: row?.content_type ?? 'exercice',
       title:        row?.title        ?? '',
       level:        row?.level        ?? null,
       module:       row?.module       ?? null,

@@ -65,6 +65,7 @@ export const filters = writable({
   hasSolution: '',
   hasIndication: '',
   hasVideo: '',
+  qcm: '',
   filiere: '',
   cpge: '',
   prepa: '',
@@ -118,6 +119,7 @@ export const hasActiveFilters = derived(
       ($filters.hasSolution !== '' && $filters.hasSolution !== null && $filters.hasSolution !== undefined) ||
       ($filters.hasIndication !== '' && $filters.hasIndication !== null && $filters.hasIndication !== undefined) ||
       ($filters.hasVideo !== '' && $filters.hasVideo !== null && $filters.hasVideo !== undefined) ||
+      Boolean($filters.qcm) ||
       hasSortOverride
     );
   }
@@ -349,6 +351,7 @@ export const searchActions = {
       hasSolution: '',
       hasIndication: '',
       hasVideo: '',
+      qcm: '',
       filiere: '',
       cpge: '',
       prepa: '',
@@ -470,6 +473,9 @@ export const searchActions = {
       if (currentFilters.hasVideo !== '' && currentFilters.hasVideo !== null && currentFilters.hasVideo !== undefined) {
         searchParams.set('hasVideo', String(currentFilters.hasVideo));
       }
+      if (currentFilters.qcm) {
+        searchParams.set('qcm', String(currentFilters.qcm));
+      }
 
       const sortParam = resolveSortParam(currentFilters);
       if (sortParam) {
@@ -588,6 +594,9 @@ export const searchActions = {
       }
       if (currentFilters.hasVideo !== '' && currentFilters.hasVideo !== null && currentFilters.hasVideo !== undefined) {
         searchParams.set('hasVideo', String(currentFilters.hasVideo));
+      }
+      if (currentFilters.qcm) {
+        searchParams.set('qcm', String(currentFilters.qcm));
       }
 
       const sortParam = resolveSortParam(currentFilters);
@@ -900,6 +909,9 @@ export const suggestionActions = {
       }
       if (currentFilters.hasVideo !== '' && currentFilters.hasVideo !== undefined && currentFilters.hasVideo !== null) {
         params.set('hasVideo', String(currentFilters.hasVideo));
+      }
+      if (currentFilters.qcm) {
+        params.set('qcm', String(currentFilters.qcm));
       }
 
       return params;

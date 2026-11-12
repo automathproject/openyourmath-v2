@@ -52,6 +52,7 @@ function cacheFullExercise(index, fullExercise) {
     const nextList = [...list];
     nextList[index] = {
       ...nextList[index],
+      content_type: fullExercise.content_type ?? nextList[index].content_type,
       title: fullExercise.title ?? nextList[index].title,
       chapter: fullExercise.chapter ?? nextList[index].chapter,
       theme: fullExercise.theme ?? nextList[index].theme,
@@ -264,6 +265,7 @@ export const listActions = {
             console.log(`Metadata loaded for ${uuid}:`, !!data.exercise);
             return { 
               uuid: uuid.trim(), 
+              content_type: data.exercise.content_type,
               title: data.exercise.title,
               chapter: data.exercise.chapter,
               theme: data.exercise.theme,
@@ -462,6 +464,8 @@ export const listActions = {
     // Ajouter l'exercice avec les métadonnées complètes
     const newExercise = {
       uuid: exerciseData.uuid,
+      // 'qcm' pour un QCM : la liste propose alors une session en direct.
+      content_type: exerciseData.content_type,
       title: exerciseData.title || `Exercice ${exerciseData.uuid.slice(0, 8)}...`,
       chapter: exerciseData.chapter,
       theme: exerciseData.theme,

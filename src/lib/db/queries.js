@@ -1,4 +1,5 @@
 // src/lib/db/queries.js - Version corrigée avec recherche insensible à la casse ET preview
+import { qcmFilterClause } from './contentType.js';
 import Database from 'better-sqlite3';
 import path from 'path';
 import { cpgeFilterClauses } from './cpge.js';
@@ -322,11 +323,14 @@ function buildSearchContext(query = '', filters = {}, sortOption = null) {
     }
   }
 
+  const qcmClause = qcmFilterClause(filterValues.qcm, 'e');
+  if (qcmClause) whereClauses.push(qcmClause);
+
   const cpge = cpgeFilterClauses(filterValues, 'e');
   whereClauses.push(...cpge.clauses);
   params.push(...cpge.params);
 
-  const selectBase =`SELECT e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.license_code, e.license_url, e.video_id, e.created_at, e.updated_at, e.preview,
+  const selectBase =`SELECT e.uuid, e.content_type, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty, e.module, e.author, e.organization, e.license_code, e.license_url, e.video_id, e.created_at, e.updated_at, e.preview,
                 e.hasIndication, e.hasSolution`;
 
   const selectClause = useFts
@@ -501,7 +505,7 @@ export async function getExerciseByUuid(uuid) {
     
     const exercise = db.prepare(`
       SELECT 
-        uuid, title, chapter, subchapter, theme, level, difficulty, module,
+        uuid, content_type, title, chapter, subchapter, theme, level, difficulty, module,
         author, organization, license_code, license_url,
         video_id, created_at, updated_at, preview,
         hasIndication, hasSolution,
@@ -830,6 +834,8 @@ export async function getChapterStructureFiltered(query = '', filters = {}) {
     } else if (filters.hasIndication === '0' || filters.hasIndication === 0 || filters.hasIndication === false) {
       baseWhere += ' AND e.hasIndication = 0';
     }
+    const qcmClause = qcmFilterClause(filters.qcm, 'e');
+    if (qcmClause) baseWhere += ` AND ${qcmClause}`;
     if (filters.hasVideo !== undefined && filters.hasVideo !== null && filters.hasVideo !== '') {
       let wantsVideo = filters.hasVideo;
       if (typeof wantsVideo !== 'boolean') {
@@ -1437,7 +1443,7 @@ export async function getRandomExercises(limit = 12) {
 
     const rows = db.prepare(`
       SELECT 
-        uuid, title, chapter, subchapter, theme, module, level, difficulty, 
+        uuid, content_type, title, chapter, subchapter, theme, module, level, difficulty, 
         author, organization, license_code, license_url, preview, created_at, updated_at,
         hasIndication, hasSolution
       FROM exercises

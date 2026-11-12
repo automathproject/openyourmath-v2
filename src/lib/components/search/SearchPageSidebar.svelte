@@ -285,6 +285,15 @@
       >
         Vidéo
       </button>
+      <button
+        type="button"
+        class="sps-check-row"
+        class:sps-check-row--on={$filters.qcm === '1'}
+        aria-pressed={$filters.qcm === '1'}
+        on:click={() => toggleFlag('qcm')}
+      >
+        QCM
+      </button>
     </div>
   </div>
 

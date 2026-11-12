@@ -157,6 +157,9 @@
   {:else}
     <!-- Detailed : meta row (chips + stars + indicators) then title -->
     <div class="rc-meta-row">
+      {#if exercise.content_type === 'qcm'}
+        <span class="chip rc-chip-qcm" title="Questions à choix multiples, à jouer en ligne">QCM</span>
+      {/if}
       {#if showLevelBadge}
         <span class="chip {isSelected ? 'chip-teal-solid' : 'chip-teal'}">{exercise.level}</span>
       {/if}
@@ -198,6 +201,9 @@
 
   {#if isCompact}
     <div class="compact-meta">
+      {#if exercise.content_type === 'qcm'}
+        <span class="chip rc-chip-qcm" title="Questions à choix multiples, à jouer en ligne">QCM</span>
+      {/if}
       {#if showLevelBadge}
         <span class="chip {isSelected ? 'chip-teal-solid' : 'chip-teal'}">{exercise.level}</span>
       {/if}
@@ -356,6 +362,7 @@
     flex-shrink: 0;
   }
   .rc-indicator--video  { color: var(--color-brand-600); }
+  .rc-chip-qcm { background: var(--color-brand-700, #0f766e); color: #fff; font-weight: 700; letter-spacing: 0.03em; }
   .rc-indicator--solution {
     display: inline-flex;
     align-items: center;
