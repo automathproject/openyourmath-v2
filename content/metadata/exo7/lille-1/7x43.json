@@ -1,0 +1,25 @@
+{
+  "uuid": "7x43",
+  "source_path": "exo7/lille-1/7x43.tex",
+  "summary": "Trouver l'équation cartésienne d'une droite D dans le plan, perpendiculaire à la droite y=x et située à une distance de 1 de l'origine.",
+  "concepts": [
+    "équation cartésienne de droite",
+    "produit scalaire",
+    "distance d'un point à une droite",
+    "vecteur normal",
+    "orthogonalité de droites"
+  ],
+  "methods": [
+    "calcul de distance point-droite",
+    "détermination de vecteur directeur",
+    "utilisation de la condition de perpendicularité"
+  ],
+  "objects": [
+    "droite dans le plan",
+    "vecteur normal",
+    "point origine"
+  ],
+  "content_hash": "ad367cbd679b3ee273f761597696678ee0e3a74e41c52ad041eaa809de76a973",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:45:10.993Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "ACSo",
+  "source_path": "exo7/worms/ACSo.tex",
+  "summary": "L'exercice demande d'évaluer la véracité de quatre affirmations concernant une variable aléatoire normale de paramètres donnés, en analysant des probabilités, des quantiles et des transformations linéaires.",
+  "concepts": [
+    "loi normale",
+    "écart-type",
+    "variance",
+    "transformation linéaire de variable aléatoire",
+    "quantiles",
+    "probabilité conditionnelle"
+  ],
+  "methods": [
+    "standardisation",
+    "calcul de probabilités à partir de la loi normale",
+    "linéarité de l'espérance et de la variance"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "transformation affine de variable aléatoire",
+    "intervalle de confiance"
+  ],
+  "content_hash": "4c4e3140fab934492c1cba77311a2a8daf24f34e469e337519a3d24fb40a0ac7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:56:44.533Z"
+}

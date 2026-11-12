@@ -1,0 +1,24 @@
+{
+  "uuid": "BVeh",
+  "source_path": "exo7/lille-2/BVeh.tex",
+  "summary": "L'exercice demande de déterminer quelles expressions parmi quatre propositions sont des primitives de la fonction f(x) = x e^x sur ℝ. Il s'agit d'identifier les formes correctes de la primitive F(x) en utilisant les propriétés de l'intégration.",
+  "concepts": [
+    "intégration par parties",
+    "primitive d'une fonction",
+    "fonction exponentielle",
+    "constante d'intégration",
+    "calcul de primitive"
+  ],
+  "methods": [
+    "intégration par parties",
+    "détermination de primitive"
+  ],
+  "objects": [
+    "fonction f(x) = x e^x",
+    "primitive F(x)",
+    "constante d'intégration k"
+  ],
+  "content_hash": "fb4dc090173bf3b89fe603e2cd171d1d08182deedbec83b6743157660f30f561",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:25:39.450Z"
+}

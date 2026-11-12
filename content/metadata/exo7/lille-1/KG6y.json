@@ -1,0 +1,28 @@
+{
+  "uuid": "KG6y",
+  "source_path": "exo7/lille-1/KG6y.tex",
+  "summary": "L'exercice demande de déterminer l'image réciproque d'intervalles par une fonction quadratique définie sur les réels. Il s'agit d'identifier les ensembles de réels dont l'image par la fonction appartient à des intervalles donnés.",
+  "concepts": [
+    "image réciproque",
+    "fonction quadratique",
+    "intervalle",
+    "inclusion d'ensembles",
+    "résolution d'inéquation",
+    "fonction définie sur les réels"
+  ],
+  "methods": [
+    "résolution d'inéquation",
+    "analyse des conditions d'appartenance",
+    "comparaison d'intervalles"
+  ],
+  "objects": [
+    "fonction f(x) = x² + 1",
+    "intervalle [1,5]",
+    "intervalle [0,5]",
+    "ensemble [-2,2]",
+    "ensemble [0,2]"
+  ],
+  "content_hash": "922f45171efb925a988166ba583971fe9298b2bc604f4073777257bff8563487",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:47:45.825Z"
+}

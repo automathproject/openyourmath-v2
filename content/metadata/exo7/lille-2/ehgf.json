@@ -1,0 +1,27 @@
+{
+  "uuid": "ehgf",
+  "source_path": "exo7/lille-2/ehgf.tex",
+  "summary": "L'exercice demande d'identifier les assertions vraies concernant les propriétés d'inversibilité et de symétrie des matrices carrées, en se basant sur leurs définitions et leurs caractéristiques structurelles.",
+  "concepts": [
+    "inversibilité d'une matrice",
+    "matrice diagonale",
+    "matrice symétrique",
+    "matrice triangulaire",
+    "transposée d'une matrice",
+    "indépendance linéaire des vecteurs colonnes"
+  ],
+  "methods": [
+    "définition de matrice diagonale",
+    "définition de matrice symétrique",
+    "définition de matrice triangulaire",
+    "critère d'inversibilité par indépendance linéaire"
+  ],
+  "objects": [
+    "matrice carrée",
+    "coefficient diagonal",
+    "transposée d'une matrice"
+  ],
+  "content_hash": "cc43cde57574b634a07f9d34dc3c25f72f928dfe4ad3ecfe8e89e2389716b130",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:53:10.474Z"
+}

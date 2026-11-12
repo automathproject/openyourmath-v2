@@ -1,0 +1,25 @@
+{
+  "uuid": "iW9n",
+  "source_path": "exo7/lille-1/iW9n.tex",
+  "summary": "L'exercice demande de déterminer les limites des suites $u_n = n \\ln(1 + 1/n)$ et $v_n = (1 + 1/n)^n$ lorsque $n$ tend vers l'infini, parmi plusieurs propositions données.",
+  "concepts": [
+    "limite de suite",
+    "équivalence de suites",
+    "fonction exponentielle",
+    "fonction logarithme",
+    "limite de suite composée"
+  ],
+  "methods": [
+    "développement limité",
+    "équivalence asymptotique",
+    "utilisation de la fonction exponentielle"
+  ],
+  "objects": [
+    "suite numérique",
+    "fonction logarithme",
+    "fonction exponentielle"
+  ],
+  "content_hash": "31df52243a5d8be29181b26a8d1957f3e54091ef8901590d8f36f0d6a869eda9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:59:49.065Z"
+}

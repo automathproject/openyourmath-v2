@@ -1,0 +1,27 @@
+{
+  "uuid": "R1mK",
+  "source_path": "exo7/lille-1/R1mK.tex",
+  "summary": "L'exercice demande d'identifier les propriétés d'une droite D passant par l'origine et le point A(1,1) en vérifiant si des vecteurs sont directeurs ou normaux, et si des équations cartésiennes sont correctes.",
+  "concepts": [
+    "vecteur directeur",
+    "vecteur normal",
+    "équation cartésienne de droite",
+    "produit scalaire",
+    "déterminant",
+    "appartenance d'un point à une droite"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "vérification d'appartenance à une droite",
+    "identification de vecteur directeur"
+  ],
+  "objects": [
+    "droite du plan",
+    "vecteur du plan",
+    "point du plan",
+    "équation cartésienne"
+  ],
+  "content_hash": "5027b120de413b0c9838271d74a544ae5d2460cf10741ec602e35ba05e6a9d01",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:45:36.063Z"
+}

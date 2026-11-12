@@ -1,0 +1,28 @@
+{
+  "uuid": "RLPV",
+  "source_path": "exo7/worms/RLPV.tex",
+  "summary": "L'exercice porte sur des probabilités discrètes avec deux dés à trois faces. Il demande d'identifier des partitions d'univers, de valider des égalités d'événements, de calculer des probabilités conditionnelles et des probabilités d'événements composés.",
+  "concepts": [
+    "probabilité discrète",
+    "événement",
+    "partition d'un univers",
+    "probabilité conditionnelle",
+    "indépendance d'événements",
+    "algèbre des événements"
+  ],
+  "methods": [
+    "développement d'algèbre booléenne",
+    "calcul de probabilité d'événements composés",
+    "utilisation de la formule des probabilités conditionnelles",
+    "vérification d'inclusion d'événements"
+  ],
+  "objects": [
+    "dés à trois faces",
+    "événements élémentaires",
+    "somme de deux dés",
+    "probabilité conditionnelle"
+  ],
+  "content_hash": "b79dc21995115cd90983d33cd685bbf44e67e5738a1143ee35251d3af94503c0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:57:15.779Z"
+}

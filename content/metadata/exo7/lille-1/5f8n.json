@@ -1,0 +1,27 @@
+{
+  "uuid": "5f8n",
+  "source_path": "exo7/lille-1/5f8n.tex",
+  "summary": "L'exercice demande de déterminer quelles équations cartésiennes parmi quatre propositions correspondent à des plans parallèles contenant respectivement deux droites données dans l'espace.",
+  "concepts": [
+    "équation cartésienne d'un plan",
+    "produit vectoriel",
+    "vecteur directeur d'une droite",
+    "vecteur normal à un plan",
+    "géométrie affine dans l'espace"
+  ],
+  "methods": [
+    "calcul du produit vectoriel",
+    "détermination d'une équation de plan à partir d'un point et d'un vecteur normal",
+    "vérification d'appartenance d'un point à un plan"
+  ],
+  "objects": [
+    "droite dans l'espace",
+    "plan dans l'espace",
+    "vecteur directeur",
+    "vecteur normal",
+    "point de l'espace"
+  ],
+  "content_hash": "eb0f03fb3ea9f3ac38dc2c2d5dfc4761d36e2281b49d580d4c98c30543c9e5aa",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:43:42.537Z"
+}

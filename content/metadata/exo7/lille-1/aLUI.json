@@ -1,0 +1,27 @@
+{
+  "uuid": "aLUI",
+  "source_path": "exo7/lille-1/aLUI.tex",
+  "summary": "L'exercice demande de déterminer les bonnes réponses concernant la dérivée et la parité de la fonction f(x) = arcsin(1-2x²) définie sur l'intervalle [-1,1]. Il s'agit d'analyser les propriétés de dérivabilité et de symétrie de cette fonction.",
+  "concepts": [
+    "dérivée d'une fonction composée",
+    "parité d'une fonction",
+    "continuité",
+    "limite de fonction",
+    "dérivabilité en un point"
+  ],
+  "methods": [
+    "calcul de dérivée",
+    "utilisation de la parité",
+    "détermination de la constante d'intégration",
+    "étude des limites latérales"
+  ],
+  "objects": [
+    "fonction composée",
+    "fonction paire",
+    "dérivée",
+    "constante d'intégration"
+  ],
+  "content_hash": "0733ab94d66c54d489aa46a2ed7bb0ff362cd7fa1646228a834cb2022df1743a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:32:47.319Z"
+}

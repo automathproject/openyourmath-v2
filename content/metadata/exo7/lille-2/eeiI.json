@@ -1,0 +1,28 @@
+{
+  "uuid": "eeiI",
+  "source_path": "exo7/lille-2/eeiI.tex",
+  "summary": "L'exercice demande d'évaluer la véracité de quatre affirmations concernant des propriétés de dérivées, des changements de variables pour le calcul d'intégrales, et des primitives de fonctions rationnelles. Il porte sur l'intégrale d'une fonction trigonométrique et son évaluation via un changement de variable.",
+  "concepts": [
+    "dérivée de fonction trigonométrique",
+    "changement de variable",
+    "primitive de fonction rationnelle",
+    "intégrale définie",
+    "fonction trigonométrique",
+    "fonction rationnelle"
+  ],
+  "methods": [
+    "substitution",
+    "calcul de dérivée",
+    "évaluation d'intégrale définie",
+    "recherche de primitive"
+  ],
+  "objects": [
+    "fonction tan(x)",
+    "intégrale de fonction trigonométrique",
+    "changement de variable t=tan(x)",
+    "primitive de 1/(3+t²)"
+  ],
+  "content_hash": "21db6b8e26dd151f20231c9642305c131906c24d8d69c8b3aa263c9b8266456a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:27:28.572Z"
+}

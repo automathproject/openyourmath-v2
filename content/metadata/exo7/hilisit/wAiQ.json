@@ -1,0 +1,25 @@
+{
+  "uuid": "wAiQ",
+  "source_path": "exo7/hilisit/wAiQ.tex",
+  "summary": "L'exercice demande d'évaluer la véracité de quatre assertions concernant les chiffres des unités des entiers pairs, multiples de 3, 4 et 5. Il s'agit de déterminer quelles propositions sont universellement vraies pour les entiers concernés.",
+  "concepts": [
+    "logique propositionnelle",
+    "divisibilité",
+    "propriétés des entiers",
+    "chiffre des unités",
+    "multiple d'un entier",
+    "entier pair"
+  ],
+  "methods": [
+    "analyse de contre-exemple",
+    "vérification par cas"
+  ],
+  "objects": [
+    "entier naturel",
+    "chiffre des unités",
+    "multiple d'un entier"
+  ],
+  "content_hash": "14448ae9b19866d6a20ca91606e48cee32ee3a7db5d71f11b324dc4e749be940",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:50:58.503Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "XD5y",
+  "source_path": "exo7/lille-2/XD5y.tex",
+  "summary": "L'exercice demande d'analyser un système linéaire à trois inconnues et un paramètre réel, en déterminant quelles assertions sur ses solutions sont vraies. Il s'agit d'étudier la compatibilité et la nature des solutions selon la valeur du paramètre.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "incompatibilité d'un système",
+    "solution paramétrique",
+    "espace des solutions"
+  ],
+  "methods": [
+    "méthode du pivot de Gauss",
+    "réduction de système",
+    "analyse de compatibilité"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice augmentée",
+    "paramètre réel"
+  ],
+  "content_hash": "21a30b702ceef014c72ee4ff77b3734a5f434c457e0de3c9334ab19d068ab3fc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:33:38.687Z"
+}

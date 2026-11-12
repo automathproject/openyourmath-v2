@@ -1,0 +1,25 @@
+{
+  "uuid": "3qGX",
+  "source_path": "exo7/lille-1/3qGX.tex",
+  "summary": "L'exercice demande de déterminer les limites des suites $u_n = \\sqrt{n+1} - \\sqrt{n}$ et $v_n = \\cos\\left(\\frac{n^2+1}{n^2-1}\\pi\\right)$ lorsque $n$ tend vers l'infini, parmi plusieurs propositions.",
+  "concepts": [
+    "limite de suite",
+    "rationalisation",
+    "limite de fonction composée",
+    "cosinus",
+    "limite de fraction rationnelle"
+  ],
+  "methods": [
+    "rationalisation",
+    "simplification algébrique",
+    "évaluation de limite de fonction trigonométrique"
+  ],
+  "objects": [
+    "suite numérique",
+    "fonction cosinus",
+    "expression algébrique"
+  ],
+  "content_hash": "146c6647e24f14f364453c83ba9befe55ef9a9d4b017139d55ca0b2f074087ed",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:58:57.645Z"
+}

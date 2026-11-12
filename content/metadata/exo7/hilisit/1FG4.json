@@ -1,0 +1,25 @@
+{
+  "uuid": "1FG4",
+  "source_path": "exo7/hilisit/1FG4.tex",
+  "summary": "L'exercice demande d'identifier parmi une liste de nombres celui qui satisfait simultanément deux congruences modulo 14 et modulo 8.",
+  "concepts": [
+    "congruence",
+    "arithmétique modulaire",
+    "division euclidienne",
+    "système de congruences",
+    "théorème des restes chinois"
+  ],
+  "methods": [
+    "calcul de reste",
+    "vérification de congruence",
+    "décomposition euclidienne"
+  ],
+  "objects": [
+    "nombre entier",
+    "congruence modulo 14",
+    "congruence modulo 8"
+  ],
+  "content_hash": "3c374a90e1d8d4a7e0f836ef7d4e3caaba43149d7755ed8466b4c68e0914086a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:22:31.178Z"
+}

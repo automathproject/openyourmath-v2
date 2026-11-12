@@ -1,0 +1,25 @@
+{
+  "uuid": "nR2F",
+  "source_path": "exo7/hilisit/nR2F.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant un entier n tel que 5n soit un multiple de 7. Il s'agit d'analyser les relations de divisibilité entre n et 7.",
+  "concepts": [
+    "théorème de Bézout",
+    "lemme de Gauss",
+    "divisibilité dans Z",
+    "nombres premiers entre eux",
+    "pgcd",
+    "multiple"
+  ],
+  "methods": [
+    "application du lemme de Gauss",
+    "analyse des relations de divisibilité"
+  ],
+  "objects": [
+    "entier n",
+    "multiple de 7",
+    "pgcd(5,7)"
+  ],
+  "content_hash": "6fe305f4e516132a3cb012dcc3ab491597cb85fe0f5fa23f52aea2f980035d1c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:24:18.756Z"
+}

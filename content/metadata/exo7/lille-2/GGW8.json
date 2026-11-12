@@ -1,0 +1,28 @@
+{
+  "uuid": "GGW8",
+  "source_path": "exo7/lille-2/GGW8.tex",
+  "summary": "L'exercice demande d'analyser un système linéaire à paramètres (a, m) en déterminant les assertions vraies concernant son existence et son unicité de solution. Il s'agit d'étudier les conditions sur les paramètres pour que le système soit compatible ou non.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "incompatibilité d'un système",
+    "solution unique",
+    "solution infinie",
+    "équivalence de systèmes"
+  ],
+  "methods": [
+    "méthode du pivot de Gauss",
+    "réduction de système",
+    "analyse de compatibilité",
+    "comparaison de systèmes équivalents"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice augmentée",
+    "paramètres réels",
+    "inconnues (x, y, z)"
+  ],
+  "content_hash": "84adec7e01379e9b2037c568358839e9122f9c77d3d75ae6943830e271680527",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:33:26.216Z"
+}

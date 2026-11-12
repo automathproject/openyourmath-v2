@@ -1,0 +1,25 @@
+{
+  "uuid": "Ehkl",
+  "source_path": "exo7/hilisit/Ehkl.tex",
+  "summary": "L'exercice demande de déterminer quelle transformation d'une solution d'une équation différentielle linéaire du premier ordre $y'+5y = 5x^2 + 2x$ donne une solution de l'équation homogène associée $y'+5y = 0$.",
+  "concepts": [
+    "équation différentielle linéaire du premier ordre",
+    "solution générale",
+    "équation homogène associée",
+    "solution particulière",
+    "linéarité des équations différentielles"
+  ],
+  "methods": [
+    "vérification de solution",
+    "calcul de dérivée",
+    "substitution dans l'équation différentielle"
+  ],
+  "objects": [
+    "équation différentielle linéaire",
+    "fonction solution",
+    "fonction transformée"
+  ],
+  "content_hash": "82afb456b19399292c5a831de02daa6f2f7d7bd942270b41afaed3b5298a4844",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:37:41.127Z"
+}

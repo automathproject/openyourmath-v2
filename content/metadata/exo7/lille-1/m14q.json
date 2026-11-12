@@ -1,0 +1,24 @@
+{
+  "uuid": "m14q",
+  "source_path": "exo7/lille-1/m14q.tex",
+  "summary": "L'exercice demande de déterminer quelles propriétés supplémentaires (injectivité, surjectivité, monotonie) impliquent qu'une fonction continue définie sur un segment est bijective, étant donné que ses valeurs aux bornes du segment correspondent aux bornes de l'image.",
+  "concepts": [
+    "théorème des valeurs intermédiaires",
+    "fonction continue",
+    "injectivité",
+    "surjectivité",
+    "bijection",
+    "monotonie stricte"
+  ],
+  "methods": [
+    "application du théorème des valeurs intermédiaires",
+    "analyse des conditions aux bornes"
+  ],
+  "objects": [
+    "fonction continue définie sur un segment",
+    "intervalle fermé borné"
+  ],
+  "content_hash": "99cadf8a18345097e133eef1376353de688afcb2b53c935fc7e56379574897cb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:30:42.353Z"
+}

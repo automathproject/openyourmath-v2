@@ -1,0 +1,28 @@
+{
+  "uuid": "X9wY",
+  "source_path": "exo7/lille-2/X9wY.tex",
+  "summary": "L'exercice demande d'analyser un système linéaire à paramètres (a, b, c) et d'évaluer la validité de quatre assertions concernant son comportement en fonction des valeurs des paramètres. L'objectif est de déterminer les conditions sous lesquelles le système admet une solution unique, une infinité de solutions ou aucune solution.",
+  "concepts": [
+    "système linéaire",
+    "paramètre",
+    "rang d'une matrice",
+    "solution unique",
+    "solution infinie",
+    "solution sans solution",
+    "équivalence de systèmes"
+  ],
+  "methods": [
+    "méthode du pivot de Gauss",
+    "réduction de système",
+    "analyse de cas par valeurs des paramètres"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice augmentée",
+    "variables (x, y, z)",
+    "paramètres (a, b, c)"
+  ],
+  "content_hash": "bd467d90214478c7258bcbede8ed4377d27d6e30273cc9433bcbe436c8764a4d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:33:36.177Z"
+}

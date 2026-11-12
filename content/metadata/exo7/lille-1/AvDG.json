@@ -1,0 +1,26 @@
+{
+  "uuid": "AvDG",
+  "source_path": "exo7/lille-1/AvDG.tex",
+  "summary": "L'exercice demande d'étudier la limite en 1 par la gauche d'une fonction définie sur ]0,1[ qui prend la valeur 1 sur les irrationnels et 1/m sur les rationnels n/m en fraction irréductible. Il faut déterminer quelles assertions sur cette limite sont vraies.",
+  "concepts": [
+    "densité des irrationnels",
+    "limite d'une fonction",
+    "suite convergente",
+    "fonction définie par morceaux",
+    "limite par la gauche"
+  ],
+  "methods": [
+    "construction de suites convergentes",
+    "évaluation de la limite sur des suites",
+    "raisonnement par densité"
+  ],
+  "objects": [
+    "fonction réelle",
+    "suite d'irrationnels",
+    "suite de rationnels",
+    "limite en un point"
+  ],
+  "content_hash": "6c202ad08172583835677002970718277fda2f39e70e0eeaa11bf7bc5610f5e8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:29:28.611Z"
+}

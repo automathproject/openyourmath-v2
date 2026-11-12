@@ -1,0 +1,28 @@
+{
+  "uuid": "r9Di",
+  "source_path": "exo7/hilisit/r9Di.tex",
+  "summary": "L'exercice demande d'analyser les propriétés d'une solution particulière d'une équation différentielle linéaire du premier ordre, en vérifiant la validité de plusieurs affirmations sur son comportement et ses dérivées.",
+  "concepts": [
+    "équation différentielle linéaire du premier ordre",
+    "solution générale",
+    "fonction exponentielle",
+    "dérivée",
+    "croissance/décroissance de fonction",
+    "tangente à une courbe"
+  ],
+  "methods": [
+    "résolution d'équation différentielle linéaire",
+    "calcul de dérivée",
+    "évaluation de fonction en un point",
+    "analyse de signe de fonction"
+  ],
+  "objects": [
+    "équation différentielle y'=2y",
+    "solution particulière y(x)",
+    "fonction f(x)=-e^{2x}",
+    "pente de tangente"
+  ],
+  "content_hash": "ee0327e272752d1116d7e7c72fbb136ec4681556b931adeda95d984e3cbdbb91",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:39:26.112Z"
+}

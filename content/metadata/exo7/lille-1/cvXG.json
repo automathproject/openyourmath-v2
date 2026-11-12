@@ -1,0 +1,25 @@
+{
+  "uuid": "cvXG",
+  "source_path": "exo7/lille-1/cvXG.tex",
+  "summary": "L'exercice demande d'analyser les propriétés d'une fonction définie par f(x) = racine cubique de (1 - x³) et de déterminer quelles assertions parmi quatre propositions sont vraies concernant son domaine de définition, sa monotonie, sa bijectivité et son application réciproque.",
+  "concepts": [
+    "fonction définie sur ℝ",
+    "fonction strictement décroissante",
+    "bijection",
+    "application réciproque",
+    "fonction cubique"
+  ],
+  "methods": [
+    "analyse de la monotonie",
+    "recherche de l'application réciproque",
+    "vérification de la bijectivité"
+  ],
+  "objects": [
+    "fonction f(x) = racine cubique de (1 - x³)",
+    "application réciproque",
+    "domaine de définition"
+  ],
+  "content_hash": "61286784aa2886778ff3d9b5712e0ed6d8569f14f5a1b6cfb07b39646714f53f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:43:17.205Z"
+}

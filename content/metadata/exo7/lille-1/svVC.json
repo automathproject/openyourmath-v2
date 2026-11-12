@@ -1,0 +1,25 @@
+{
+  "uuid": "svVC",
+  "source_path": "exo7/lille-1/svVC.tex",
+  "summary": "L'exercice demande de déterminer quel sous-ensemble X d'un ensemble E satisfait deux conditions : être disjoint de A et former une union avec A égale à E. Le contexte porte sur les relations entre sous-ensembles d'un ensemble donné.",
+  "concepts": [
+    "complémentaire d'un ensemble",
+    "partition d'un ensemble",
+    "inclusion d'ensembles",
+    "opérations sur les ensembles",
+    "relation d'intersection",
+    "relation d'union"
+  ],
+  "methods": [
+    "utilisation des propriétés des opérations ensemblistes",
+    "identification du complémentaire"
+  ],
+  "objects": [
+    "ensemble",
+    "sous-ensemble",
+    "complémentaire d'un sous-ensemble"
+  ],
+  "content_hash": "4d53a9f0e0bfa2834db0366a655e743b647dec7abf41493a1ec0d6c8a28dbcc8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:50:41.789Z"
+}

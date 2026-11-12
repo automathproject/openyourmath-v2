@@ -1,0 +1,26 @@
+{
+  "uuid": "LDHh",
+  "source_path": "exo7/hilisit/LDHh.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant les relations d'inclusion, d'intersection et de différence entre un intervalle réel A = [1,3] et un ensemble discret B = {0,1,2,3}.",
+  "concepts": [
+    "inclusion d'ensembles",
+    "intersection d'ensembles",
+    "différence d'ensembles",
+    "appartenance d'un élément à un ensemble",
+    "intervalle réel",
+    "ensemble fini"
+  ],
+  "methods": [
+    "vérification d'appartenance",
+    "calcul d'intersection",
+    "calcul de différence d'ensembles"
+  ],
+  "objects": [
+    "intervalle [1,3]",
+    "ensemble {0,1,2,3}",
+    "élément 3/2"
+  ],
+  "content_hash": "8f67d2289ed0b80e31af202d4b64385f19e28f20ec514280087fed2ac950ca2a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:47:55.657Z"
+}

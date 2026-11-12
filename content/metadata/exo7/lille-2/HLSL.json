@@ -1,0 +1,25 @@
+{
+  "uuid": "HLSL",
+  "source_path": "exo7/lille-2/HLSL.tex",
+  "summary": "L'exercice demande de vérifier la validité de quatre égalités concernant des intégrales de fonctions rationnelles impliquant le logarithme naturel. Il s'agit de déterminer quelles primitives proposées sont correctes pour des intégrales définies sur l'intervalle ]1, +∞[.",
+  "concepts": [
+    "changement de variable",
+    "primitive d'une fonction",
+    "intégrale indéfinie",
+    "fonction logarithme",
+    "fonction rationnelle"
+  ],
+  "methods": [
+    "changement de variable",
+    "intégration directe",
+    "simplification algébrique"
+  ],
+  "objects": [
+    "intégrale indéfinie",
+    "fonction de la forme 1/(x ln²x)",
+    "fonction de la forme 1/(x√ln x)"
+  ],
+  "content_hash": "51e7a64fb3e4ca09951472ae924d643902e08dcb3bb778f01b9d084bc6f4f3c2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:26:00.071Z"
+}

@@ -1,0 +1,23 @@
+{
+  "uuid": "3pgF",
+  "source_path": "exo7/hilisit/3pgF.tex",
+  "summary": "L'exercice demande de déterminer les valeurs des paramètres a et b pour que la fonction y(x) = 7e^{-5x} soit solution d'une équation différentielle du premier ordre y' = ay avec une condition initiale y(0) = b.",
+  "concepts": [
+    "équation différentielle linéaire du premier ordre",
+    "solution générale d'équation différentielle",
+    "condition initiale",
+    "fonction exponentielle"
+  ],
+  "methods": [
+    "identification de paramètres",
+    "résolution d'équation différentielle linéaire"
+  ],
+  "objects": [
+    "équation différentielle",
+    "fonction solution",
+    "condition initiale"
+  ],
+  "content_hash": "694e12ad865733b7a4ce71b70424b7a57b306d6919587cee4090b36e04a59362",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:36:57.258Z"
+}

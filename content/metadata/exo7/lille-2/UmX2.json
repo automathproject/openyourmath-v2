@@ -1,0 +1,25 @@
+{
+  "uuid": "UmX2",
+  "source_path": "exo7/lille-2/UmX2.tex",
+  "summary": "L'exercice demande de déterminer si les applications f et g de R³ vers R² et R respectivement sont linéaires, en fonction des valeurs des paramètres réels a et b. Il s'agit d'analyser les conditions de linéarité pour ces applications.",
+  "concepts": [
+    "application linéaire",
+    "condition de linéarité",
+    "additivité",
+    "homogénéité",
+    "image de l'élément nul"
+  ],
+  "methods": [
+    "vérification des propriétés de linéarité",
+    "test de l'image de l'élément nul",
+    "test de l'additivité"
+  ],
+  "objects": [
+    "application f de R³ dans R²",
+    "application g de R³ dans R",
+    "paramètres réels a et b"
+  ],
+  "content_hash": "f6fd6ef79ef34cac9a334a2f8edb977ea3fd3ed86afa0abb996253abcf7f69c2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:21:44.495Z"
+}

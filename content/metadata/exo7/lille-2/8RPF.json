@@ -1,0 +1,25 @@
+{
+  "uuid": "8RPF",
+  "source_path": "exo7/lille-2/8RPF.tex",
+  "summary": "L'exercice demande de vérifier la validité de quatre égalités impliquant des développements limités de la fonction logarithme naturel en 0, en identifiant celles qui sont correctes.",
+  "concepts": [
+    "développement limité",
+    "fonction logarithme",
+    "notation petit o",
+    "développement limité d'ordre 2",
+    "changement de variable"
+  ],
+  "methods": [
+    "substitution",
+    "comparaison de développements limités",
+    "évaluation de limites"
+  ],
+  "objects": [
+    "fonction ln(1 + t)",
+    "développement limité en 0",
+    "notation o(x^n)"
+  ],
+  "content_hash": "c970254a1b0602a28121a6c112f25d30b505e619819813071d0f720d6eae21af",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:34:31.658Z"
+}

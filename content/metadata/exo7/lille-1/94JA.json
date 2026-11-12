@@ -1,0 +1,24 @@
+{
+  "uuid": "94JA",
+  "source_path": "exo7/lille-1/94JA.tex",
+  "summary": "L'exercice demande de déterminer le symbole logique (implication simple, double implication ou aucun) qui rend vraie l'assertion reliant l'inégalité |x²| < 5 et l'intervalle -√5 < x < √5.",
+  "concepts": [
+    "implication logique",
+    "équivalence logique",
+    "inégalité",
+    "valeur absolue",
+    "intervalle"
+  ],
+  "methods": [
+    "analyse d'implication",
+    "vérification d'équivalence"
+  ],
+  "objects": [
+    "inégalité",
+    "intervalle",
+    "valeur absolue"
+  ],
+  "content_hash": "0b7ddd1e7551d17d9e6324cb1d657332213c55363eb33fae1a2f3135a34fddeb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:46:45.660Z"
+}

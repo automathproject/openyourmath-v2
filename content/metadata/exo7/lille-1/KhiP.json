@@ -1,0 +1,25 @@
+{
+  "uuid": "KhiP",
+  "source_path": "exo7/lille-1/KhiP.tex",
+  "summary": "Calculer la somme d'une série alternée impliquant des coefficients binomiaux et des puissances de 1/2, et identifier la valeur correcte parmi des propositions données.",
+  "concepts": [
+    "binôme de Newton",
+    "coefficient binomial",
+    "somme de séries",
+    "puissance d'un nombre",
+    "formule du binôme"
+  ],
+  "methods": [
+    "application du binôme de Newton",
+    "calcul de somme finie",
+    "substitution algébrique"
+  ],
+  "objects": [
+    "coefficient binomial C^k_n",
+    "série alternée",
+    "puissance de 1/2"
+  ],
+  "content_hash": "f3c4e8a72423279852edb25c31b7bbe2e5c20eee98b6366f1a17c46d6bccdb3b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:47:50.616Z"
+}

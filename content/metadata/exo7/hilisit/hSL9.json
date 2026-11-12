@@ -1,0 +1,26 @@
+{
+  "uuid": "hSL9",
+  "source_path": "exo7/hilisit/hSL9.tex",
+  "summary": "L'exercice demande de vérifier si des couples d'entiers donnés (u, v) sont des coefficients de Bézout pour des paires d'entiers (a, b) données, c'est-à-dire s'ils satisfont l'équation au + bv = pgcd(a, b).",
+  "concepts": [
+    "théorème de Bézout",
+    "pgcd",
+    "coefficients de Bézout",
+    "arithmétique dans Z",
+    "nombres premiers entre eux",
+    "algèbre linéaire discrète"
+  ],
+  "methods": [
+    "calcul du pgcd",
+    "vérification d'égalité",
+    "algorithme d'Euclide"
+  ],
+  "objects": [
+    "entiers",
+    "pgcd",
+    "coefficients de Bézout"
+  ],
+  "content_hash": "e4f13c1df3a8f91adde8636e0a3044192ffd8f6feea7818fbcc5cc01acc82745",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:24:08.484Z"
+}

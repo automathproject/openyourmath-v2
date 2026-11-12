@@ -1,0 +1,23 @@
+{
+  "uuid": "t7sL",
+  "source_path": "exo7/hilisit/t7sL.tex",
+  "summary": "L'exercice demande d'identifier la méthode de raisonnement la plus adaptée pour démontrer l'inégalité $2^{n-1} \\le n^n$ pour tout entier naturel $n \\ge 1$. L'énoncé propose plusieurs options : contraposition, disjonction, absurde ou récurrence.",
+  "concepts": [
+    "raisonnement par l'absurde",
+    "raisonnement par récurrence",
+    "inégalité",
+    "entier naturel",
+    "initialisation"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "raisonnement par récurrence"
+  ],
+  "objects": [
+    "inégalité",
+    "entier naturel"
+  ],
+  "content_hash": "b89883833eb4569754d678decf425f7fa98c046a216545dc8604b09ec28afc4d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:50:49.361Z"
+}

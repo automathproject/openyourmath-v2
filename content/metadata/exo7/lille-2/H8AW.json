@@ -1,0 +1,26 @@
+{
+  "uuid": "H8AW",
+  "source_path": "exo7/lille-2/H8AW.tex",
+  "summary": "L'exercice demande d'identifier parmi plusieurs propositions celle(s) qui donne(nt) une primitive correcte de la fonction arctan(x). Il s'agit de vérifier des expressions impliquant des intégrales et des combinaisons de fonctions.",
+  "concepts": [
+    "primitive d'une fonction",
+    "intégration par parties",
+    "fonction arctan",
+    "constante d'intégration",
+    "intégrale indéfinie"
+  ],
+  "methods": [
+    "intégration par parties",
+    "décomposition d'intégrale",
+    "calcul de primitive"
+  ],
+  "objects": [
+    "fonction arctan(x)",
+    "primitive F(x)",
+    "intégrale indéfinie",
+    "constante k"
+  ],
+  "content_hash": "3e7712dc34c22e18e1b1d1ac15bd240947677857ce94e57202eaf5ba16e55e93",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:25:57.127Z"
+}

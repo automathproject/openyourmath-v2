@@ -1,0 +1,26 @@
+{
+  "uuid": "6giY",
+  "source_path": "exo7/lille-1/6giY.tex",
+  "summary": "L'exercice demande d'étudier les propriétés d'une suite définie par une somme de fractions et de déterminer quelles affirmations parmi quatre propositions sont correctes. La suite est donnée par $u_n = \\sum_{k=1}^n \\frac{1}{n+k}$ pour $n \\geq 1$.",
+  "concepts": [
+    "inégalité logarithmique",
+    "convergence de suite",
+    "théorème d'encadrement",
+    "limite de suite",
+    "croissance de suite",
+    "majoration de suite"
+  ],
+  "methods": [
+    "sommation télescopique",
+    "utilisation d'inégalités",
+    "encadrement de termes"
+  ],
+  "objects": [
+    "suite numérique",
+    "somme de fractions",
+    "inégalités logarithmiques"
+  ],
+  "content_hash": "0938687c740ce43d63b5f2ba5ab420ec7a146f6b77f5d04073d4f14d64ac466f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:59:11.314Z"
+}

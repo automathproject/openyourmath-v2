@@ -1,0 +1,30 @@
+{
+  "uuid": "h9kX",
+  "source_path": "exo7/lille-2/h9kX.tex",
+  "summary": "L'exercice demande de déterminer les propriétés d'une application linéaire définie sur l'ensemble des matrices carrées d'ordre 2 à coefficients réels, qui associe à chaque matrice sa trace. Il s'agit d'identifier si cette application est linéaire, de calculer la dimension de son noyau et de son image, et de vérifier si son image est égal à ℝ.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "dimension d'un espace vectoriel",
+    "théorème du rang",
+    "trace d'une matrice",
+    "sous-espace vectoriel"
+  ],
+  "methods": [
+    "vérification de la linéarité",
+    "calcul de la dimension d'un noyau",
+    "calcul de la dimension d'une image",
+    "utilisation du théorème du rang"
+  ],
+  "objects": [
+    "matrice carrée d'ordre 2",
+    "application linéaire",
+    "noyau",
+    "image",
+    "espace vectoriel ℝ"
+  ],
+  "content_hash": "7d68b141453718248cd0c8144bafcaade36a752290add4ec493bf20ac4d1f4e9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:53:18.585Z"
+}

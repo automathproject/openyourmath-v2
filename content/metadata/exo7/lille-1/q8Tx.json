@@ -1,0 +1,26 @@
+{
+  "uuid": "q8Tx",
+  "source_path": "exo7/lille-1/q8Tx.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant la division euclidienne de deux polynômes, avec B non nul. Il s'agit de vérifier l'existence, l'unicité du reste et les conditions sur son degré.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "existence du quotient et du reste",
+    "unicité du quotient et du reste",
+    "degré d'un polynôme",
+    "algèbre des polynômes",
+    "arithmétique des polynômes"
+  ],
+  "methods": [
+    "définition de la division euclidienne",
+    "comparaison des degrés"
+  ],
+  "objects": [
+    "polynôme A",
+    "polynôme B",
+    "quotient Q",
+    "reste R"
+  ],
+  "content_hash": "24b88d661941a956e56606165f5d1b6c3c9de4432e10d2b61470809dd0d485bb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:56:25.978Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "Ts52",
+  "source_path": "exo7/lille-1/Ts52.tex",
+  "summary": "Trouver l'équation cartésienne d'une droite D parallèle à la droite x=y dans le plan, située à une distance de 1 de l'origine.",
+  "concepts": [
+    "équation cartésienne de droite",
+    "distance d'un point à une droite",
+    "produit scalaire",
+    "vecteur normal",
+    "repère orthonormé"
+  ],
+  "methods": [
+    "calcul de distance point-droite",
+    "utilisation du vecteur normal",
+    "résolution d'équation"
+  ],
+  "objects": [
+    "droite dans le plan",
+    "vecteur normal",
+    "point origine"
+  ],
+  "content_hash": "6909d3e938bce35596abd7ca72b45d5a6c7860faacd5777cdfc172ff59fd5dfd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:45:38.029Z"
+}

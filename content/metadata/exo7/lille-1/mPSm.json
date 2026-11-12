@@ -1,0 +1,27 @@
+{
+  "uuid": "mPSm",
+  "source_path": "exo7/lille-1/mPSm.tex",
+  "summary": "L'exercice demande de déterminer les éléments simples possibles dans la décomposition en fractions rationnelles de la fraction F = P/Q, où P et Q sont des polynômes donnés. Il s'agit d'identifier les formes admissibles des éléments simples en fonction des facteurs du dénominateur.",
+  "concepts": [
+    "décomposition en éléments simples",
+    "fraction rationnelle propre",
+    "polynôme irréductible sur ℝ",
+    "multiplicité d'une racine",
+    "partie polynomiale"
+  ],
+  "methods": [
+    "décomposition en fractions partielles",
+    "identification des facteurs irréductibles",
+    "calcul des coefficients par identification"
+  ],
+  "objects": [
+    "fraction rationnelle",
+    "polynôme",
+    "élément simple",
+    "racine simple",
+    "racine multiple"
+  ],
+  "content_hash": "dbd67978f26a1880d05d55f6fe45dd9268128e9c6ec091006a54aca970329ed3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:56:23.558Z"
+}

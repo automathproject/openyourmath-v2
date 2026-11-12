@@ -1,0 +1,28 @@
+{
+  "uuid": "gLWQ",
+  "source_path": "exo7/lille-2/gLWQ.tex",
+  "summary": "L'exercice demande de vérifier la validité de quatre développements limités d'ordre 3 en 0 pour les fonctions 1/cos(x) et tan(x), en utilisant leurs expressions trigonométriques.",
+  "concepts": [
+    "développement limité",
+    "fonction trigonométrique",
+    "limite",
+    "notation petit o",
+    "développement limité de 1/(1+t)",
+    "produit de développements limités"
+  ],
+  "methods": [
+    "développement limité d'une fonction composée",
+    "produit de développements limités",
+    "substitution de variable",
+    "approximation au voisinage de 0"
+  ],
+  "objects": [
+    "fonction 1/cos(x)",
+    "fonction tan(x)",
+    "développement limité d'ordre 3",
+    "notation petit o"
+  ],
+  "content_hash": "ac2458d097e16bb9844bf12974692c2614a3651f5a6b072295b931b5c0483284",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:35:53.853Z"
+}

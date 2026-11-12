@@ -1,0 +1,26 @@
+{
+  "uuid": "hgag",
+  "source_path": "exo7/lille-1/hgag.tex",
+  "summary": "L'exercice demande d'identifier les propriétés locales (extrema, point d'inflexion) d'une fonction polynomiale en analysant ses dérivées première et seconde.",
+  "concepts": [
+    "dérivée première",
+    "dérivée seconde",
+    "minimum local",
+    "maximum local",
+    "point d'inflexion",
+    "extremum"
+  ],
+  "methods": [
+    "calcul de dérivées successives",
+    "test de la dérivée seconde",
+    "analyse du signe de la dérivée seconde"
+  ],
+  "objects": [
+    "fonction polynomiale",
+    "dérivée première",
+    "dérivée seconde"
+  ],
+  "content_hash": "5bca3d06628865467c811e0008eee0a184aa31ac6af280abb9cec1d46b6b5dc0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:33:00.836Z"
+}

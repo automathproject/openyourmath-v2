@@ -1,0 +1,28 @@
+{
+  "uuid": "1iS3",
+  "source_path": "exo7/lille-1/1iS3.tex",
+  "summary": "L'exercice demande de déterminer le domaine de définition d'une fonction $f(x) = x^x(1-x)^{1-x}$ et d'analyser ses propriétés (valeurs, monotonie, bijectivité) sur cet intervalle.",
+  "concepts": [
+    "domaine de définition",
+    "fonction exponentielle",
+    "fonction logarithme",
+    "dérivabilité",
+    "variations de fonction",
+    "bijectivité"
+  ],
+  "methods": [
+    "décomposition en exponentielle",
+    "calcul de dérivée",
+    "étude des variations",
+    "analyse de la bijectivité"
+  ],
+  "objects": [
+    "fonction $f(x) = x^x(1-x)^{1-x}$",
+    "domaine de définition",
+    "ensemble des valeurs",
+    "fonction dérivée"
+  ],
+  "content_hash": "2c16a3e983de5ccd9aae594f8f5936a93b826fb6310e82bb07ca54f516d0f3c5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:42:24.857Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "n4HE",
+  "source_path": "exo7/lille-2/n4HE.tex",
+  "summary": "L'exercice demande d'analyser un système linéaire à paramètres (a, b, c, d) en quatre inconnues (x, y, z, t) et de déterminer quelles assertions sur son existence de solutions et son rang sont vraies.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "incompatibilité d'un système",
+    "solution paramétrique",
+    "équivalence de systèmes"
+  ],
+  "methods": [
+    "méthode du pivot de Gauss",
+    "réduction de système",
+    "élimination de variables"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice augmentée",
+    "paramètres réels"
+  ],
+  "content_hash": "de6cd2ba8139c7922332821dcacbf2221fd3d36b293f084e503269b1a57ca3c7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:34:03.057Z"
+}

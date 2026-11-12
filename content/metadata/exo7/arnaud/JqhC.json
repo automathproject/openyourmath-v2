@@ -1,0 +1,27 @@
+{
+  "uuid": "JqhC",
+  "source_path": "exo7/arnaud/JqhC.tex",
+  "summary": "L'exercice demande d'analyser les propriétés d'une suite définie par récurrence et de déterminer quelles affirmations logiques sur ses termes sont vraies. La suite est donnée par x₀=1 et xₙ = xₙ₋₁/n pour n ≥ 1.",
+  "concepts": [
+    "suite numérique",
+    "récurrence",
+    "inégalité",
+    "limite d'une suite",
+    "quantificateurs logiques",
+    "propriétés des suites"
+  ],
+  "methods": [
+    "raisonnement par récurrence",
+    "analyse des inégalités",
+    "calcul explicite des premiers termes",
+    "comparaison de suites"
+  ],
+  "objects": [
+    "suite définie par récurrence",
+    "termes de la suite",
+    "inégalités sur les termes"
+  ],
+  "content_hash": "dbdde7c757a2cc4ce1bc8a2823cab170d84487b12b4e730b208f6b00c4529b60",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:47:38.694Z"
+}

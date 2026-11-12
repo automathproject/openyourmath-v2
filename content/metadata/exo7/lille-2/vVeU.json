@@ -1,0 +1,27 @@
+{
+  "uuid": "vVeU",
+  "source_path": "exo7/lille-2/vVeU.tex",
+  "summary": "L'exercice demande de déterminer les matrices de passage entre deux bases d'un espace vectoriel de fonctions réelles engendré par les fonctions constantes, cosinus et sinus. Il s'agit d'identifier les matrices correctes représentant les changements de base.",
+  "concepts": [
+    "espace vectoriel",
+    "base d'un espace vectoriel",
+    "matrice de passage",
+    "application linéaire",
+    "identité",
+    "coordonnées d'un vecteur dans une base"
+  ],
+  "methods": [
+    "calcul des coordonnées d'un vecteur dans une base",
+    "construction de matrice de passage",
+    "vérification de l'identité matricielle"
+  ],
+  "objects": [
+    "espace vectoriel de fonctions",
+    "matrice carrée 3x3",
+    "base de fonctions",
+    "matrice de passage"
+  ],
+  "content_hash": "b119a73c005dbc0c914b314cb4549613a743cae1489573d99a14f191bcea68fb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:54:05.034Z"
+}

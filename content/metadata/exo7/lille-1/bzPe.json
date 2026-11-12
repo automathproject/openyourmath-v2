@@ -1,0 +1,25 @@
+{
+  "uuid": "bzPe",
+  "source_path": "exo7/lille-1/bzPe.tex",
+  "summary": "Trouver les coordonnées du projeté orthogonal d'un point donné sur une droite de l'espace définie par un point et un vecteur directeur, dans un repère orthonormé.",
+  "concepts": [
+    "projeté orthogonal",
+    "droite de l'espace",
+    "repère orthonormé",
+    "produit scalaire",
+    "équation paramétrique de droite"
+  ],
+  "methods": [
+    "calcul de produit scalaire",
+    "résolution d'équation linéaire",
+    "paramétrisation de droite"
+  ],
+  "objects": [
+    "point de l'espace",
+    "vecteur directeur",
+    "projeté orthogonal"
+  ],
+  "content_hash": "362d15cd15301af21500c16342a33dd1f81d019b0d3b51edea93b3ab956da270",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:44:27.494Z"
+}

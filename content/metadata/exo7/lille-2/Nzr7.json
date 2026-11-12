@@ -1,0 +1,31 @@
+{
+  "uuid": "Nzr7",
+  "source_path": "exo7/lille-2/Nzr7.tex",
+  "summary": "L'exercice demande de vérifier la validité de quatre développements limités d'ordre 1 ou 3 en 0 pour des fonctions composées ou rationnelles, en utilisant la notation o(x^n).",
+  "concepts": [
+    "développement limité",
+    "notation o petit",
+    "fonction composée",
+    "approximation locale",
+    "limite de fonctions",
+    "développement limité d'une racine n-ième",
+    "développement limité d'une fonction rationnelle"
+  ],
+  "methods": [
+    "développement limité de (1 + t)^α",
+    "approximation affine",
+    "approximation cubique",
+    "linéarisation",
+    "utilisation de la notation o(x^n)"
+  ],
+  "objects": [
+    "développement limité d'ordre 1",
+    "développement limité d'ordre 3",
+    "fonction racine cubique",
+    "fonction racine carrée",
+    "fonction polynomiale"
+  ],
+  "content_hash": "b99d0a31330e020c4fa94cffdec3ee87d8aafb5c0d4631de579556aedbf4de68",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:35:28.374Z"
+}

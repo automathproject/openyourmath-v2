@@ -1,0 +1,27 @@
+{
+  "uuid": "opLv",
+  "source_path": "exo7/worms/opLv.tex",
+  "summary": "L'exercice étudie la loi d'une variable aléatoire Y, prime versée à un employé, définie à partir d'une variable normale X représentant son gain mensuel. Il demande de déterminer si Y est continue et la probabilité que Y dépasse 50 euros.",
+  "concepts": [
+    "loi normale",
+    "variable aléatoire discrète",
+    "variable aléatoire continue",
+    "fonction de répartition",
+    "standardisation",
+    "probabilité conditionnelle"
+  ],
+  "methods": [
+    "standardisation",
+    "calcul de probabilité à partir d'une loi normale",
+    "manipulation d'événements"
+  ],
+  "objects": [
+    "variable aléatoire Y",
+    "variable aléatoire X",
+    "loi normale",
+    "prime conditionnelle"
+  ],
+  "content_hash": "6c0a8374d786bcbb881c531589568c38ec0f002527d689d210372c0edd130ce2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:56:57.806Z"
+}

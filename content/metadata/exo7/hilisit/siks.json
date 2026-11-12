@@ -1,0 +1,26 @@
+{
+  "uuid": "siks",
+  "source_path": "exo7/hilisit/siks.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant la divisibilité d'un entier N construit à partir d'un nombre premier p ≥ 5. N est défini comme (p+3)² - p².",
+  "concepts": [
+    "divisibilité dans Z",
+    "nombre premier",
+    "développement d'expression algébrique",
+    "division euclidienne",
+    "propriétés des nombres impairs"
+  ],
+  "methods": [
+    "développement d'expression",
+    "division euclidienne",
+    "analyse de divisibilité",
+    "réduction modulo"
+  ],
+  "objects": [
+    "nombre premier p ≥ 5",
+    "entier N = (p+3)² - p²",
+    "diviseurs 2, 3, 6, p"
+  ],
+  "content_hash": "ec3c1ca1ae1c781de325c42b20b861bb761bdeed91ce9e94f6fe8c06ddb13b6c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:24:37.346Z"
+}

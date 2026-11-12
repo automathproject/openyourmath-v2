@@ -1,0 +1,29 @@
+{
+  "uuid": "O3Bx",
+  "source_path": "exo7/lille-2/O3Bx.tex",
+  "summary": "L'exercice demande de vérifier la validité de quatre affirmations concernant les développements limités des fonctions arctan(1+x) et arctan(cos x) au voisinage de 0, en utilisant des propriétés d'intégration et de composition de développements limités.",
+  "concepts": [
+    "développement limité",
+    "intégration de développements limités",
+    "composition de développements limités",
+    "notation petit o",
+    "développement limité d'une fonction composée",
+    "développement limité de arctan",
+    "développement limité de cos"
+  ],
+  "methods": [
+    "calcul de dérivée",
+    "intégration de développements limités",
+    "composition de développements limités",
+    "approximation d'ordre supérieur"
+  ],
+  "objects": [
+    "fonction arctan",
+    "fonction cos",
+    "développement limité d'ordre 2 et 3",
+    "fonction composée"
+  ],
+  "content_hash": "f3d4df4bd74bd2a7264c92fae0e4a34797a09a8c30faaf2038ad8621972582ad",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:35:31.242Z"
+}

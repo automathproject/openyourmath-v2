@@ -1,0 +1,26 @@
+{
+  "uuid": "Szzc",
+  "source_path": "exo7/lille-2/Szzc.tex",
+  "summary": "L'exercice demande d'évaluer la validité de quatre affirmations concernant le calcul d'intégrales impliquant des fonctions logarithmes, en utilisant l'intégration par parties.",
+  "concepts": [
+    "intégration par parties",
+    "primitive d'une fonction",
+    "fonction logarithme",
+    "calcul d'intégrale définie",
+    "choix de primitives conjuguées"
+  ],
+  "methods": [
+    "intégration par parties",
+    "choix de u et dv",
+    "évaluation de primitive en bornes"
+  ],
+  "objects": [
+    "intégrale de ln(t)",
+    "intégrale de t*ln(t)",
+    "primitive de ln(t)",
+    "primitive de t*ln(t)"
+  ],
+  "content_hash": "77af0b49a8dc08743873cffe3cf107728107e80373df0b1cf6528abe947c4aa6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:26:56.617Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "BVo0",
+  "source_path": "exo7/lille-1/BVo0.tex",
+  "summary": "L'exercice demande d'évaluer la validité de quatre assertions logiques concernant l'appartenance de points (x,y) au disque unité D. Chaque assertion combine des quantificateurs universels (∀) et existentiels (∃) appliqués à des variables x et y dans l'intervalle [-1,1].",
+  "concepts": [
+    "quantificateurs universels",
+    "quantificateurs existentiels",
+    "logique des prédicats",
+    "appartenance à un ensemble",
+    "disque unité",
+    "intervalle réel"
+  ],
+  "methods": [
+    "analyse de cas",
+    "validation par contre-exemple",
+    "interprétation géométrique"
+  ],
+  "objects": [
+    "disque unité",
+    "points du plan",
+    "intervalle [-1,1]",
+    "assertions logiques"
+  ],
+  "content_hash": "1610e7dca9f9bc69ae750adbd1decfdab05e41e025f91fcac4c3d9e3f7285045",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:46:55.445Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "ATHR",
+  "source_path": "exo7/lille-1/ATHR.tex",
+  "summary": "L'exercice demande de déterminer les limites en +∞ et -∞ de la fonction f(x) = e^{-x}cos(e^{2x}) parmi les propositions données.",
+  "concepts": [
+    "limite de fonction",
+    "comportement asymptotique",
+    "encadrement de fonction trigonométrique",
+    "croissance exponentielle",
+    "décroissance exponentielle"
+  ],
+  "methods": [
+    "encadrement",
+    "comparaison de croissance",
+    "analyse des termes dominants"
+  ],
+  "objects": [
+    "fonction exponentielle",
+    "fonction trigonométrique",
+    "limite en l'infini"
+  ],
+  "content_hash": "bdfff1fce3d82633401f5a88f7472360c001c0a9c576eb2066d5d5121bcdca19",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:29:26.167Z"
+}

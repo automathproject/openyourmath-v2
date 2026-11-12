@@ -1,0 +1,29 @@
+{
+  "uuid": "Ik2A",
+  "source_path": "exo7/lille-2/Ik2A.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant les développements limités d'une fonction arctangente composée, en analysant ses approximations à différents ordres et en différents points. Il mobilise des transformations de variables et des propriétés des DL.",
+  "concepts": [
+    "développement limité",
+    "limite",
+    "fonction arctangente",
+    "approximation",
+    "ordre d'un DL",
+    "changement de variable",
+    "intégration de fonctions"
+  ],
+  "methods": [
+    "développement limité d'une fonction composée",
+    "approximation de Taylor",
+    "calcul de dérivée",
+    "intégration pour obtenir un DL"
+  ],
+  "objects": [
+    "fonction arctangente",
+    "développement limité d'ordre 1 et 2",
+    "fonction composée",
+    "limite en 0+ et en l'infini"
+  ],
+  "content_hash": "a8beffb88e95860d1dd7fc071e559027b4971378e3f578b1c4186f94d0f22d53",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:35:10.259Z"
+}

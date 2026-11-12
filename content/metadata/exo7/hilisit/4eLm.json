@@ -1,0 +1,27 @@
+{
+  "uuid": "4eLm",
+  "source_path": "exo7/hilisit/4eLm.tex",
+  "summary": "Déterminer pour quels entiers n donnés (3, 5, 7, 9) la congruence 10^10 ≡ 7^18 [n] est vérifiée, en testant chaque cas par calcul direct.",
+  "concepts": [
+    "congruence dans Z",
+    "calcul modulo",
+    "propriétés des puissances modulo",
+    "théorème des restes chinois",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "calcul de puissances modulo",
+    "simplification de congruences",
+    "réduction modulo n",
+    "utilisation de propriétés exponentielles"
+  ],
+  "objects": [
+    "entiers naturels",
+    "congruences",
+    "puissances d'entiers",
+    "modulo n"
+  ],
+  "content_hash": "ca9b9e02cee1c57dfc8af9e0efd11e7b553cd1c07223757ef399930ef92e903b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:22:43.661Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "xDyQ",
+  "source_path": "exo7/hilisit/xDyQ.tex",
+  "summary": "L'exercice demande d'analyser les propriétés des solutions d'une équation différentielle linéaire du premier ordre $y' = ay$ avec $a>0$, en évaluant la validité de quatre affirmations concernant les solutions constantes et leur comportement asymptotique.",
+  "concepts": [
+    "équation différentielle linéaire du premier ordre",
+    "solution générale",
+    "solution constante",
+    "comportement asymptotique",
+    "fonction exponentielle"
+  ],
+  "methods": [
+    "résolution par séparation des variables",
+    "analyse des limites",
+    "étude des solutions particulières"
+  ],
+  "objects": [
+    "équation différentielle",
+    "solution $y(x) = Ce^{ax}$",
+    "limite en $-\\infty$"
+  ],
+  "content_hash": "ed4f5bbd72931b420e501b96ee7dea3c35f53edbd3517ec338c06d8890ec1764",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:39:51.064Z"
+}

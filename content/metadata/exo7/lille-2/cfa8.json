@@ -1,0 +1,24 @@
+{
+  "uuid": "cfa8",
+  "source_path": "exo7/lille-2/cfa8.tex",
+  "summary": "L'exercice demande d'identifier parmi quatre assertions celles qui sont vraies concernant les propriétés du produit et de la somme de matrices carrées. Il s'agit de vérifier des propriétés algébriques élémentaires des opérations matricielles.",
+  "concepts": [
+    "associativité du produit matriciel",
+    "distributivité du produit matriciel par rapport à l'addition",
+    "non-commutativité du produit matriciel",
+    "matrice nulle",
+    "propriétés algébriques des matrices"
+  ],
+  "methods": [
+    "contre-exemple",
+    "vérification de propriétés algébriques"
+  ],
+  "objects": [
+    "matrices carrées",
+    "produit de matrices",
+    "somme de matrices"
+  ],
+  "content_hash": "9441dc04ca7c8190ee088a575d3dc82a7c2aa179218522f5cd111068c3e729d9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:52:58.309Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "8JmW",
+  "source_path": "exo7/lille-1/8JmW.tex",
+  "summary": "L'exercice demande d'analyser les propriétés d'une fonction g(x) = f(x)/(x-α) où f est continue sur [a,b], dérivable sur ]a,b[, et s'annule en a et b. Il s'agit de déterminer quelles affirmations sur g et ses dérivées sont correctes.",
+  "concepts": [
+    "théorème de Rolle",
+    "continuité d'une fonction",
+    "dérivabilité",
+    "tangente à une courbe",
+    "fonction rationnelle"
+  ],
+  "methods": [
+    "application du théorème de Rolle",
+    "calcul de dérivée",
+    "analyse des conditions d'annulation"
+  ],
+  "objects": [
+    "fonction continue",
+    "fonction dérivable",
+    "tangente à une courbe",
+    "fonction rationnelle"
+  ],
+  "content_hash": "8765c57031909842a05fe988ddd4caedac164191924581b9a0f75a42dba653de",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:32:07.136Z"
+}

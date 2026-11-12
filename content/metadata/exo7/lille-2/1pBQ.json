@@ -1,0 +1,27 @@
+{
+  "uuid": "1pBQ",
+  "source_path": "exo7/lille-2/1pBQ.tex",
+  "summary": "L'exercice demande d'évaluer la validité de quatre assertions concernant le calcul d'une intégrale par changement de variable avec la substitution x = sin(t). Il porte sur la transformation de l'intégrale ∫√(1−x²)dx et la recherche de primitives.",
+  "concepts": [
+    "changement de variable",
+    "primitive d'une fonction",
+    "identité trigonométrique",
+    "intégration de fonctions trigonométriques",
+    "fonction réciproque"
+  ],
+  "methods": [
+    "substitution trigonométrique",
+    "identité trigonométrique fondamentale",
+    "intégration par parties",
+    "linéarisation de cos²(t)"
+  ],
+  "objects": [
+    "intégrale indéfinie",
+    "fonction √(1−x²)",
+    "fonction cos²(t)",
+    "fonction arcsin(x)"
+  ],
+  "content_hash": "511da9b76c2b7c5da9dc600de1262d602ce1c6219466b835d514d4d56ed99c75",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:24:58.772Z"
+}

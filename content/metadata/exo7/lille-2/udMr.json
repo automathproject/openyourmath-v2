@@ -1,0 +1,30 @@
+{
+  "uuid": "udMr",
+  "source_path": "exo7/lille-2/udMr.tex",
+  "summary": "L'exercice propose un système linéaire homogène à n inconnues avec un paramètre réel a. Il demande de déterminer quelles assertions sont vraies concernant l'équivalence du système, son nombre de solutions selon la valeur de a, et l'existence de solutions pour une valeur spécifique de a.",
+  "concepts": [
+    "système d'équations linéaires",
+    "rang d'une matrice",
+    "équivalence de systèmes",
+    "solution unique",
+    "solution infinie",
+    "solution sans solution",
+    "paramètre réel"
+  ],
+  "methods": [
+    "réduction de système",
+    "analyse de cas",
+    "comparaison d'équations",
+    "résolution par substitution"
+  ],
+  "objects": [
+    "système linéaire",
+    "matrice augmentée",
+    "paramètre réel",
+    "inconnues réelles",
+    "équations linéaires"
+  ],
+  "content_hash": "9464f0b85cff3a673ae0b37c7053520025b74c138379e8d1d7f357383ea22b1d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:34:13.049Z"
+}

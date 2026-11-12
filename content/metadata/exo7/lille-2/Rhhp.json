@@ -1,0 +1,26 @@
+{
+  "uuid": "Rhhp",
+  "source_path": "exo7/lille-2/Rhhp.tex",
+  "summary": "L'exercice demande de déterminer si un polynôme de degré ≤ 3 vérifiant quatre conditions données existe, est unique ou infini, et de vérifier une propriété supplémentaire. Le contexte est purement algébrique.",
+  "concepts": [
+    "polynôme de degré donné",
+    "système d'équations linéaires",
+    "unicité de la solution",
+    "détermination des coefficients",
+    "dérivée d'un polynôme"
+  ],
+  "methods": [
+    "résolution de système linéaire",
+    "interpolation polynomiale",
+    "calcul de dérivée"
+  ],
+  "objects": [
+    "polynôme à coefficients réels",
+    "système d'équations",
+    "valeurs en points donnés",
+    "dérivée en un point"
+  ],
+  "content_hash": "f0dabbd011ea6ea9fe6f575d3069da84bd3b2a1d22a3cb2feb62d35480f4ee0d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:33:31.257Z"
+}

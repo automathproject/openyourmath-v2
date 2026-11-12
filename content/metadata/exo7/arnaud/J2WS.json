@@ -1,0 +1,25 @@
+{
+  "uuid": "J2WS",
+  "source_path": "exo7/arnaud/J2WS.tex",
+  "summary": "L'exercice demande de déterminer le nombre de tirages distincts possibles en lançant deux dés à 6 faces sans tenir compte de l'ordre, puis de comparer les probabilités de certaines sommes obtenues.",
+  "concepts": [
+    "combinaison",
+    "probabilité",
+    "loi de probabilité discrète",
+    "événement élémentaire",
+    "cardinal d'un ensemble"
+  ],
+  "methods": [
+    "énumération des cas",
+    "calcul de probabilité",
+    "comparaison de probabilités"
+  ],
+  "objects": [
+    "ensemble de tirages",
+    "somme de deux dés",
+    "probabilité d'une somme"
+  ],
+  "content_hash": "2ebd3f8595e34086e766b846576f33937e1f9b7ead1d9954e755efee24a16b27",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:47:34.567Z"
+}

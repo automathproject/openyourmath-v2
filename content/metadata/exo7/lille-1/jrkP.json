@@ -1,0 +1,23 @@
+{
+  "uuid": "jrkP",
+  "source_path": "exo7/lille-1/jrkP.tex",
+  "summary": "L'exercice demande de déterminer la limite en 0 de la fonction f(x) = (cos x - 1)/x² parmi plusieurs propositions. La fonction est définie pour x ≠ 0 et l'étude porte sur son comportement à l'approche de 0.",
+  "concepts": [
+    "limite d'une fonction en un point",
+    "développement trigonométrique",
+    "limite de sin(x)/x",
+    "équivalents asymptotiques"
+  ],
+  "methods": [
+    "développement trigonométrique",
+    "changement de variable",
+    "utilisation de limites connues"
+  ],
+  "objects": [
+    "fonction rationnelle trigonométrique",
+    "limite en un point"
+  ],
+  "content_hash": "60d1d02d71526da0a6160aa605db4d1798a98d0779367e824ea9bc58d0db7172",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:30:40.138Z"
+}

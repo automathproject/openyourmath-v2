@@ -1,0 +1,26 @@
+{
+  "uuid": "ynIC",
+  "source_path": "exo7/lille-1/ynIC.tex",
+  "summary": "L'exercice demande d'analyser les propriétés d'une suite définie par $u_n = \\sqrt[n]{3 + \\cos n}$ et de déterminer si elle est bornée, convergente, croissante ou divergente.",
+  "concepts": [
+    "suite numérique",
+    "bornes d'une suite",
+    "convergence d'une suite",
+    "théorème d'encadrement",
+    "limite d'une suite",
+    "fonction cosinus"
+  ],
+  "methods": [
+    "encadrement de suite",
+    "calcul de limites de suites",
+    "application du théorème d'encadrement"
+  ],
+  "objects": [
+    "suite $u_n$",
+    "fonction cosinus",
+    "bornes inférieures et supérieures"
+  ],
+  "content_hash": "f1e76d8672efe7ad0bda157b7571207685e45264f4157547bea2a8a1b397a150",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T19:00:06.856Z"
+}

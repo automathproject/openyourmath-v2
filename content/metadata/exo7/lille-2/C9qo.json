@@ -1,0 +1,27 @@
+{
+  "uuid": "C9qo",
+  "source_path": "exo7/lille-2/C9qo.tex",
+  "summary": "L'exercice étudie la trajectoire paramétrée d'une particule et demande d'identifier des propriétés géométriques de la courbe. Il s'agit de déterminer si des affirmations sur les points stationnaires, les tangentes et les asymptotes sont vraies ou fausses.",
+  "concepts": [
+    "développement limité",
+    "point de rebroussement",
+    "tangente à une courbe paramétrée",
+    "asymptote",
+    "branche parabolique",
+    "direction asymptotique"
+  ],
+  "methods": [
+    "développement limité à l'ordre 4",
+    "analyse des coefficients dominants",
+    "calcul de limite"
+  ],
+  "objects": [
+    "courbe paramétrée",
+    "tangente",
+    "asymptote",
+    "branche parabolique"
+  ],
+  "content_hash": "84b95b2db81123654b6d406ea39183aa036c0b4582f8e92e42a91dc4a56d2682",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:31:28.061Z"
+}

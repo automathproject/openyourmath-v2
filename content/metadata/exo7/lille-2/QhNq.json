@@ -1,0 +1,27 @@
+{
+  "uuid": "QhNq",
+  "source_path": "exo7/lille-2/QhNq.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions parmi quatre propositions sur l'inversibilité d'une matrice 3x3 A et de ses combinaisons sont vraies. La matrice A est donnée explicitement.",
+  "concepts": [
+    "inversibilité d'une matrice",
+    "déterminant",
+    "vecteurs colonnes linéairement dépendants",
+    "transposée d'une matrice",
+    "propriétés des puissances de matrices"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "analyse de la dépendance linéaire",
+    "raisonnement par l'absurde",
+    "vérification de l'inversibilité"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "puissances de matrice",
+    "transposée de matrice",
+    "combinaison linéaire de matrices"
+  ],
+  "content_hash": "cd6f50e4ce3a8ec1dd05615ee7b502d557b67c7794d5de715e5fc3827a7d2daf",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:52:31.771Z"
+}

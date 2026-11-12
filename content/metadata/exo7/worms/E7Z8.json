@@ -1,0 +1,27 @@
+{
+  "uuid": "E7Z8",
+  "source_path": "exo7/worms/E7Z8.tex",
+  "summary": "L'exercice demande de déterminer l'expression de la densité de probabilité d'une variable aléatoire Y définie comme le carré d'une variable gaussienne centrée réduite X, pour x > 0. Il s'agit de reconnaître la loi du χ² à 1 degré de liberté.",
+  "concepts": [
+    "densité de probabilité",
+    "fonction de répartition",
+    "loi gaussienne centrée réduite",
+    "loi du χ²",
+    "transformation de variable aléatoire",
+    "dérivation de fonction composée"
+  ],
+  "methods": [
+    "calcul de densité par transformation",
+    "dérivation de fonction de répartition",
+    "utilisation de la fonction de répartition gaussienne"
+  ],
+  "objects": [
+    "variable aléatoire gaussienne",
+    "variable aléatoire χ²",
+    "fonction de répartition",
+    "densité de probabilité"
+  ],
+  "content_hash": "783c39577bb3d3a8a8fabb9cc7c9c84e627bc6d21b3793def18a44c37453516f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:56:47.180Z"
+}

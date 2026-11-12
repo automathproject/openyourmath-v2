@@ -1,0 +1,24 @@
+{
+  "uuid": "JUOP",
+  "source_path": "exo7/lille-2/JUOP.tex",
+  "summary": "L'exercice demande d'identifier parmi plusieurs propositions celle(s) qui donne(nt) correctement une primitive de la fonction ln(x) sur l'intervalle ]0,+∞[. Il s'agit de reconnaître la forme générale d'une primitive obtenue par intégration par parties.",
+  "concepts": [
+    "intégration par parties",
+    "primitive d'une fonction",
+    "fonction logarithme",
+    "constante d'intégration",
+    "calcul d'intégrale indéfinie"
+  ],
+  "methods": [
+    "intégration par parties",
+    "reconnaissance de primitives"
+  ],
+  "objects": [
+    "fonction ln(x)",
+    "primitive F(x)",
+    "constante k"
+  ],
+  "content_hash": "27a5817c862c3ea7055ec9b3c01070c3e2cdda28a20b7501dd71e0649ccf9db3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:26:12.774Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "UM47",
+  "source_path": "exo7/lille-1/UM47.tex",
+  "summary": "Calculer la distance d'un point A à une droite D dans l'espace, donnée par deux équations cartésiennes, en utilisant un repère orthonormé.",
+  "concepts": [
+    "distance d'un point à une droite dans l'espace",
+    "repère orthonormé",
+    "produit vectoriel",
+    "norme d'un vecteur",
+    "équations cartésiennes d'une droite"
+  ],
+  "methods": [
+    "calcul du produit vectoriel",
+    "calcul de la norme d'un vecteur",
+    "résolution d'un système d'équations linéaires"
+  ],
+  "objects": [
+    "point dans l'espace",
+    "droite dans l'espace",
+    "vecteur directeur",
+    "vecteur position"
+  ],
+  "content_hash": "1d3bd8def568abbe14060494eb5436ff864a16930010ce4cd8aa5f0386eb8e6e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:44:20.616Z"
+}

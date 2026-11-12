@@ -1,0 +1,25 @@
+{
+  "uuid": "S6s9",
+  "source_path": "exo7/lille-1/S6s9.tex",
+  "summary": "L'exercice demande de déterminer les limites des suites $u_n = \\frac{\\cos n}{2n+1}$ et $v_n = \\frac{2n + \\cos n}{2n+1}$ lorsque $n$ tend vers l'infini, parmi plusieurs propositions.",
+  "concepts": [
+    "théorème d'encadrement",
+    "limite de suite",
+    "fonction cosinus",
+    "division de suites",
+    "limite de fraction rationnelle"
+  ],
+  "methods": [
+    "encadrement de terme",
+    "décomposition de suite",
+    "calcul de limite de fraction rationnelle"
+  ],
+  "objects": [
+    "suite numérique",
+    "fonction trigonométrique",
+    "limite infinie"
+  ],
+  "content_hash": "2921301639b4ea554549537b71621be13695bcfd722a559348efbd99c8ade22b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:59:30.690Z"
+}

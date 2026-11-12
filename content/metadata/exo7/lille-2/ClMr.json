@@ -1,0 +1,25 @@
+{
+  "uuid": "ClMr",
+  "source_path": "exo7/lille-2/ClMr.tex",
+  "summary": "L'exercice demande d'identifier parmi quatre affirmations celles qui sont vraies concernant le calcul de primitives de fonctions logarithmes. Il porte sur l'intégration de ln(x+1) et x*ln(1+x) sur l'intervalle ]-1, +∞[.",
+  "concepts": [
+    "intégration par parties",
+    "primitive d'une fonction",
+    "fonction logarithme",
+    "intégrale indéfinie",
+    "changement de variable"
+  ],
+  "methods": [
+    "intégration par parties",
+    "décomposition de l'intégrande",
+    "calcul de primitive"
+  ],
+  "objects": [
+    "fonction ln(x+1)",
+    "fonction x*ln(1+x)",
+    "intégrale indéfinie"
+  ],
+  "content_hash": "452952c639f9860f50e8c988c273fc53e30b2cf71c0c3499879ae855b30d35ac",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:25:42.278Z"
+}

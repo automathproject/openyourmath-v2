@@ -1,0 +1,25 @@
+{
+  "uuid": "bigC",
+  "source_path": "exo7/lille-1/bigC.tex",
+  "summary": "L'exercice demande de déterminer le module et l'argument d'un nombre complexe donné sous forme d'une fraction de puissances de nombres complexes, et de valider des assertions correspondantes.",
+  "concepts": [
+    "module d'un nombre complexe",
+    "argument d'un nombre complexe",
+    "formule du module d'un quotient",
+    "formule de l'argument d'un quotient",
+    "puissance d'un nombre complexe"
+  ],
+  "methods": [
+    "calcul du module",
+    "calcul de l'argument",
+    "application des formules de module et argument pour les puissances"
+  ],
+  "objects": [
+    "nombre complexe",
+    "module",
+    "argument"
+  ],
+  "content_hash": "595a75a8a7d589b4e1bdca3e9e0596e23a42d0e4794316a9cad7153e90de7b3e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:54:56.153Z"
+}

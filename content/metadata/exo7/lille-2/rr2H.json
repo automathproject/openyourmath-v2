@@ -1,0 +1,26 @@
+{
+  "uuid": "rr2H",
+  "source_path": "exo7/lille-2/rr2H.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant un système linéaire de trois équations à trois inconnues. Il s'agit d'analyser la compatibilité du système et le nombre de solutions possibles.",
+  "concepts": [
+    "système linéaire",
+    "méthode du pivot de Gauss",
+    "rang d'une matrice",
+    "incompatibilité d'un système",
+    "équations linéaires",
+    "résolution de systèmes"
+  ],
+  "methods": [
+    "élimination de Gauss",
+    "réduction par lignes",
+    "analyse de la forme échelonnée"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice augmentée",
+    "inconnues réelles"
+  ],
+  "content_hash": "1913f66667b5636797dca0776e43abc485b61876050ca99cafe06d46ceee065e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:34:07.929Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "2JCC",
+  "source_path": "exo7/lille-2/2JCC.tex",
+  "summary": "L'exercice demande d'analyser un système linéaire à quatre inconnues et un paramètre réel m, en déterminant quelles assertions sur les solutions sont vraies. Il s'agit d'étudier la compatibilité et le nombre de solutions selon les valeurs de m.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "incompatibilité d'un système",
+    "solution unique",
+    "solution infinie",
+    "méthode du pivot de Gauss"
+  ],
+  "methods": [
+    "réduction par pivot de Gauss",
+    "analyse des cas particuliers",
+    "comparaison de systèmes équivalents"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice augmentée",
+    "paramètre réel"
+  ],
+  "content_hash": "cf5e4cbeb22c8bdb402af2064bb43224c86b1a97f47b86284c840ef9397093c7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:33:13.368Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "2D0M",
+  "source_path": "exo7/hilisit/2D0M.tex",
+  "summary": "L'exercice demande d'analyser les propriétés des chiffres des dizaines et des unités des nombres premiers à deux chiffres compris entre 10 et 100, en évaluant la validité de quatre affirmations sur ces chiffres.",
+  "concepts": [
+    "nombre premier",
+    "chiffre des dizaines",
+    "chiffre des unités",
+    "divisibilité",
+    "critère de divisibilité par 9",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "analyse des cas",
+    "vérification de divisibilité",
+    "utilisation des critères de primalité"
+  ],
+  "objects": [
+    "nombre premier à deux chiffres",
+    "chiffres décimaux",
+    "somme des chiffres"
+  ],
+  "content_hash": "20a6e251d05edcd070d7491e6141d64b6ce2b07b6645be76ba1f6e5a0a9e248b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:22:35.373Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "7K8i",
+  "source_path": "exo7/worms/7K8i.tex",
+  "summary": "L'exercice demande de calculer le nombre de façons de sélectionner 30 SMS parmi 2000, puis d'évaluer des probabilités liées à ce tirage aléatoire, notamment la probabilité qu'une personne spécifique ou au moins l'un de deux amis soit sélectionné.",
+  "concepts": [
+    "combinaison",
+    "probabilité discrète",
+    "équirépartition",
+    "probabilité conditionnelle",
+    "cardinal d'un ensemble",
+    "loi uniforme discrète"
+  ],
+  "methods": [
+    "calcul de coefficient binomial",
+    "utilisation de la formule de la probabilité",
+    "complémentaire d'un événement",
+    "simplification de fractions"
+  ],
+  "objects": [
+    "sous-ensemble",
+    "événement",
+    "probabilité",
+    "coefficient binomial"
+  ],
+  "content_hash": "0884955e50cc34d55463dabebb3b67d7797adfdf5199d4bb6042d59e81e527a8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:57:07.883Z"
+}

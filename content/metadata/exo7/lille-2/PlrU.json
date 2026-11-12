@@ -1,0 +1,26 @@
+{
+  "uuid": "PlrU",
+  "source_path": "exo7/lille-2/PlrU.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant l'ensemble E de R³ défini par l'équation xy + xz + yz = 0, muni des opérations usuelles. Il s'agit d'analyser les propriétés de stabilité de E par addition et multiplication scalaire, ainsi que l'appartenance de l'élément nul.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "stabilité par addition",
+    "stabilité par multiplication scalaire",
+    "élément neutre",
+    "structure d'espace vectoriel",
+    "opérations usuelles"
+  ],
+  "methods": [
+    "vérification des propriétés de sous-espace vectoriel",
+    "test d'appartenance",
+    "contre-exemple"
+  ],
+  "objects": [
+    "ensemble de R³",
+    "élément nul",
+    "vecteurs de R³"
+  ],
+  "content_hash": "e789f8158d5fdb2b6cc3cc1ae79665e930732c9cd319f780b4e11b0711a0eb19",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:40:58.596Z"
+}

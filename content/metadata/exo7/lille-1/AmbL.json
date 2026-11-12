@@ -1,0 +1,25 @@
+{
+  "uuid": "AmbL",
+  "source_path": "exo7/lille-1/AmbL.tex",
+  "summary": "L'exercice demande de déterminer les relations entre une droite et deux plans dans l'espace, en vérifiant si la droite est incluse dans un plan, si elle est l'intersection des deux plans, ou si elle est sécante avec l'un d'eux.",
+  "concepts": [
+    "équation cartésienne d'un plan",
+    "équation paramétrique d'une droite",
+    "intersection de plans",
+    "inclusion d'une droite dans un plan",
+    "géométrie affine"
+  ],
+  "methods": [
+    "substitution paramétrique",
+    "vérification d'appartenance",
+    "calcul d'intersection"
+  ],
+  "objects": [
+    "plan de l'espace",
+    "droite de l'espace",
+    "repère orthonormé"
+  ],
+  "content_hash": "a70d093fad5fe09d498caa437e0e38c4653b726bd6bd9fa0c5033dbdce724975",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:43:46.082Z"
+}

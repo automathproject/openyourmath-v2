@@ -1,0 +1,26 @@
+{
+  "uuid": "CYoU",
+  "source_path": "exo7/lille-2/CYoU.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant une matrice carrée A d'ordre n à coefficients réels vérifiant A^m = I pour un certain entier m ≥ 1. Il s'agit d'analyser l'inversibilité de A, son inverse, son rang et un cas particulier où m=2.",
+  "concepts": [
+    "inversibilité d'une matrice",
+    "rang d'une matrice",
+    "matrice identité",
+    "propriétés des puissances de matrices",
+    "matrice carrée"
+  ],
+  "methods": [
+    "calcul de l'inverse d'une matrice",
+    "analyse des propriétés algébriques",
+    "vérification des assertions"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice identité",
+    "inverse d'une matrice",
+    "puissance d'une matrice"
+  ],
+  "content_hash": "e4427f6e6a7db7553dd430b3d249008c6bf342e6577a532260159443234d471a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:51:46.016Z"
+}

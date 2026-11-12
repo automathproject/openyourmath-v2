@@ -1,0 +1,28 @@
+{
+  "uuid": "fW4O",
+  "source_path": "exo7/worms/fW4O.tex",
+  "summary": "Calculer la probabilité d'attendre plus de 10 minutes au moins 3 fois sur 10 jours, où le temps d'attente suit une loi de densité donnée. L'énoncé fournit la densité de probabilité d'une variable continue et demande d'utiliser cette information pour modéliser une situation répétée.",
+  "concepts": [
+    "loi binomiale",
+    "variable aléatoire continue",
+    "densité de probabilité",
+    "probabilité conditionnelle",
+    "indépendance",
+    "loi de probabilité"
+  ],
+  "methods": [
+    "calcul de probabilité conditionnelle",
+    "approximation de probabilité",
+    "utilisation de la loi binomiale",
+    "calcul de somme de probabilités"
+  ],
+  "objects": [
+    "variable aléatoire de temps d'attente",
+    "densité de probabilité",
+    "loi binomiale",
+    "probabilité conditionnelle"
+  ],
+  "content_hash": "ffb5ad9ff79da43c37d19428a2ab30c2654985ba29b4f90520b589995bf20fc4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:56:55.347Z"
+}

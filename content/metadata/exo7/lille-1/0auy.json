@@ -1,0 +1,27 @@
+{
+  "uuid": "0auy",
+  "source_path": "exo7/lille-1/0auy.tex",
+  "summary": "L'exercice demande de déterminer les limites en +∞ et -∞ d'une fonction réelle f(x) = x + 5√(1 - x⁵) en évaluant la validité de quatre assertions proposées.",
+  "concepts": [
+    "limite d'une fonction réelle",
+    "limite en l'infini",
+    "conjugué algébrique",
+    "développement factoriel",
+    "comparaison de termes dominants"
+  ],
+  "methods": [
+    "multiplication par le conjugué",
+    "simplification algébrique",
+    "analyse des termes dominants",
+    "évaluation des limites"
+  ],
+  "objects": [
+    "fonction réelle",
+    "limite infinie",
+    "expression algébrique",
+    "termes dominants"
+  ],
+  "content_hash": "c2195d854f1584b290015f47afdb51ddac969c8814f30bb533d96b7e92385e4e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:28:59.381Z"
+}

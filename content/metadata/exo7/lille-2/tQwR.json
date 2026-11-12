@@ -1,0 +1,28 @@
+{
+  "uuid": "tQwR",
+  "source_path": "exo7/lille-2/tQwR.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant une matrice 2x2 dépendant d'un paramètre réel x, notamment son inversibilité, son inverse, son rang, et les propriétés de ses puissances.",
+  "concepts": [
+    "inversibilité d'une matrice",
+    "rang d'une matrice",
+    "puissance d'une matrice",
+    "matrice identité",
+    "matrice de rotation",
+    "récurrence sur les matrices"
+  ],
+  "methods": [
+    "calcul de l'inverse d'une matrice",
+    "récurrence mathématique",
+    "vérification d'égalité matricielle",
+    "propriétés des matrices de rotation"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "inverse d'une matrice",
+    "puissance d'une matrice",
+    "matrice identité"
+  ],
+  "content_hash": "d62b678673cf99a74d2c9e51134f6023fad5b68b8bde8cdf563444d6f04e359c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:53:59.873Z"
+}

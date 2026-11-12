@@ -1,0 +1,31 @@
+{
+  "uuid": "PaTt",
+  "source_path": "exo7/lille-2/PaTt.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant un endomorphisme d'un espace de polynômes de degré ≤ 3, en analysant son noyau, son image, sa matrice dans différentes bases et les puissances de cette matrice.",
+  "concepts": [
+    "endomorphisme d'espace vectoriel",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "changement de base",
+    "matrice de passage",
+    "puissance de matrice",
+    "base d'un espace vectoriel"
+  ],
+  "methods": [
+    "calcul de noyau",
+    "vérification de base",
+    "calcul de matrice de passage",
+    "calcul de puissance de matrice",
+    "diagonalisation"
+  ],
+  "objects": [
+    "endomorphisme de ℝ₃[X]",
+    "matrice carrée 4x4",
+    "base de polynômes",
+    "matrice de passage",
+    "puissance de matrice"
+  ],
+  "content_hash": "27f63495cfd329d46bd06eab9914950a3907828cf98071c2ca8b8c43f5e28ba0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:52:26.485Z"
+}

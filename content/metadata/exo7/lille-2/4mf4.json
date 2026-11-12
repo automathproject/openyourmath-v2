@@ -1,0 +1,28 @@
+{
+  "uuid": "4mf4",
+  "source_path": "exo7/lille-2/4mf4.tex",
+  "summary": "L'exercice demande de déterminer les propriétés vectorielles des ensembles E et F de matrices carrées d'ordre 2 à coefficients réels, définis respectivement par les conditions de symétrie et d'anti-symétrie. Il s'agit d'identifier la dimension de ces espaces et leur relation de supplémentarité dans M₂(ℝ).",
+  "concepts": [
+    "espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "matrice symétrique",
+    "matrice antisymétrique",
+    "base d'un espace vectoriel",
+    "théorème de la dimension d'une somme",
+    "supplémentarité d'espaces vectoriels"
+  ],
+  "methods": [
+    "calcul de la dimension par base",
+    "vérification de la supplémentarité",
+    "identification de matrices génératrices"
+  ],
+  "objects": [
+    "matrice carrée 2x2",
+    "espace vectoriel de matrices",
+    "famille génératrice",
+    "base d'un espace vectoriel"
+  ],
+  "content_hash": "f0666364140d9d490da79b3712b25832156c7d8587cc50aa8dd849c0d7b4aa73",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:51:30.819Z"
+}

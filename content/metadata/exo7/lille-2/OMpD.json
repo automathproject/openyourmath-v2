@@ -1,0 +1,26 @@
+{
+  "uuid": "OMpD",
+  "source_path": "exo7/lille-2/OMpD.tex",
+  "summary": "L'exercice demande de déterminer quelles propriétés d'un espace vectoriel classique s'appliquent à une structure algébrique non usuelle définie sur ℝ*² avec des opérations modifiées. Il s'agit d'analyser la stabilité par multiplication scalaire, l'élément neutre, l'inverse additif et la structure d'espace vectoriel.",
+  "concepts": [
+    "espace vectoriel",
+    "élément neutre",
+    "inverse additif",
+    "stabilité par multiplication scalaire",
+    "structure algébrique",
+    "lois de composition interne"
+  ],
+  "methods": [
+    "vérification des axiomes d'espace vectoriel",
+    "calcul de l'élément neutre",
+    "recherche de l'inverse additif"
+  ],
+  "objects": [
+    "ensemble ℝ*²",
+    "opérations de composition",
+    "couple (x,y)"
+  ],
+  "content_hash": "4ff55b38f320a245968ee34176da7544e8f87eb6c0eafb6b18cc09137182050e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:40:55.647Z"
+}

@@ -1,0 +1,28 @@
+{
+  "uuid": "jXLf",
+  "source_path": "exo7/lille-2/jXLf.tex",
+  "summary": "L'exercice demande d'analyser un système linéaire à paramètres (a, b, c) non nuls et distincts, en déterminant quelles assertions sur son existence et sa nature de solutions sont vraies. Il s'agit d'étudier la compatibilité et le nombre de solutions du système.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "théorème de Rouché-Capelli",
+    "paramètre",
+    "solution infinie",
+    "équivalence de systèmes"
+  ],
+  "methods": [
+    "méthode du pivot de Gauss",
+    "réduction de système",
+    "analyse de compatibilité",
+    "résolution par substitution"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice augmentée",
+    "paramètres réels",
+    "solution paramétrique"
+  ],
+  "content_hash": "014ac12880207d7b7e03f0398e2591619268a09d67bbe5e59f968cd7e4d53e69",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:33:54.719Z"
+}

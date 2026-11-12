@@ -1,0 +1,28 @@
+{
+  "uuid": "Tx8v",
+  "source_path": "exo7/lille-1/Tx8v.tex",
+  "summary": "L'exercice demande de déterminer quels polynômes donnés sont irréductibles sur les corps $\\Qq$, $\\Rr$ ou $\\Cc$, en analysant leur degré et leur discriminant.",
+  "concepts": [
+    "polynôme irréductible",
+    "corps de nombres",
+    "discriminant d'un polynôme",
+    "factorisation de polynômes",
+    "degré d'un polynôme",
+    "racines complexes"
+  ],
+  "methods": [
+    "analyse du discriminant",
+    "critère d'irréductibilité sur $\\Rr$ et $\\Cc$",
+    "factorisation dans $\\Qq[X]$"
+  ],
+  "objects": [
+    "polynôme du second degré",
+    "polynôme du troisième degré",
+    "corps $\\Qq$",
+    "corps $\\Rr$",
+    "corps $\\Cc$"
+  ],
+  "content_hash": "78fac9f6199305f9532c5c429af5cce7ca17b6e292496927bf6b92fc4ca63ae1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:55:59.561Z"
+}

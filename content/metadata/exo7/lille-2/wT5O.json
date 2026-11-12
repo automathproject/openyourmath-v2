@@ -1,0 +1,26 @@
+{
+  "uuid": "wT5O",
+  "source_path": "exo7/lille-2/wT5O.tex",
+  "summary": "L'exercice demande de déterminer si un ensemble de couples réels (x,y) vérifiant x+y=1 forme un espace vectoriel en analysant la validité de quatre assertions. Le contexte est purement algébrique, sans application concrète.",
+  "concepts": [
+    "espace vectoriel",
+    "sous-espace vectoriel",
+    "stabilité par addition",
+    "stabilité par multiplication scalaire",
+    "élément neutre",
+    "opérations usuelles"
+  ],
+  "methods": [
+    "vérification des propriétés d'espace vectoriel",
+    "test de stabilité",
+    "analyse des conditions d'appartenance"
+  ],
+  "objects": [
+    "ensemble de couples réels",
+    "sous-ensemble de ℝ²",
+    "élément neutre (0,0)"
+  ],
+  "content_hash": "0cec4a0baa42ee878460f33aec0f8e35147d24edede52d19b2cbcc88f18e1b5a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:42:14.591Z"
+}

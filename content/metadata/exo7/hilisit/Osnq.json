@@ -1,0 +1,27 @@
+{
+  "uuid": "Osnq",
+  "source_path": "exo7/hilisit/Osnq.tex",
+  "summary": "L'exercice demande d'identifier parmi quatre ensembles proposés ceux qui contiennent l'intervalle [0,2]. Les options incluent des intersections, des complémentaires et des unions d'intervalles ainsi qu'un ensemble discret.",
+  "concepts": [
+    "inclusion d'ensembles",
+    "intervalle réel",
+    "opérations sur les ensembles",
+    "complémentaire d'un ensemble",
+    "union d'ensembles",
+    "intersection d'ensembles"
+  ],
+  "methods": [
+    "vérification d'appartenance",
+    "analyse des bornes d'intervalles"
+  ],
+  "objects": [
+    "intervalle [0,2]",
+    "ensemble discret",
+    "ensemble complémentaire",
+    "ensemble intersection",
+    "ensemble union"
+  ],
+  "content_hash": "8b70d916b0553a9be117e41ac46428eb9e6f0746dda304e1d2815def67261548",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:48:22.809Z"
+}

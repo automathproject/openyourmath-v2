@@ -1,0 +1,30 @@
+{
+  "uuid": "pt2w",
+  "source_path": "exo7/lille-2/pt2w.tex",
+  "summary": "L'exercice demande de vérifier des affirmations concernant les développements limités d'une fonction rationnelle impliquant des fonctions usuelles (ln et racine carrée) au voisinage de 0. Il s'agit d'évaluer la validité de développements limités d'ordre 2 et 3 pour la fonction et sa composée.",
+  "concepts": [
+    "développement limité",
+    "fonction composée",
+    "division de séries formelles",
+    "petit o",
+    "développement limité d'ordre n",
+    "fonction logarithme",
+    "fonction racine carrée"
+  ],
+  "methods": [
+    "développement limité de fonctions usuelles",
+    "division de polynômes",
+    "approximation par séries de Taylor",
+    "calcul de reste o(x^n)"
+  ],
+  "objects": [
+    "fonction rationnelle",
+    "développement limité d'ordre 2",
+    "développement limité d'ordre 3",
+    "fonction ln(1+x+x²)",
+    "fonction √(1+2x)-1"
+  ],
+  "content_hash": "36278e72ba73e354991d5d0572bbe76bf8f9da65adcbdf5e91bdb0863761a80c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:36:30.204Z"
+}

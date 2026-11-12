@@ -1,0 +1,24 @@
+{
+  "uuid": "Fj8x",
+  "source_path": "exo7/lille-1/Fj8x.tex",
+  "summary": "L'exercice demande de calculer l'expression |z₁ + z₂|² + |z₁ - z₂|² pour deux nombres complexes z₁ et z₂, et de choisir la réponse correcte parmi les options proposées.",
+  "concepts": [
+    "module d'un nombre complexe",
+    "conjugué d'un nombre complexe",
+    "identité du parallélogramme",
+    "propriétés algébriques des nombres complexes"
+  ],
+  "methods": [
+    "développement algébrique",
+    "utilisation de la relation |z|² = z * conjugué(z)",
+    "simplification d'expressions complexes"
+  ],
+  "objects": [
+    "nombres complexes",
+    "module de nombres complexes",
+    "conjugué de nombres complexes"
+  ],
+  "content_hash": "93abaaa90401054c94333a50c0b5fb27bae1e3cec698c368939f7d66cd8e15bf",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:54:23.712Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "Lu2R",
+  "source_path": "exo7/lille-2/Lu2R.tex",
+  "summary": "L'exercice demande de vérifier la validité de quatre assertions concernant des opérations sur des matrices (somme, produit, transposée) avec des matrices données de tailles variées.",
+  "concepts": [
+    "transposée d'une matrice",
+    "somme de matrices",
+    "produit de matrices",
+    "matrice ligne",
+    "matrice colonne",
+    "matrice carrée"
+  ],
+  "methods": [
+    "calcul de transposée",
+    "addition matricielle",
+    "multiplication matricielle"
+  ],
+  "objects": [
+    "matrice 1x3",
+    "matrice 3x1",
+    "matrice 2x3",
+    "matrice 3x3"
+  ],
+  "content_hash": "23bd8b6f3f14a5121a27d8c915b0a61ea7407f6bbb204aa182cc9c2fe77e66f4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:52:15.792Z"
+}

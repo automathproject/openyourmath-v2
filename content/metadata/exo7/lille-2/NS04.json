@@ -1,0 +1,29 @@
+{
+  "uuid": "NS04",
+  "source_path": "exo7/lille-2/NS04.tex",
+  "summary": "L'exercice demande de déterminer les assertions vraies concernant un endomorphisme de ℝ³ donné par sa matrice dans la base canonique. Il porte sur les dimensions des noyaux de f-Id et f-2Id, l'existence d'une base de diagonalisation et la relation de conjugaison matricielle.",
+  "concepts": [
+    "endomorphisme",
+    "noyau d'un endomorphisme",
+    "dimension d'un espace vectoriel",
+    "valeur propre",
+    "diagonalisation",
+    "matrice de passage",
+    "conjugaison de matrices"
+  ],
+  "methods": [
+    "calcul de noyau",
+    "détermination de valeurs propres",
+    "construction de base adaptée",
+    "vérification de conjugaison"
+  ],
+  "objects": [
+    "matrice d'endomorphisme",
+    "base de ℝ³",
+    "matrice diagonale",
+    "matrice inversible"
+  ],
+  "content_hash": "94bda6a515f26a8a3f54127f723ab39516cbfc225422ce49d98da99111e563e4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:52:20.895Z"
+}

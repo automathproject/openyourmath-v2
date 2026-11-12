@@ -1,0 +1,27 @@
+{
+  "uuid": "V2El",
+  "source_path": "exo7/lille-2/V2El.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sur l'inversibilité de transformations linéaires d'une matrice inversible A sont vraies, parmi des opérations comme la multiplication par un scalaire, la transposée, la multiplication par sa transposée, et l'addition avec sa transposée.",
+  "concepts": [
+    "inversibilité d'une matrice",
+    "transposée d'une matrice",
+    "matrice identité",
+    "produit matriciel",
+    "inverse d'une matrice",
+    "propriétés des transposées"
+  ],
+  "methods": [
+    "vérification par contre-exemple",
+    "calcul de l'inverse d'une matrice",
+    "utilisation des propriétés de la transposée"
+  ],
+  "objects": [
+    "matrice inversible",
+    "transposée d'une matrice",
+    "matrice identité",
+    "produit de matrices"
+  ],
+  "content_hash": "d97820e10361242c26e54424d47c4be779f528386bfcca1c103eb76bba7dc584",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:52:39.509Z"
+}

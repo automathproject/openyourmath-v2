@@ -1,0 +1,28 @@
+{
+  "uuid": "sQnD",
+  "source_path": "exo7/lille-2/sQnD.tex",
+  "summary": "L'exercice demande de vérifier des affirmations sur les primitives d'intégrales de la forme (t²+1)⁻ⁿ et de la forme x⁻¹(ln²x+1)⁻ⁿ, en utilisant des relations de récurrence et des changements de variable.",
+  "concepts": [
+    "intégration par parties",
+    "relation de récurrence",
+    "changement de variable",
+    "primitive d'une fonction",
+    "fonction arctangente",
+    "intégrale définie"
+  ],
+  "methods": [
+    "intégration par parties",
+    "changement de variable",
+    "réécriture d'intégrale",
+    "calcul de primitive"
+  ],
+  "objects": [
+    "fonction Fₙ(x)",
+    "fonction Iₙ",
+    "intégrale de (t²+1)⁻ⁿ",
+    "intégrale de x⁻¹(ln²x+1)⁻ⁿ"
+  ],
+  "content_hash": "1cf462e5068a500d28a3498015b343d77a2828ed96e01d223636aba1b6595bfe",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:28:28.138Z"
+}

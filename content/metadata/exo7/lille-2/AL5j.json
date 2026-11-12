@@ -1,0 +1,30 @@
+{
+  "uuid": "AL5j",
+  "source_path": "exo7/lille-2/AL5j.tex",
+  "summary": "L'exercice demande d'analyser les propriétés locales de la fonction f(x) = x - sin(x) autour de 0 en utilisant son développement limité d'ordre 3. Il s'agit de déterminer quelles affirmations sont vraies concernant la tangente, les extrêmes, les points d'inflexion et la limite de f(x)/x².",
+  "concepts": [
+    "développement limité",
+    "tangente à une courbe",
+    "point d'inflexion",
+    "limite de fonctions",
+    "ordre d'un développement limité",
+    "notation petit o",
+    "étude locale de fonction"
+  ],
+  "methods": [
+    "calcul de développement limité",
+    "comparaison de termes dominants",
+    "analyse de la courbure",
+    "évaluation de limites"
+  ],
+  "objects": [
+    "fonction réelle",
+    "développement limité d'ordre 3",
+    "tangente",
+    "point d'abscisse 0",
+    "limite de quotient"
+  ],
+  "content_hash": "04b088f88fb32047bd62cca65e324e8f90f23f4f1959c6eaa2bfebbb14cbb128",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:34:44.054Z"
+}

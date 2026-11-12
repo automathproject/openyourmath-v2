@@ -1,0 +1,26 @@
+{
+  "uuid": "PgOg",
+  "source_path": "exo7/lille-1/PgOg.tex",
+  "summary": "L'exercice demande de déterminer si certaines valeurs sont des racines doubles du polynôme P(X) = X^6 + 4X^5 + X^4 - 10X^3 - 4X^2 + 8X en vérifiant les conditions nécessaires.",
+  "concepts": [
+    "racine d'un polynôme",
+    "racine multiple",
+    "décomposition en facteurs irréductibles",
+    "polynôme dérivé",
+    "multiplicité d'une racine"
+  ],
+  "methods": [
+    "calcul de la dérivée",
+    "factorisation de polynôme",
+    "vérification des conditions de racine double"
+  ],
+  "objects": [
+    "polynôme de degré 6",
+    "racine double",
+    "dérivée première",
+    "dérivée seconde"
+  ],
+  "content_hash": "729a5c1414b8ff87587ac294cb0467f65cdf43b9390032faf5ad7f9b71998646",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:55:51.940Z"
+}

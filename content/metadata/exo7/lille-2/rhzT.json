@@ -1,0 +1,29 @@
+{
+  "uuid": "rhzT",
+  "source_path": "exo7/lille-2/rhzT.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant les développements limités de deux fonctions f(x) et g(t), définies par des relations algébriques et logarithmiques, en analysant leur comportement au voisinage de 0 et à l'infini.",
+  "concepts": [
+    "développement limité",
+    "limite en l'infini",
+    "notation petit o",
+    "changement de variable",
+    "développement limité à droite/gauche",
+    "fonction composée",
+    "logarithme naturel"
+  ],
+  "methods": [
+    "développement limité d'une fraction rationnelle",
+    "développement limité d'une fonction composée",
+    "changement de variable pour le DL",
+    "approximation des termes dominants"
+  ],
+  "objects": [
+    "fonction rationnelle",
+    "fonction logarithmique",
+    "développement limité d'ordre 2",
+    "fonction en 1/t"
+  ],
+  "content_hash": "f1263bba1d53d21ca5a34a28d883b104b4ebce482e3125db2ec825588823e24b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:36:38.110Z"
+}

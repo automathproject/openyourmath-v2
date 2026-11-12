@@ -1,0 +1,25 @@
+{
+  "uuid": "aPJH",
+  "source_path": "exo7/hilisit/aPJH.tex",
+  "summary": "L'exercice demande d'identifier les affirmations vraies concernant les diviseurs communs, les multiples et les relations entre deux entiers donnés, 28 et 42.",
+  "concepts": [
+    "diviseur commun",
+    "plus grand commun diviseur",
+    "plus petit commun multiple",
+    "multiple d'un entier",
+    "arithmétique dans Z"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "calcul du pgcd",
+    "calcul du ppcm"
+  ],
+  "objects": [
+    "entiers naturels",
+    "diviseurs",
+    "multiples"
+  ],
+  "content_hash": "b8c8d094b0d290170d86e08faa85a7119d4fd8e8d7863b964255491a2cad0aa8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:23:55.245Z"
+}

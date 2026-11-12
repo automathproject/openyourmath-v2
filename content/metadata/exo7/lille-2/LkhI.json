@@ -1,0 +1,30 @@
+{
+  "uuid": "LkhI",
+  "source_path": "exo7/lille-2/LkhI.tex",
+  "summary": "L'exercice demande d'analyser un système linéaire à paramètres (a, m) en 4 inconnues (x, y, z, t) et de déterminer quelles assertions sur son nombre de solutions sont vraies. Il s'agit de comparer des équivalences de systèmes et d'étudier la compatibilité selon les valeurs des paramètres.",
+  "concepts": [
+    "système linéaire",
+    "paramètre",
+    "rang d'une matrice",
+    "équivalence de systèmes",
+    "compatibilité d'un système",
+    "solution unique",
+    "solution infinie",
+    "incompatibilité"
+  ],
+  "methods": [
+    "méthode du pivot de Gauss",
+    "réduction de système",
+    "analyse de cas selon les paramètres",
+    "comparaison d'équivalences"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice augmentée",
+    "paramètres réels",
+    "inconnues réelles"
+  ],
+  "content_hash": "d458e8f4f609d4f01d3de67751faccc0398afd330319d92b2d7c45dfaa67705e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:33:28.980Z"
+}

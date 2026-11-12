@@ -1,0 +1,25 @@
+{
+  "uuid": "PS5z",
+  "source_path": "exo7/lille-2/PS5z.tex",
+  "summary": "L'exercice demande de vérifier la validité de quatre égalités concernant des primitives de fonctions composées d'exponentielles et de fractions rationnelles. Il s'agit d'identifier les expressions correctes de primitives pour des combinaisons de fonctions usuelles.",
+  "concepts": [
+    "linéarité de l'intégration",
+    "primitive d'une fonction exponentielle",
+    "primitive d'une fonction rationnelle",
+    "intégrale indéfinie",
+    "constante d'intégration"
+  ],
+  "methods": [
+    "décomposition en intégrales simples",
+    "calcul de primitives usuelles",
+    "vérification par dérivation"
+  ],
+  "objects": [
+    "fonction exponentielle",
+    "fonction rationnelle",
+    "intégrale indéfinie"
+  ],
+  "content_hash": "4fd54a244105e6860f12aa935449bd6f04939e524538bc0c81b053d052904015",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:26:42.117Z"
+}

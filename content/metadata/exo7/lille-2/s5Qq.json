@@ -1,0 +1,28 @@
+{
+  "uuid": "s5Qq",
+  "source_path": "exo7/lille-2/s5Qq.tex",
+  "summary": "L'exercice demande de vérifier des affirmations concernant les développements limités d'ordre 1 et 2 en 0 de la fonction ln(x/(e^x - 1)), en utilisant des propriétés de composition et de quotient de développements limités.",
+  "concepts": [
+    "développement limité",
+    "composition de fonctions",
+    "quotient de fonctions",
+    "notation petit o",
+    "limite",
+    "fonction logarithme"
+  ],
+  "methods": [
+    "développement limité d'une fonction composée",
+    "développement limité d'un quotient",
+    "approximation affine",
+    "approximation quadratique"
+  ],
+  "objects": [
+    "fonction ln(x/(e^x - 1))",
+    "développement limité d'ordre 2",
+    "développement limité d'ordre 1",
+    "fonction e^x - 1"
+  ],
+  "content_hash": "f3d9effe2d0e3c3b9cdbc26cf318921f4df98779e934b5b439bd2917dda359cc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:36:40.669Z"
+}

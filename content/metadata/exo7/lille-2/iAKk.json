@@ -1,0 +1,25 @@
+{
+  "uuid": "iAKk",
+  "source_path": "exo7/lille-2/iAKk.tex",
+  "summary": "L'exercice demande de déterminer si deux applications données entre espaces vectoriels sont linéaires, en vérifiant leurs propriétés fondamentales. Les applications considérées sont f: ℝ² → ℝ définie par f(x,y) = |x+y| et g: ℝ² → ℝ² définie par g(x,y) = (max(x,y), min(x,y)).",
+  "concepts": [
+    "application linéaire",
+    "espace vectoriel",
+    "propriété additive",
+    "propriété homogène",
+    "contre-exemple"
+  ],
+  "methods": [
+    "vérification des propriétés linéaires",
+    "calcul d'image",
+    "comparaison d'images"
+  ],
+  "objects": [
+    "application f: ℝ² → ℝ",
+    "application g: ℝ² → ℝ²",
+    "vecteurs de ℝ²"
+  ],
+  "content_hash": "d71aad00620ac1330a6752c2a96c48d841d2d87077e9c5fe8dcbadfcaf3251fb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:21:52.420Z"
+}

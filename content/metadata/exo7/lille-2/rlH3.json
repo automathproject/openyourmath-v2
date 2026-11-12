@@ -1,0 +1,29 @@
+{
+  "uuid": "rlH3",
+  "source_path": "exo7/lille-2/rlH3.tex",
+  "summary": "L'exercice demande de déterminer les propriétés d'une application linéaire dérivée sur l'espace des polynômes de degré ≤ 2 à coefficients réels, en analysant son noyau et son image.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application",
+    "image d'une application",
+    "injection",
+    "surjection",
+    "théorème du rang",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "calcul de la dérivée",
+    "détermination d'une base",
+    "vérification de la colinéarité",
+    "application du théorème du rang"
+  ],
+  "objects": [
+    "polynôme de degré ≤ 2",
+    "espace vectoriel de polynômes",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire"
+  ],
+  "content_hash": "39c5c3cc99a0f9efeb92b25a26f811112aceb4dc46c211e57cdbf896635cc267",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:22:00.205Z"
+}

@@ -1,0 +1,24 @@
+{
+  "uuid": "uRwq",
+  "source_path": "exo7/hilisit/uRwq.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant le pgcd et le ppcm de deux entiers positifs a et b, après avoir multiplié ces entiers par 2. On connaît pgcd(a,b) = 10 et ppcm(a,b) = 140.",
+  "concepts": [
+    "pgcd",
+    "ppcm",
+    "relation entre pgcd et ppcm",
+    "multiplicativité du pgcd",
+    "multiplicativité du ppcm"
+  ],
+  "methods": [
+    "utilisation de la relation pgcd × ppcm = a × b",
+    "calcul de pgcd et ppcm après multiplication par un facteur"
+  ],
+  "objects": [
+    "entiers positifs",
+    "pgcd de deux entiers",
+    "ppcm de deux entiers"
+  ],
+  "content_hash": "931ad7b70a97a5fd00d5381baff3323978ddcff592ab3fcaa466b37fe2c642f2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:24:42.310Z"
+}

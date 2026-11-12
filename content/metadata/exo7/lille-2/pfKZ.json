@@ -1,0 +1,25 @@
+{
+  "uuid": "pfKZ",
+  "source_path": "exo7/lille-2/pfKZ.tex",
+  "summary": "L'exercice demande de déterminer quelles propriétés parmi quatre assertions sont vraies pour l'ensemble E des polynômes réels de degré strictement inférieur à n, muni des opérations usuelles.",
+  "concepts": [
+    "espace vectoriel",
+    "sous-espace vectoriel",
+    "stabilité par addition",
+    "stabilité par multiplication scalaire",
+    "polynôme",
+    "degré d'un polynôme"
+  ],
+  "methods": [
+    "vérification des propriétés d'espace vectoriel",
+    "analyse de la stabilité"
+  ],
+  "objects": [
+    "ensemble de polynômes",
+    "opérations usuelles (addition, multiplication scalaire)",
+    "élément nul"
+  ],
+  "content_hash": "f95c0e0ca898a99d391822ab46605df96edcc1c850ac89d02e72e645593eaeaf",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:42:08.493Z"
+}

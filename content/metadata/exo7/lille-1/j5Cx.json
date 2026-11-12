@@ -1,0 +1,24 @@
+{
+  "uuid": "j5Cx",
+  "source_path": "exo7/lille-1/j5Cx.tex",
+  "summary": "L'exercice demande de déterminer quelle inégalité doit être démontrée lors de l'étape d'hérédité d'une preuve par récurrence pour montrer que 2^n > 2n+1 pour tout entier n assez grand.",
+  "concepts": [
+    "principe de récurrence",
+    "hypothèse de récurrence",
+    "hérédité",
+    "raisonnement par contraposée",
+    "inégalité"
+  ],
+  "methods": [
+    "preuve par récurrence",
+    "déduction logique"
+  ],
+  "objects": [
+    "inégalité",
+    "entier naturel",
+    "assertion H_n"
+  ],
+  "content_hash": "6e7c0069257be2f80b23489049f6df3055ef5b4c4de0050afce0eee7e7dc3775",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:49:54.601Z"
+}

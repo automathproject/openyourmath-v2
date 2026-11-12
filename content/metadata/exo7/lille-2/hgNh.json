@@ -1,0 +1,28 @@
+{
+  "uuid": "hgNh",
+  "source_path": "exo7/lille-2/hgNh.tex",
+  "summary": "L'exercice demande de vérifier la validité de quatre égalités impliquant des développements limités de fonctions logarithmiques composées avec des fonctions trigonométriques ou exponentielles, au voisinage de 0.",
+  "concepts": [
+    "développement limité",
+    "petit o",
+    "limite",
+    "fonction logarithme",
+    "fonction exponentielle",
+    "fonction trigonométrique"
+  ],
+  "methods": [
+    "développement limité d'une fonction composée",
+    "approximation affine",
+    "approximation quadratique",
+    "linéarisation"
+  ],
+  "objects": [
+    "fonction ln(1 + e^x)",
+    "fonction ln(cos x)",
+    "fonction ln(1 + sin x)",
+    "fonction ln(1 - x²) - ln((1 + x)²)"
+  ],
+  "content_hash": "0a09a8d1a7301c3555819f12cf66f280c1979216d698e9554b4624ea89f7fcd9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:36:01.964Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "Y9fQ",
+  "source_path": "exo7/hilisit/Y9fQ.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant le PGCD et le PPCM entre le nombre 79 475 et 75, en utilisant leurs décompositions en facteurs premiers.",
+  "concepts": [
+    "décomposition en facteurs premiers",
+    "plus grand commun diviseur",
+    "plus petit commun multiple",
+    "divisibilité dans Z",
+    "arithmétique des entiers"
+  ],
+  "methods": [
+    "calcul du PGCD par décomposition",
+    "calcul du PPCM par décomposition",
+    "vérification de divisibilité"
+  ],
+  "objects": [
+    "nombre entier",
+    "décomposition factorielle",
+    "PGCD",
+    "PPCM"
+  ],
+  "content_hash": "427022c5918ca03ee881d5710330bbb2b12c6c8b82b77e70ec939621d8c20be6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:23:50.942Z"
+}

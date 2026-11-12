@@ -1,0 +1,26 @@
+{
+  "uuid": "9Gr4",
+  "source_path": "exo7/lille-2/9Gr4.tex",
+  "summary": "L'exercice demande d'évaluer la validité de quatre assertions concernant le calcul de la primitive de 1/sin(x) en utilisant le changement de variable t = cos(x). Il s'agit de vérifier des égalités d'intégrales et des décompositions algébriques.",
+  "concepts": [
+    "changement de variable",
+    "primitive d'une fonction",
+    "décomposition en éléments simples",
+    "intégrale indéfinie",
+    "fonction trigonométrique"
+  ],
+  "methods": [
+    "changement de variable",
+    "décomposition en éléments simples",
+    "intégration directe"
+  ],
+  "objects": [
+    "fonction 1/sin(x)",
+    "changement de variable t = cos(x)",
+    "intégrale indéfinie",
+    "décomposition algébrique"
+  ],
+  "content_hash": "98933ab04278a711e3857867b4482c1f15f12365772197e4ede0610c685b20dd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:25:31.765Z"
+}

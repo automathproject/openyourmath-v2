@@ -1,0 +1,26 @@
+{
+  "uuid": "riuM",
+  "source_path": "exo7/hilisit/riuM.tex",
+  "summary": "L'exercice demande d'analyser une relation linéaire entre deux entiers 41 et 7, et d'en déduire des propriétés sur leur PGCD et leur caractère premiers entre eux.",
+  "concepts": [
+    "théorème de Bézout",
+    "PGCD",
+    "nombres premiers entre eux",
+    "diviseur",
+    "relation de Bézout",
+    "arithmétique dans Z"
+  ],
+  "methods": [
+    "application du théorème de Bézout",
+    "analyse des diviseurs communs",
+    "vérification de la divisibilité"
+  ],
+  "objects": [
+    "PGCD de deux entiers",
+    "relation linéaire",
+    "coefficients de Bézout"
+  ],
+  "content_hash": "f027d7cfaf8a7e585788c9d04d4e4656523efba66b42296070f7ad8292177149",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:24:34.782Z"
+}

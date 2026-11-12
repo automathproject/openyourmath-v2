@@ -1,0 +1,28 @@
+{
+  "uuid": "qqjx",
+  "source_path": "exo7/lille-2/qqjx.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant un endomorphisme f d'un espace vectoriel E, en particulier les relations entre f²=0, l'image de f et le noyau de f.",
+  "concepts": [
+    "endomorphisme",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "bijectivité",
+    "injectivité",
+    "relation entre noyau et image"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de la définition du noyau",
+    "utilisation de la définition de l'image",
+    "application de la composition d'applications linéaires"
+  ],
+  "objects": [
+    "espace vectoriel",
+    "endomorphisme",
+    "noyau",
+    "image"
+  ],
+  "content_hash": "0b7378fcc55c8a331aca028ee22c5037206eb350e2719b02597064385e1c27cc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:21:56.929Z"
+}

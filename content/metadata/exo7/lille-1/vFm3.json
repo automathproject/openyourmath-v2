@@ -1,0 +1,25 @@
+{
+  "uuid": "vFm3",
+  "source_path": "exo7/lille-1/vFm3.tex",
+  "summary": "L'exercice demande d'identifier les intervalles où une fonction polynomiale du second degré s'annule, en utilisant les résultats d'une méthode de dichotomie appliquée sur un intervalle donné. Il propose également une inégalité à vérifier concernant la racine carrée de 7.",
+  "concepts": [
+    "théorème des valeurs intermédiaires",
+    "continuité",
+    "fonction strictement croissante",
+    "racine d'une fonction",
+    "méthode de dichotomie"
+  ],
+  "methods": [
+    "application du théorème des valeurs intermédiaires",
+    "encadrement de racine",
+    "comparaison de valeurs de fonction"
+  ],
+  "objects": [
+    "fonction polynomiale",
+    "intervalle de recherche",
+    "racine carrée"
+  ],
+  "content_hash": "e487ce4b09f0d86b26072c6e7f04e4810610fcec562badf1e1dae03f746ab4c0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:31:03.366Z"
+}

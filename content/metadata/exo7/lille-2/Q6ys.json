@@ -1,0 +1,28 @@
+{
+  "uuid": "Q6ys",
+  "source_path": "exo7/lille-2/Q6ys.tex",
+  "summary": "L'exercice demande de déterminer la matrice d'une application linéaire f entre l'espace des polynômes de degré ≤ 2 et ℝ³, en utilisant différentes bases canoniques. Il s'agit de vérifier des assertions concernant les matrices de passage de f selon les bases données.",
+  "concepts": [
+    "application linéaire",
+    "matrice d'une application linéaire",
+    "base d'un espace vectoriel",
+    "coordonnées d'un vecteur dans une base",
+    "espace vectoriel de polynômes",
+    "changement de base"
+  ],
+  "methods": [
+    "calcul des coordonnées d'un vecteur dans une base",
+    "construction de la matrice d'une application linéaire",
+    "évaluation de polynômes"
+  ],
+  "objects": [
+    "polynôme de degré ≤ 2",
+    "espace vectoriel ℝ³",
+    "matrice de passage",
+    "base canonique",
+    "application linéaire"
+  ],
+  "content_hash": "a79a2de4cc5d38f862b539cf2d0c0367de1a5d95ecacf7c5f2421d42726de63f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:52:29.187Z"
+}

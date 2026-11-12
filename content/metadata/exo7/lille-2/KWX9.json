@@ -1,0 +1,30 @@
+{
+  "uuid": "KWX9",
+  "source_path": "exo7/lille-2/KWX9.tex",
+  "summary": "On considère une application linéaire entre des espaces de polynômes, définie par la division euclidienne par (X+1)³. L'exercice demande de déterminer les assertions vraies concernant le noyau, l'image et le rang de cette application.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "théorème du rang",
+    "division euclidienne de polynômes",
+    "base d'un espace vectoriel",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "calcul du noyau",
+    "calcul de l'image",
+    "application du théorème du rang",
+    "vérification de la base d'un espace"
+  ],
+  "objects": [
+    "espace vectoriel de polynômes",
+    "application linéaire entre espaces de polynômes",
+    "noyau d'une application",
+    "image d'une application",
+    "base de polynômes"
+  ],
+  "content_hash": "afa7f141d190d6a06e9f7eff73ab5037cf16027359f4b1ff4b03dff861b18940",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:21:23.329Z"
+}

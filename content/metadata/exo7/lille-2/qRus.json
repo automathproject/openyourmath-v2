@@ -1,0 +1,29 @@
+{
+  "uuid": "qRus",
+  "source_path": "exo7/lille-2/qRus.tex",
+  "summary": "L'exercice demande d'étudier les propriétés locales d'une fonction définie par morceaux en 0, en utilisant les développements limités pour analyser sa continuité, sa dérivabilité et sa position par rapport à sa tangente en 0.",
+  "concepts": [
+    "développement limité",
+    "continuité",
+    "dérivabilité",
+    "limite de fonction",
+    "tangente à une courbe",
+    "division de séries formelles",
+    "ordre d'un développement limité"
+  ],
+  "methods": [
+    "calcul de développement limité",
+    "standardisation",
+    "comparaison de termes dominants",
+    "analyse de la position relative d'une courbe et de sa tangente"
+  ],
+  "objects": [
+    "fonction définie par morceaux",
+    "tangente en un point",
+    "développement limité d'ordre 2",
+    "limite en un point"
+  ],
+  "content_hash": "0c64ef5da129bb9cb7b4e83a3ab297a5750ea03b23505ee45fd7732473818e88",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:36:32.852Z"
+}

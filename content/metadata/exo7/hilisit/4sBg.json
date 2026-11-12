@@ -1,0 +1,25 @@
+{
+  "uuid": "4sBg",
+  "source_path": "exo7/hilisit/4sBg.tex",
+  "summary": "L'exercice demande d'identifier les coefficients de Bézout u et v pour les entiers a=453 et b=201, ainsi que leur PGCD, en utilisant l'algorithme d'Euclide étendu.",
+  "concepts": [
+    "théorème de Bézout",
+    "algorithme d'Euclide étendu",
+    "PGCD",
+    "nombres premiers entre eux",
+    "arithmétique dans Z",
+    "équation de Bézout"
+  ],
+  "methods": [
+    "algorithme d'Euclide",
+    "remontée des coefficients de Bézout"
+  ],
+  "objects": [
+    "entiers naturels",
+    "coefficients de Bézout",
+    "PGCD"
+  ],
+  "content_hash": "363a2e4b52b8afebf946a44aa021811e06e6396608025e2296d0b15d93f09238",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:22:46.307Z"
+}

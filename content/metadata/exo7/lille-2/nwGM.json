@@ -1,0 +1,26 @@
+{
+  "uuid": "nwGM",
+  "source_path": "exo7/lille-2/nwGM.tex",
+  "summary": "L'exercice demande d'identifier parmi quatre assertions celles qui sont vraies concernant des ensembles de vecteurs comme bases de ℝ, selon qu'on considère ℝ ou ℚ comme corps de base.",
+  "concepts": [
+    "espace vectoriel",
+    "base d'un espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "corps de base",
+    "linéaire indépendance",
+    "générateurs d'un espace vectoriel"
+  ],
+  "methods": [
+    "vérification de la linéaire indépendance",
+    "comparaison de dimension",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "ℝ-espace vectoriel",
+    "ℚ-espace vectoriel",
+    "ensemble de vecteurs {1}, {√2}, {1, √2}"
+  ],
+  "content_hash": "459664424686084a43f33c1943f1e023dd4d94ea206920769046bc66075c7dd4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:42:04.016Z"
+}

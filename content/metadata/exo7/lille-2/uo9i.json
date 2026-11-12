@@ -1,0 +1,25 @@
+{
+  "uuid": "uo9i",
+  "source_path": "exo7/lille-2/uo9i.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant les propriétés d'une matrice triangulaire supérieure A et de sa puissance N = A - aI, notamment sur la nilpotence de N, l'applicabilité de la formule du binôme et les expressions explicites de An.",
+  "concepts": [
+    "matrice triangulaire",
+    "nilpotence",
+    "formule du binôme pour les matrices",
+    "commutativité du produit matriciel",
+    "puissance de matrice"
+  ],
+  "methods": [
+    "calcul de puissances de matrices",
+    "décomposition matricielle",
+    "vérification d'assertions"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "matrice nilpotente",
+    "puissance de matrice"
+  ],
+  "content_hash": "ab0f3cfc9cb28c0ead23c4aff2ae79bdc585c68b3491da03c696dcd405d76c67",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:54:02.331Z"
+}

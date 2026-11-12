@@ -1,0 +1,29 @@
+{
+  "uuid": "K4fO",
+  "source_path": "exo7/lille-2/K4fO.tex",
+  "summary": "L'exercice demande d'identifier les affirmations vraies concernant les développements limités d'ordre 2 en 0 des fonctions f(x) = √(1+2x) - 1 et g(x) = ln(1+x), ainsi que leurs applications pour étudier la tangente et le comportement local de f(x).",
+  "concepts": [
+    "développement limité",
+    "tangente à une courbe",
+    "limite de fonctions",
+    "ordre d'un développement limité",
+    "notation petit o",
+    "approximation locale"
+  ],
+  "methods": [
+    "calcul de développement limité",
+    "comparaison de développements limités",
+    "étude de la position relative d'une courbe et de sa tangente",
+    "calcul de limite à l'aide de développements limités"
+  ],
+  "objects": [
+    "fonction √(1+2x) - 1",
+    "fonction ln(1+x)",
+    "tangente en 0",
+    "développement limité d'ordre 2",
+    "rapport de fonctions"
+  ],
+  "content_hash": "0bd3937531cd30c4dd01812290310c1ea665dfb0dcef8027c5db93ba7b627be7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:35:13.549Z"
+}

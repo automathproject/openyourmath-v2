@@ -1,0 +1,24 @@
+{
+  "uuid": "M9fM",
+  "source_path": "exo7/worms/M9fM.tex",
+  "summary": "L'exercice demande de calculer l'espérance d'une variable aléatoire Y définie comme une transformation quadratique d'une autre variable X, dont l'espérance et la variance sont connues.",
+  "concepts": [
+    "espérance mathématique",
+    "variance",
+    "relation entre variance et moment d'ordre 2",
+    "linéarité de l'espérance"
+  ],
+  "methods": [
+    "calcul de moment d'ordre 2 à partir de la variance",
+    "application de la formule de l'espérance d'une transformation"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "espérance",
+    "variance",
+    "transformation quadratique"
+  ],
+  "content_hash": "8675851eff7b7ad40b86c48cfbbc4bb07ba8b34de5a939ca025d74e059d6faac",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:57:13.042Z"
+}

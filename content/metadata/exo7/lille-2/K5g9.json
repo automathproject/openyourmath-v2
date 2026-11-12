@@ -1,0 +1,30 @@
+{
+  "uuid": "K5g9",
+  "source_path": "exo7/lille-2/K5g9.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant une application linéaire f définie sur l'espace des polynômes réels de degré ≤ 3, en utilisant deux bases différentes. Il porte sur la matrice de f dans ces bases, la vérification de la base B', et la relation de supplémentarité entre le noyau et l'image de f.",
+  "concepts": [
+    "application linéaire",
+    "matrice d'une application linéaire",
+    "base d'un espace vectoriel",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "espaces supplémentaires",
+    "division euclidienne de polynômes"
+  ],
+  "methods": [
+    "calcul de matrice de passage",
+    "détermination du noyau et de l'image",
+    "vérification de la base d'un espace vectoriel",
+    "utilisation de la division euclidienne"
+  ],
+  "objects": [
+    "polynôme de degré ≤ 3",
+    "base canonique",
+    "matrice 4x4",
+    "application linéaire",
+    "noyau et image d'une application"
+  ],
+  "content_hash": "410ba6ecaea606e2a65031ce95e3ef6409f3d30ac4936ac5dc4a7e54331481dd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:52:03.627Z"
+}

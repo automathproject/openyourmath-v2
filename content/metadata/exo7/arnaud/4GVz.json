@@ -1,0 +1,28 @@
+{
+  "uuid": "4GVz",
+  "source_path": "exo7/arnaud/4GVz.tex",
+  "summary": "L'exercice étudie une suite définie par récurrence $u_{n+1} = 2u_n(1-u_n)$ avec $u_0 ∈ [0,1]$. Il demande d'analyser les propriétés de cette suite, notamment son inclusion dans l'intervalle [0,1], sa monotonie, ses points fixes et sa convergence.",
+  "concepts": [
+    "suite définie par récurrence",
+    "point fixe",
+    "convergence d'une suite",
+    "fonction contractante",
+    "intervalle invariant",
+    "limite d'une suite"
+  ],
+  "methods": [
+    "analyse des points fixes",
+    "étude de la monotonie",
+    "calcul des limites",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "suite numérique",
+    "fonction $f(x) = 2x(1-x)$",
+    "intervalle [0,1]",
+    "limite de suite"
+  ],
+  "content_hash": "80aab02fcd279a1fb0a41ee0f5078768ffc84432f238e69b44e12fcbe6ebd99b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:59:00.624Z"
+}

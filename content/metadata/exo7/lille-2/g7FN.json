@@ -1,0 +1,25 @@
+{
+  "uuid": "g7FN",
+  "source_path": "exo7/lille-2/g7FN.tex",
+  "summary": "L'exercice demande de déterminer les matrices de passage entre deux bases d'un espace vectoriel de dimension 3, en identifiant la matrice P (de B à B') et son inverse Q (de B' à B), puis de valider des assertions sur ces matrices.",
+  "concepts": [
+    "matrice de passage",
+    "inversibilité d'une matrice",
+    "base d'un espace vectoriel",
+    "application linéaire bijective",
+    "coordonnées d'un vecteur dans une base"
+  ],
+  "methods": [
+    "calcul de l'inverse d'une matrice",
+    "construction d'une matrice de passage",
+    "vérification de l'inversibilité"
+  ],
+  "objects": [
+    "matrice carrée 3x3",
+    "base canonique",
+    "vecteurs de base"
+  ],
+  "content_hash": "02f365a1324e8252fba6f1d35c99d32277baec04116740b7913ae30e47b90ba7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:53:13.180Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "ekRr",
+  "source_path": "exo7/lille-2/ekRr.tex",
+  "summary": "L'exercice demande de déterminer les développements limités d'ordre 2 en 0 de la fonction f(x) = (1+x)^(1/(e^x-1)) en vérifiant des affirmations sur ses DL. Il mobilise des DL usuels et des opérations sur les DL (quotient et composée).",
+  "concepts": [
+    "développement limité",
+    "fonction exponentielle",
+    "fonction logarithme",
+    "opération sur les DL",
+    "quotient de DL",
+    "composée de DL",
+    "petit o"
+  ],
+  "methods": [
+    "développement limité de ln(1+x)",
+    "développement limité de e^x-1",
+    "division de DL",
+    "composition de DL",
+    "approximation exponentielle"
+  ],
+  "objects": [
+    "fonction f(x) = (1+x)^(1/(e^x-1))",
+    "développement limité d'ordre 2",
+    "DL de ln(1+x)",
+    "DL de e^x-1"
+  ],
+  "content_hash": "b91c72af8472b47695896554573c61689ab37305cc820674b36f1df554291294",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:35:44.763Z"
+}

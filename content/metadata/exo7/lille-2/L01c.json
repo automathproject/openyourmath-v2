@@ -1,0 +1,32 @@
+{
+  "uuid": "L01c",
+  "source_path": "exo7/lille-2/L01c.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant un endomorphisme de ℝ³ donné par sa matrice dans la base canonique. Les assertions portent sur l'inversibilité de A−aI, le rang de A et A−4I, la dimension des noyaux de f et f−4Id, et l'existence d'une base de diagonalisation.",
+  "concepts": [
+    "endomorphisme",
+    "matrice d'application linéaire",
+    "noyau d'un endomorphisme",
+    "image d'un endomorphisme",
+    "rang d'une matrice",
+    "valeurs propres",
+    "diagonalisation",
+    "changement de base"
+  ],
+  "methods": [
+    "calcul du polynôme caractéristique",
+    "détermination des valeurs propres",
+    "calcul de la dimension du noyau",
+    "construction d'une base de noyau",
+    "diagonalisation d'une matrice"
+  ],
+  "objects": [
+    "matrice carrée 3x3",
+    "endomorphisme de ℝ³",
+    "noyau d'un endomorphisme",
+    "matrice identité",
+    "base de ℝ³"
+  ],
+  "content_hash": "5ca130ada523b3dd23039d46d47d0b18a07562f7f36b14456a4039ba2642dc2f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:52:07.560Z"
+}

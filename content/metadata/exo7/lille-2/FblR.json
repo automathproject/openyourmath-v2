@@ -1,0 +1,30 @@
+{
+  "uuid": "FblR",
+  "source_path": "exo7/lille-2/FblR.tex",
+  "summary": "L'exercice demande de déterminer si des assertions sur des bases de l'espace vectoriel des polynômes de degré ≤ 2 et les matrices associées à une application linéaire sont vraies. L'application linéaire f est définie par f(P) = XP', où P' est la dérivée de P.",
+  "concepts": [
+    "application linéaire",
+    "base d'un espace vectoriel",
+    "matrice d'une application linéaire",
+    "changement de base",
+    "polynôme de degré 2",
+    "espace vectoriel de polynômes",
+    "coordonnées d'un vecteur dans une base"
+  ],
+  "methods": [
+    "calcul des coordonnées d'un vecteur dans une base",
+    "construction de la matrice d'une application linéaire",
+    "vérification de l'indépendance linéaire",
+    "calcul de la dérivée d'un polynôme"
+  ],
+  "objects": [
+    "espace vectoriel ℝ₂[X]",
+    "base canonique {1, X, X²}",
+    "application linéaire f(P) = XP'",
+    "base alternative {P₁, P₂, P₃}",
+    "matrices de passage"
+  ],
+  "content_hash": "4bafc70be70ab7cfe5eb2a3709f7a9d9413d8cfe8d8c012d85948d1754179228",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:51:53.991Z"
+}

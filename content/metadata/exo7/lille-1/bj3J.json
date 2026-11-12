@@ -1,0 +1,27 @@
+{
+  "uuid": "bj3J",
+  "source_path": "exo7/lille-1/bj3J.tex",
+  "summary": "L'exercice demande de déterminer les valeurs exactes des expressions A, B et C définies comme des fonctions circulaires inverses appliquées à des angles donnés, puis de vérifier parmi les propositions celles qui sont vraies.",
+  "concepts": [
+    "fonction sinus inverse",
+    "fonction cosinus inverse",
+    "fonction tangente inverse",
+    "périodicité des fonctions trigonométriques",
+    "plage de définition des fonctions circulaires inverses",
+    "réduction d'angle"
+  ],
+  "methods": [
+    "réduction modulo la période",
+    "utilisation des propriétés des fonctions circulaires inverses",
+    "comparaison d'intervalles"
+  ],
+  "objects": [
+    "fonction arcsin",
+    "fonction arccos",
+    "fonction arctan",
+    "angle réel"
+  ],
+  "content_hash": "21892c9d8d4576546ee7daf107e05caad87c9bdab17346abf2166394d659ca23",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:43:10.817Z"
+}

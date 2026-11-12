@@ -1,0 +1,28 @@
+{
+  "uuid": "K4Wy",
+  "source_path": "exo7/lille-1/K4Wy.tex",
+  "summary": "L'exercice demande de déterminer les valeurs des paramètres a et b pour qu'une fonction par morceaux, définie par une exponentielle pour x ≤ 0 et une arctangente pour x > 0, soit dérivable sur ℝ.",
+  "concepts": [
+    "continuité d'une fonction",
+    "dérivabilité en un point",
+    "limite d'une fonction",
+    "fonction par morceaux",
+    "continuité sur un intervalle",
+    "dérivée d'une fonction composée"
+  ],
+  "methods": [
+    "calcul de limite",
+    "continuité en un point",
+    "égalité des dérivées latérales",
+    "calcul de dérivée"
+  ],
+  "objects": [
+    "fonction par morceaux",
+    "paramètres a et b",
+    "dérivée latérale",
+    "limite en un point"
+  ],
+  "content_hash": "6e09dcdbd22b45ef79bde8b08b50e3da1f6576bf69a053a4c3eeee4140d2460e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:32:18.204Z"
+}

@@ -1,0 +1,24 @@
+{
+  "uuid": "WI0V",
+  "source_path": "exo7/lille-2/WI0V.tex",
+  "summary": "L'exercice demande de déterminer si deux applications de ℂ dans ℂ, associant à un nombre complexe sa partie réelle ou imaginaire, sont linéaires sur ℂ ou sur ℝ.",
+  "concepts": [
+    "application linéaire",
+    "espace vectoriel sur ℂ",
+    "espace vectoriel sur ℝ",
+    "partie réelle",
+    "partie imaginaire"
+  ],
+  "methods": [
+    "vérification des propriétés de linéarité",
+    "analyse des structures d'espaces vectoriels"
+  ],
+  "objects": [
+    "application ℂ → ℂ",
+    "partie réelle d'un nombre complexe",
+    "partie imaginaire d'un nombre complexe"
+  ],
+  "content_hash": "271a60c19ac3bcc723f7cac0d12b38db969dbc027dc268630984b0cb1726f164",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:21:46.636Z"
+}

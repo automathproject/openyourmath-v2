@@ -1,0 +1,25 @@
+{
+  "uuid": "tEBA",
+  "source_path": "exo7/lille-2/tEBA.tex",
+  "summary": "L'exercice demande d'identifier les expressions correctes obtenues par changement de variable t = sin(x) dans l'intégrale ∫(cos³x / (1 + sin²x)) dx. Il s'agit de transformer l'intégrale en fonction de t et d'en déduire sa primitive.",
+  "concepts": [
+    "changement de variable",
+    "primitive d'une fonction",
+    "intégration",
+    "fonction trigonométrique",
+    "décomposition d'intégrale"
+  ],
+  "methods": [
+    "substitution",
+    "décomposition en éléments simples",
+    "intégration de fractions rationnelles"
+  ],
+  "objects": [
+    "intégrale indéfinie",
+    "fonction trigonométrique",
+    "variable de substitution"
+  ],
+  "content_hash": "630ef8d71aca7fdc18c7e853088cfbae668ce2776fcb64c21088358e51513315",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:28:35.168Z"
+}

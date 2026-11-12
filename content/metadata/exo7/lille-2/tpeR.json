@@ -1,0 +1,26 @@
+{
+  "uuid": "tpeR",
+  "source_path": "exo7/lille-2/tpeR.tex",
+  "summary": "L'exercice demande de déterminer si des applications définies sur des espaces de polynômes sont linéaires et si elles annulent le polynôme nul. Il s'agit d'applications associant à un polynôme de degré ≤ 3 son reste ou son quotient dans la division par X³+1.",
+  "concepts": [
+    "application linéaire",
+    "division euclidienne de polynômes",
+    "espace vectoriel de polynômes",
+    "linéarité",
+    "polynôme quotient",
+    "polynôme reste"
+  ],
+  "methods": [
+    "vérification de la linéarité",
+    "calcul de division euclidienne"
+  ],
+  "objects": [
+    "polynôme de degré ≤ 3",
+    "polynôme de degré ≤ 2",
+    "application linéaire",
+    "division euclidienne"
+  ],
+  "content_hash": "0b2a16cccef255fc5757b472c00a36a465c35ff0b2d185e3eefecd61f4c445df",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:22:05.713Z"
+}

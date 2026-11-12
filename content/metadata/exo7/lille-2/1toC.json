@@ -1,0 +1,27 @@
+{
+  "uuid": "1toC",
+  "source_path": "exo7/lille-2/1toC.tex",
+  "summary": "L'exercice demande de déterminer quelles matrices parmi quatre données sont inversibles, en justifiant leur inversibilité ou non.",
+  "concepts": [
+    "inversibilité d'une matrice",
+    "déterminant",
+    "vecteurs colonnes",
+    "linéaire dépendance",
+    "matrice carrée",
+    "rang d'une matrice"
+  ],
+  "methods": [
+    "méthode de Gauss",
+    "calcul du déterminant",
+    "vérification de la linéaire dépendance des colonnes"
+  ],
+  "objects": [
+    "matrice 1x1",
+    "matrice 2x2",
+    "matrice 3x3",
+    "vecteurs colonnes"
+  ],
+  "content_hash": "34ef22d6fea063f0026c865bf3fa84df1d9b9f51cbf9f372343c65530a347987",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:51:21.623Z"
+}

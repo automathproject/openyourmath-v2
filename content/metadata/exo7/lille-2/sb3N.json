@@ -1,0 +1,29 @@
+{
+  "uuid": "sb3N",
+  "source_path": "exo7/lille-2/sb3N.tex",
+  "summary": "On considère un endomorphisme f d'un espace vectoriel réel E vérifiant f² + f + Id = 0. L'exercice demande de déterminer quelles assertions parmi quatre propositions sur le noyau, l'injectivité, la bijectivité et l'inverse de f sont vraies.",
+  "concepts": [
+    "endomorphisme",
+    "noyau d'une application linéaire",
+    "injectivité",
+    "bijectivité",
+    "inverse d'un endomorphisme",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "calcul de noyau",
+    "vérification d'injectivité",
+    "recherche d'inverse",
+    "manipulation d'équations fonctionnelles"
+  ],
+  "objects": [
+    "endomorphisme",
+    "espace vectoriel",
+    "application identité",
+    "noyau",
+    "inverse"
+  ],
+  "content_hash": "d8e03704b4f52a3b7378d92c1dc2331cdf46e8bd795bde5ab0ab0711daf2e141",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:22:03.017Z"
+}

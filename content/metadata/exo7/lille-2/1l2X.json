@@ -1,0 +1,28 @@
+{
+  "uuid": "1l2X",
+  "source_path": "exo7/lille-2/1l2X.tex",
+  "summary": "L'exercice demande de déterminer les propriétés d'un sous-espace vectoriel E de ℝ³ défini par deux équations linéaires, en évaluant la validité de quatre assertions sur sa base et sa dimension.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "base d'un espace vectoriel",
+    "rang d'un système d'équations linéaires",
+    "espace vectoriel de dimension finie",
+    "générateur d'un espace vectoriel"
+  ],
+  "methods": [
+    "résolution d'un système d'équations linéaires",
+    "calcul du rang d'une matrice",
+    "détermination de la dimension par le théorème du rang",
+    "vérification de l'indépendance linéaire"
+  ],
+  "objects": [
+    "sous-espace vectoriel de ℝ³",
+    "système d'équations linéaires homogènes",
+    "vecteur générateur",
+    "base d'un espace vectoriel"
+  ],
+  "content_hash": "cb43e9b0dcfe769a0db60ac38c986b352f9f055a3db4634f2b5dd730316ceedb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:40:00.204Z"
+}

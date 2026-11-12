@@ -1,0 +1,26 @@
+{
+  "uuid": "TSCI",
+  "source_path": "exo7/lille-1/TSCI.tex",
+  "summary": "L'exercice demande de déterminer les coefficients du quotient Q et la forme du reste R dans la division euclidienne de deux polynômes A(X) et B(X) donnés, en vérifiant des affirmations sur ces coefficients.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "quotient et reste",
+    "degré d'un polynôme",
+    "monôme",
+    "arithmétique des polynômes"
+  ],
+  "methods": [
+    "algorithme de la division euclidienne",
+    "identification des coefficients",
+    "comparaison des degrés"
+  ],
+  "objects": [
+    "polynôme A(X)",
+    "polynôme B(X)",
+    "quotient Q(X)",
+    "reste R(X)"
+  ],
+  "content_hash": "9b05fdda10c22339390d4c2e71e8b40d5ad25c1f9778e3831468ac4c8f058756",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:55:56.610Z"
+}

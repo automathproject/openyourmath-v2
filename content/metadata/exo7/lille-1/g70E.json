@@ -1,0 +1,28 @@
+{
+  "uuid": "g70E",
+  "source_path": "exo7/lille-1/g70E.tex",
+  "summary": "L'exercice demande d'analyser les propriétés d'un polynôme Q obtenu par translation d'un polynôme P de degré n ≥ 1, et de vérifier des assertions sur les coefficients de Q. Le contexte porte sur la manipulation algébrique des polynômes.",
+  "concepts": [
+    "polynôme",
+    "degré d'un polynôme",
+    "coefficient d'un polynôme",
+    "translation de polynôme",
+    "monôme",
+    "coefficient constant",
+    "coefficient dominant"
+  ],
+  "methods": [
+    "développement algébrique",
+    "identification des coefficients",
+    "comparaison de polynômes"
+  ],
+  "objects": [
+    "polynôme unitaire",
+    "coefficient du terme de degré n-1",
+    "coefficient constant",
+    "polynôme Q(X) = P(X - a_{n-1}/n)"
+  ],
+  "content_hash": "288d08573e323b38df2c0d00aff2ce228822083e5a867a337bd9a54bf088aab9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:56:17.959Z"
+}

@@ -1,0 +1,27 @@
+{
+  "uuid": "R6Q0",
+  "source_path": "exo7/lille-2/R6Q0.tex",
+  "summary": "L'exercice demande de déterminer le rang de différentes familles de polynômes dans l'espace vectoriel ℝ₂[X] en évaluant leur linéaire indépendance. Il s'agit de vérifier des assertions sur la dimension des sous-espaces engendrés par ces polynômes.",
+  "concepts": [
+    "espace vectoriel",
+    "sous-espace vectoriel",
+    "famille de vecteurs",
+    "linéaire indépendance",
+    "rang d'une famille de vecteurs",
+    "dimension d'un espace vectoriel",
+    "polynôme"
+  ],
+  "methods": [
+    "détermination de la dimension d'un sous-espace",
+    "vérification de l'indépendance linéaire",
+    "calcul de rang"
+  ],
+  "objects": [
+    "famille de polynômes",
+    "sous-espace vectoriel engendré",
+    "polynômes de degré ≤ 2"
+  ],
+  "content_hash": "5b9790a0d11cc8723dfd3b092eb8bbddad0a919225ff2e1629ca74ce48c1b163",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:41:06.337Z"
+}

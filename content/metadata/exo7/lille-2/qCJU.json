@@ -1,0 +1,24 @@
+{
+  "uuid": "qCJU",
+  "source_path": "exo7/lille-2/qCJU.tex",
+  "summary": "L'exercice demande de déterminer la dimension d'un sous-espace vectoriel E de ℝⁿ constitué des n-uplets où toutes les coordonnées sont égales. Il propose plusieurs assertions sur la dimension de E à évaluer.",
+  "concepts": [
+    "espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "sous-espace vectoriel",
+    "base d'un espace vectoriel",
+    "vecteur générateur"
+  ],
+  "methods": [
+    "reconnaissance d'un espace vectoriel engendré par un vecteur",
+    "détermination de la dimension par cardinal d'une base"
+  ],
+  "objects": [
+    "sous-espace vectoriel de ℝⁿ",
+    "vecteur (1,1,...,1)",
+    "base d'un espace vectoriel"
+  ],
+  "content_hash": "27b0aba3c1242079c2be72ca8912cf0bfef1a4c79d77bbebb35c2dbca6324c83",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:42:11.561Z"
+}

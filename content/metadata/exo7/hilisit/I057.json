@@ -1,0 +1,25 @@
+{
+  "uuid": "I057",
+  "source_path": "exo7/hilisit/I057.tex",
+  "summary": "L'exercice demande d'identifier les affirmations vraies concernant les primitives de la fonction $x \to 1/x$ sur différents intervalles de définition.",
+  "concepts": [
+    "primitive d'une fonction",
+    "domaine de définition",
+    "dérivée",
+    "fonction logarithme",
+    "fonction dérivable"
+  ],
+  "methods": [
+    "calcul de dérivée",
+    "vérification de primitive"
+  ],
+  "objects": [
+    "fonction $x \to 1/x$",
+    "fonction $x \to \\ln(x)$",
+    "fonction $x \to \\ln(-x)$",
+    "intervalles de définition"
+  ],
+  "content_hash": "63e8b8080705fddb7eef1edfb18f26f086c6d445c72f88d3794060164c04755b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:26:05.006Z"
+}

@@ -1,0 +1,23 @@
+{
+  "uuid": "BEC3",
+  "source_path": "exo7/hilisit/BEC3.tex",
+  "summary": "L'exercice demande d'identifier parmi plusieurs équations différentielles du premier ordre celles dont une fonction donnée est solution. La fonction proposée est f(x) = 2e^{-x} + 3.",
+  "concepts": [
+    "équation différentielle du premier ordre",
+    "solution d'une équation différentielle",
+    "fonction dérivée",
+    "égalité entre fonctions"
+  ],
+  "methods": [
+    "vérification par substitution",
+    "calcul de dérivée"
+  ],
+  "objects": [
+    "fonction exponentielle",
+    "équation différentielle linéaire",
+    "fonction solution"
+  ],
+  "content_hash": "7d79d48ae5841fa69d764f35f72843917505b0f49ba32d143aec2bb18237b5f1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:37:23.403Z"
+}

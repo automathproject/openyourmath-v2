@@ -1,0 +1,28 @@
+{
+  "uuid": "1jGQ",
+  "source_path": "exo7/worms/1jGQ.tex",
+  "summary": "L'exercice demande de déterminer quelle affirmation est vraie concernant l'espérance, la probabilité conditionnelle et la médiane d'une variable aléatoire continue X représentant le temps de trajet quotidien, de densité f_X(x) = x e^{-x} sur [0, +∞[.",
+  "concepts": [
+    "densité de probabilité",
+    "espérance d'une variable aléatoire",
+    "fonction de répartition",
+    "probabilité conditionnelle",
+    "médiane d'une variable aléatoire",
+    "intégrale de fonction exponentielle"
+  ],
+  "methods": [
+    "calcul d'espérance par intégration",
+    "calcul de probabilité conditionnelle via la fonction de répartition",
+    "résolution numérique d'équation"
+  ],
+  "objects": [
+    "variable aléatoire continue",
+    "fonction de densité",
+    "fonction de répartition",
+    "espérance",
+    "médiane"
+  ],
+  "content_hash": "0df664eee8b65a2bd9a053f422bc6719224fb3f438af1f93d808d56898526df3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:56:42.322Z"
+}

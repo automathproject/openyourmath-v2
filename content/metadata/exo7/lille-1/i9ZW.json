@@ -1,0 +1,27 @@
+{
+  "uuid": "i9ZW",
+  "source_path": "exo7/lille-1/i9ZW.tex",
+  "summary": "Calculer la norme de la somme de deux vecteurs dans le plan, connaissant leurs normes individuelles et l'angle entre eux.",
+  "concepts": [
+    "produit scalaire",
+    "norme d'un vecteur",
+    "bilinéarité",
+    "symétrie du produit scalaire",
+    "relation de Chasles pour le produit scalaire",
+    "cosinus d'un angle"
+  ],
+  "methods": [
+    "calcul de produit scalaire à partir de normes et angle",
+    "développement de norme de somme de vecteurs",
+    "utilisation de la formule de la norme au carré"
+  ],
+  "objects": [
+    "vecteurs du plan",
+    "norme de vecteur",
+    "angle entre vecteurs",
+    "produit scalaire"
+  ],
+  "content_hash": "24e2de5d69c94443b1c12aeb23f19c9dab4279db624d167710039e826841e773",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:45:54.211Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "3L7D",
+  "source_path": "exo7/lille-2/3L7D.tex",
+  "summary": "Dans l'espace vectoriel des polynômes réels de degré ≤ 1, déterminer si des familles de polynômes données sont libres, génératrices ou forment une base.",
+  "concepts": [
+    "famille libre",
+    "famille génératrice",
+    "base d'un espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "polynôme de degré 1",
+    "colinéarité"
+  ],
+  "methods": [
+    "vérification de linéarité",
+    "extraction de sous-famille",
+    "détermination de la dimension"
+  ],
+  "objects": [
+    "famille de polynômes",
+    "espace vectoriel de polynômes",
+    "polynôme de degré ≤ 1"
+  ],
+  "content_hash": "50239de24771c9ddb78ae071bd9dd9a95b3116b931fe9e267712abdc58846807",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:40:04.530Z"
+}

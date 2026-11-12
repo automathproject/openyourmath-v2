@@ -1,0 +1,29 @@
+{
+  "uuid": "YImI",
+  "source_path": "exo7/worms/YImI.tex",
+  "summary": "L'exercice modélise le nombre de joueurs absents dans une équipe de basket comme une variable aléatoire discrète. Il demande de calculer des probabilités spécifiques, de vérifier des partitions d'événements et d'estimer des paramètres comme l'espérance et le premier quartile.",
+  "concepts": [
+    "loi binomiale",
+    "probabilité discrète",
+    "espérance d'une variable aléatoire",
+    "quartile",
+    "partition d'un univers",
+    "événements incompatibles"
+  ],
+  "methods": [
+    "calcul de probabilité par complémentaire",
+    "identification de la loi de probabilité",
+    "calcul de l'espérance",
+    "détermination du premier quartile"
+  ],
+  "objects": [
+    "variable aléatoire discrète",
+    "loi binomiale",
+    "espérance",
+    "quartile",
+    "partitions d'événements"
+  ],
+  "content_hash": "44cdec7adf4c3b0d8ddb9dca258218e510727472b2be34225c3fec7654b9087f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:57:18.573Z"
+}

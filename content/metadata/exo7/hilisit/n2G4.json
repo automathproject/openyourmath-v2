@@ -1,0 +1,26 @@
+{
+  "uuid": "n2G4",
+  "source_path": "exo7/hilisit/n2G4.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant des entiers relatifs a, b, c, u, v vérifiant une identité de Bézout (au + bv = 1) et une divisibilité (a divise bc).",
+  "concepts": [
+    "théorème de Bézout",
+    "lemme de Gauss",
+    "plus grand diviseur commun",
+    "identité de Bézout",
+    "divisibilité dans Z",
+    "nombres premiers entre eux"
+  ],
+  "methods": [
+    "utilisation du théorème de Bézout",
+    "application du lemme de Gauss",
+    "analyse des diviseurs communs"
+  ],
+  "objects": [
+    "entiers relatifs",
+    "identité de Bézout",
+    "diviseurs communs"
+  ],
+  "content_hash": "05f1923c665cde5d5c70ef2b86605e5a55ca18720a48b89b20e38657b53d052c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:24:14.563Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "B79E",
+  "source_path": "exo7/lille-2/B79E.tex",
+  "summary": "L'exercice demande de déterminer la matrice d'une application linéaire φ dans une base donnée, puis d'analyser ses propriétés (inversibilité, bijectivité, rang) à partir de cette matrice. L'application φ est définie sur un espace vectoriel de fonctions réelles engendré par trois fonctions spécifiques.",
+  "concepts": [
+    "matrice d'une application linéaire",
+    "inversibilité d'une matrice",
+    "bijectivité d'une application linéaire",
+    "rang d'une matrice",
+    "espace vectoriel de fonctions",
+    "dérivation",
+    "base d'un espace vectoriel"
+  ],
+  "methods": [
+    "calcul des coordonnées d'une image par une application linéaire",
+    "détermination du rang d'une matrice",
+    "vérification de l'inversibilité d'une matrice",
+    "calcul de l'inverse d'une matrice"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "application linéaire",
+    "espace vectoriel de fonctions",
+    "base de fonctions",
+    "dérivées premières et secondes"
+  ],
+  "content_hash": "b8ead1359056a8285f2a4886de713e4ffa9dbc769d7ba1aed902614e2045c384",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:51:41.507Z"
+}

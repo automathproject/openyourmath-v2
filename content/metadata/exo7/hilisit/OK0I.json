@@ -1,0 +1,25 @@
+{
+  "uuid": "OK0I",
+  "source_path": "exo7/hilisit/OK0I.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant un entier a > 0 dont le reste dans la division euclidienne par 8 est 5. Il s'agit d'analyser les propriétés arithmétiques de a à partir de sa représentation sous forme de division euclidienne.",
+  "concepts": [
+    "division euclidienne",
+    "parité",
+    "multiple",
+    "restes de division",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "décomposition en facteurs",
+    "analyse de cas",
+    "vérification par contre-exemple"
+  ],
+  "objects": [
+    "entier naturel",
+    "reste de division",
+    "multiple"
+  ],
+  "content_hash": "42fb645831ff8a09961cff294610747b2ce9e5c6f7882e2137cee0587931164f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:23:27.350Z"
+}

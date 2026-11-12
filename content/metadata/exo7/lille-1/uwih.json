@@ -1,0 +1,24 @@
+{
+  "uuid": "uwih",
+  "source_path": "exo7/lille-1/uwih.tex",
+  "summary": "L'exercice demande d'identifier les assertions vraies concernant les zéros d'une fonction continue sur un intervalle fermé, en fonction de ses valeurs aux bornes et de sa monotonie.",
+  "concepts": [
+    "théorème des valeurs intermédiaires",
+    "continuité",
+    "fonction strictement monotone",
+    "unicité du zéro",
+    "existence du zéro"
+  ],
+  "methods": [
+    "application du théorème des valeurs intermédiaires",
+    "analyse de la monotonie"
+  ],
+  "objects": [
+    "fonction continue",
+    "intervalle fermé",
+    "zéro de fonction"
+  ],
+  "content_hash": "77c08760f98bfdcc3b7700f8c81085b7fe009b64340b9e67d7f2c2db8c8360cb",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:30:57.544Z"
+}

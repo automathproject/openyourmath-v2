@@ -1,0 +1,27 @@
+{
+  "uuid": "HxLb",
+  "source_path": "exo7/hilisit/HxLb.tex",
+  "summary": "L'exercice demande d'identifier les affirmations vraies concernant les solutions d'une équation différentielle linéaire du premier ordre avec second membre exponentiel. Il porte sur l'équation y' + y = e^x et ses solutions particulières et générales.",
+  "concepts": [
+    "équation différentielle linéaire du premier ordre",
+    "solution homogène",
+    "solution particulière",
+    "solution générale",
+    "condition initiale",
+    "méthode de variation de la constante"
+  ],
+  "methods": [
+    "résolution d'équation homogène associée",
+    "méthode de la constante variationnelle",
+    "vérification de solutions candidates"
+  ],
+  "objects": [
+    "équation différentielle linéaire",
+    "solution particulière",
+    "solution générale",
+    "condition initiale"
+  ],
+  "content_hash": "2dcca9e67b4611d2f0d882782d620717f24ffda366bf5f5b8a6da789508bb496",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:37:46.019Z"
+}

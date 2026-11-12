@@ -1,0 +1,26 @@
+{
+  "uuid": "jkqg",
+  "source_path": "exo7/lille-1/jkqg.tex",
+  "summary": "L'exercice demande d'analyser la convergence d'une suite définie par une somme partielle de termes en 1/n² et d'évaluer la validité de quatre affirmations concernant son comportement.",
+  "concepts": [
+    "suite numérique",
+    "convergence",
+    "suite majorée",
+    "suite croissante",
+    "théorème des suites monotones",
+    "limite infinie"
+  ],
+  "methods": [
+    "raisonnement par récurrence",
+    "étude de la monotonie",
+    "majoration de suite"
+  ],
+  "objects": [
+    "suite (u_n)",
+    "somme partielle",
+    "limite de suite"
+  ],
+  "content_hash": "227516594e34263f462fdf05cbae9aed19f136066b9ec6f4ec2d1fd825f50da1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:59:53.709Z"
+}

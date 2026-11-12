@@ -1,0 +1,22 @@
+{
+  "uuid": "QGBX",
+  "source_path": "exo7/lille-2/QGBX.tex",
+  "summary": "L'exercice demande de déterminer quelles propriétés parmi quatre assertions sont vraies pour l'ensemble E défini comme l'ensemble des triplets (x,y,z) de ℝ³ vérifiant x - y + z = 0, muni des opérations usuelles.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "stabilité par addition",
+    "stabilité par multiplication scalaire",
+    "élément neutre",
+    "espace vectoriel"
+  ],
+  "methods": [
+    "vérification des propriétés de sous-espace vectoriel"
+  ],
+  "objects": [
+    "ensemble de triplets",
+    "espace vectoriel ℝ³"
+  ],
+  "content_hash": "d809e387c34c0b7d8d8949df7a409b5256b1846668eebb048b9597ef17c3c55b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:41:00.841Z"
+}

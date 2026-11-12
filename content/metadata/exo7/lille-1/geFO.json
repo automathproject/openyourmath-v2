@@ -1,0 +1,25 @@
+{
+  "uuid": "geFO",
+  "source_path": "exo7/lille-1/geFO.tex",
+  "summary": "L'exercice demande de déterminer la limite en 0 d'une fonction définie par f(x) = xE(1/x), où E désigne la partie entière, parmi plusieurs propositions. Il s'agit d'étudier le comportement de la fonction en un point particulier.",
+  "concepts": [
+    "limite d'une fonction en un point",
+    "partie entière",
+    "inégalités encadrant la partie entière",
+    "limite à droite et à gauche",
+    "continuité"
+  ],
+  "methods": [
+    "encadrement de la partie entière",
+    "étude des limites latérales",
+    "comparaison des bornes"
+  ],
+  "objects": [
+    "fonction réelle",
+    "partie entière",
+    "limite en un point"
+  ],
+  "content_hash": "b4adae0bccf1193438b3fee015d07c38c486cf749bf4b7c82da2b72826c2fc95",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:30:37.927Z"
+}

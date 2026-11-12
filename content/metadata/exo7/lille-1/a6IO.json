@@ -1,0 +1,27 @@
+{
+  "uuid": "a6IO",
+  "source_path": "exo7/lille-1/a6IO.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant le module et l'argument d'un nombre complexe z = 1 + e^(iθ), avec θ ∈ ]-π, π[. Il s'agit d'analyser les propriétés algébriques et géométriques de z en fonction de θ.",
+  "concepts": [
+    "module d'un nombre complexe",
+    "argument d'un nombre complexe",
+    "forme exponentielle",
+    "identités trigonométriques",
+    "module d'une somme de nombres complexes",
+    "argument d'une somme de nombres complexes"
+  ],
+  "methods": [
+    "factorisation",
+    "utilisation des identités trigonométriques",
+    "comparaison des formes cartésienne et polaire"
+  ],
+  "objects": [
+    "nombre complexe",
+    "module",
+    "argument",
+    "forme exponentielle"
+  ],
+  "content_hash": "e284fc042392b8a5cd3e583305176408cd7349ff77b6eb70a5f1083848d24162",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:54:54.187Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "iFMF",
+  "source_path": "exo7/lille-1/iFMF.tex",
+  "summary": "L'exercice demande de déterminer les propriétés de concavité/convexité de la fonction ln(x) sur R+* et de valider des inégalités liées à cette propriété.",
+  "concepts": [
+    "concavité",
+    "convexité",
+    "fonction dérivable",
+    "inégalité de Jensen",
+    "fonction strictement croissante",
+    "dérivée seconde"
+  ],
+  "methods": [
+    "calcul de dérivée seconde",
+    "application de l'inégalité de Jensen",
+    "composition de fonctions"
+  ],
+  "objects": [
+    "fonction ln(x)",
+    "dérivée seconde",
+    "inégalité fonctionnelle"
+  ],
+  "content_hash": "168cc2c1e544d7887d0d943bce9e304acbb5d6f1b7a1dc4fccf777ccbdc4a995",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:33:05.260Z"
+}

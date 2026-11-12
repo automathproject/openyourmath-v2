@@ -1,0 +1,27 @@
+{
+  "uuid": "UuN2",
+  "source_path": "exo7/lille-1/UuN2.tex",
+  "summary": "L'exercice demande d'analyser la convergence de deux suites définies par des sommes partielles de séries et d'évaluer des propositions sur leurs propriétés. La suite u_n est une somme de termes 1/k², et v_n est définie comme u_n + 1/n.",
+  "concepts": [
+    "suite numérique",
+    "suite croissante",
+    "suite décroissante",
+    "suites adjacentes",
+    "convergence de suites",
+    "limite infinie",
+    "comparaison de limites"
+  ],
+  "methods": [
+    "étude de la monotonie",
+    "calcul de la différence de suites",
+    "critère de convergence des suites adjacentes"
+  ],
+  "objects": [
+    "suite u_n",
+    "suite v_n",
+    "somme de termes 1/k²"
+  ],
+  "content_hash": "cc099cbcadeadb8b7d41dd983232d3acdfe86125b362cf708dee5ef68e0ecd48",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:59:35.276Z"
+}

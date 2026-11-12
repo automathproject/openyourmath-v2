@@ -1,0 +1,26 @@
+{
+  "uuid": "L4kM",
+  "source_path": "exo7/lille-2/L4kM.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant une famille de 4 matrices carrées d'ordre 2 à coefficients réels, en analysant sa liberté, sa capacité à générer l'espace vectoriel et sa dimension.",
+  "concepts": [
+    "famille libre",
+    "famille génératrice",
+    "base d'un espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "espace vectoriel des matrices carrées",
+    "combinaison linéaire"
+  ],
+  "methods": [
+    "vérification de la liberté d'une famille",
+    "calcul de dimension d'un sous-espace vectoriel",
+    "comparaison de matrices"
+  ],
+  "objects": [
+    "matrice carrée 2x2",
+    "famille de matrices",
+    "espace vectoriel M₂(ℝ)"
+  ],
+  "content_hash": "2f65b223ece02a5bddbebbad23a21416aca85f30123314723cef55f015a21d79",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:52:10.387Z"
+}

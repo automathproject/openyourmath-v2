@@ -1,0 +1,29 @@
+{
+  "uuid": "PoCf",
+  "source_path": "exo7/lille-1/PoCf.tex",
+  "summary": "L'exercice demande de déterminer les équations cartésiennes et paramétriques d'un plan P passant par un point donné et perpendiculaire à une droite donnée dans l'espace, puis de vérifier parmi plusieurs propositions celles qui sont correctes.",
+  "concepts": [
+    "équation cartésienne d'un plan",
+    "équation paramétrique d'un plan",
+    "vecteur directeur d'une droite",
+    "vecteur normal à un plan",
+    "orthogonalité dans l'espace",
+    "géométrie affine"
+  ],
+  "methods": [
+    "détermination d'un vecteur normal à partir d'une droite",
+    "écriture d'une équation cartésienne de plan",
+    "écriture d'une représentation paramétrique de plan",
+    "vérification d'appartenance d'un point à un plan"
+  ],
+  "objects": [
+    "droite de l'espace",
+    "plan de l'espace",
+    "vecteur directeur",
+    "vecteur normal",
+    "point de l'espace"
+  ],
+  "content_hash": "97ffdaeeab8f1612eea64d56781496e9c57006fd0d8be2acd8dede2ccb76df00",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:44:09.906Z"
+}

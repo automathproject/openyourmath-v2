@@ -1,0 +1,28 @@
+{
+  "uuid": "KXlK",
+  "source_path": "exo7/lille-2/KXlK.tex",
+  "summary": "L'exercice demande d'analyser les développements limités d'une fonction et de déterminer les asymptotes de son graphe. On étudie la fonction f(x) = x ln((x+1)/x) et sa transformation g(x) = f(1/x), avec des questions sur les développements limités et les asymptotes.",
+  "concepts": [
+    "développement limité",
+    "asymptote",
+    "limite",
+    "fonction composée",
+    "notation petit o",
+    "développement limité en l'infini"
+  ],
+  "methods": [
+    "développement limité d'une fonction",
+    "changement de variable",
+    "analyse des asymptotes",
+    "comparaison des ordres de grandeur"
+  ],
+  "objects": [
+    "fonction réelle",
+    "développement limité",
+    "asymptote horizontale",
+    "fonction composée"
+  ],
+  "content_hash": "c639f518cb6b3dbc26587d7111ee90dd2cae61fc454773531baa1dcb585baad6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:35:16.250Z"
+}

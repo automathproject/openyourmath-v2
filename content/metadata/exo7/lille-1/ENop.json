@@ -1,0 +1,25 @@
+{
+  "uuid": "ENop",
+  "source_path": "exo7/lille-1/ENop.tex",
+  "summary": "L'exercice demande d'analyser la fonction composée f(x) = arcsin(sin x) + arccos(cos x) et de déterminer les assertions vraies concernant son domaine de définition et ses valeurs sur différents intervalles.",
+  "concepts": [
+    "fonction périodique",
+    "fonction circulaire inverse",
+    "domaine de définition",
+    "fonction par morceaux",
+    "propriétés des fonctions trigonométriques inverses"
+  ],
+  "methods": [
+    "simplification de fonction périodique",
+    "analyse par intervalles",
+    "utilisation des propriétés des arcsin et arccos"
+  ],
+  "objects": [
+    "fonction réelle",
+    "intervalle réel",
+    "fonction par morceaux"
+  ],
+  "content_hash": "d1a192ef337ce4937bdde14509cff55691aafe4b11badb74a652cbe80d36d854",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:42:41.325Z"
+}

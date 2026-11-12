@@ -1,0 +1,30 @@
+{
+  "uuid": "yMKZ",
+  "source_path": "exo7/lille-2/yMKZ.tex",
+  "summary": "L'exercice demande de vérifier la validité de quatre développements limités de fonctions composées ou de quotients, en utilisant des développements limités usuels et des opérations sur ceux-ci.",
+  "concepts": [
+    "développement limité",
+    "fonction composée",
+    "quotient de fonctions",
+    "petit o",
+    "limite",
+    "opérations sur les développements limités"
+  ],
+  "methods": [
+    "division de développements limités",
+    "composition de développements limités",
+    "approximation par développement limité",
+    "calcul de petit o"
+  ],
+  "objects": [
+    "développement limité d'ordre 2",
+    "développement limité d'ordre 4",
+    "fonction ln(1+x)",
+    "fonction e^x-1",
+    "fonction arcsin",
+    "fonction x sin x"
+  ],
+  "content_hash": "35ab666e2df31b17006ab3e06edf08ea7e49d799bd414eaae696eed8f39d2b09",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:36:43.250Z"
+}

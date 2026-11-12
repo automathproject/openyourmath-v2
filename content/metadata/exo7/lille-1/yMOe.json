@@ -1,0 +1,27 @@
+{
+  "uuid": "yMOe",
+  "source_path": "exo7/lille-1/yMOe.tex",
+  "summary": "Calculer la distance d'un point A à un plan P défini par un point B et deux vecteurs directeurs u et v dans un repère orthonormé de l'espace.",
+  "concepts": [
+    "distance d'un point à un plan",
+    "produit vectoriel",
+    "produit mixte",
+    "repère orthonormé",
+    "vecteur directeur",
+    "norme d'un vecteur"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "calcul de norme",
+    "utilisation de la formule de distance point-plan"
+  ],
+  "objects": [
+    "point de l'espace",
+    "plan de l'espace",
+    "vecteurs directeurs",
+    "repère orthonormé"
+  ],
+  "content_hash": "59299b307843221f14d04b5bb37a7ca1e03d5aa2520c590085914c9931f3f826",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:44:57.574Z"
+}

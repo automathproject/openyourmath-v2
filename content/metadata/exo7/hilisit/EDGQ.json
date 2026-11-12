@@ -1,0 +1,25 @@
+{
+  "uuid": "EDGQ",
+  "source_path": "exo7/hilisit/EDGQ.tex",
+  "summary": "L'exercice demande de déterminer quelles égalités linéaires en deux entiers u et v sont possibles lorsque le PGCD de a et b vaut 4, en s'appuyant sur le théorème de Bézout.",
+  "concepts": [
+    "théorème de Bézout",
+    "plus grand diviseur commun",
+    "divisibilité dans Z",
+    "combinaison linéaire",
+    "nombres premiers entre eux"
+  ],
+  "methods": [
+    "application du théorème de Bézout",
+    "multiplication d'une relation de Bézout",
+    "changement de signe dans une combinaison linéaire"
+  ],
+  "objects": [
+    "entiers relatifs",
+    "combinaison linéaire",
+    "PGCD"
+  ],
+  "content_hash": "987ef152577470b219c9c4d1d887371c8c5caa3151891dd8103805e60ae021d0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:22:59.211Z"
+}

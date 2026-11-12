@@ -1,0 +1,27 @@
+{
+  "uuid": "W0Io",
+  "source_path": "exo7/hilisit/W0Io.tex",
+  "summary": "L'exercice demande d'identifier les affirmations vraies concernant les solutions d'une équation différentielle linéaire du premier ordre. Il s'agit de vérifier des propriétés sur les solutions générales et particulières de l'équation 2y' = 3y + 1.",
+  "concepts": [
+    "équation différentielle linéaire du premier ordre",
+    "solution générale",
+    "condition initiale",
+    "limite de fonction",
+    "existence et unicité des solutions"
+  ],
+  "methods": [
+    "résolution d'équation différentielle linéaire",
+    "méthode de variation de la constante",
+    "calcul de condition initiale",
+    "analyse de limite"
+  ],
+  "objects": [
+    "équation différentielle",
+    "solution particulière",
+    "fonction exponentielle",
+    "condition y(0)=0"
+  ],
+  "content_hash": "7059ae0eb7dd7331eec9344d9e8992f5314d4b8ae8c3ac546656535d77ce3997",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:38:22.660Z"
+}

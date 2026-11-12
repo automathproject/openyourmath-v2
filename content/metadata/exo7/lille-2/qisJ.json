@@ -1,0 +1,26 @@
+{
+  "uuid": "qisJ",
+  "source_path": "exo7/lille-2/qisJ.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant une application linéaire f de ℝ³ dans ℝ³, en analysant si une famille de vecteurs forme une base et en calculant les matrices de f dans différentes bases.",
+  "concepts": [
+    "application linéaire",
+    "base d'un espace vectoriel",
+    "matrice d'une application linéaire",
+    "changement de base",
+    "coordonnées d'un vecteur dans une base"
+  ],
+  "methods": [
+    "calcul des coordonnées d'un vecteur dans une base",
+    "construction de la matrice d'une application linéaire",
+    "vérification de la linéaire indépendance"
+  ],
+  "objects": [
+    "espace vectoriel ℝ³",
+    "base canonique",
+    "famille de vecteurs",
+    "matrice carrée 3x3"
+  ],
+  "content_hash": "5133b0edebc8d6349a8f660dcc97cec13839ea07d3048dee900447e2aa9a9b49",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:53:49.641Z"
+}

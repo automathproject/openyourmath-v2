@@ -1,0 +1,30 @@
+{
+  "uuid": "KazJ",
+  "source_path": "exo7/lille-2/KazJ.tex",
+  "summary": "L'exercice demande de déterminer quelles propriétés (injectivité, surjectivité, bijectivité) sont vraies pour un endomorphisme nilpotent d'un espace vectoriel et pour son opposé par rapport à l'identité.",
+  "concepts": [
+    "endomorphisme nilpotent",
+    "injectivité",
+    "surjectivité",
+    "bijectivité",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "inverse d'une application linéaire",
+    "récurrence"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "calcul de noyau",
+    "calcul d'image",
+    "factorisation d'application linéaire"
+  ],
+  "objects": [
+    "endomorphisme",
+    "espace vectoriel",
+    "application linéaire",
+    "identité"
+  ],
+  "content_hash": "560b284d9b5e3d982d309b38048bc05c774c4477c36629e7fad28ad380db253a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:21:25.805Z"
+}

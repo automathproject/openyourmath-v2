@@ -1,0 +1,26 @@
+{
+  "uuid": "9uC4",
+  "source_path": "exo7/hilisit/9uC4.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant la divisibilité de n-1 ou n+1 par 11, sachant que n²-1 est divisible par 11. Il s'agit d'une question d'arithmétique sur les nombres premiers et leurs propriétés.",
+  "concepts": [
+    "lemme d'Euclide",
+    "divisibilité dans Z",
+    "nombres premiers",
+    "factorisation",
+    "propriétés des entiers"
+  ],
+  "methods": [
+    "factorisation",
+    "application du lemme d'Euclide",
+    "test de divisibilité"
+  ],
+  "objects": [
+    "entier n",
+    "nombres premiers",
+    "diviseurs",
+    "produit (n-1)(n+1)"
+  ],
+  "content_hash": "c98964a5f885c1d5ef6ea3431237baaa290e345309dbc47b86c09663c3d5eb19",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:22:51.880Z"
+}

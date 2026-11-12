@@ -1,0 +1,26 @@
+{
+  "uuid": "0XGr",
+  "source_path": "exo7/lille-1/0XGr.tex",
+  "summary": "On étudie une suite croissante $(u_n)$ vérifiant une inégalité de différence $u_{n+1} - u_n \\leq \frac{1}{2^n}$ pour tout $n \\geq 0$. L'exercice demande de déterminer les propriétés de convergence et de bornes de cette suite parmi plusieurs propositions.",
+  "concepts": [
+    "suite croissante",
+    "suite bornée",
+    "convergence de suite",
+    "inégalité de récurrence",
+    "majoration de suite",
+    "limite de suite"
+  ],
+  "methods": [
+    "récurrence",
+    "somme de série géométrique",
+    "passage à la limite"
+  ],
+  "objects": [
+    "suite numérique",
+    "inégalité de différence",
+    "limite de suite"
+  ],
+  "content_hash": "49579510c4f407a1b04166e5c4db21ea99fa6071ddd1b87c6d699359c14a0d98",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:58:50.752Z"
+}

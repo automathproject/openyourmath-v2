@@ -1,0 +1,25 @@
+{
+  "uuid": "NekV",
+  "source_path": "exo7/lille-2/NekV.tex",
+  "summary": "L'exercice demande de déterminer quelles propriétés parmi quatre assertions sont vraies pour l'ensemble E des fonctions continues sur [0,1] dont l'intégrale sur [0,1] est nulle.",
+  "concepts": [
+    "espace vectoriel",
+    "fonction continue",
+    "intégrale",
+    "stabilité par addition",
+    "stabilité par multiplication scalaire",
+    "fonction nulle"
+  ],
+  "methods": [
+    "vérification des axiomes d'espace vectoriel",
+    "test de stabilité"
+  ],
+  "objects": [
+    "ensemble de fonctions",
+    "fonction continue",
+    "intégrale"
+  ],
+  "content_hash": "8c121a8b107fada17f7b37cc7e5766e0945d1e518a499d1083e8d7df6446d1b7",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:40:50.731Z"
+}

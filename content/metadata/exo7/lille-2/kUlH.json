@@ -1,0 +1,27 @@
+{
+  "uuid": "kUlH",
+  "source_path": "exo7/lille-2/kUlH.tex",
+  "summary": "L'exercice demande d'analyser un système linéaire de trois équations à trois inconnues et de déterminer quelles assertions parmi quatre propositions sont vraies. Il s'agit d'étudier l'équivalence de systèmes, la géométrie associée et l'existence/ unicité de solutions.",
+  "concepts": [
+    "système linéaire",
+    "équivalence de systèmes",
+    "rang d'une matrice",
+    "solution unique",
+    "géométrie des plans",
+    "méthode du pivot de Gauss"
+  ],
+  "methods": [
+    "réduction par pivot de Gauss",
+    "résolution de système triangulaire",
+    "analyse d'équivalence de systèmes"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice augmentée",
+    "solution unique",
+    "plans affine"
+  ],
+  "content_hash": "9c5c091b906155a053e124a36c848c2d45774421cf42c942ff053520ca0b0f1a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:33:58.099Z"
+}

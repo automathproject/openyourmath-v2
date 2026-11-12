@@ -1,0 +1,27 @@
+{
+  "uuid": "U2iA",
+  "source_path": "exo7/lille-1/U2iA.tex",
+  "summary": "Calculer la distance d'un point donné à une droite paramétrée dans le plan muni d'un repère orthonormé.",
+  "concepts": [
+    "distance d'un point à une droite",
+    "repère orthonormé",
+    "produit scalaire",
+    "déterminant",
+    "norme d'un vecteur",
+    "paramétrage d'une droite"
+  ],
+  "methods": [
+    "formule de la distance point-droite",
+    "calcul de déterminant",
+    "calcul de norme vectorielle"
+  ],
+  "objects": [
+    "droite paramétrée",
+    "point du plan",
+    "vecteur directeur",
+    "vecteur position"
+  ],
+  "content_hash": "3f1ed6d4bb160bf5e61ddb7ba317f59bbf97bbcd147968375a81e68af5ecaa7f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:45:40.486Z"
+}

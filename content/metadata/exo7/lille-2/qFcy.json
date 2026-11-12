@@ -1,0 +1,25 @@
+{
+  "uuid": "qFcy",
+  "source_path": "exo7/lille-2/qFcy.tex",
+  "summary": "L'exercice demande de vérifier des affirmations concernant l'intégrale de 1/(1+sin²x) sur l'intervalle ]-π/2,π/2[ en utilisant un changement de variable t = tan(x). Il s'agit d'identifier les égalités correctes après transformation.",
+  "concepts": [
+    "changement de variable",
+    "intégration",
+    "fonction trigonométrique",
+    "primitive",
+    "identité trigonométrique"
+  ],
+  "methods": [
+    "changement de variable",
+    "intégration directe",
+    "simplification d'expression"
+  ],
+  "objects": [
+    "intégrale indéfinie",
+    "fonction trigonométrique",
+    "variable de substitution"
+  ],
+  "content_hash": "f97d6f0e834f1d300af375b3d59e5c6227b381ba82913cb759a656121cd83243",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:28:13.055Z"
+}

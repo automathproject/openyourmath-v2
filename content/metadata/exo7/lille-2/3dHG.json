@@ -1,0 +1,28 @@
+{
+  "uuid": "3dHG",
+  "source_path": "exo7/lille-2/3dHG.tex",
+  "summary": "L'exercice demande de vérifier la validité de quatre développements limités d'ordre 2 en 0 pour la fonction f(x) = (1+x)^(1/x), en utilisant des propriétés de composition et des développements limités usuels.",
+  "concepts": [
+    "développement limité",
+    "composition de fonctions",
+    "fonction exponentielle",
+    "fonction logarithme",
+    "notation petit o",
+    "développement limité d'ordre 2"
+  ],
+  "methods": [
+    "développement limité de ln(1+x)",
+    "développement limité de e^u",
+    "composition de développements limités",
+    "approximation au voisinage de 0"
+  ],
+  "objects": [
+    "fonction f(x) = (1+x)^(1/x)",
+    "développement limité de ln(1+x)/x",
+    "développement limité de e^(1+u)",
+    "développement limité de f(x)"
+  ],
+  "content_hash": "79d834c9ffc20252ac56b8a6335a9915b47ec2282d5fcdb83c2356fb3c4ca307",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:34:26.816Z"
+}

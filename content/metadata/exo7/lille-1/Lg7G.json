@@ -1,0 +1,25 @@
+{
+  "uuid": "Lg7G",
+  "source_path": "exo7/lille-1/Lg7G.tex",
+  "summary": "L'exercice demande de déterminer quelles valeurs parmi -1, 0, 1 et 2 sont des racines du polynôme P(X) = X^7 - 5X^5 - 5X^4 + 4X^3 + 13X^2 + 12X + 4.",
+  "concepts": [
+    "racine d'un polynôme",
+    "factorisation de polynôme",
+    "polynôme irréductible",
+    "théorème des racines rationnelles",
+    "division euclidienne des polynômes"
+  ],
+  "methods": [
+    "évaluation d'un polynôme",
+    "factorisation",
+    "recherche de racines évidentes"
+  ],
+  "objects": [
+    "polynôme de degré 7",
+    "racines réelles",
+    "facteurs irréductibles"
+  ],
+  "content_hash": "65b971bfdbd987c33af28ba8e26b230cc421787c374ca92e771ac983149c8e73",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:55:43.739Z"
+}

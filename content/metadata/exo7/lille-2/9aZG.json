@@ -1,0 +1,29 @@
+{
+  "uuid": "9aZG",
+  "source_path": "exo7/lille-2/9aZG.tex",
+  "summary": "L'exercice demande d'évaluer la validité de quatre limites en 0 en utilisant des développements limités d'ordre 1 ou 2 pour des fonctions usuelles (exponentielle, racine carrée, logarithme, sinus, cosinus).",
+  "concepts": [
+    "développement limité",
+    "limite de fonction",
+    "notation petit o",
+    "fonctions usuelles",
+    "approximation locale",
+    "équivalence asymptotique"
+  ],
+  "methods": [
+    "développement limité d'ordre 1",
+    "développement limité d'ordre 2",
+    "comparaison de termes dominants",
+    "simplification de fraction rationnelle"
+  ],
+  "objects": [
+    "fonction exponentielle",
+    "fonction racine carrée",
+    "fonction logarithme",
+    "fonction sinus",
+    "fonction cosinus"
+  ],
+  "content_hash": "31729b5c378cdf0b1ec781207f8d5e2b634d1c09e1c579ea8945e4195e1a674f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:34:40.615Z"
+}

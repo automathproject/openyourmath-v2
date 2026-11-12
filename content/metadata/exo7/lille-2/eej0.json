@@ -1,0 +1,26 @@
+{
+  "uuid": "eej0",
+  "source_path": "exo7/lille-2/eej0.tex",
+  "summary": "L'exercice demande de déterminer le rang de familles de polynômes dans ℝ₃[X] et de vérifier si elles sont libres ou génératrices. Il s'appuie sur les dérivées successives d'un polynôme donné.",
+  "concepts": [
+    "famille libre",
+    "famille génératrice",
+    "rang d'une famille de vecteurs",
+    "dimension d'un espace vectoriel",
+    "polynôme de degré donné",
+    "dérivée de polynôme"
+  ],
+  "methods": [
+    "vérification de linéaire indépendance",
+    "calcul de la dimension d'un sous-espace vectoriel",
+    "analyse des degrés de polynômes"
+  ],
+  "objects": [
+    "famille de polynômes",
+    "espace vectoriel de polynômes",
+    "dérivées successives de polynôme"
+  ],
+  "content_hash": "5516e5502f56009c8b830570bd52ec10ac6a33f7c50893fcb5fb8a686da6d80f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:41:42.587Z"
+}

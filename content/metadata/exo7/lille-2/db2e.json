@@ -1,0 +1,30 @@
+{
+  "uuid": "db2e",
+  "source_path": "exo7/lille-2/db2e.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant une application linéaire f de ℝ³ dans ℝ³, en analysant si des vecteurs donnés forment une base, une base du noyau ou de l'image, et en vérifiant la relation de supplémentarité entre noyau et image.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "base d'un espace vectoriel",
+    "supplémentarité d'espaces vectoriels",
+    "matrice d'une application linéaire"
+  ],
+  "methods": [
+    "vérification de linéarité",
+    "calcul de noyau",
+    "calcul d'image",
+    "détermination de base",
+    "calcul de matrice dans une base"
+  ],
+  "objects": [
+    "application linéaire de ℝ³ dans ℝ³",
+    "vecteurs de ℝ³",
+    "noyau",
+    "image",
+    "matrice 3x3"
+  ],
+  "content_hash": "f7905872a5421123439f12f0e1c535ce0b3514d57bbacb90aa35a9299673384b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:53:05.805Z"
+}

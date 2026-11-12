@@ -1,0 +1,22 @@
+{
+  "uuid": "DWH2",
+  "source_path": "exo7/hilisit/DWH2.tex",
+  "summary": "L'exercice demande d'identifier les quadruplets (a, b, q, r) qui vérifient la division euclidienne a = bq + r avec 0 ≤ r < b parmi plusieurs propositions.",
+  "concepts": [
+    "division euclidienne",
+    "algèbre dans Z",
+    "inégalités",
+    "arithmétique élémentaire"
+  ],
+  "methods": [
+    "vérification d'inégalités",
+    "calcul de division euclidienne"
+  ],
+  "objects": [
+    "entiers naturels",
+    "division euclidienne"
+  ],
+  "content_hash": "0d1b7524ee81eee8659a5ef95d366b1c810b5c10ae1abba024ac4b2e852da278",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:22:56.998Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "RHDl",
+  "source_path": "exo7/lille-2/RHDl.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions parmi quatre propositions sont vraies pour une primitive F de la fonction f(x) = (2x + 3)/(x² + 2x + 2). Il s'agit d'identifier les formes correctes de la décomposition et de l'intégration de cette fonction rationnelle.",
+  "concepts": [
+    "décomposition en éléments simples",
+    "intégration de fractions rationnelles",
+    "linéarité de l'intégration",
+    "fonction logarithme",
+    "fonction arctangente"
+  ],
+  "methods": [
+    "décomposition en éléments simples",
+    "intégration par parties",
+    "reconnaissance de primitives standard"
+  ],
+  "objects": [
+    "fonction rationnelle",
+    "primitive d'une fonction",
+    "constante d'intégration"
+  ],
+  "content_hash": "a0346e42b57e5b5b360b86d75dc37ed5f16179e62a63efa98158f06960fa4371",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:26:49.367Z"
+}

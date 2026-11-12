@@ -1,0 +1,27 @@
+{
+  "uuid": "auU3",
+  "source_path": "exo7/lille-2/auU3.tex",
+  "summary": "L'exercice demande de déterminer les matrices de passage entre deux bases d'un espace vectoriel de polynômes de degré ≤ 2, et d'identifier parmi des propositions celles qui correspondent correctement à ces matrices.",
+  "concepts": [
+    "matrice de passage",
+    "base d'un espace vectoriel",
+    "application linéaire",
+    "espace vectoriel de polynômes",
+    "identité d'un espace vectoriel",
+    "coordonnées d'un vecteur dans une base"
+  ],
+  "methods": [
+    "calcul des coordonnées d'un vecteur dans une base",
+    "construction de matrice de passage",
+    "vérification de l'identité matricielle"
+  ],
+  "objects": [
+    "matrice carrée 3x3",
+    "base canonique",
+    "polynôme de degré ≤ 2",
+    "espace vectoriel de dimension finie"
+  ],
+  "content_hash": "1ec6b2d3aed3fe00434d1109d207aaa5b96f00361eba01f6e883d8da64d7cd23",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:52:54.991Z"
+}

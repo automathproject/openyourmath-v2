@@ -1,0 +1,26 @@
+{
+  "uuid": "4Qvs",
+  "source_path": "exo7/lille-1/4Qvs.tex",
+  "summary": "L'exercice demande de déterminer les bonnes réponses concernant la dérivée première et les dérivées d'ordre supérieur de la fonction f(x) = x ln(1 + x). Il s'agit d'identifier les expressions correctes pour f'(x) et f^(n)(x) pour n ≥ 2.",
+  "concepts": [
+    "dérivée d'ordre supérieur",
+    "formule de Leibniz",
+    "dérivation de fonctions composées",
+    "dérivation de logarithme",
+    "factorielles",
+    "coefficients binomiaux"
+  ],
+  "methods": [
+    "dérivation par produit",
+    "application de la formule de Leibniz",
+    "calcul itératif des dérivées"
+  ],
+  "objects": [
+    "fonction composée",
+    "dérivées successives",
+    "polynôme générateur"
+  ],
+  "content_hash": "39802640ad6347180800cbd08a89ca12f268f7e53bd3e516596fa14aed9c655e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:31:57.009Z"
+}

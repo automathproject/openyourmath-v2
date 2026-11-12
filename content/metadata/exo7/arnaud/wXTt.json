@@ -1,0 +1,27 @@
+{
+  "uuid": "wXTt",
+  "source_path": "exo7/arnaud/wXTt.tex",
+  "summary": "L'exercice demande d'identifier parmi cinq assertions celles qui sont vraies concernant les nombres rationnels et irrationnels. Il porte sur les propriétés algébriques et d'ordre des ensembles ℚ et ℝ\\ℚ.",
+  "concepts": [
+    "ensemble des nombres rationnels",
+    "ensemble des nombres irrationnels",
+    "densité des rationnels dans les réels",
+    "stabilité par addition",
+    "propriété d'ordre dense",
+    "racine carrée de nombre entier"
+  ],
+  "methods": [
+    "vérification par contre-exemple",
+    "utilisation de la densité de ℚ dans ℝ",
+    "analyse de la stabilité algébrique"
+  ],
+  "objects": [
+    "nombres rationnels",
+    "nombres irrationnels",
+    "inégalités",
+    "racine carrée"
+  ],
+  "content_hash": "f64a6c4e3473614f81e24b0f5b7a64cb770f035687c9d90fa00ae176cb34d8c2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:58:43.853Z"
+}

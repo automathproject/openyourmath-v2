@@ -1,0 +1,26 @@
+{
+  "uuid": "EqeJ",
+  "source_path": "exo7/arnaud/EqeJ.tex",
+  "summary": "L'exercice demande d'identifier parmi cinq assertions celles qui sont vraies, en mobilisant des propriétés fondamentales de la divisibilité et du PGCD dans l'ensemble des entiers relatifs.",
+  "concepts": [
+    "divisibilité dans Z",
+    "division euclidienne",
+    "théorème de Gauss",
+    "PGCD",
+    "théorème de Bézout",
+    "existence de solutions dans Z"
+  ],
+  "methods": [
+    "application du théorème de Gauss",
+    "calcul de PGCD",
+    "vérification de l'existence de solutions entières"
+  ],
+  "objects": [
+    "entiers relatifs",
+    "PGCD",
+    "équation diophantienne"
+  ],
+  "content_hash": "c1a69650573ae7e1dfcc6f2e707cfa523bb21fff5802a0cca902c6ffb5eaec02",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:23:01.383Z"
+}

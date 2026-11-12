@@ -1,0 +1,27 @@
+{
+  "uuid": "5n5F",
+  "source_path": "exo7/lille-1/5n5F.tex",
+  "summary": "L'exercice demande d'identifier les formules correctes pour les coefficients du produit de deux polynômes A(X) et B(X). Il s'agit de comparer différentes expressions pour le coefficient c_k du polynôme produit C(X) = A(X) × B(X).",
+  "concepts": [
+    "polynôme",
+    "produit de polynômes",
+    "coefficient d'un polynôme",
+    "somme indicée",
+    "algèbre linéaire",
+    "définition du produit de polynômes"
+  ],
+  "methods": [
+    "développement du produit de polynômes",
+    "identification des coefficients",
+    "comparaison d'expressions algébriques"
+  ],
+  "objects": [
+    "polynôme A(X)",
+    "polynôme B(X)",
+    "polynôme produit C(X)",
+    "coefficient c_k"
+  ],
+  "content_hash": "148b7f659d846e7e9d440574eb4a180b0ba00ea774ae174009b7fbfcdb7b856a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:55:31.296Z"
+}

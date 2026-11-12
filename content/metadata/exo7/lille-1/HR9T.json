@@ -1,0 +1,22 @@
+{
+  "uuid": "HR9T",
+  "source_path": "exo7/lille-1/HR9T.tex",
+  "summary": "L'exercice demande d'identifier parmi quatre assertions celle qui exprime correctement la formule du maximum de deux nombres réels x et y.",
+  "concepts": [
+    "fonction maximum",
+    "valeur absolue",
+    "propriétés des nombres réels",
+    "distinction de cas"
+  ],
+  "methods": [
+    "analyse de cas",
+    "simplification d'expression"
+  ],
+  "objects": [
+    "fonction max(x,y)",
+    "valeur absolue |x-y|"
+  ],
+  "content_hash": "c84d1b412501add21b8dbcc945262972d778df64373fa275fec0f90de70bc423",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:58:01.459Z"
+}

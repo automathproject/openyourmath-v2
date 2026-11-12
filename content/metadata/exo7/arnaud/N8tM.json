@@ -1,0 +1,28 @@
+{
+  "uuid": "N8tM",
+  "source_path": "exo7/arnaud/N8tM.tex",
+  "summary": "L'exercice demande d'identifier les assertions vraies concernant l'irréductibilité de polynômes dans différents corps et le calcul du PGCD de polynômes dans Z[X].",
+  "concepts": [
+    "irréductibilité de polynômes",
+    "corps de nombres",
+    "polynômes unitaires",
+    "PGCD dans Z[X]",
+    "factorisation de polynômes",
+    "critères d'irréductibilité"
+  ],
+  "methods": [
+    "critère d'Eisenstein",
+    "algorithme d'Euclide étendu",
+    "factorisation dans C[X]",
+    "recherche de racines évidentes"
+  ],
+  "objects": [
+    "polynôme irréductible",
+    "PGCD de polynômes",
+    "polynôme à coefficients entiers",
+    "polynôme à coefficients rationnels"
+  ],
+  "content_hash": "7b3d924eef4b3cf581cb1436c16e7fa14ace24a2d5c3ac133048d2ddc4de23fd",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:23:22.556Z"
+}

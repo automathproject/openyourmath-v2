@@ -1,0 +1,25 @@
+{
+  "uuid": "713r",
+  "source_path": "exo7/lille-2/713r.tex",
+  "summary": "L'exercice demande d'identifier les primitives correctes d'intégrales impliquant un changement de variable u = 2 + cos x. Il propose quatre options avec des expressions différentes et des exposants variés.",
+  "concepts": [
+    "changement de variable",
+    "primitive d'une fonction",
+    "intégration",
+    "fonction composée",
+    "fonction trigonométrique"
+  ],
+  "methods": [
+    "changement de variable",
+    "intégration directe",
+    "linéarisation de l'intégrande"
+  ],
+  "objects": [
+    "intégrale indéfinie",
+    "fonction u(x) = 2 + cos x",
+    "fonction puissance"
+  ],
+  "content_hash": "6716bb230b86b9eaec0dcca728cc48e9c79eef3cdbce6fea722967ee17f1aa2b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:25:15.491Z"
+}

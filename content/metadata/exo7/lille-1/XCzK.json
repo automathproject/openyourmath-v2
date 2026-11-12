@@ -1,0 +1,26 @@
+{
+  "uuid": "XCzK",
+  "source_path": "exo7/lille-1/XCzK.tex",
+  "summary": "Trouver l'équation cartésienne d'un plan P contenant une droite D donnée et tel que la distance d'un point A(1,1,1) à P soit égale à 1/√2. L'espace est muni d'un repère orthonormé direct.",
+  "concepts": [
+    "distance d'un point à un plan",
+    "équation cartésienne d'un plan",
+    "droite dans l'espace",
+    "repère orthonormé",
+    "géométrie vectorielle"
+  ],
+  "methods": [
+    "calcul de distance point-plan",
+    "paramétrage de plan contenant une droite",
+    "résolution d'équation"
+  ],
+  "objects": [
+    "point de l'espace",
+    "droite paramétrée",
+    "plan de l'espace",
+    "repère orthonormé"
+  ],
+  "content_hash": "8b4dbf8132e19223c0acd02a64a818a0119ebe97b88b030da2bd32f0fa364036",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:44:23.315Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "9TNC",
+  "source_path": "exo7/hilisit/9TNC.tex",
+  "summary": "Trouver les coefficients a, b et c d'une fonction polynomiale du second degré f(x) = ax² + bx + c qui est solution d'une équation différentielle linéaire du premier ordre y' + 2y = 4x² + 2x - 1.",
+  "concepts": [
+    "équation différentielle linéaire du premier ordre",
+    "solution d'une équation différentielle",
+    "identification des coefficients",
+    "polynôme du second degré",
+    "dérivée d'une fonction polynomiale"
+  ],
+  "methods": [
+    "identification des coefficients",
+    "calcul de la dérivée",
+    "résolution d'équation linéaire"
+  ],
+  "objects": [
+    "fonction polynomiale",
+    "équation différentielle",
+    "coefficients a, b, c"
+  ],
+  "content_hash": "96f073ac3f8a9fd12d080bca92df33777de9a0da7c2de9df306367c70530457a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:37:13.115Z"
+}

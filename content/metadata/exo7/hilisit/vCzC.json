@@ -1,0 +1,23 @@
+{
+  "uuid": "vCzC",
+  "source_path": "exo7/hilisit/vCzC.tex",
+  "summary": "L'exercice demande de déterminer quels restes possibles (0, 1, 2, 3) peuvent apparaître lors de la division euclidienne d'un nombre premier p ≥ 3 par 4.",
+  "concepts": [
+    "division euclidienne",
+    "nombre premier",
+    "parité",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "analyse des cas",
+    "propriétés des nombres premiers"
+  ],
+  "objects": [
+    "nombre premier",
+    "reste de division",
+    "entier naturel"
+  ],
+  "content_hash": "30876050060f8a8cf06a9da53b74c1984d97967efc6c2b1cba1ccc32c783c2b2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:24:43.956Z"
+}

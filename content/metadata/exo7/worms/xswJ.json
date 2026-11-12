@@ -1,0 +1,24 @@
+{
+  "uuid": "xswJ",
+  "source_path": "exo7/worms/xswJ.tex",
+  "summary": "L'exercice demande de déterminer le nombre de façons de noircir k cases parmi n dans un tableau, en choisissant parmi des propositions multiples.",
+  "concepts": [
+    "combinaison",
+    "nombre de combinaisons",
+    "principe de dénombrement",
+    "arrangement",
+    "cardinal d'un ensemble fini"
+  ],
+  "methods": [
+    "calcul de coefficient binomial",
+    "énumération des cas"
+  ],
+  "objects": [
+    "ensemble fini",
+    "combinaison de k éléments",
+    "tableau de n cases"
+  ],
+  "content_hash": "63ac1e3dbcf4f1451b307065048df9c1914fe0b3897fa586cfde6c42dc0d49a4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:57:34.984Z"
+}

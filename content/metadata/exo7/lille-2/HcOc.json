@@ -1,0 +1,28 @@
+{
+  "uuid": "HcOc",
+  "source_path": "exo7/lille-2/HcOc.tex",
+  "summary": "L'exercice demande de vérifier la validité de quatre développements limités de fonctions trigonométriques composées ou transformées, en identifiant ceux qui sont corrects.",
+  "concepts": [
+    "développement limité",
+    "fonction trigonométrique",
+    "composée de fonctions",
+    "notation petit o",
+    "limite",
+    "approximation locale"
+  ],
+  "methods": [
+    "développement limité d'une fonction composée",
+    "changement de variable",
+    "utilisation de DL usuels",
+    "comparaison terme à terme"
+  ],
+  "objects": [
+    "développement limité de sin(x)",
+    "développement limité de cos(x)",
+    "fonction composée",
+    "notation o(x^n)"
+  ],
+  "content_hash": "9bab4786a619567b0f141d07721c2dc64d9a9d49f8596f78a16ec0b1b31f5b3e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:35:04.207Z"
+}

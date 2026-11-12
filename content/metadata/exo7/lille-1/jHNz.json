@@ -1,0 +1,27 @@
+{
+  "uuid": "jHNz",
+  "source_path": "exo7/lille-1/jHNz.tex",
+  "summary": "L'exercice demande d'identifier la faille dans une preuve par récurrence appliquée à l'inégalité e^x > x pour tout réel x ≥ 1. La preuve proposée utilise une initialisation à x=1 et une étape d'hérédité, mais l'argument n'est pas valide.",
+  "concepts": [
+    "principe de récurrence",
+    "inégalité",
+    "fonction exponentielle",
+    "raisonnement par l'absurde",
+    "domaine de définition",
+    "entiers naturels"
+  ],
+  "methods": [
+    "preuve par récurrence",
+    "initialisation",
+    "hérédité",
+    "analyse de validité d'un raisonnement"
+  ],
+  "objects": [
+    "inégalité e^x > x",
+    "réel x ≥ 1",
+    "fonction exponentielle"
+  ],
+  "content_hash": "6dde5ab81a27f7e073cbe7fd08a3c250af8ec32f1a7ff2797fcf5a1435228756",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:49:57.357Z"
+}

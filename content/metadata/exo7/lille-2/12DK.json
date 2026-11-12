@@ -1,0 +1,27 @@
+{
+  "uuid": "12DK",
+  "source_path": "exo7/lille-2/12DK.tex",
+  "summary": "L'exercice demande de vérifier la validité de quatre affirmations concernant des intégrales définies et des changements de variables. Il porte sur l'évaluation d'intégrales impliquant des fonctions trigonométriques et des transformations de variables.",
+  "concepts": [
+    "changement de variable",
+    "intégrale définie",
+    "fonctions trigonométriques",
+    "décomposition en éléments simples",
+    "primitive d'une fonction"
+  ],
+  "methods": [
+    "substitution",
+    "décomposition en fractions partielles",
+    "calcul de primitive",
+    "évaluation d'intégrale définie"
+  ],
+  "objects": [
+    "intégrale de 1/cos(x)",
+    "intégrale de tan(x)/cos(x)",
+    "changement de variable t=sin(x)",
+    "changement de variable t=cos(x)"
+  ],
+  "content_hash": "8089ac115503604a8eece7d1da8f3291571382bec2fc14631dc425a5f106e27e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:24:51.056Z"
+}

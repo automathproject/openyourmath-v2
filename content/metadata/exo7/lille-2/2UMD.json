@@ -1,0 +1,32 @@
+{
+  "uuid": "2UMD",
+  "source_path": "exo7/lille-2/2UMD.tex",
+  "summary": "L'exercice demande de déterminer les propriétés d'une application linéaire de R³ dans R³ en analysant son noyau et son image, et en vérifiant si elle est injective ou surjective.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "injectivité",
+    "surjectivité",
+    "théorème du rang",
+    "dimension d'un espace vectoriel",
+    "base d'un espace vectoriel"
+  ],
+  "methods": [
+    "calcul du noyau",
+    "calcul de l'image",
+    "vérification de l'injectivité",
+    "vérification de la surjectivité",
+    "utilisation du théorème du rang"
+  ],
+  "objects": [
+    "application linéaire de R³ dans R³",
+    "noyau",
+    "image",
+    "base de noyau",
+    "base d'image"
+  ],
+  "content_hash": "c880fe54b7d60518433cb483a05af0083613c77f119815a44732c3979d69ba72",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-12T18:19:51.262Z"
+}

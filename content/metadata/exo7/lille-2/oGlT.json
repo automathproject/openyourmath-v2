@@ -1,0 +1,26 @@
+{
+  "uuid": "oGlT",
+  "source_path": "exo7/lille-2/oGlT.tex",
+  "summary": "L'exercice demande de déterminer si un ensemble de matrices particulières forme un espace vectoriel et, si oui, d'en identifier la dimension. Il propose plusieurs assertions sur la dimension potentielle de cet espace.",
+  "concepts": [
+    "espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "base d'un espace vectoriel",
+    "matrice",
+    "structure algébrique"
+  ],
+  "methods": [
+    "vérification des axiomes d'espace vectoriel",
+    "construction d'une base",
+    "calcul de dimension"
+  ],
+  "objects": [
+    "ensemble de matrices",
+    "matrice 2x2",
+    "base de matrices",
+    "espace vectoriel de matrices"
+  ],
+  "content_hash": "7382850fc3c8a432dd6e7ca08686aaf18a362a06b1b13348a7f60bdf1ccb7bc4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:53:41.194Z"
+}

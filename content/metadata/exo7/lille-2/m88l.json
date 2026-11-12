@@ -1,0 +1,29 @@
+{
+  "uuid": "m88l",
+  "source_path": "exo7/lille-2/m88l.tex",
+  "summary": "L'exercice demande de vérifier la validité de quatre affirmations concernant les développements limités des fonctions f(x) = e^(sin x) et g(x) = e^(cos x) en 0, ainsi qu'une relation entre leurs dérivées.",
+  "concepts": [
+    "développement limité",
+    "fonction exponentielle",
+    "fonction trigonométrique",
+    "ordre d'un o petit",
+    "développement limité à droite/gauche",
+    "dérivée",
+    "composition de fonctions"
+  ],
+  "methods": [
+    "développement limité de e^u",
+    "approximation de sin x et cos x",
+    "calcul de dérivée",
+    "comparaison de termes dominants"
+  ],
+  "objects": [
+    "fonction f(x) = e^(sin x)",
+    "fonction g(x) = e^(cos x)",
+    "développement limité d'ordre 2 et 3",
+    "dérivée de f(x)"
+  ],
+  "content_hash": "a6eda706fa58720e683d0a43d0636408902ac818d33ec19dd5bb5c71074264ec",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:36:12.415Z"
+}

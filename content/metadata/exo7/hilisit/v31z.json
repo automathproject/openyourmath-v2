@@ -1,0 +1,26 @@
+{
+  "uuid": "v31z",
+  "source_path": "exo7/hilisit/v31z.tex",
+  "summary": "L'exercice demande de déterminer la conclusion logique que Lambert tire de l'implication $x \\in \\Qq \\implies \\tan(x) \\notin \\Qq$ et de l'égalité $1 = \\tan(\\frac{\\pi}{4})$. Il s'agit d'appliquer la contraposée d'une implication pour prouver l'irrationalité d'un nombre.",
+  "concepts": [
+    "implication logique",
+    "contraposée",
+    "irrationalité",
+    "raisonnement par l'absurde",
+    "logique propositionnelle",
+    "ensemble des nombres rationnels"
+  ],
+  "methods": [
+    "application de la contraposée",
+    "raisonnement par contraposée",
+    "utilisation d'une implication"
+  ],
+  "objects": [
+    "implication logique",
+    "nombre rationnel",
+    "fonction tangente"
+  ],
+  "content_hash": "3d6c5e55e991b3e71de2246e38d7c7518c3ad8a5d8aa1fec733e9744a685c367",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:50:56.289Z"
+}

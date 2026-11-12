@@ -1,0 +1,28 @@
+{
+  "uuid": "SPVE",
+  "source_path": "exo7/lille-2/SPVE.tex",
+  "summary": "L'exercice demande d'analyser un système linéaire à paramètres (m, a) en quatre inconnues (x, y, z, t) et de déterminer quelles assertions sur son existence et son unicité de solutions sont vraies.",
+  "concepts": [
+    "système linéaire",
+    "paramètre",
+    "rang d'une matrice",
+    "équivalence de systèmes",
+    "solution unique",
+    "solution infinie",
+    "incompatibilité d'un système"
+  ],
+  "methods": [
+    "méthode du pivot de Gauss",
+    "réduction de système",
+    "analyse de cas par valeurs de paramètres"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice augmentée",
+    "paramètres réels",
+    "inconnues réelles"
+  ],
+  "content_hash": "a12979a1a7377d231cc816bfd666c12ee5ededfd133d54f53dc01f1de59ddfa1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:33:33.565Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "YcO5",
+  "source_path": "exo7/lille-2/YcO5.tex",
+  "summary": "L'exercice demande de déterminer les propriétés vraies d'un endomorphisme f d'un espace vectoriel E de dimension 3 tel que f² = 0, en analysant les relations entre son image et son noyau, son rang, et la forme de sa matrice dans une base adaptée.",
+  "concepts": [
+    "endomorphisme",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "rang d'une application linéaire",
+    "théorème du rang",
+    "dimension d'un espace vectoriel",
+    "matrice d'une application linéaire"
+  ],
+  "methods": [
+    "analyse des relations entre noyau et image",
+    "application du théorème du rang",
+    "construction d'une base adaptée",
+    "détermination de la matrice d'un endomorphisme"
+  ],
+  "objects": [
+    "espace vectoriel de dimension 3",
+    "endomorphisme",
+    "noyau",
+    "image",
+    "matrice 3x3"
+  ],
+  "content_hash": "ef32de58d7a8249f6b3ead81f8f46164b7ee5c59924ec25cf997e08759c191f2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:52:47.374Z"
+}

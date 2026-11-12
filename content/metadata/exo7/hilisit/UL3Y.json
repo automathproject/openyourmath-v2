@@ -1,0 +1,24 @@
+{
+  "uuid": "UL3Y",
+  "source_path": "exo7/hilisit/UL3Y.tex",
+  "summary": "L'exercice demande d'identifier les affirmations vraies concernant la divisibilité d'un nombre premier dans le produit de deux entiers, en appliquant le lemme d'Euclide.",
+  "concepts": [
+    "lemme d'Euclide",
+    "nombre premier",
+    "divisibilité dans Z",
+    "produit d'entiers",
+    "propriété de prime"
+  ],
+  "methods": [
+    "application du lemme d'Euclide",
+    "contre-exemple"
+  ],
+  "objects": [
+    "nombre premier p",
+    "entiers a et b",
+    "produit ab"
+  ],
+  "content_hash": "f9d0a6d2ecf88c4e04fbf9e8e0fad3dfd419861c7f3810f4ffbf78a65f952ba2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:23:39.456Z"
+}

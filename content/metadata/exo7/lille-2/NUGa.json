@@ -1,0 +1,27 @@
+{
+  "uuid": "NUGa",
+  "source_path": "exo7/lille-2/NUGa.tex",
+  "summary": "L'exercice demande de vérifier la validité de quatre affirmations concernant des primitives de fonctions composées sur l'intervalle ]0,+∞[. Il s'agit d'identifier les expressions correctes de primitives pour des combinaisons de fonctions rationnelles, exponentielles, racine carrée et trigonométriques.",
+  "concepts": [
+    "linéarité de l'intégration",
+    "primitive d'une fonction",
+    "intégrale de la fonction 1/x",
+    "intégrale de la fonction exponentielle",
+    "intégrale de la fonction sinus",
+    "intégrale de la fonction racine carrée"
+  ],
+  "methods": [
+    "décomposition en intégrales simples",
+    "calcul de primitives usuelles",
+    "vérification par dérivation"
+  ],
+  "objects": [
+    "fonction rationnelle",
+    "fonction exponentielle",
+    "fonction racine carrée",
+    "fonction sinus"
+  ],
+  "content_hash": "56e92b03d76979806498e55d5414aa3e719a1484a46b780f2851fa0473ed2fd1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:26:34.991Z"
+}

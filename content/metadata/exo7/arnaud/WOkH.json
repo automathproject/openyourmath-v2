@@ -1,0 +1,26 @@
+{
+  "uuid": "WOkH",
+  "source_path": "exo7/arnaud/WOkH.tex",
+  "summary": "L'exercice demande d'analyser les propriétés d'une suite numérique définie par $x_n = \\frac{(-1)^n}{n}$ en évaluant la validité de cinq propositions logiques concernant sa convergence, ses bornes et ses valeurs.",
+  "concepts": [
+    "suite numérique",
+    "convergence",
+    "limite d'une suite",
+    "quantificateurs logiques",
+    "propriétés de bornes",
+    "valeur absolue"
+  ],
+  "methods": [
+    "analyse des quantificateurs",
+    "étude de la limite",
+    "comparaison de termes"
+  ],
+  "objects": [
+    "suite $(x_n)$",
+    "propositions logiques",
+    "valeur absolue $|x_n|$"
+  ],
+  "content_hash": "d649b262e2ab571006e307fc2e8b311ba22ab6c18497eeba6752f4b68b73fd80",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:49:05.573Z"
+}

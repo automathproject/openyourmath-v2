@@ -1,0 +1,28 @@
+{
+  "uuid": "VIj3",
+  "source_path": "exo7/lille-1/VIj3.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant les opérations d'intersection et d'union entre un ensemble A et son complémentaire dans E, où A est une partie propre de E.",
+  "concepts": [
+    "complémentaire d'un ensemble",
+    "intersection d'ensembles",
+    "union d'ensembles",
+    "partie d'un ensemble",
+    "lois de De Morgan",
+    "absurdité logique",
+    "inclusion d'ensembles"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation des propriétés des opérations ensemblistes"
+  ],
+  "objects": [
+    "ensemble A",
+    "complémentaire de A",
+    "ensemble E",
+    "intersection A ∩ A̅",
+    "union A ∪ A̅"
+  ],
+  "content_hash": "43f902925c1278bbfcf409608d2b623f257336ec325a94dfb1023ffc99e80c78",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:48:57.832Z"
+}

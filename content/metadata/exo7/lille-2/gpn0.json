@@ -1,0 +1,31 @@
+{
+  "uuid": "gpn0",
+  "source_path": "exo7/lille-2/gpn0.tex",
+  "summary": "L'exercice demande d'évaluer la validité de quatre limites en 0 en utilisant des développements limités pour simplifier les expressions. Les fonctions impliquent des exponentielles, des trigonométriques et des polynômes.",
+  "concepts": [
+    "développement limité",
+    "limite de fonction",
+    "notation petit o",
+    "approximation locale",
+    "fonction exponentielle",
+    "fonction trigonométrique",
+    "équivalence asymptotique"
+  ],
+  "methods": [
+    "développement limité d'ordre n",
+    "standardisation",
+    "approximation polynomiale",
+    "comparaison de termes dominants",
+    "utilisation de la notation petit o"
+  ],
+  "objects": [
+    "fonction exponentielle",
+    "fonction cosinus",
+    "fonction sinus",
+    "polynôme",
+    "limite en 0"
+  ],
+  "content_hash": "f638041546f1c63e226177c9d7fbfacbf40d7e320467691ef53fedde73f6281c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:35:57.225Z"
+}

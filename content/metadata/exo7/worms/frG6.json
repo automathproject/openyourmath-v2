@@ -1,0 +1,31 @@
+{
+  "uuid": "frG6",
+  "source_path": "exo7/worms/frG6.tex",
+  "summary": "L'exercice porte sur une variable aléatoire discrète X prenant les valeurs 0, 1, 2 avec des probabilités dépendant d'un paramètre a. Il demande de déterminer les valeurs possibles de a, d'identifier le graphe de la fonction de répartition, de calculer l'espérance et la variance de X, puis d'en déduire celles d'une transformation linéaire Y=4-2X.",
+  "concepts": [
+    "variable aléatoire discrète",
+    "probabilité",
+    "fonction de répartition",
+    "espérance",
+    "variance",
+    "transformation linéaire de variable aléatoire",
+    "loi de probabilité"
+  ],
+  "methods": [
+    "calcul de probabilités",
+    "linéarité de l'espérance",
+    "formule de la variance",
+    "propriétés des transformations linéaires"
+  ],
+  "objects": [
+    "variable aléatoire à trois valeurs",
+    "paramètre de loi",
+    "fonction de répartition",
+    "espérance",
+    "variance",
+    "transformation affine de variable aléatoire"
+  ],
+  "content_hash": "07b202cad20fe5efc02b6276f404d9afae83c0f0fb856f8e2657483636ca6bb5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:57:26.879Z"
+}

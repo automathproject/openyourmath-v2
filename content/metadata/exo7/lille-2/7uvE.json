@@ -1,0 +1,29 @@
+{
+  "uuid": "7uvE",
+  "source_path": "exo7/lille-2/7uvE.tex",
+  "summary": "L'exercice demande de déterminer les assertions vraies concernant un endomorphisme de ℝ³, sa matrice dans une base canonique, sa matrice dans une nouvelle base, et la puissance de cette matrice. Il mobilise le changement de base et les propriétés des matrices de passage.",
+  "concepts": [
+    "endomorphisme",
+    "matrice d'application linéaire",
+    "changement de base",
+    "matrice de passage",
+    "bijectivité",
+    "puissance de matrice",
+    "rang d'une matrice"
+  ],
+  "methods": [
+    "calcul de matrice de passage",
+    "vérification de bijectivité par le rang",
+    "calcul de puissance de matrice",
+    "utilisation de la relation AP = PB"
+  ],
+  "objects": [
+    "matrice 3x3",
+    "base vectorielle",
+    "matrice de passage",
+    "endomorphisme de ℝ³"
+  ],
+  "content_hash": "f7271f6ca3718942daf488821eebfb29c095d641421efcf00617d8e2986e7aca",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:51:33.427Z"
+}

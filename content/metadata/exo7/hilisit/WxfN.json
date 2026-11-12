@@ -1,0 +1,25 @@
+{
+  "uuid": "WxfN",
+  "source_path": "exo7/hilisit/WxfN.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant les solutions d'une équation différentielle du premier ordre linéaire non homogène. Il s'agit de vérifier si des fonctions proposées satisfont l'équation y' = 2y - 2x + 1.",
+  "concepts": [
+    "équation différentielle linéaire du premier ordre",
+    "solution particulière",
+    "solution constante",
+    "fonction exponentielle",
+    "fonction polynomiale"
+  ],
+  "methods": [
+    "vérification par substitution",
+    "recherche de solution constante",
+    "analyse de solutions proposées"
+  ],
+  "objects": [
+    "équation différentielle y' = 2y - 2x + 1",
+    "fonction solution",
+    "solution particulière"
+  ],
+  "content_hash": "8cbaec136cecde4fdbda83233eb6feff26e58087526118422ac91da6ce106703",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:38:30.403Z"
+}

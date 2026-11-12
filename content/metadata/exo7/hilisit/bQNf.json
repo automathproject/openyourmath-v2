@@ -1,0 +1,26 @@
+{
+  "uuid": "bQNf",
+  "source_path": "exo7/hilisit/bQNf.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant le pgcd et le ppcm de deux entiers donnés, 220 et 60. Il s'agit de vérifier des propriétés de divisibilité et de multiples communs.",
+  "concepts": [
+    "pgcd",
+    "ppcm",
+    "diviseur commun",
+    "multiple commun",
+    "algorithme d'Euclide",
+    "arithmétique dans Z"
+  ],
+  "methods": [
+    "calcul du pgcd par liste des diviseurs",
+    "calcul du ppcm par formule",
+    "vérification de divisibilité"
+  ],
+  "objects": [
+    "entiers naturels",
+    "pgcd de deux nombres",
+    "ppcm de deux nombres"
+  ],
+  "content_hash": "57f1fa73aeb269d993df7781e8048f870648eaa47b0803121ccf77085aef1e07",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:23:58.808Z"
+}

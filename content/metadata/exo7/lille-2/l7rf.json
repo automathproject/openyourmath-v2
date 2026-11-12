@@ -1,0 +1,24 @@
+{
+  "uuid": "l7rf",
+  "source_path": "exo7/lille-2/l7rf.tex",
+  "summary": "L'exercice demande de déterminer le rang de quatre matrices données en évaluant l'indépendance linéaire de leurs vecteurs colonnes ou lignes. Il s'agit d'appliquer la définition du rang matriciel à des exemples concrets.",
+  "concepts": [
+    "rang d'une matrice",
+    "indépendance linéaire",
+    "vecteurs colonnes",
+    "vecteurs lignes",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "détermination du rang par élimination de Gauss",
+    "vérification de l'indépendance linéaire"
+  ],
+  "objects": [
+    "matrice 1x3",
+    "matrice 3x2",
+    "matrice 3x3"
+  ],
+  "content_hash": "e30416f58106febca6335abb13ad83ee8e8d1cbd1bb6916c02b2f9d8e28b38b2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:53:26.694Z"
+}

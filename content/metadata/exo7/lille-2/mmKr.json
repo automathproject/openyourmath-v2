@@ -1,0 +1,29 @@
+{
+  "uuid": "mmKr",
+  "source_path": "exo7/lille-2/mmKr.tex",
+  "summary": "L'exercice demande de vérifier la validité de quatre développements limités d'ordre 2 en 0 pour les fonctions f(x) = ln(1 + sin x) et g(x) = ln(1 + cos x), ainsi que pour leurs combinaisons. Il s'agit d'évaluer des approximations polynomiales locales.",
+  "concepts": [
+    "développement limité",
+    "fonction logarithme",
+    "fonction sinus",
+    "fonction cosinus",
+    "petit o",
+    "approximation locale",
+    "composition de fonctions"
+  ],
+  "methods": [
+    "développement limité d'une fonction composée",
+    "approximation de Taylor",
+    "linéarisation",
+    "utilisation de DL usuels"
+  ],
+  "objects": [
+    "fonction f(x) = ln(1 + sin x)",
+    "fonction g(x) = ln(1 + cos x)",
+    "développement limité d'ordre 2",
+    "combinaison de fonctions"
+  ],
+  "content_hash": "e8e87fc17bc325db51a01389a48ca021aad237c9f8ee07ac43733e70a35f67b0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:36:15.306Z"
+}

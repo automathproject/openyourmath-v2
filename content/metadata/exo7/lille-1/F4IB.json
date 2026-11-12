@@ -1,0 +1,27 @@
+{
+  "uuid": "F4IB",
+  "source_path": "exo7/lille-1/F4IB.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant la fonction f(x) = x⁴ - 3x³ + 3x² - x, notamment sur l'existence de points où la tangente est horizontale ou verticale, et sur la présence d'un point d'inflexion en 0.",
+  "concepts": [
+    "théorème de Rolle",
+    "dérivabilité",
+    "tangente horizontale",
+    "tangente verticale",
+    "point d'inflexion",
+    "fonction polynomiale"
+  ],
+  "methods": [
+    "calcul de dérivée",
+    "application du théorème de Rolle",
+    "analyse des conditions de tangente"
+  ],
+  "objects": [
+    "fonction polynomiale de degré 4",
+    "courbe représentative",
+    "tangente",
+    "point d'inflexion"
+  ],
+  "content_hash": "6121648633b1370f22590e4310cfdf4fc3afa266a1e7f52361b67d6a5ff3d29d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:32:15.616Z"
+}

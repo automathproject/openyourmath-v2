@@ -1,0 +1,27 @@
+{
+  "uuid": "woSJ",
+  "source_path": "exo7/hilisit/woSJ.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies pour deux entiers a et b vérifiant l'équation 5a² - 4b² = 1, en utilisant le théorème de Bézout pour analyser les relations de divisibilité.",
+  "concepts": [
+    "théorème de Bézout",
+    "nombres premiers entre eux",
+    "plus grand commun diviseur",
+    "divisibilité dans Z",
+    "identités de Bézout",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "identification d'identités de Bézout",
+    "analyse de divisibilité",
+    "utilisation de l'équation donnée pour inférer des propriétés"
+  ],
+  "objects": [
+    "entiers a et b",
+    "pgcd(a², b²)",
+    "pgcd(5a, 4b)",
+    "équation diophantienne"
+  ],
+  "content_hash": "438e59a7275bd5ad8ce3f37c2168892dd51e71a55fc67faeafcd7006cf7ec519",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:24:46.731Z"
+}

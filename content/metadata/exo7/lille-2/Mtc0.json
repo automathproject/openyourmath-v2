@@ -1,0 +1,25 @@
+{
+  "uuid": "Mtc0",
+  "source_path": "exo7/lille-2/Mtc0.tex",
+  "summary": "L'exercice demande d'évaluer l'exactitude de quatre égalités impliquant des intégrales de fonctions rationnelles et radicales sur l'intervalle [0,1]. Il s'agit de vérifier des primitives usuelles de fonctions de la forme 1/(x+1)^2, 1/(x+1), 1/√(x+1) et √(x+1).",
+  "concepts": [
+    "intégrale définie",
+    "changement de variable",
+    "primitive d'une fonction",
+    "fonction rationnelle",
+    "fonction radicale"
+  ],
+  "methods": [
+    "changement de variable",
+    "calcul de primitive",
+    "évaluation d'intégrale définie"
+  ],
+  "objects": [
+    "fonction rationnelle",
+    "fonction radicale",
+    "intégrale définie"
+  ],
+  "content_hash": "432d2b6d867e1561cfa397e5f9f29d9625dce6298a24467d1e0ebf2de9a5aea3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:26:32.169Z"
+}

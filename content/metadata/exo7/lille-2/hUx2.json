@@ -1,0 +1,27 @@
+{
+  "uuid": "hUx2",
+  "source_path": "exo7/lille-2/hUx2.tex",
+  "summary": "L'exercice demande d'analyser un système linéaire à trois inconnues et un paramètre réel, en déterminant les assertions vraies concernant son nombre de solutions selon les valeurs du paramètre. Il s'agit d'étudier la compatibilité et l'unicité des solutions d'un système paramétré.",
+  "concepts": [
+    "système linéaire",
+    "rang d'une matrice",
+    "incompatibilité d'un système",
+    "solution unique",
+    "solution infinie",
+    "paramètre",
+    "équivalence de systèmes"
+  ],
+  "methods": [
+    "méthode du pivot de Gauss",
+    "réduction de système",
+    "analyse de cas selon le paramètre"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice augmentée",
+    "paramètre réel"
+  ],
+  "content_hash": "c10a75521ab4bb8fdd5e21b6a265f97518a84c972499a9af5c963f953728249f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:33:51.490Z"
+}

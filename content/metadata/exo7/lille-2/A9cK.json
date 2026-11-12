@@ -1,0 +1,27 @@
+{
+  "uuid": "A9cK",
+  "source_path": "exo7/lille-2/A9cK.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant une matrice nilpotente A, notamment son inversibilité et celle de A-aI pour divers a réels.",
+  "concepts": [
+    "matrice nilpotente",
+    "inversibilité d'une matrice",
+    "polynôme caractéristique",
+    "valeur propre",
+    "déterminant",
+    "matrice identité"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "calcul de puissance de matrice",
+    "inversion de matrice",
+    "décomposition polynomiale"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice identité",
+    "polynôme annulateur"
+  ],
+  "content_hash": "455a3becfb0c5f14d01232a3614e975eaa932e68d5658a2166614d12470b42f1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:51:35.487Z"
+}

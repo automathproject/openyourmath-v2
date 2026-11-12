@@ -1,0 +1,27 @@
+{
+  "uuid": "kk7a",
+  "source_path": "exo7/lille-1/kk7a.tex",
+  "summary": "L'exercice demande d'identifier si un réel donné est le maximum d'un ensemble E, ou si E admet un maximum, en vérifiant la définition mathématique du maximum.",
+  "concepts": [
+    "maximum d'un ensemble",
+    "majorant",
+    "borne supérieure",
+    "intervalle réel",
+    "inclusion d'intervalles",
+    "définition par quantification"
+  ],
+  "methods": [
+    "vérification de la définition du maximum",
+    "analyse des bornes d'intervalles",
+    "comparaison d'éléments"
+  ],
+  "objects": [
+    "ensemble de réels",
+    "intervalle fermé",
+    "intervalle semi-ouvert",
+    "intersection d'intervalles"
+  ],
+  "content_hash": "919afb36d15bac45f6231295d0dfede22fd606fbceb794c9c1e31b04bffb4475",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:58:30.273Z"
+}

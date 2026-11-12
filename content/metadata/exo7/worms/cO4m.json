@@ -1,0 +1,27 @@
+{
+  "uuid": "cO4m",
+  "source_path": "exo7/worms/cO4m.tex",
+  "summary": "Calculer la probabilité d'obtenir exactement k piles lors de n lancers d'une pièce équilibrée, en identifiant la formule correcte parmi trois propositions.",
+  "concepts": [
+    "loi binomiale",
+    "probabilité d'un événement",
+    "coefficient binomial",
+    "schéma de Bernoulli",
+    "indépendance des tirages",
+    "probabilité conditionnelle"
+  ],
+  "methods": [
+    "calcul de coefficient binomial",
+    "application de la formule de la loi binomiale",
+    "simplification d'expression algébrique"
+  ],
+  "objects": [
+    "pièce équilibrée",
+    "nombre de piles",
+    "nombre de lancers",
+    "coefficient binomial"
+  ],
+  "content_hash": "f9cfdbf52098d19555695d42922e646e65090642f939dce94c73efc9fe39ad2b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:57:20.802Z"
+}

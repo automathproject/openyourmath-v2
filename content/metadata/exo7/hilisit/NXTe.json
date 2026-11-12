@@ -1,0 +1,25 @@
+{
+  "uuid": "NXTe",
+  "source_path": "exo7/hilisit/NXTe.tex",
+  "summary": "L'exercice demande de choisir la méthode la plus adaptée pour démontrer l'inégalité $(1+x)^n \\ge 1+nx$ pour tout $x \\in \\mathbb{R}$ et tout $n \\in \\mathbb{N}$. Il s'agit d'une inégalité classique en algèbre.",
+  "concepts": [
+    "inégalité binomiale",
+    "récurrence mathématique",
+    "raisonnement par cas",
+    "raisonnement par l'absurde",
+    "contraposée"
+  ],
+  "methods": [
+    "récurrence sur un entier",
+    "fixation d'une variable",
+    "disjonction des cas"
+  ],
+  "objects": [
+    "inégalité",
+    "variable réelle",
+    "entier naturel"
+  ],
+  "content_hash": "08ab6dd5657a27322dc186afefbf5374afd64b148c41690c97a654b318a2d0e1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:48:10.645Z"
+}

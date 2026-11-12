@@ -1,0 +1,28 @@
+{
+  "uuid": "lIdq",
+  "source_path": "exo7/lille-2/lIdq.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant une application linéaire f de R³ dans R², en vérifiant si des familles de vecteurs sont des bases et en identifiant la matrice de f par rapport à ces bases.",
+  "concepts": [
+    "application linéaire",
+    "base d'un espace vectoriel",
+    "matrice d'une application linéaire",
+    "coordonnées d'un vecteur dans une base",
+    "famille libre",
+    "famille génératrice"
+  ],
+  "methods": [
+    "vérification de la liberté d'une famille de vecteurs",
+    "calcul des coordonnées d'un vecteur dans une base",
+    "construction de la matrice d'une application linéaire"
+  ],
+  "objects": [
+    "application linéaire",
+    "vecteurs de R³",
+    "vecteurs de R²",
+    "matrice 2x3",
+    "bases de R² et R³"
+  ],
+  "content_hash": "9a0821095fd3e8380f2431be734c0f6bd71455468540d479b7967ed2a145da88",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:53:29.890Z"
+}

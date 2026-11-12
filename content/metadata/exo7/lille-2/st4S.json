@@ -1,0 +1,28 @@
+{
+  "uuid": "st4S",
+  "source_path": "exo7/lille-2/st4S.tex",
+  "summary": "L'exercice demande d'analyser un système linéaire paramétré par deux réels a et b, et de déterminer quelles assertions parmi quatre propositions sont vraies concernant l'équivalence du système, son existence de solutions et leur nombre.",
+  "concepts": [
+    "système d'équations linéaires",
+    "rang d'une matrice",
+    "équivalence de systèmes",
+    "solution unique",
+    "solution infinie",
+    "algorithme de Gauss",
+    "matrice augmentée"
+  ],
+  "methods": [
+    "réduction de Gauss",
+    "analyse de cas paramétriques",
+    "comparaison de systèmes équivalents"
+  ],
+  "objects": [
+    "système linéaire homogène",
+    "matrice des coefficients",
+    "paramètres réels",
+    "solution générale"
+  ],
+  "content_hash": "386be15aba30492f45b3bd099a5c2f11681a8b3bce328a9c9dc689e7137459e0",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:34:10.287Z"
+}

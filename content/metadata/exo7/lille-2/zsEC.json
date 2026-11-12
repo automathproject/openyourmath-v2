@@ -1,0 +1,30 @@
+{
+  "uuid": "zsEC",
+  "source_path": "exo7/lille-2/zsEC.tex",
+  "summary": "L'exercice demande de déterminer les assertions vraies concernant le noyau, l'image et le rang d'une application linéaire définie sur l'espace des polynômes réels de degré ≤ 2, en utilisant sa dérivée première et seconde.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "théorème du rang",
+    "dimension d'un espace vectoriel",
+    "base d'un espace vectoriel",
+    "polynôme de degré 2"
+  ],
+  "methods": [
+    "calcul de noyau",
+    "calcul d'image",
+    "application du théorème du rang",
+    "vérification de linéarité"
+  ],
+  "objects": [
+    "polynôme à coefficients réels",
+    "espace vectoriel de polynômes",
+    "application linéaire",
+    "noyau",
+    "image"
+  ],
+  "content_hash": "9d1ece6a9892fc2fa34c575151bd34f8d5e8b552b42e4df602f202274f7914c1",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:22:23.942Z"
+}

@@ -1,0 +1,24 @@
+{
+  "uuid": "YeNv",
+  "source_path": "exo7/lille-2/YeNv.tex",
+  "summary": "L'exercice demande de vérifier parmi quatre assertions celles qui sont vraies concernant les primitives de la fonction cos(πx) + 1/x sur l'intervalle ]0, +∞[. Certaines assertions concernent des primitives générales, d'autres une primitive spécifique s'annulant en x=1.",
+  "concepts": [
+    "primitive d'une fonction",
+    "linéarité de l'intégration",
+    "condition initiale",
+    "fonction trigonométrique",
+    "fonction logarithme"
+  ],
+  "methods": [
+    "intégration terme à terme",
+    "détermination de la constante d'intégration",
+    "vérification d'une condition initiale"
+  ],
+  "objects": [
+    "fonction cos(πx) + 1/x",
+    "primitive sur ]0, +∞["
+  ],
+  "content_hash": "79becdec95a8b923ec029ba99de101543ad90386d893f37ddd379be360a56fc6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:27:15.448Z"
+}

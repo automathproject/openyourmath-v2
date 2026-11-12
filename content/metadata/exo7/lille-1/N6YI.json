@@ -1,0 +1,28 @@
+{
+  "uuid": "N6YI",
+  "source_path": "exo7/lille-1/N6YI.tex",
+  "summary": "L'exercice demande de déterminer la convergence des suites $(u_n)$ et $(v_n)$ définies par des fractions impliquant des puissances de deux réels $a$ et $b$ avec $a > b > 0$. Il s'agit d'analyser les limites de ces suites lorsque $n$ tend vers l'infini.",
+  "concepts": [
+    "suite géométrique",
+    "limite de suite",
+    "convergence",
+    "suite numérique",
+    "comparaison de termes",
+    "croissance exponentielle"
+  ],
+  "methods": [
+    "simplification d'expression",
+    "factorisation",
+    "analyse de la limite d'une suite géométrique",
+    "comparaison de termes dominants"
+  ],
+  "objects": [
+    "suite $(u_n)$",
+    "suite $(v_n)",
+    "terme général de suite",
+    "limite infinie"
+  ],
+  "content_hash": "47dca352d9caf9d027848165f1407681cfadfffa005789a1dc54d536eee57966",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:59:26.185Z"
+}

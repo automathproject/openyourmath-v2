@@ -1,0 +1,25 @@
+{
+  "uuid": "VmLM",
+  "source_path": "exo7/lille-2/VmLM.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant l'ensemble des matrices à n lignes et m colonnes à coefficients réels, muni de l'addition et de la multiplication par un scalaire.",
+  "concepts": [
+    "espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "base d'un espace vectoriel",
+    "matrice élémentaire",
+    "structure algébrique"
+  ],
+  "methods": [
+    "vérification des axiomes d'espace vectoriel",
+    "construction explicite d'une base",
+    "calcul de dimension"
+  ],
+  "objects": [
+    "matrice",
+    "espace vectoriel de matrices",
+    "base canonique"
+  ],
+  "content_hash": "bbb55a7bd85f933ca8c14a9ac550666926d467da837fae2370e1d81e016b1059",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:52:44.314Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "OHUl",
+  "source_path": "exo7/hilisit/OHUl.tex",
+  "summary": "L'exercice demande de déterminer si quatre entiers donnés sont des nombres premiers en vérifiant leur divisibilité par des nombres premiers inférieurs ou égaux à leur racine carrée.",
+  "concepts": [
+    "nombre premier",
+    "divisibilité",
+    "critère de divisibilité",
+    "racine carrée",
+    "décomposition en facteurs premiers"
+  ],
+  "methods": [
+    "test de divisibilité",
+    "décomposition factorielle",
+    "calcul de la somme des chiffres"
+  ],
+  "objects": [
+    "entiers naturels",
+    "nombres premiers",
+    "facteurs premiers"
+  ],
+  "content_hash": "35068622f61232ee564a034276dc7f956fb2850926b5467900bb25acc7f29a24",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:23:24.769Z"
+}

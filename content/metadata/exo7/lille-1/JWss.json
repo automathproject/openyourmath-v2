@@ -1,0 +1,27 @@
+{
+  "uuid": "JWss",
+  "source_path": "exo7/lille-1/JWss.tex",
+  "summary": "L'exercice demande de déterminer les conditions sur les paramètres a et b pour que la fonction f(x) = √(x³ + 2x² + 3) - a x √(x + b) admette une limite finie en +∞.",
+  "concepts": [
+    "limite de fonction en l'infini",
+    "conjugué d'une expression",
+    "comparaison de termes dominants",
+    "limite finie",
+    "croissance comparée des fonctions"
+  ],
+  "methods": [
+    "multiplication par le conjugué",
+    "développement asymptotique",
+    "analyse des termes dominants",
+    "comparaison des degrés"
+  ],
+  "objects": [
+    "fonction rationnelle",
+    "expression conjuguée",
+    "limite finie",
+    "paramètres réels"
+  ],
+  "content_hash": "14d79a8ad32213db37a22046e4d305bdd81aeaf7e2a6d5786d6f7cbf02bf1ab5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:29:57.377Z"
+}

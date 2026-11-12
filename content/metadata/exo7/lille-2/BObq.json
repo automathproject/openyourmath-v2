@@ -1,0 +1,27 @@
+{
+  "uuid": "BObq",
+  "source_path": "exo7/lille-2/BObq.tex",
+  "summary": "L'exercice demande de déterminer si des applications données entre espaces vectoriels sont linéaires, en fonction de paramètres réels. Il s'agit d'analyser les propriétés de linéarité des applications f et g définies par des formules explicites.",
+  "concepts": [
+    "application linéaire",
+    "espace vectoriel",
+    "linéarité",
+    "additivité",
+    "homogénéité",
+    "conditions nécessaires et suffisantes"
+  ],
+  "methods": [
+    "vérification des propriétés de linéarité",
+    "analyse des conditions sur les paramètres",
+    "test de l'additivité",
+    "test de l'homogénéité"
+  ],
+  "objects": [
+    "application f de ℝ³ dans ℝ²",
+    "application g de ℝ³ dans ℝ³",
+    "paramètres réels a, b, c"
+  ],
+  "content_hash": "f1153f7735d022342fc74e03ceae2435d7addaa2b9ac85ef41582922a4ef0a2c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:21:13.039Z"
+}

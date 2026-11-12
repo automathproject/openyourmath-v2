@@ -1,0 +1,28 @@
+{
+  "uuid": "8lAM",
+  "source_path": "exo7/lille-2/8lAM.tex",
+  "summary": "L'exercice demande de déterminer les développements limités d'ordre 2 ou 3 en 0 des fonctions arcsin(x) et arctan(x), ainsi que de leurs dérivées, en identifiant les propositions correctes parmi quatre options.",
+  "concepts": [
+    "développement limité",
+    "fonction réciproque",
+    "intégration de fonctions",
+    "développement limité d'ordre n",
+    "notation petit o",
+    "développement limité à droite/gauche"
+  ],
+  "methods": [
+    "développement en série entière",
+    "intégration terme à terme",
+    "calcul de dérivées",
+    "approximation locale"
+  ],
+  "objects": [
+    "fonction arcsin(x)",
+    "fonction arctan(x)",
+    "développement limité d'une fonction",
+    "dérivée d'une fonction réciproque"
+  ],
+  "content_hash": "ea17f06a0901f592039fb10a390fb3a2a40efcf4215b94a38ef39b69aa1a6a60",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:34:34.472Z"
+}

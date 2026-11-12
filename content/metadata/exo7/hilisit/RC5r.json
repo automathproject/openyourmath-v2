@@ -1,0 +1,24 @@
+{
+  "uuid": "RC5r",
+  "source_path": "exo7/hilisit/RC5r.tex",
+  "summary": "L'exercice demande d'identifier parmi quatre affirmations celles qui sont vraies concernant les primitives de fonctions usuelles. Il s'agit de vérifier si une fonction donnée est bien la primitive d'une autre fonction en calculant sa dérivée.",
+  "concepts": [
+    "primitive d'une fonction",
+    "dérivée",
+    "fonction polynomiale",
+    "fonction exponentielle",
+    "fonction trigonométrique"
+  ],
+  "methods": [
+    "calcul de dérivée",
+    "vérification de primitive"
+  ],
+  "objects": [
+    "fonction polynomiale",
+    "fonction exponentielle",
+    "fonction trigonométrique"
+  ],
+  "content_hash": "19c3c33ee2e0f10d34471370782ce7e20319b0dca3224c518433f5610c1a8355",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:26:44.452Z"
+}

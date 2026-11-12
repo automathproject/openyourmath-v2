@@ -1,0 +1,27 @@
+{
+  "uuid": "2wGK",
+  "source_path": "exo7/lille-2/2wGK.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant trois matrices carrées non nulles A, B et C vérifiant AB = AC. Il s'agit d'analyser les propriétés d'inversibilité et de rang de la matrice A.",
+  "concepts": [
+    "inversibilité d'une matrice",
+    "rang d'une matrice",
+    "matrice carrée",
+    "matrice identité",
+    "produit de matrices",
+    "matrice nulle"
+  ],
+  "methods": [
+    "raisonnement par l'absurde",
+    "utilisation de l'inverse",
+    "factorisation de matrices"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice identité",
+    "matrice nulle",
+    "matrice inversible"
+  ],
+  "content_hash": "49ade171da81297ed66a6803abbf626309e6ba4dc32a0014bf8402aaf614cbb3",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:51:27.753Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "r2hQ",
+  "source_path": "exo7/lille-2/r2hQ.tex",
+  "summary": "L'exercice demande de déterminer quelles matrices parmi A, B et C sont inversibles, et si l'inverse de B est égal à C. Les matrices sont données sous forme explicite.",
+  "concepts": [
+    "inversibilité d'une matrice",
+    "calcul de l'inverse d'une matrice",
+    "déterminant",
+    "rang d'une matrice",
+    "matrice carrée"
+  ],
+  "methods": [
+    "méthode de Gauss",
+    "calcul du déterminant",
+    "vérification de l'inverse"
+  ],
+  "objects": [
+    "matrice 2x2",
+    "matrice 3x3",
+    "inverse d'une matrice"
+  ],
+  "content_hash": "c00bdfdd9fdef9e785834676de4412272c1655090c55e0bc644ed64fff7dbdec",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:53:54.467Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "4b9I",
+  "source_path": "exo7/lille-2/4b9I.tex",
+  "summary": "L'exercice demande de déterminer si des ensembles de polynômes sont des bases d'un sous-espace vectoriel E de R2[X] défini par des conditions sur la valeur et la dérivée en 1, et de trouver la dimension de E.",
+  "concepts": [
+    "sous-espace vectoriel",
+    "base d'un espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "polynôme de degré 2",
+    "dérivée d'une fonction polynomiale",
+    "système d'équations linéaires"
+  ],
+  "methods": [
+    "résolution de système d'équations linéaires",
+    "détermination d'une base par combinaison linéaire",
+    "calcul de la dimension par cardinal d'une base"
+  ],
+  "objects": [
+    "sous-espace vectoriel de polynômes",
+    "polynôme de degré ≤ 2",
+    "ensemble de polynômes générateurs"
+  ],
+  "content_hash": "b8fbbbec5a30cfa6b90808a3bda72d5c6f41cb0c3d7cd04f9600cce1cdc778d6",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:40:09.936Z"
+}

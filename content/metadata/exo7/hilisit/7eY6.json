@@ -1,0 +1,25 @@
+{
+  "uuid": "7eY6",
+  "source_path": "exo7/hilisit/7eY6.tex",
+  "summary": "L'exercice demande d'identifier parmi quatre fonctions proposées celle qui est une primitive de √x sur l'intervalle ]0, +∞[. Il s'agit de reconnaître la fonction dont la dérivée est √x.",
+  "concepts": [
+    "primitive d'une fonction",
+    "dérivée d'une fonction",
+    "fonction puissance",
+    "règle de dérivation des puissances"
+  ],
+  "methods": [
+    "calcul de dérivée",
+    "simplification algébrique",
+    "réécriture en exposant fractionnaire"
+  ],
+  "objects": [
+    "fonction √x",
+    "fonction x√x",
+    "fonction x²√x",
+    "fonction 1/(2√x)"
+  ],
+  "content_hash": "071b2d05f3ada2558fbe1678711836eaf577fa6cd53a00a582c9e5311176c3dc",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:25:18.062Z"
+}

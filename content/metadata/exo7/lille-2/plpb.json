@@ -1,0 +1,25 @@
+{
+  "uuid": "plpb",
+  "source_path": "exo7/lille-2/plpb.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant une matrice 3x4 réelle en tant que matrice d'une application linéaire entre espaces vectoriels réels, en utilisant le théorème du rang.",
+  "concepts": [
+    "application linéaire",
+    "matrice d'une application linéaire",
+    "théorème du rang",
+    "noyau d'une application linéaire",
+    "bijectivité",
+    "inversibilité d'une matrice"
+  ],
+  "methods": [
+    "analyse de la dimension des espaces source et cible",
+    "application du théorème du rang"
+  ],
+  "objects": [
+    "matrice 3x4",
+    "application linéaire entre espaces vectoriels",
+    "noyau d'une application linéaire"
+  ],
+  "content_hash": "d9358e7f675f788bf073d7a964e1ce87ea0f8290264da3717e4d5fbeea27e43d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:53:43.804Z"
+}

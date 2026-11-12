@@ -1,0 +1,28 @@
+{
+  "uuid": "AUco",
+  "source_path": "exo7/lille-2/AUco.tex",
+  "summary": "L'exercice demande de déterminer les assertions vraies concernant la matrice de passage entre deux bases d'un espace vectoriel, la matrice d'un endomorphisme dans une nouvelle base, et la puissance d'une matrice. Il s'appuie sur des calculs de matrices et des propriétés de changement de base.",
+  "concepts": [
+    "matrice de passage",
+    "changement de base",
+    "endomorphisme",
+    "matrice d'une application linéaire",
+    "puissance de matrice",
+    "relation de changement de base"
+  ],
+  "methods": [
+    "calcul de matrice inverse",
+    "vérification d'égalité matricielle",
+    "calcul de puissance de matrice",
+    "utilisation de la relation AP = PB"
+  ],
+  "objects": [
+    "matrice carrée",
+    "base d'un espace vectoriel",
+    "endomorphisme de R^3",
+    "matrice de passage"
+  ],
+  "content_hash": "2361c989c27232e91062f37fb8a847d3ecc97406abe1a519438f17bc39d1cf36",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:51:38.216Z"
+}

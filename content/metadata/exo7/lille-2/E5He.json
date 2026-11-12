@@ -1,0 +1,24 @@
+{
+  "uuid": "E5He",
+  "source_path": "exo7/lille-2/E5He.tex",
+  "summary": "L'exercice demande de déterminer quelles expressions sont des primitives de la fonction f(x) = x ln x sur l'intervalle ]0, +∞[ en vérifiant des propositions données.",
+  "concepts": [
+    "intégration par parties",
+    "primitive d'une fonction",
+    "fonction logarithme",
+    "constante d'intégration",
+    "calcul d'intégrale"
+  ],
+  "methods": [
+    "intégration par parties",
+    "détermination de primitives"
+  ],
+  "objects": [
+    "fonction f(x) = x ln x",
+    "primitive F(x)",
+    "constante d'intégration k"
+  ],
+  "content_hash": "9ec0698d38f12965260971bf871287fcf0000d848c40c8c150570cdf37bbac2f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:25:48.943Z"
+}

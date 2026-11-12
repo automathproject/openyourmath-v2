@@ -1,0 +1,28 @@
+{
+  "uuid": "Y4JR",
+  "source_path": "exo7/lille-1/Y4JR.tex",
+  "summary": "L'exercice demande d'analyser les propriétés d'une suite d'intervalles décroissants définis par I_n = [0, 1/n] pour n ≥ 1, et de déterminer quelles assertions sur ces intervalles sont vraies.",
+  "concepts": [
+    "suite d'intervalles",
+    "inclusion d'intervalles",
+    "intersection d'intervalles",
+    "union d'intervalles",
+    "densité de R",
+    "limite d'intervalles"
+  ],
+  "methods": [
+    "raisonnement par inclusion",
+    "analyse de l'intersection",
+    "analyse de l'union",
+    "raisonnement par l'absurde"
+  ],
+  "objects": [
+    "suite d'intervalles I_n",
+    "intervalle [0,1/n]",
+    "union d'intervalles",
+    "intersection d'intervalles"
+  ],
+  "content_hash": "19bb60f712630db8e76f7b7ca04f95bdfc08171e3693f8931e8a89ca15e8ab20",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:58:10.551Z"
+}

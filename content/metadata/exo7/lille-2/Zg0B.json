@@ -1,0 +1,27 @@
+{
+  "uuid": "Zg0B",
+  "source_path": "exo7/lille-2/Zg0B.tex",
+  "summary": "L'exercice demande de déterminer la matrice d'une application linéaire dans la base canonique de ℝ³ et d'identifier son rang parmi des propositions données.",
+  "concepts": [
+    "application linéaire",
+    "matrice d'une application linéaire",
+    "base canonique",
+    "rang d'une application linéaire",
+    "colinéarité",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "calcul des images des vecteurs de la base",
+    "vérification de la colinéarité",
+    "détermination du rang par dimension de l'image"
+  ],
+  "objects": [
+    "application linéaire de ℝ³ dans ℝ³",
+    "matrice 3x3",
+    "base canonique de ℝ³",
+    "vecteurs f(e₁), f(e₂), f(e₃)"
+  ],
+  "content_hash": "1dae6057d8c05a4f2e06e96199d432b6b7e3c6209291037a0d57d4f31b789080",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:52:50.077Z"
+}

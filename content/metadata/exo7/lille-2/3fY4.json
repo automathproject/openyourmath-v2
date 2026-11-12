@@ -1,0 +1,27 @@
+{
+  "uuid": "3fY4",
+  "source_path": "exo7/lille-2/3fY4.tex",
+  "summary": "L'exercice demande de déterminer quelles primitives proposées pour la fonction f(x) = 1/√(ax² + b) sont correctes selon les valeurs des paramètres a et b. Il s'agit d'identifier les cas où une primitive proposée vérifie bien f(x) = F'(x).",
+  "concepts": [
+    "primitive d'une fonction",
+    "dérivation",
+    "fonction composée",
+    "changement de variable",
+    "fonction trigonométrique inverse",
+    "fonction rationnelle"
+  ],
+  "methods": [
+    "dérivation",
+    "vérification de primitive",
+    "calcul de dérivée de fonction composée"
+  ],
+  "objects": [
+    "fonction rationnelle",
+    "fonction trigonométrique inverse",
+    "primitive",
+    "fonction polynomiale"
+  ],
+  "content_hash": "38f960b7c70af795390e1b2b16b5b1d30e2520cbc878a68f277c28549283623d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:25:06.393Z"
+}

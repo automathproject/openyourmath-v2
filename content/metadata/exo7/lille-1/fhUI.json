@@ -1,0 +1,27 @@
+{
+  "uuid": "fhUI",
+  "source_path": "exo7/lille-1/fhUI.tex",
+  "summary": "Trouver une équation cartésienne d'un plan P contenant une droite D donnée et perpendiculaire à un plan Q d'équation donnée. L'espace est muni d'un repère orthonormé direct.",
+  "concepts": [
+    "plan de l'espace",
+    "droite de l'espace",
+    "vecteur normal",
+    "perpendicularité de plans",
+    "équation cartésienne",
+    "repère orthonormé"
+  ],
+  "methods": [
+    "détermination de vecteur normal",
+    "combinaison linéaire de plans",
+    "résolution de système d'équations"
+  ],
+  "objects": [
+    "droite D",
+    "plan P",
+    "plan Q",
+    "vecteur normal"
+  ],
+  "content_hash": "3735189e217e03ca8fd0786aed06e1c22e4f16f66ef8109104a049f1beb534d8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:44:35.112Z"
+}

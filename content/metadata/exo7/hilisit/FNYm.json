@@ -1,0 +1,25 @@
+{
+  "uuid": "FNYm",
+  "source_path": "exo7/hilisit/FNYm.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant l'existence et l'unicité des coefficients entiers u et v dans l'équation de Bézout pour deux entiers positifs a et b, avec d = pgcd(a,b).",
+  "concepts": [
+    "théorème de Bézout",
+    "pgcd",
+    "nombres entiers",
+    "équation de Bézout",
+    "unicité des solutions",
+    "arithmétique dans Z"
+  ],
+  "methods": [
+    "identification des coefficients de Bézout",
+    "analyse de l'unicité des solutions"
+  ],
+  "objects": [
+    "entiers positifs",
+    "pgcd",
+    "coefficients entiers"
+  ],
+  "content_hash": "13c53ed388527d6c4b4397a0a59a1d351a5ebae5afce75a8384721a35d2600a8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:23:03.633Z"
+}

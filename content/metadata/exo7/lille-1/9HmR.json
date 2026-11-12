@@ -1,0 +1,25 @@
+{
+  "uuid": "9HmR",
+  "source_path": "exo7/lille-1/9HmR.tex",
+  "summary": "Calculer la somme alternée des coefficients binomiaux C^k_100 pour k allant de 0 à 100, et identifier la valeur correcte parmi les propositions données.",
+  "concepts": [
+    "binôme de Newton",
+    "coefficient binomial",
+    "somme alternée",
+    "développement binomial",
+    "polynôme caractéristique"
+  ],
+  "methods": [
+    "développement binomial",
+    "évaluation de polynôme",
+    "somme de termes alternés"
+  ],
+  "objects": [
+    "coefficient binomial",
+    "somme de coefficients",
+    "polynôme (1 - 1)^100"
+  ],
+  "content_hash": "22ea5a72bc4ab84df9ea08dc000c04b1cb359b95c94334fd23b666f8fcd4271f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:46:48.231Z"
+}

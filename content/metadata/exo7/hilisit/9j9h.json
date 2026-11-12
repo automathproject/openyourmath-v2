@@ -1,0 +1,24 @@
+{
+  "uuid": "9j9h",
+  "source_path": "exo7/hilisit/9j9h.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations de congruences modulo 2, 5, 9 et 10 sont vraies pour des entiers donnés. Il s'agit de vérifier des relations d'équivalence dans Z.",
+  "concepts": [
+    "congruence dans Z",
+    "divisibilité",
+    "critère de divisibilité par 9",
+    "chiffre des unités",
+    "relation d'équivalence"
+  ],
+  "methods": [
+    "calcul de reste modulo n",
+    "somme des chiffres",
+    "vérification de divisibilité"
+  ],
+  "objects": [
+    "entiers naturels",
+    "congruences modulo 2, 5, 9, 10"
+  ],
+  "content_hash": "3d3f79a6fec42283da48bb8612cd6dd9a974ce642c31047c12d707e7cbd8e75a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:22:49.222Z"
+}

@@ -1,0 +1,25 @@
+{
+  "uuid": "NedA",
+  "source_path": "exo7/lille-1/NedA.tex",
+  "summary": "L'exercice demande de calculer la dérivée de deux fonctions composées : une fonction sinus d'un polynôme au carré et une fonction tangente d'un polynôme. Il propose quatre réponses possibles à évaluer.",
+  "concepts": [
+    "fonction composée",
+    "dérivée d'une fonction composée",
+    "règle de dérivation en chaîne",
+    "dérivée du sinus",
+    "dérivée de la tangente"
+  ],
+  "methods": [
+    "dérivation en chaîne",
+    "calcul de dérivée première",
+    "application de formules de dérivation standard"
+  ],
+  "objects": [
+    "fonction sinus",
+    "fonction tangente",
+    "fonction polynomiale"
+  ],
+  "content_hash": "80024cc4b13c3478d32e39447003c5476e27f6d3d80b5c5392caba77664b8047",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:32:28.149Z"
+}

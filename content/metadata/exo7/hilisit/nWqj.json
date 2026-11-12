@@ -1,0 +1,25 @@
+{
+  "uuid": "nWqj",
+  "source_path": "exo7/hilisit/nWqj.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant la fonction f(x) = -2e^(3x) comme solution unique d'une équation différentielle du premier ordre y' = 3y, sous différentes conditions initiales ou de comportement asymptotique.",
+  "concepts": [
+    "équation différentielle linéaire du premier ordre",
+    "solution générale d'équation différentielle",
+    "condition initiale",
+    "comportement asymptotique de fonction exponentielle",
+    "unicité de la solution"
+  ],
+  "methods": [
+    "résolution d'équation différentielle linéaire",
+    "application de condition initiale",
+    "analyse de limite de fonction exponentielle"
+  ],
+  "objects": [
+    "fonction exponentielle",
+    "équation différentielle y' = 3y",
+    "solution particulière d'équation différentielle"
+  ],
+  "content_hash": "a6f281298df9145d7e4a65e6d240d3c59492371420582472195ed52fb9b49b88",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:39:10.831Z"
+}

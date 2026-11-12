@@ -1,0 +1,25 @@
+{
+  "uuid": "jgvD",
+  "source_path": "exo7/lille-1/jgvD.tex",
+  "summary": "Calculer la distance d'un point à une droite dans le plan, en utilisant les coordonnées des points et la droite définie par deux points.",
+  "concepts": [
+    "distance d'un point à une droite",
+    "produit scalaire",
+    "déterminant",
+    "norme d'un vecteur",
+    "repère orthonormé"
+  ],
+  "methods": [
+    "calcul de déterminant",
+    "calcul de norme vectorielle",
+    "formule de la distance point-droite"
+  ],
+  "objects": [
+    "vecteurs du plan",
+    "droite définie par deux points",
+    "coordonnées cartésiennes"
+  ],
+  "content_hash": "fda180139b021fd5eb5910d0e084c753d6e2f28e1742ea28407a32da4f0faa9e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:45:56.213Z"
+}

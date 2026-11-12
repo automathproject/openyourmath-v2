@@ -1,0 +1,26 @@
+{
+  "uuid": "PokT",
+  "source_path": "exo7/lille-1/PokT.tex",
+  "summary": "L'exercice demande d'identifier les assertions logiques vraies concernant un ensemble E de couples (x,y) dans le plan réel, défini par des inégalités. Il s'agit d'analyser des quantificateurs universels et existentiels appliqués à des conditions géométriques.",
+  "concepts": [
+    "quantificateurs universels",
+    "quantificateurs existentiels",
+    "logique des prédicats",
+    "ensemble défini par des inégalités",
+    "relation d'appartenance",
+    "analyse de propositions"
+  ],
+  "methods": [
+    "analyse de cas",
+    "interprétation géométrique",
+    "validation par contre-exemple"
+  ],
+  "objects": [
+    "ensemble de couples réels",
+    "quantificateurs logiques",
+    "inégalités définissant un ensemble"
+  ],
+  "content_hash": "6cf8797b1623cf068471d001ab787360c7c72413bd982f8937a4e17144b4c8d4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:48:28.914Z"
+}

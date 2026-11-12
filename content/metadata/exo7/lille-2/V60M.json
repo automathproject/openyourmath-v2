@@ -1,0 +1,28 @@
+{
+  "uuid": "V60M",
+  "source_path": "exo7/lille-2/V60M.tex",
+  "summary": "L'exercice demande de déterminer les assertions vraies concernant la matrice de passage entre deux bases d'un espace vectoriel, la matrice d'un endomorphisme dans une nouvelle base, et la puissance d'une matrice. Il s'appuie sur des calculs de matrices de passage et de diagonalisation.",
+  "concepts": [
+    "matrice de passage",
+    "changement de base",
+    "endomorphisme",
+    "matrice d'une application linéaire",
+    "puissance de matrice",
+    "diagonalisation",
+    "relation de changement de base"
+  ],
+  "methods": [
+    "calcul de matrice inverse",
+    "calcul de puissance de matrice",
+    "vérification d'égalité matricielle"
+  ],
+  "objects": [
+    "matrice carrée 2x2",
+    "base d'un espace vectoriel",
+    "matrice de passage",
+    "endomorphisme de ℝ²"
+  ],
+  "content_hash": "c21692f1649560c0768a2da1b49a930330ef6d19c1c4c5b8b98844abd9db8027",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:52:42.168Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "wziF",
+  "source_path": "exo7/lille-1/wziF.tex",
+  "summary": "L'exercice demande d'analyser les propriétés d'une fonction définie sur un intervalle ouvert, en déterminant si elle est bornée, majorée, minorée ou si elle s'annule. La fonction étudiée est f(x) = x sin(πx) - ln(x) - 1 sur ]0,1].",
+  "concepts": [
+    "continuité",
+    "limite de fonction",
+    "théorème des valeurs intermédiaires",
+    "bornes supérieures et inférieures",
+    "fonction minorée",
+    "fonction majorée"
+  ],
+  "methods": [
+    "calcul de limite",
+    "analyse des bornes",
+    "application du théorème des valeurs intermédiaires"
+  ],
+  "objects": [
+    "fonction réelle d'une variable",
+    "intervalle ouvert",
+    "limite en un point"
+  ],
+  "content_hash": "8cdec5d6710c77fb573cfaeacdfc93dc478b7bc0f204df84b6aed6cfdc0b4fb2",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:31:12.137Z"
+}

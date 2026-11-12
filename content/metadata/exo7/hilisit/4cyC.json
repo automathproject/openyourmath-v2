@@ -1,0 +1,24 @@
+{
+  "uuid": "4cyC",
+  "source_path": "exo7/hilisit/4cyC.tex",
+  "summary": "L'exercice demande d'identifier parmi plusieurs propositions celle qui énonce correctement le petit théorème de Fermat pour un nombre premier p et un entier x.",
+  "concepts": [
+    "petit théorème de Fermat",
+    "congruence",
+    "nombre premier",
+    "divisibilité dans Z",
+    "arithmétique modulaire"
+  ],
+  "methods": [
+    "vérification de congruence",
+    "application directe du théorème de Fermat"
+  ],
+  "objects": [
+    "entier x",
+    "nombre premier p",
+    "congruence modulaire"
+  ],
+  "content_hash": "36a880a89909b63fd7ceb4e759642c3ad2cf134e76c2ff7c49182580ba02314b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:22:41.273Z"
+}

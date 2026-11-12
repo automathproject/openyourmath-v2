@@ -1,0 +1,26 @@
+{
+  "uuid": "CTmr",
+  "source_path": "exo7/lille-2/CTmr.tex",
+  "summary": "L'exercice demande de déterminer les propriétés d'une matrice carrée A vérifiant une équation polynomiale de degré m. Il s'agit d'analyser son inversibilité, son inverse et son rang.",
+  "concepts": [
+    "inversibilité d'une matrice",
+    "rang d'une matrice",
+    "matrice identité",
+    "polynôme annulateur",
+    "matrice carrée",
+    "propriétés des matrices inversibles"
+  ],
+  "methods": [
+    "factorisation",
+    "calcul de l'inverse d'une matrice",
+    "analyse du rang"
+  ],
+  "objects": [
+    "matrice carrée",
+    "matrice identité",
+    "polynôme annulateur"
+  ],
+  "content_hash": "e0e26fb2a6ba7ddad5fde5979aa19446bf007b95f678c41c1bf1a7eb126daf8e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:51:43.542Z"
+}

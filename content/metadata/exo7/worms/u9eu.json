@@ -1,0 +1,31 @@
+{
+  "uuid": "u9eu",
+  "source_path": "exo7/worms/u9eu.tex",
+  "summary": "Un joueur lance une pièce équilibrée jusqu'à obtenir pile, en payant 10 euros à chaque face. On étudie la loi du nombre de faces obtenues avant le premier pile, ainsi que ses espérance, variance, et médiane.",
+  "concepts": [
+    "loi géométrique",
+    "espérance d'une variable aléatoire",
+    "variance d'une variable aléatoire",
+    "médiane d'une variable aléatoire",
+    "probabilité conditionnelle",
+    "variable aléatoire discrète",
+    "loi de probabilité"
+  ],
+  "methods": [
+    "calcul de l'espérance",
+    "calcul de la variance",
+    "calcul de la médiane",
+    "utilisation de la formule de la variance",
+    "calcul de probabilités élémentaires"
+  ],
+  "objects": [
+    "variable aléatoire géométrique",
+    "nombre d'échecs avant la première réussite",
+    "montant moyen payé",
+    "espérance d'une variable aléatoire",
+    "variance d'une variable aléatoire"
+  ],
+  "content_hash": "3ef6ff21a04952b4f54f974e0c457b582eec8e7968f46d041b19be982d9d29c5",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:57:32.825Z"
+}

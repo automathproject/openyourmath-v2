@@ -1,0 +1,29 @@
+{
+  "uuid": "oiJS",
+  "source_path": "exo7/lille-2/oiJS.tex",
+  "summary": "L'exercice demande de vérifier la validité de quatre développements limités d'ordre 2 en 0 pour les fonctions f(x) = 1/(1+sin x) et g(x) = 1/(1+cos x), ainsi que pour leur somme et leur quotient.",
+  "concepts": [
+    "développement limité",
+    "fonction trigonométrique",
+    "petit o",
+    "approximation locale",
+    "opérations sur les développements limités",
+    "limite de fonctions"
+  ],
+  "methods": [
+    "développement limité de fonctions trigonométriques",
+    "changement de variable",
+    "opérations algébriques sur les DL",
+    "approximation des fonctions usuelles"
+  ],
+  "objects": [
+    "fonction f(x) = 1/(1+sin x)",
+    "fonction g(x) = 1/(1+cos x)",
+    "développement limité d'ordre 2",
+    "somme de fonctions",
+    "quotient de fonctions"
+  ],
+  "content_hash": "6bf02855b50498232c5a7169958f1b69f0aa3d7617e2fc9ba5abdf9a30833089",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:36:26.539Z"
+}

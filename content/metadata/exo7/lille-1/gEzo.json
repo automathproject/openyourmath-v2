@@ -1,0 +1,27 @@
+{
+  "uuid": "gEzo",
+  "source_path": "exo7/lille-1/gEzo.tex",
+  "summary": "L'exercice demande de déterminer si une application définie par f(n) = n + 1 de ℕ dans ℕ est injective, surjective, bijective ou ni injective ni surjective.",
+  "concepts": [
+    "application",
+    "injection",
+    "surjection",
+    "bijectivité",
+    "ensemble de départ",
+    "ensemble d'arrivée",
+    "image d'une application"
+  ],
+  "methods": [
+    "définition d'injection",
+    "définition de surjection",
+    "vérification par contraposée"
+  ],
+  "objects": [
+    "application f: ℕ → ℕ",
+    "entiers naturels",
+    "image d'une application"
+  ],
+  "content_hash": "a464196ea61db59c995ed2934acfd95315d6c3c3915fd86a91a2f2eaa5a03b05",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:49:45.461Z"
+}

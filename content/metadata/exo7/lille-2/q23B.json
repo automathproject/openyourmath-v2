@@ -1,0 +1,30 @@
+{
+  "uuid": "q23B",
+  "source_path": "exo7/lille-2/q23B.tex",
+  "summary": "L'exercice demande de déterminer les propriétés (dimension du noyau, injectivité, rang, surjectivité) d'une application linéaire f définie sur l'espace des matrices carrées 2x2 réelles par f(M) = AM - MA, où A est une matrice donnée.",
+  "concepts": [
+    "application linéaire",
+    "noyau d'une application",
+    "image d'une application",
+    "dimension d'un espace vectoriel",
+    "rang d'une application",
+    "injectivité",
+    "surjectivité"
+  ],
+  "methods": [
+    "calcul explicite de l'image",
+    "détermination du noyau",
+    "calcul de la dimension du noyau",
+    "calcul du rang"
+  ],
+  "objects": [
+    "matrice carrée 2x2",
+    "application linéaire",
+    "noyau",
+    "image",
+    "espace vectoriel"
+  ],
+  "content_hash": "51535ba86f6999721641d193e312cb9a743c48e4c327507dce0dad62e0c5b42f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:53:47.095Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "36j0",
+  "source_path": "exo7/lille-1/36j0.tex",
+  "summary": "L'exercice demande de déterminer les limites des suites $u_n = 3^n - 2^n$ et $v_n = 3^n - (-3)^n$ lorsque $n$ tend vers l'infini, parmi plusieurs propositions données.",
+  "concepts": [
+    "suite géométrique",
+    "limite de suite",
+    "théorème des suites extraites",
+    "croissance exponentielle",
+    "comportement asymptotique"
+  ],
+  "methods": [
+    "factorisation",
+    "analyse des sous-suites",
+    "comparaison de termes dominants",
+    "calcul de limite"
+  ],
+  "objects": [
+    "suite numérique",
+    "terme général de suite",
+    "sous-suites"
+  ],
+  "content_hash": "2baf109d6706dd553d2e0ac75825cee1e05a08ed1f582e962ac378c17d977194",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:58:54.974Z"
+}

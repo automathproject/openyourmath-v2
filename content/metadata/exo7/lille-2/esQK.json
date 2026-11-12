@@ -1,0 +1,29 @@
+{
+  "uuid": "esQK",
+  "source_path": "exo7/lille-2/esQK.tex",
+  "summary": "L'exercice demande d'analyser les propriétés d'une fonction f définie au voisinage de 0, donnée par son développement limité d'ordre 4, et de déterminer quelles affirmations sur sa continuité, dérivabilité, et ses développements limités composés sont correctes.",
+  "concepts": [
+    "développement limité",
+    "continuité",
+    "dérivabilité",
+    "ordre d'un développement limité",
+    "composition de fonctions",
+    "limite",
+    "notation petit o"
+  ],
+  "methods": [
+    "analyse de la continuité via la limite",
+    "détermination de la dérivée par développement limité",
+    "composition de développements limités",
+    "changement de variable dans un développement limité"
+  ],
+  "objects": [
+    "fonction réelle",
+    "développement limité d'ordre 4",
+    "limite en 0",
+    "fonction composée"
+  ],
+  "content_hash": "41989865897bf64a718be80cb264616cff829de1109b8d28cb21c650bf8539b4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:35:48.445Z"
+}

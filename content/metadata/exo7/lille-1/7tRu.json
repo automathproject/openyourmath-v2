@@ -1,0 +1,27 @@
+{
+  "uuid": "7tRu",
+  "source_path": "exo7/lille-1/7tRu.tex",
+  "summary": "L'exercice demande de déterminer la nature géométrique de l'ensemble des points M d'affixe z vérifiant l'équation |(z-1)/(1+iz)| = √2, en identifiant parmi les propositions si cet ensemble est une droite, un cercle, vide ou un cercle spécifique.",
+  "concepts": [
+    "module d'un nombre complexe",
+    "équation cartésienne de cercle",
+    "identité remarquable",
+    "conjugué d'un nombre complexe",
+    "géométrie dans le plan complexe"
+  ],
+  "methods": [
+    "développement d'expression complexe",
+    "calcul de module",
+    "identification de forme géométrique",
+    "résolution d'équation complexe"
+  ],
+  "objects": [
+    "nombre complexe",
+    "ensemble de points",
+    "affixe",
+    "équation cartésienne"
+  ],
+  "content_hash": "ee6f93956dc7a8afcf1b02ae71a606213c68b0eb24a81a9d1a41dac1697a4534",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:54:18.058Z"
+}

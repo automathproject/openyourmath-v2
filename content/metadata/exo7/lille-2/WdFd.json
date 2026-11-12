@@ -1,0 +1,29 @@
+{
+  "uuid": "WdFd",
+  "source_path": "exo7/lille-2/WdFd.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant les développements limités de deux fonctions et la limite d'une fonction en un point. Il s'agit d'analyser des égalités de développements limités et d'évaluer une limite à l'aide de ces développements.",
+  "concepts": [
+    "développement limité",
+    "limite de fonction",
+    "notation petit o",
+    "changement de variable",
+    "continuité",
+    "équivalence de fonctions"
+  ],
+  "methods": [
+    "développement limité d'ordre 1",
+    "changement de variable pour les DL",
+    "évaluation de limite à l'aide de DL",
+    "comparaison de développements limités"
+  ],
+  "objects": [
+    "fonction ln(x)",
+    "fonction rationnelle",
+    "développement limité en 0",
+    "développement limité en 1",
+    "limite en un point"
+  ],
+  "content_hash": "9100ad2e3b31341d490db7a9259627f4bd65c26cd5e103135540807d9adce730",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:35:41.681Z"
+}

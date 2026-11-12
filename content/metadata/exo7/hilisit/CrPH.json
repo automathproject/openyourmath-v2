@@ -1,0 +1,27 @@
+{
+  "uuid": "CrPH",
+  "source_path": "exo7/hilisit/CrPH.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies pour un entier impair a multiple de 3, en analysant ses propriétés arithmétiques.",
+  "concepts": [
+    "multiple",
+    "divisibilité",
+    "pgcd",
+    "ppcm",
+    "division euclidienne",
+    "parité"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "analyse de cas",
+    "calcul de pgcd",
+    "calcul de ppcm"
+  ],
+  "objects": [
+    "entier impair",
+    "multiple de 3",
+    "diviseurs de 3"
+  ],
+  "content_hash": "8911812efc27bd712073cda33f505bb050a88c1a65ed06d5f30958fd1b8196a9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:22:53.803Z"
+}

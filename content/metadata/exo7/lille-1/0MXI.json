@@ -1,0 +1,27 @@
+{
+  "uuid": "0MXI",
+  "source_path": "exo7/lille-1/0MXI.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant la division euclidienne de deux polynômes, avec B non nul. Il s'agit de vérifier l'existence, l'unicité et les propriétés de degré du quotient Q.",
+  "concepts": [
+    "division euclidienne des polynômes",
+    "existence du quotient",
+    "unicité du quotient",
+    "degré d'un polynôme",
+    "algèbre des polynômes",
+    "théorème de la division euclidienne"
+  ],
+  "methods": [
+    "analyse des degrés",
+    "vérification d'existence",
+    "preuve d'unicité"
+  ],
+  "objects": [
+    "polynôme A",
+    "polynôme B",
+    "quotient Q",
+    "reste R"
+  ],
+  "content_hash": "3ea12059b8c76fec87b1eedd63c1f3ded8a789b6ee4d80dbcc5e7e36c9033371",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:55:23.187Z"
+}

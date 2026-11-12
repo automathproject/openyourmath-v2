@@ -1,0 +1,27 @@
+{
+  "uuid": "aRu0",
+  "source_path": "exo7/lille-1/aRu0.tex",
+  "summary": "L'exercice demande d'identifier parmi quatre affirmations celles qui sont vraies concernant les racines d'un polynôme, leur multiplicité et leur relation avec la divisibilité par des polynômes de la forme (X-a)^k.",
+  "concepts": [
+    "racine d'un polynôme",
+    "multiplicité d'une racine",
+    "théorème de factorisation",
+    "divisibilité dans K[X]",
+    "polynôme dérivé",
+    "théorème de Rolle"
+  ],
+  "methods": [
+    "factorisation de polynômes",
+    "calcul de dérivées successives",
+    "utilisation du théorème de factorisation"
+  ],
+  "objects": [
+    "polynôme à coefficients dans K",
+    "racine d'un polynôme",
+    "multiplicité d'une racine",
+    "polynôme dérivé"
+  ],
+  "content_hash": "c4a458871e033c8f44989acc3940e16426a90b3308e69f50b7382dc4718318bf",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:56:07.914Z"
+}

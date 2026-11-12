@@ -1,0 +1,28 @@
+{
+  "uuid": "qP0z",
+  "source_path": "exo7/lille-2/qP0z.tex",
+  "summary": "L'exercice demande d'analyser les propriétés d'un système linéaire de 4 équations et 3 inconnues, en fonction de son rang et de la structure de son système échelonné. Il s'agit de déterminer quelles assertions sur le nombre de solutions sont vraies selon la valeur du rang.",
+  "concepts": [
+    "système linéaire",
+    "système échelonné",
+    "rang d'un système",
+    "méthode du pivot de Gauss",
+    "solution unique",
+    "solution infinie",
+    "incompatibilité d'un système"
+  ],
+  "methods": [
+    "réduction par pivot de Gauss",
+    "analyse du rang",
+    "vérification de la compatibilité"
+  ],
+  "objects": [
+    "système linéaire",
+    "système échelonné",
+    "rang",
+    "équations à premier membre nul"
+  ],
+  "content_hash": "ec3b335b1856f707de59d9d16e7d01509214829e7ce2c9a93133931a7596a338",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:34:05.717Z"
+}

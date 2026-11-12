@@ -1,0 +1,29 @@
+{
+  "uuid": "E6Ny",
+  "source_path": "exo7/lille-1/E6Ny.tex",
+  "summary": "L'exercice demande d'identifier parmi quatre assertions logiques celles qui sont toujours vraies, quelle que soit la vérité des propositions P et Q. Il s'agit d'évaluer la validité universelle de combinaisons d'implications et de conjonctions.",
+  "concepts": [
+    "implication logique",
+    "équivalence logique",
+    "table de vérité",
+    "lois de De Morgan",
+    "tautologie",
+    "négation",
+    "conjonction",
+    "disjonction"
+  ],
+  "methods": [
+    "évaluation par cas",
+    "construction de table de vérité",
+    "analyse de tautologie"
+  ],
+  "objects": [
+    "proposition logique",
+    "assertion",
+    "implication",
+    "équivalence"
+  ],
+  "content_hash": "d9c3a8044942667a985a446cba56d9302253f3654490135f4342b5a3df6ef833",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:47:14.980Z"
+}

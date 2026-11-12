@@ -1,0 +1,26 @@
+{
+  "uuid": "fCpe",
+  "source_path": "exo7/lille-1/fCpe.tex",
+  "summary": "L'exercice demande d'analyser les propriétés de deux suites construites par dichotomie pour localiser un zéro d'une fonction continue sur un intervalle, et de valider des assertions sur leur comportement et leur convergence.",
+  "concepts": [
+    "théorème des valeurs intermédiaires",
+    "continuité",
+    "suites adjacentes",
+    "convergence",
+    "méthode de dichotomie",
+    "encadrement de zéro"
+  ],
+  "methods": [
+    "méthode de dichotomie",
+    "analyse de suites adjacentes",
+    "estimation d'erreur"
+  ],
+  "objects": [
+    "fonction continue",
+    "suites numériques",
+    "intervalle de recherche"
+  ],
+  "content_hash": "22c970898fea033923b8358db9ebb9e3988517d98f1c1ba2b7133b874ff3c391",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:30:33.127Z"
+}

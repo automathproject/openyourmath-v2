@@ -1,0 +1,26 @@
+{
+  "uuid": "7SuV",
+  "source_path": "exo7/lille-1/7SuV.tex",
+  "summary": "L'exercice demande d'analyser la limite en 0 d'une fonction définie par morceaux sur [0,1], prenant la valeur x-1 pour les irrationnels et 1 pour les rationnels. Il faut déterminer quelle assertion parmi quatre propositions est vraie concernant cette limite.",
+  "concepts": [
+    "densité des rationnels",
+    "densité des irrationnels",
+    "limite de fonction",
+    "suite convergente",
+    "fonction définie par morceaux",
+    "limite de suite"
+  ],
+  "methods": [
+    "utilisation de la densité",
+    "construction de suites convergentes",
+    "analyse des limites par approche séquentielle"
+  ],
+  "objects": [
+    "fonction définie par morceaux",
+    "suites de rationnels et d'irrationnels",
+    "limite en un point"
+  ],
+  "content_hash": "84c771701c4f02bff8de865ffb80636a55d17be1be8ef2f53a9829d2184d2a9a",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:29:17.933Z"
+}

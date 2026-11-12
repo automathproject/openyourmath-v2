@@ -1,0 +1,31 @@
+{
+  "uuid": "wtlR",
+  "source_path": "exo7/lille-2/wtlR.tex",
+  "summary": "L'exercice demande de déterminer les propriétés d'un endomorphisme f défini sur l'espace des polynômes réels de degré ≤ 3, en analysant son noyau, son injectivité, sa surjectivité et son rang.",
+  "concepts": [
+    "endomorphisme",
+    "noyau d'une application linéaire",
+    "image d'une application linéaire",
+    "injectivité",
+    "surjectivité",
+    "théorème du rang",
+    "famille libre",
+    "dimension d'un espace vectoriel"
+  ],
+  "methods": [
+    "calcul du noyau",
+    "vérification de l'injectivité",
+    "application du théorème du rang",
+    "détermination de l'image"
+  ],
+  "objects": [
+    "polynôme de degré ≤ 3",
+    "endomorphisme",
+    "noyau",
+    "image",
+    "sous-espace vectoriel"
+  ],
+  "content_hash": "b5e9265a7276518f653f27df5ee59454ee78dc9e12db261ac2ac261a86636027",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:22:11.532Z"
+}

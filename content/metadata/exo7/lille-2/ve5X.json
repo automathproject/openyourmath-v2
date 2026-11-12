@@ -1,0 +1,26 @@
+{
+  "uuid": "ve5X",
+  "source_path": "exo7/lille-2/ve5X.tex",
+  "summary": "L'exercice demande de déterminer si un polynôme de degré ≤ 11 vérifiant des conditions sur ses dérivées successives en 1 existe, et s'il est unique. Il propose plusieurs assertions à évaluer.",
+  "concepts": [
+    "formule de Taylor",
+    "polynôme",
+    "dérivées successives",
+    "système linéaire",
+    "unicité de la solution",
+    "détermination des coefficients"
+  ],
+  "methods": [
+    "développement de Taylor",
+    "résolution de système linéaire",
+    "interpolation polynomiale"
+  ],
+  "objects": [
+    "polynôme de degré ≤ 11",
+    "dérivées en un point",
+    "développement de Taylor"
+  ],
+  "content_hash": "cb89643d85959d4e18af619eb3cd6034aceaab20556d5f2503e328de333d1f8c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:34:16.038Z"
+}

@@ -1,0 +1,30 @@
+{
+  "uuid": "HcYM",
+  "source_path": "exo7/worms/HcYM.tex",
+  "summary": "L'exercice propose une série de questions sur les propriétés des événements en probabilité discrète, notamment leur inclusion, leur indépendance, leur compatibilité, et leur représentation. Il aborde aussi la validité de certaines formulations mathématiques.",
+  "concepts": [
+    "probabilité d'un événement",
+    "inclusion d'événements",
+    "indépendance d'événements",
+    "événements incompatibles",
+    "union d'événements",
+    "intersection d'événements",
+    "événement élémentaire"
+  ],
+  "methods": [
+    "calcul de probabilité conditionnelle",
+    "utilisation de la formule de probabilité totale",
+    "vérification de l'indépendance",
+    "analyse de la validité syntaxique des expressions"
+  ],
+  "objects": [
+    "événements A et B",
+    "univers Ω",
+    "probabilités P(A) et P(B)",
+    "événement élémentaire ω",
+    "ensemble des parties de Ω"
+  ],
+  "content_hash": "681b934a734e04eecbd45802bc932ce8d1d2c00dba1240e0047d9b121a8df931",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:57:10.758Z"
+}

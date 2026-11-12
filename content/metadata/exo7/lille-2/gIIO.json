@@ -1,0 +1,28 @@
+{
+  "uuid": "gIIO",
+  "source_path": "exo7/lille-2/gIIO.tex",
+  "summary": "L'exercice demande d'analyser un système linéaire de trois équations à trois inconnues pour déterminer quelles assertions sur ses solutions sont vraies. Il s'agit d'étudier l'équivalence du système et la nature de son ensemble solution.",
+  "concepts": [
+    "système linéaire",
+    "équivalence de systèmes",
+    "rang d'une matrice",
+    "espace solution",
+    "plan affine",
+    "combinaison linéaire d'équations"
+  ],
+  "methods": [
+    "méthode du pivot de Gauss",
+    "réduction de système",
+    "élimination de variables",
+    "analyse de dépendance linéaire"
+  ],
+  "objects": [
+    "système d'équations linéaires",
+    "matrice augmentée",
+    "inconnues réelles",
+    "ensemble solution"
+  ],
+  "content_hash": "2ce6bb9077431a5fbc60792e8560e482f985b8aa3acef990ffc56378dc0c6aa4",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:33:48.025Z"
+}

@@ -1,0 +1,29 @@
+{
+  "uuid": "0w28",
+  "source_path": "exo7/lille-2/0w28.tex",
+  "summary": "L'exercice demande d'étudier les propriétés locales de deux fonctions $f(x) = \\sqrt{1+2x} - \\sqrt[3]{1+3x}$ et $g(x) = 1 - \\cos x$ autour de $x=0$ en utilisant leurs développements limités. Il s'agit de déterminer la validité de quatre affirmations concernant la tangente à $f$ en $0$, les développements limités de $f$ et $g$, et une limite de quotient.",
+  "concepts": [
+    "développement limité",
+    "limite de fonctions",
+    "tangente à une courbe",
+    "ordre d'un développement limité",
+    "notation petit o",
+    "approximation locale"
+  ],
+  "methods": [
+    "calcul de développement limité",
+    "comparaison de développements limités",
+    "étude de la position relative d'une courbe et de sa tangente",
+    "évaluation de limites à l'aide de DL"
+  ],
+  "objects": [
+    "fonction $f(x) = \\sqrt{1+2x} - \\sqrt[3]{1+3x}$",
+    "fonction $g(x) = 1 - \\cos x$",
+    "tangente en $x=0$",
+    "développement limité d'ordre 2",
+    "quotient de fonctions"
+  ],
+  "content_hash": "3fc7524fe304f1420797ffea69fe049aec9bbbf09e2fb56a18d53d5ef2eba97d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:34:22.521Z"
+}

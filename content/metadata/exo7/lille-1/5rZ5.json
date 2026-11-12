@@ -1,0 +1,29 @@
+{
+  "uuid": "5rZ5",
+  "source_path": "exo7/lille-1/5rZ5.tex",
+  "summary": "L'exercice demande de déterminer les limites des suites $u_n = (1 - 1/n)^n$ et $v_n = (1 + (-1)^n/n)^n$ et d'identifier les affirmations correctes concernant leur convergence.",
+  "concepts": [
+    "limite de suite",
+    "convergence",
+    "divergence",
+    "équivalence de suites",
+    "théorème des suites extraites",
+    "fonction logarithme",
+    "développement limité"
+  ],
+  "methods": [
+    "équivalence asymptotique",
+    "théorème des suites extraites",
+    "calcul de limite via logarithme",
+    "analyse de sous-suites"
+  ],
+  "objects": [
+    "suite numérique",
+    "limite de suite",
+    "fonction exponentielle",
+    "fonction logarithme"
+  ],
+  "content_hash": "c45abf18ebcdfc9072860370cfeaa924cc8c4a7b719d1a16352ddeeaf5213f29",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:59:06.278Z"
+}

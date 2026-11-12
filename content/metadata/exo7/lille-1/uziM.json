@@ -1,0 +1,26 @@
+{
+  "uuid": "uziM",
+  "source_path": "exo7/lille-1/uziM.tex",
+  "summary": "L'exercice demande de déterminer la limite en 0 de la fonction f(x) = ln(1+x)/x en évaluant les assertions proposées. Il s'agit d'une fonction rationnelle impliquant le logarithme naturel.",
+  "concepts": [
+    "limite de fonction",
+    "dérivée",
+    "théorème des accroissements finis",
+    "continuité",
+    "fonction composée",
+    "taux d'accroissement"
+  ],
+  "methods": [
+    "développement limité",
+    "calcul de dérivée",
+    "évaluation de limite par taux d'accroissement"
+  ],
+  "objects": [
+    "fonction rationnelle",
+    "fonction logarithme",
+    "limite en un point"
+  ],
+  "content_hash": "a43ab1ee66b72760d067a2831a94163bc027c7d75a09a3354fe6e4635d92ce2e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:31:00.414Z"
+}

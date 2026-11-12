@@ -1,0 +1,26 @@
+{
+  "uuid": "UoTg",
+  "source_path": "exo7/lille-2/UoTg.tex",
+  "summary": "L'exercice demande de déterminer les propriétés des sous-espaces vectoriels E et F de l'espace des polynômes réels de degré ≤ 3, en analysant leurs dimensions et leur relation de somme directe.",
+  "concepts": [
+    "somme directe d'espaces vectoriels",
+    "dimension d'un espace vectoriel",
+    "base d'un espace vectoriel",
+    "théorème de la dimension d'une somme",
+    "espace vectoriel de polynômes",
+    "supplémentarité d'espaces vectoriels"
+  ],
+  "methods": [
+    "calcul de dimension par base",
+    "vérification de l'intersection de sous-espaces",
+    "application du théorème de la dimension d'une somme"
+  ],
+  "objects": [
+    "sous-espace vectoriel de polynômes",
+    "base de polynômes",
+    "espace vectoriel de polynômes de degré ≤ 3"
+  ],
+  "content_hash": "33264ad53b2b347f39373b40d56fbcf8788bd6568ce1da774eac919803ee5639",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:41:16.045Z"
+}

@@ -1,0 +1,24 @@
+{
+  "uuid": "1rlX",
+  "source_path": "exo7/hilisit/1rlX.tex",
+  "summary": "L'exercice demande de déterminer le plus petit entier naturel à partir duquel l'inégalité 4^n > 20n est vraie, en utilisant une preuve par récurrence.",
+  "concepts": [
+    "preuve par récurrence",
+    "inégalité",
+    "entier naturel",
+    "initialisation",
+    "hypothèse de récurrence",
+    "propriété vraie pour n ≥ n₀"
+  ],
+  "methods": [
+    "initialisation de récurrence",
+    "vérification d'inégalité"
+  ],
+  "objects": [
+    "inégalité 4^n > 20n",
+    "entier naturel n"
+  ],
+  "content_hash": "ad94dc5290dff1f5f0c97364c50e7ce7994180a71d69b7cd7cb1f1ffd647b047",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:46:19.174Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "LafO",
+  "source_path": "exo7/arnaud/LafO.tex",
+  "summary": "L'exercice demande d'identifier parmi cinq assertions celles qui sont vraies, en utilisant des propriétés arithmétiques de divisibilité et de parité dans l'ensemble des entiers naturels.",
+  "concepts": [
+    "divisibilité dans Z",
+    "parité",
+    "propriétés des nombres pairs",
+    "théorème de Gauss",
+    "critères de divisibilité"
+  ],
+  "methods": [
+    "décomposition en facteurs premiers",
+    "analyse de cas",
+    "vérification par contre-exemple"
+  ],
+  "objects": [
+    "entiers naturels",
+    "produit de quatre entiers consécutifs",
+    "somme de deux entiers",
+    "produit de deux entiers"
+  ],
+  "content_hash": "9820167f28afdaac175ccbd154f699d628294ac31da568480b5891008140d15e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:23:16.722Z"
+}

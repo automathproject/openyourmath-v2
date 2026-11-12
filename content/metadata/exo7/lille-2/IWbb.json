@@ -1,0 +1,26 @@
+{
+  "uuid": "IWbb",
+  "source_path": "exo7/lille-2/IWbb.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant l'ensemble E défini comme les couples (x,y) de ℝ² tels que e^x * e^y = 1, muni des opérations usuelles. Il s'agit d'identifier si E est vide, s'il correspond à d'autres ensembles simples, ou s'il forme un espace vectoriel.",
+  "concepts": [
+    "espace vectoriel",
+    "sous-espace vectoriel",
+    "ensemble de couples",
+    "opérations usuelles",
+    "structure algébrique",
+    "condition d'appartenance"
+  ],
+  "methods": [
+    "vérification des axiomes d'espace vectoriel",
+    "analyse de la condition d'appartenance",
+    "comparaison d'ensembles"
+  ],
+  "objects": [
+    "ensemble de couples (x,y)",
+    "espace vectoriel ℝ²",
+    "sous-espace vectoriel"
+  ],
+  "content_hash": "518ce3eb3589eb1d88e7bae2cba2626dc5f2e4023ee9deeb869b452913bece79",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:40:42.746Z"
+}

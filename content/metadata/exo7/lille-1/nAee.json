@@ -1,0 +1,23 @@
+{
+  "uuid": "nAee",
+  "source_path": "exo7/lille-1/nAee.tex",
+  "summary": "L'exercice demande de calculer la somme des coefficients binomiaux C^k_10 pour k allant de 0 à 10, en utilisant la notation des combinaisons. Il s'agit d'un problème de dénombrement classique.",
+  "concepts": [
+    "coefficient binomial",
+    "binôme de Newton",
+    "combinaison",
+    "somme de coefficients binomiaux",
+    "formule du binôme"
+  ],
+  "methods": [
+    "application du binôme de Newton",
+    "calcul de puissance entière"
+  ],
+  "objects": [
+    "coefficient binomial C^k_n",
+    "somme de coefficients binomiaux"
+  ],
+  "content_hash": "1d13266b6b14c678120916016cc363de62ab2ff3be254556fea27613aa8a762b",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:50:05.503Z"
+}

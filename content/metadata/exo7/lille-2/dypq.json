@@ -1,0 +1,28 @@
+{
+  "uuid": "dypq",
+  "source_path": "exo7/lille-2/dypq.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sur le rang de matrices carrées sont vraies, en considérant la transposée, l'inverse, la somme et le produit de matrices.",
+  "concepts": [
+    "rang d'une matrice",
+    "transposée d'une matrice",
+    "inversibilité",
+    "matrice inversible",
+    "produit de matrices",
+    "somme de matrices"
+  ],
+  "methods": [
+    "calcul du rang",
+    "vérification d'inversibilité",
+    "contre-exemple"
+  ],
+  "objects": [
+    "matrice carrée",
+    "transposée",
+    "inverse d'une matrice",
+    "somme de matrices",
+    "produit de matrices"
+  ],
+  "content_hash": "de7260a6e41e6eefc5f4456eca810e1729a1c609fd8252c5b1bdf02ab65fdf9d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:53:08.017Z"
+}

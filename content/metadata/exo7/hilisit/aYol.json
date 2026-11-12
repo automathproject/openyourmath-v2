@@ -1,0 +1,27 @@
+{
+  "uuid": "aYol",
+  "source_path": "exo7/hilisit/aYol.tex",
+  "summary": "L'exercice demande d'identifier parmi quatre affirmations celles qui sont vraies concernant des primitives de fonctions données. Les fonctions concernées sont des combinaisons de fonctions trigonométriques, exponentielles, logarithmiques et polynomiales.",
+  "concepts": [
+    "primitive d'une fonction",
+    "dérivation",
+    "fonction composée",
+    "fonction exponentielle",
+    "fonction logarithmique",
+    "fonction polynomiale"
+  ],
+  "methods": [
+    "calcul de dérivée",
+    "vérification par dérivation",
+    "intégration de fonctions composées"
+  ],
+  "objects": [
+    "fonction $\\sin(x)e^{\\cos(x)}$",
+    "fonction $\\cos(x^3+x)$",
+    "fonction $\\ln(x)$",
+    "fonction $4x^3+4x$"
+  ],
+  "content_hash": "cf1761764005909647db57f4d6d28d9bc52e414596201f0a11dc00798f2f9f35",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:27:22.544Z"
+}

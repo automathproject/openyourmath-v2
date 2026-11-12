@@ -1,0 +1,26 @@
+{
+  "uuid": "EABF",
+  "source_path": "exo7/lille-1/EABF.tex",
+  "summary": "L'exercice demande de déterminer les domaines de définition de deux fonctions : une fonction logarithmique composée et une fonction puissance d'elle-même. Il s'agit d'identifier les intervalles où ces fonctions sont définies parmi des propositions données.",
+  "concepts": [
+    "domaine de définition",
+    "fonction logarithmique",
+    "fonction exponentielle",
+    "inégalité",
+    "fonction puissance",
+    "fonction composée"
+  ],
+  "methods": [
+    "résolution d'inéquation",
+    "analyse de définition de fonction"
+  ],
+  "objects": [
+    "fonction f(x) = ln((2+x)/(2-x))",
+    "fonction g(x) = x^x",
+    "domaine de définition D_f",
+    "domaine de définition D_g"
+  ],
+  "content_hash": "eb3a089f0002ab9fe5c7e7647cda194b26ec75f664e92abba01c151b1bd8e999",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:42:39.113Z"
+}

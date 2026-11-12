@@ -1,0 +1,26 @@
+{
+  "uuid": "ZCaa",
+  "source_path": "exo7/lille-1/ZCaa.tex",
+  "summary": "Trouver l'expression d'une fonction continue sur [-1,1] dont la dérivée est donnée sur l'intervalle ouvert, avec une condition initiale en 0. L'exercice demande de reconnaître la primitive d'une fonction dérivée et d'ajuster la constante d'intégration.",
+  "concepts": [
+    "primitive d'une fonction",
+    "fonction dérivée",
+    "fonction continue",
+    "fonction arc sinus",
+    "fonction arc cosinus",
+    "condition initiale"
+  ],
+  "methods": [
+    "recherche de primitive",
+    "calcul de dérivée",
+    "ajustement de constante d'intégration"
+  ],
+  "objects": [
+    "fonction continue",
+    "fonction dérivée",
+    "constante d'intégration"
+  ],
+  "content_hash": "530f7585a26455c65b9b60a69cf33d5d659943c6e5592a7b157b5c49bcaf7f62",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:32:39.709Z"
+}

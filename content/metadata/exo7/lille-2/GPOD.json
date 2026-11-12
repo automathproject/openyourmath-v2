@@ -1,0 +1,26 @@
+{
+  "uuid": "GPOD",
+  "source_path": "exo7/lille-2/GPOD.tex",
+  "summary": "L'exercice demande de déterminer si des familles de polynômes dans l'espace vectoriel ℝ₂[X] sont libres, génératrices ou forment une base, en analysant leurs propriétés linéaires.",
+  "concepts": [
+    "famille libre",
+    "famille génératrice",
+    "base d'un espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "polynôme",
+    "espace vectoriel de polynômes"
+  ],
+  "methods": [
+    "vérification de linéarité",
+    "comparaison de la dimension",
+    "analyse de la cardinalité d'une famille"
+  ],
+  "objects": [
+    "famille de polynômes",
+    "espace vectoriel ℝ₂[X]",
+    "polynômes de degré ≤ 2"
+  ],
+  "content_hash": "d9a83070b5b5d7069a983fb88fc7d4a163ad931719a5385d3e1cbae32080ed61",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:40:35.250Z"
+}

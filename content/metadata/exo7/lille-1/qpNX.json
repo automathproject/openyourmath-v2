@@ -1,0 +1,26 @@
+{
+  "uuid": "qpNX",
+  "source_path": "exo7/lille-1/qpNX.tex",
+  "summary": "L'exercice demande de déterminer les limites d'une fonction rationnelle impliquant des racines carrées, en 0+ et en +∞, parmi plusieurs propositions. La fonction étudiée est f(x) = √x / √(x + √x).",
+  "concepts": [
+    "limite de fonction",
+    "limite en un point",
+    "limite à l'infini",
+    "simplification d'expression",
+    "rationalisation"
+  ],
+  "methods": [
+    "simplification algébrique",
+    "changement de variable",
+    "comparaison de termes dominants"
+  ],
+  "objects": [
+    "fonction rationnelle",
+    "racine carrée",
+    "limite unilatérale",
+    "limite infinie"
+  ],
+  "content_hash": "12ab4b86bce1f9471ef79d3ecdf4dad77e27389852f96ce6b15f8070da3de286",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:30:50.953Z"
+}

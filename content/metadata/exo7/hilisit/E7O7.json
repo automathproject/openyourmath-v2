@@ -1,0 +1,25 @@
+{
+  "uuid": "E7O7",
+  "source_path": "exo7/hilisit/E7O7.tex",
+  "summary": "L'exercice demande d'identifier parmi quatre fonctions proposées celles qui sont solutions sur ℝ de l'équation différentielle y' = 2y + e^(2x) et qui vérifient la condition initiale y(0) = 2.",
+  "concepts": [
+    "équation différentielle linéaire du premier ordre",
+    "condition initiale",
+    "solution d'une équation différentielle",
+    "dérivée d'une fonction composée",
+    "fonction exponentielle"
+  ],
+  "methods": [
+    "calcul de dérivée",
+    "vérification de condition initiale",
+    "substitution dans l'équation différentielle"
+  ],
+  "objects": [
+    "fonction solution",
+    "équation différentielle",
+    "condition initiale"
+  ],
+  "content_hash": "e51ff34f4817332a02128938d836ab2ca5a7b13ab449d74cbf668e81a798351e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:37:35.355Z"
+}

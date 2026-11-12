@@ -1,0 +1,25 @@
+{
+  "uuid": "m80O",
+  "source_path": "exo7/lille-2/m80O.tex",
+  "summary": "L'exercice demande de déterminer la matrice d'une application linéaire f de ℝ² dans ℝ relativement aux bases canoniques, en utilisant la définition de la matrice d'une application linéaire.",
+  "concepts": [
+    "application linéaire",
+    "matrice d'une application linéaire",
+    "base canonique",
+    "espace vectoriel",
+    "dimension d'un espace vectoriel",
+    "image d'un vecteur par une application"
+  ],
+  "methods": [
+    "calcul des images des vecteurs de la base",
+    "construction de la matrice colonne par colonne"
+  ],
+  "objects": [
+    "application linéaire de ℝ² dans ℝ",
+    "matrice 1x2",
+    "vecteurs de la base canonique"
+  ],
+  "content_hash": "f9564538a18e0cb322100514c679de079addcbb74f262434b9123543d2e7a54e",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:53:35.051Z"
+}

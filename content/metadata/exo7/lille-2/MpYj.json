@@ -1,0 +1,31 @@
+{
+  "uuid": "MpYj",
+  "source_path": "exo7/lille-2/MpYj.tex",
+  "summary": "L'exercice demande d'analyser les développements limités de fonctions et leurs comportements asymptotiques. On étudie les fonctions f(x) = x arctan(x) et g(x) = x f(1/x), avec des questions sur les développements limités, les limites et les asymptotes.",
+  "concepts": [
+    "développement limité",
+    "limite en l'infini",
+    "asymptote",
+    "continuité",
+    "prolongement par continuité",
+    "fonction composée",
+    "fonction arctangente"
+  ],
+  "methods": [
+    "développement limité en un point",
+    "développement limité en l'infini",
+    "intégration",
+    "analyse de comportement asymptotique",
+    "comparaison de fonctions"
+  ],
+  "objects": [
+    "fonction f(x) = x arctan(x)",
+    "fonction g(x) = x f(1/x)",
+    "développement limité d'ordre 3",
+    "asymptote oblique",
+    "graphe de fonction"
+  ],
+  "content_hash": "67b65992db7e4ecabd41188508ac2a2427c3ec7804701e8d869a4425eb0cd541",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:35:19.285Z"
+}

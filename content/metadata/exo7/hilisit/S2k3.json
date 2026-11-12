@@ -1,0 +1,26 @@
+{
+  "uuid": "S2k3",
+  "source_path": "exo7/hilisit/S2k3.tex",
+  "summary": "L'exercice demande de déterminer pour quelles propositions l'utilisation du quantificateur existentiel (∃) rend l'assertion vraie, tandis que l'utilisation du quantificateur universel (∀) la rend fausse. Les propositions concernent des propriétés arithmétiques sur les entiers naturels.",
+  "concepts": [
+    "quantificateurs logiques",
+    "propriétés arithmétiques",
+    "nombres premiers",
+    "divisibilité",
+    "logique des prédicats"
+  ],
+  "methods": [
+    "analyse de vérité de propositions quantifiées",
+    "contre-exemples",
+    "vérification de propriétés arithmétiques"
+  ],
+  "objects": [
+    "entiers naturels",
+    "nombres pairs",
+    "nombres premiers",
+    "facteurs premiers"
+  ],
+  "content_hash": "8f7c8fcfc5a2f0c505289042c0512b68d796a7fdf5fa7618c4678877bc896944",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:48:40.872Z"
+}

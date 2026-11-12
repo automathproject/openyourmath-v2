@@ -1,0 +1,26 @@
+{
+  "uuid": "IWjs",
+  "source_path": "exo7/lille-2/IWjs.tex",
+  "summary": "L'exercice demande d'évaluer deux intégrales définies sur l'intervalle [0, π/2] et leur somme, puis de vérifier des affirmations sur leurs valeurs. Les intégrales impliquent des fonctions trigonométriques et un changement de variable.",
+  "concepts": [
+    "intégrale définie",
+    "changement de variable",
+    "fonction trigonométrique",
+    "linéarité de l'intégrale",
+    "primitive logarithmique"
+  ],
+  "methods": [
+    "changement de variable",
+    "décomposition trigonométrique",
+    "calcul de primitive",
+    "évaluation d'intégrale"
+  ],
+  "objects": [
+    "intégrale de fonction trigonométrique",
+    "changement de variable t=1+2sinx",
+    "somme d'intégrales"
+  ],
+  "content_hash": "f1063002df1a4e7db64d73a3a9d4edad3458714e9b1804d861385550cdc51b5c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:26:07.773Z"
+}

@@ -1,0 +1,26 @@
+{
+  "uuid": "5hei",
+  "source_path": "exo7/lille-1/5hei.tex",
+  "summary": "L'exercice demande d'analyser la dérivabilité de la fonction valeur absolue f(x) = |x - 1| en différents points, en déterminant les dérivées à droite et à gauche en 1, et en vérifiant la dérivabilité en 0 et 1.",
+  "concepts": [
+    "dérivabilité",
+    "dérivée à droite",
+    "dérivée à gauche",
+    "limite de fonction",
+    "fonction continue par morceaux",
+    "fonction valeur absolue"
+  ],
+  "methods": [
+    "calcul de dérivées partielles",
+    "comparaison des limites latérales",
+    "définition de la dérivée"
+  ],
+  "objects": [
+    "fonction valeur absolue",
+    "dérivée en un point",
+    "limites latérales"
+  ],
+  "content_hash": "51f09bc71fdf6dbe6373e34359ed5f137e3384e8844680b5d34b367e2f4a7dff",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:31:59.642Z"
+}

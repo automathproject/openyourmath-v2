@@ -1,0 +1,27 @@
+{
+  "uuid": "ZjQr",
+  "source_path": "exo7/lille-1/ZjQr.tex",
+  "summary": "L'exercice demande de déterminer les propriétés vraies du nombre complexe z = e^(e^(iθ)) en analysant son module et son argument. Il s'agit d'appliquer les définitions du module et de l'argument d'un nombre complexe en forme exponentielle.",
+  "concepts": [
+    "module d'un nombre complexe",
+    "argument d'un nombre complexe",
+    "forme exponentielle d'un nombre complexe",
+    "fonctions trigonométriques",
+    "nombre complexe non nul"
+  ],
+  "methods": [
+    "décomposition en module et argument",
+    "utilisation de la forme exponentielle",
+    "calcul du module",
+    "calcul de l'argument"
+  ],
+  "objects": [
+    "nombre complexe z = e^(e^(iθ))",
+    "module |z|",
+    "argument arg z",
+    "fonction exponentielle complexe"
+  ],
+  "content_hash": "919226859f456f9acde4071c4747935302688a0d7e4a4bdb463f13443e2e11d8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:54:49.026Z"
+}

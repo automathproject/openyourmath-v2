@@ -1,0 +1,26 @@
+{
+  "uuid": "lyHE",
+  "source_path": "exo7/lille-2/lyHE.tex",
+  "summary": "L'exercice demande de déterminer quelles assertions sont vraies concernant un système d'équations non linéaires à trois inconnues réelles. Il s'agit d'analyser la linéarité du système, ses équivalences et le nombre de solutions.",
+  "concepts": [
+    "système d'équations non linéaires",
+    "équivalence de systèmes",
+    "solution d'un système",
+    "rang d'une matrice",
+    "système linéaire"
+  ],
+  "methods": [
+    "substitution",
+    "résolution par équivalence",
+    "analyse de cas"
+  ],
+  "objects": [
+    "système d'équations à trois inconnues",
+    "matrice augmentée",
+    "solution unique",
+    "solutions multiples"
+  ],
+  "content_hash": "468705f8a7be6fe54aa5e84ba078334eee7e6145928216c06508ca825b8834f9",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-12T18:34:00.919Z"
+}
