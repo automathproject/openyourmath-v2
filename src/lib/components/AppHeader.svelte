@@ -79,7 +79,7 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
           <circle cx="12" cy="12" r="2.5"/><path d="M7.5 7.5a6.4 6.4 0 000 9M16.5 7.5a6.4 6.4 0 010 9M4.6 4.6a10.5 10.5 0 000 14.8M19.4 4.6a10.5 10.5 0 010 14.8"/>
         </svg>
-        <span class="nav-label">En direct</span>
+        <span class="nav-label nav-label--live">En direct</span>
       </a>
       <a href="/create" class:is-active={isActive('/create')} aria-label="Créer" title="Créer">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -251,6 +251,14 @@
      redondant avec le logo, cède la place (comme sur téléphone). */
   @media (max-width: 900px) {
     .app-brand-name { display: none; }
+    /* « En direct » garde son icône ; son libellé reviendrait à faire déborder
+       l'en-tête (le lien reste nommé par son aria-label). */
+    .nav-label--live { display: none; }
+  }
+
+  /* Six entrées : entre téléphone et tablette, elles se resserrent pour tenir. */
+  @media (min-width: 641px) and (max-width: 900px) {
+    .app-nav a { padding: 6px 7px; }
   }
 
   /* Entre 641 et 760 px, il manque encore une cinquantaine de pixels : le
