@@ -19,6 +19,11 @@ export function askedCount(results) {
   return results.questions.filter((question) => question.asked !== false).length;
 }
 
+/** Pourcentage arrondi de bonnes réponses ; 0 quand personne n'a répondu. */
+export function successRate(correct, answered) {
+  return answered > 0 ? Math.round((100 * correct) / answered) : 0;
+}
+
 /** Questions justes d'un participant. */
 export function participantScore(participant) {
   return participant.answers.filter((answer) => answer?.correct).length;

@@ -9,8 +9,10 @@
   import { onDestroy, onMount } from 'svelte';
   import MathRenderer from '$lib/components/MathRenderer.svelte';
   import QcmChoices from '$lib/components/qcm/QcmChoices.svelte';
+  import LiveReviewOverview from '$lib/components/qcm/LiveReviewOverview.svelte';
+  import LiveResultsTable from '$lib/components/qcm/LiveResultsTable.svelte';
   import { post, subscribe } from '$lib/qcm/liveClient.js';
-  import { askedCount, lettersOf, participantScore, questionLabel, resultsToCsv } from '$lib/qcm/results.js';
+  import { resultsToCsv, successRate } from '$lib/qcm/results.js';
 
   export let data;
 
@@ -64,11 +66,10 @@
     URL.revokeObjectURL(link.href);
   }
 
-  const rateOf = (correct, answered) => (answered > 0 ? Math.round((100 * correct) / answered) : 0);
-
   $: phase = state.phase;
   $: reviewing = phase === 'review';
-  $: overview = reviewing && state.reviewIndex === null;
+  // Sans question revue, ou avant le premier état du flux (rendu serveur), on montre la vue d'ensemble.
+  $: overview = reviewing && !state.question;
   $: focus = reviewing ? state.reviewIndex : state.index;
   $: question = state.question;
   $: stats = state.stats;
@@ -84,7 +85,7 @@
   $: marks = (phase === 'revealed' || reviewing) && question
     ? question.choices.map((_, index) => (state.correction.correct.includes(index) ? 'correct' : ''))
     : null;
-  $: successRate = stats ? rateOf(stats.correct, stats.answered) : 0;
+  $: questionRate = stats ? successRate(stats.correct, stats.answered) : 0;
   $: roster = [...(state.roster ?? [])].sort((a, b) => b.score - a.score || a.name.localeCompare(b.name, 'fr'));
 </script>
 
@@ -104,44 +105,7 @@
         </p>
         <button type="button" class="btn btn--primary" on:click={downloadCsv}>Télécharger le bilan (CSV)</button>
 
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">Participant</th>
-                {#each results.questions as item, index}
-                  <th scope="col" class:muted={item.asked === false} title="{questionLabel(item, index)}{item.asked === false ? ' (non posée)' : ''}">Q{index + 1}</th>
-                {/each}
-                <th scope="col">Score</th>
-              </tr>
-              <tr class="key">
-                <th scope="row">Réponses justes</th>
-                {#each results.questions as item}<td>{lettersOf(item.correct) || '—'}</td>{/each}
-                <td></td>
-              </tr>
-              <tr class="key">
-                <th scope="row">Réussite</th>
-                {#each results.questions as item}
-                  <td>{item.stats.answered ? `${Math.round((100 * item.stats.correct) / item.stats.answered)} %` : '—'}</td>
-                {/each}
-                <td></td>
-              </tr>
-            </thead>
-            <tbody>
-              {#each [...results.participants].sort((a, b) => participantScore(b) - participantScore(a)) as participant}
-                <tr>
-                  <th scope="row">{participant.name}</th>
-                  {#each participant.answers as answer}
-                    <td class:ok={answer?.correct} class:ko={answer && !answer.correct}>
-                      {#if answer}{lettersOf(answer.selection) || '∅'}{:else}<span class="muted">—</span>{/if}
-                    </td>
-                  {/each}
-                  <td class="score">{participantScore(participant)}/{askedCount(results)}</td>
-                </tr>
-              {/each}
-            </tbody>
-          </table>
-        </div>
+        <LiveResultsTable {results} />
       {:else}
         <p class="muted">La session a été fermée ({ended === 'duree' ? 'durée maximale atteinte' : ended === 'inactivite' ? 'inactivité' : 'session introuvable'}).</p>
       {/if}
@@ -181,34 +145,17 @@
           <h2 class="review-title">Bilan de la session</h2>
           <p class="phase phase--review" role="status">Bilan</p>
         </div>
-        <p class="muted review-sub">
-          {state.asked} question{state.asked > 1 ? 's' : ''} posée{state.asked > 1 ? 's' : ''} sur {state.total}
-          · {state.participants} participant{state.participants > 1 ? 's' : ''}.
-          Les participants voient sur leur téléphone leurs réponses et les réponses justes.
-        </p>
-        <ol class="review-list">
-          {#each outline as item, index}
-            {@const rate = rateOf(item.correct, item.answered)}
-            <li>
-              <button type="button" class="review-row" class:review-row--skipped={!item.asked} disabled={busy} on:click={() => command('review', index)}>
-                <span class="review-num">Q{index + 1}</span>
-                <span class="review-label">{item.title}{#if item.of > 1}<span class="muted"> ({item.rank}/{item.of})</span>{/if}</span>
-                {#if item.asked}
-                  <span class="review-bar" aria-hidden="true"><span style="width: {rate}%" class:low={rate < 50}></span></span>
-                  <span class="review-rate">{item.answered ? `${rate} %` : 'aucune réponse'}{#if item.answered}<span class="muted"> · {item.correct}/{item.answered}</span>{/if}</span>
-                {:else}
-                  <span class="review-bar review-bar--empty" aria-hidden="true"></span>
-                  <span class="review-rate muted">non posée</span>
-                {/if}
-              </button>
-            </li>
-          {/each}
-        </ol>
+        <LiveReviewOverview
+          {outline}
+          participants={state.participants}
+          disabled={busy}
+          on:select={(event) => command('review', event.detail)}
+        />
       </section>
 
       <section class="controls" aria-label="Pilotage du bilan">
         <div class="meter" role="status">
-          <span class="meter-value">{rateOf(totals.correct, totals.answered)} %</span>
+          <span class="meter-value">{successRate(totals.correct, totals.answered)} %</span>
           <span class="meter-label">de bonnes réponses</span>
         </div>
         <div class="buttons">
@@ -267,7 +214,7 @@
             <span class="meter-value">{stats?.answered ?? 0} / {state.participants}</span>
             <span class="meter-label">ont répondu</span>
             {#if (phase === 'revealed' || reviewing) && stats?.answered}
-              <span class="meter-rate">{successRate} % de réussite</span>
+              <span class="meter-rate">{questionRate} % de réussite</span>
             {/if}
           {/if}
         </div>
@@ -675,81 +622,6 @@
     color: #111827;
   }
 
-  .review-sub {
-    margin: -0.5rem 0 1rem;
-  }
-
-  .review-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 0.35rem;
-  }
-
-  .review-row {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 3rem minmax(0, 1fr) minmax(6rem, 14rem) 9rem;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.55rem 0.75rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 0.6rem;
-    background: #fff;
-    text-align: left;
-    font-size: 1rem;
-    color: #111827;
-    cursor: pointer;
-  }
-
-  .review-row:hover:not(:disabled) {
-    border-color: var(--color-brand-500);
-    background: var(--color-brand-50);
-  }
-
-  .review-row--skipped {
-    color: #6b7280;
-  }
-
-  .review-num {
-    font-weight: 800;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .review-label {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .review-bar {
-    height: 0.6rem;
-    border-radius: 999px;
-    background: #f3f4f6;
-    overflow: hidden;
-  }
-
-  .review-bar span {
-    display: block;
-    height: 100%;
-    background: #22c55e;
-  }
-
-  .review-bar span.low {
-    background: #f59e0b;
-  }
-
-  .review-bar--empty {
-    background: repeating-linear-gradient(45deg, #f3f4f6 0 6px, #fff 6px 12px);
-  }
-
-  .review-rate {
-    text-align: right;
-    font-weight: 700;
-    font-variant-numeric: tabular-nums;
-  }
-
   .outline-item--bilan {
     font-weight: 700;
     color: var(--color-brand-700);
@@ -840,53 +712,6 @@
     font-weight: 700;
   }
 
-  .table-wrap {
-    margin: 1.25rem 0;
-    overflow-x: auto;
-  }
-
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    font-size: 0.9rem;
-  }
-
-  th,
-  td {
-    padding: 0.4rem 0.6rem;
-    border-bottom: 1px solid #e5e7eb;
-    text-align: center;
-    white-space: nowrap;
-  }
-
-  th[scope='row'],
-  thead th:first-child {
-    text-align: left;
-  }
-
-  .key td,
-  .key th {
-    background: #f9fafb;
-    font-weight: 600;
-    color: #4b5563;
-  }
-
-  td.ok {
-    background: #f0fdf4;
-    color: #166534;
-    font-weight: 600;
-  }
-
-  td.ko {
-    background: #fef2f2;
-    color: #991b1b;
-  }
-
-  td.score {
-    font-weight: 800;
-    font-variant-numeric: tabular-nums;
-  }
-
   .offline-banner {
     position: fixed;
     left: 50%;
@@ -909,14 +734,6 @@
 
     .stem {
       font-size: 1.1rem;
-    }
-
-    .review-row {
-      grid-template-columns: 2.5rem minmax(0, 1fr) auto;
-    }
-
-    .review-bar {
-      display: none;
     }
   }
 </style>
