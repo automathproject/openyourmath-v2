@@ -5,7 +5,7 @@
  * S'abonne à l'état d'une session.
  *
  * @param {string} code
- * @param {{ host?: boolean, onState: (state: object) => void, onEnd: (reason: string) => void,
+ * @param {{ host?: boolean, onState: (state: object) => void, onEnd: (reason: string, data?: object) => void,
  *   onStatus?: (status: 'connecting' | 'open' | 'lost') => void }} handlers
  * @returns {() => void} fonction de désabonnement
  */
@@ -25,7 +25,8 @@ export function subscribe(code, { host = false, onState, onEnd, onStatus = () =>
     source.addEventListener('fin', (event) => {
       closed = true;
       source.close();
-      onEnd(JSON.parse(event.data).reason);
+      const data = JSON.parse(event.data);
+      onEnd(data.reason, data);
     });
     source.addEventListener('error', async () => {
       if (closed) return;

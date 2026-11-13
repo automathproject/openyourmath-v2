@@ -14,6 +14,16 @@ export function lettersOf(selection) {
   return (selection || []).map(choiceLetter).join(', ');
 }
 
+/** Nombre de questions posées : le dénominateur des scores (une question sautée sans être ouverte ne compte pas). */
+export function askedCount(results) {
+  return results.questions.filter((question) => question.asked !== false).length;
+}
+
+/** Questions justes d'un participant. */
+export function participantScore(participant) {
+  return participant.answers.filter((answer) => answer?.correct).length;
+}
+
 function csvCell(value) {
   let text = String(value ?? '');
   // Un tableur exécuterait une cellule qui commence par =, +, - ou @.
@@ -28,14 +38,12 @@ function csvCell(value) {
 export function resultsToCsv(results) {
   const header = ['Participant', ...results.questions.map(questionLabel), 'Score'];
   const key = ['Réponses justes', ...results.questions.map((question) => lettersOf(question.correct) || 'aucune'), ''];
-  const rows = results.participants.map((participant) => {
-    const score = participant.answers.filter((answer) => answer?.correct).length;
-    return [
-      participant.name,
-      ...participant.answers.map((answer) => (answer ? lettersOf(answer.selection) || '(aucune)' : '')),
-      `${score}/${results.questions.length}`,
-    ];
-  });
+  const asked = askedCount(results);
+  const rows = results.participants.map((participant) => [
+    participant.name,
+    ...participant.answers.map((answer) => (answer ? lettersOf(answer.selection) || '(aucune)' : '')),
+    `${participantScore(participant)}/${asked}`,
+  ]);
   // BOM : sans lui, Excel lit l'UTF-8 comme du Latin-1.
   return '﻿' + [header, key, ...rows].map((row) => row.map(csvCell).join(';')).join('\r\n') + '\r\n';
 }

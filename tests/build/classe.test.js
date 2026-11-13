@@ -130,6 +130,66 @@ describe('déroulé d’une session', () => {
   });
 });
 
+describe('bilan', () => {
+  const THREE = [...QUESTIONS, question('Troisième', [true, false])];
+
+  it('corrige ce qui a été posé, garde la session ouverte et donne à chacun sa revue', async () => {
+    const { code, hostToken } = createSession({ questions: THREE });
+    const ada = joinSession(code, 'Ada');
+    expectError(() => control(code, hostToken, 'review'), 'bilan');
+
+    control(code, hostToken, 'open');
+    submitAnswer(code, ada.token, 0, [1, 2]);
+    control(code, hostToken, 'reveal');
+    control(code, hostToken, 'next');
+    // La seconde est posée, jamais corrigée ; la troisième n'est jamais ouverte.
+    submitAnswer(code, ada.token, 1, [1]);
+
+    const participant = openStream(code, { participantToken: ada.token });
+    const host = openStream(code, { hostToken });
+    await readEvents(participant);
+    await readEvents(host);
+
+    control(code, hostToken, 'review');
+    const session = getSession(code);
+    expect(session.phase).toBe('review');
+    expect([...session.revealed].sort()).toEqual([0, 1]);
+    expectError(() => submitAnswer(code, ada.token, 1, [0]), 'ferme');
+
+    const mine = (await readEvents(participant)).at(-1).data;
+    expect(mine.question).toBeUndefined();
+    expect(mine.me).toMatchObject({ score: 1 });
+    expect(mine.review.map((item) => [item.index, item.answer, item.ok])).toEqual([
+      [0, [1, 2], true],
+      [1, [1], false],
+    ]);
+    expect(mine.review[1].choices.map((choice) => choice.correct)).toEqual([true, false]);
+
+    const overview = (await readEvents(host)).at(-1).data;
+    expect(overview.reviewIndex).toBeNull();
+    expect(overview.question).toBeUndefined();
+    expect(overview.outline.map(({ asked, answered, correct }) => ({ asked, answered, correct }))).toEqual([
+      { asked: true, answered: 1, correct: 1 },
+      { asked: true, answered: 1, correct: 0 },
+      { asked: false, answered: 0, correct: 0 },
+    ]);
+
+    // Revoir une question ne renvoie rien aux participants.
+    control(code, hostToken, 'review', 1);
+    expect((await readEvents(host)).at(-1).data).toMatchObject({ reviewIndex: 1, correction: { correct: [0] } });
+    expect(await readEvents(participant)).toEqual([]);
+
+    // Reprendre le déroulé, puis terminer : la revue part avec le message de fin.
+    control(code, hostToken, 'goto', 2);
+    expect(getSession(code).phase).toBe('open');
+    expect(resultsFor(code, hostToken).questions.map((item) => item.asked)).toEqual([true, true, true]);
+    control(code, hostToken, 'end');
+    const fin = (await readEvents(participant)).find(({ event }) => event === 'fin').data;
+    expect(fin.reason).toBe('fin');
+    expect(fin.review.map((item) => item.index)).toEqual([0, 1]);
+  });
+});
+
 describe('droits', () => {
   it('réserve le pilotage et le bilan à la personne qui anime', () => {
     const { code, hostToken } = createSession({ questions: QUESTIONS });

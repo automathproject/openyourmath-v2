@@ -1,11 +1,14 @@
 <!-- src/routes/classe/[code]/+page.svelte
      Vue d'un participant à une session de qcm en direct : il entre avec un
      pseudonyme, répond à la question que l'enseignant a ouverte, puis voit la
-     correction quand elle est montrée à la classe. -->
+     correction quand elle est montrée à la classe. Au bilan, et après la fin
+     de la session, il garde sa revue : chaque question corrigée avec sa
+     réponse et les réponses justes. -->
 <script>
   import { onDestroy, onMount } from 'svelte';
   import MathRenderer from '$lib/components/MathRenderer.svelte';
   import QcmChoices from '$lib/components/qcm/QcmChoices.svelte';
+  import LiveRecap from '$lib/components/qcm/LiveRecap.svelte';
   import { post, subscribe } from '$lib/qcm/liveClient.js';
   import { instructionFor } from '$lib/qcm/blocks.js';
 
@@ -19,6 +22,8 @@
   let state = data.summary;
   let status = 'connecting';
   let ended = '';
+  /** Revue reçue au bilan ou à la fin, gardée une fois la connexion fermée. */
+  let recap = null;
   let unsubscribe = null;
 
   // Réponse en cours de saisie, et celle que le serveur a enregistrée.
@@ -39,13 +44,17 @@
     }
     sent = next.answer ?? null;
     if (next.me?.name) name = next.me.name;
+    if (next.review) recap = { review: next.review, me: next.me };
   }
 
   function connect() {
     unsubscribe?.();
     unsubscribe = subscribe(data.code, {
       onState: applyState,
-      onEnd: (reason) => (ended = reason),
+      onEnd: (reason, data) => {
+        ended = reason;
+        if (data?.review?.length) recap = { review: data.review, me: data.me };
+      },
       onStatus: (value) => (status = value),
     });
   }
@@ -128,15 +137,20 @@
   </header>
 
   {#if ended}
-    <section class="panel center">
+    <section class="panel center" class:panel--compact={recap}>
       <h2>Session terminée</h2>
       <p>{END_MESSAGES[ended] ?? END_MESSAGES.fin}</p>
-      {#if state.me && state.corrected > 0}
+      {#if recap}
+        <p class="muted small">Votre bilan reste affiché tant que vous ne quittez pas cette page.</p>
+      {:else if state.me && state.corrected > 0}
         <p class="final-score">{state.me.score} / {state.corrected}</p>
         <p class="muted">questions réussies</p>
       {/if}
       <a class="link" href="/classe">Rejoindre une autre session</a>
     </section>
+    {#if recap}
+      <div class="recap-wrap"><LiveRecap review={recap.review} me={recap.me} total={state.total} /></div>
+    {/if}
   {:else if !name}
     <section class="panel">
       <h2>Entrer dans la session</h2>
@@ -152,6 +166,15 @@
       </form>
       <p class="muted small">{state.participants} participant{state.participants > 1 ? 's' : ''} sur {state.maxParticipants} places.</p>
     </section>
+  {:else if phase === 'review'}
+    {#if recap?.review.length}
+      <LiveRecap review={recap.review} me={recap.me} total={state.total} />
+    {:else}
+      <section class="panel center">
+        <h2>Bilan</h2>
+        <p class="muted">Aucune question n'a été corrigée.</p>
+      </section>
+    {/if}
   {:else if phase === 'lobby' || !question}
     <section class="panel center">
       <div class="pulse" aria-hidden="true"></div>
@@ -283,6 +306,14 @@
   .center {
     text-align: center;
     padding: 2.5rem 1.25rem;
+  }
+
+  .panel--compact {
+    padding: 1.25rem;
+  }
+
+  .recap-wrap {
+    margin-top: 1rem;
   }
 
   .progress {

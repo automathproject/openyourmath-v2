@@ -156,7 +156,10 @@ export function sweepSessions(now = Date.now()) {
 function closeSession(session, reason) {
   session.phase = 'ended';
   for (const stream of [...session.streams]) {
-    send(stream, 'fin', { reason });
+    // Chaque participant repart avec la revue des questions corrigées : la page
+    // la garde affichée une fois la connexion fermée.
+    const participant = stream.role === 'participant' ? session.participants.get(stream.participantId) : null;
+    send(stream, 'fin', participant ? { reason, ...participantRecap(session, participant) } : { reason });
     dropStream(stream);
   }
   if (session.statsTimer) clearTimeout(session.statsTimer);
@@ -226,9 +229,43 @@ function correction(session, index) {
   return { correct: correctIndexes(question.choices), explanation_html: question.explanation_html };
 }
 
+/**
+ * Revue personnelle d'un participant : les questions corrigées, avec sa
+ * réponse, les réponses justes et les explications. Jamais une question que
+ * la classe n'a pas vue corrigée.
+ */
+function participantRecap(session, participant) {
+  const review = [];
+  session.questions.forEach((question, index) => {
+    if (!session.revealed.has(index)) return;
+    const answer = participant.answers.get(index) ?? null;
+    review.push({
+      index,
+      title: question.title,
+      rank: question.rank,
+      of: question.of,
+      context_html: question.context_html,
+      stem_html: question.stem_html,
+      choices: question.choices.map((choice) => ({
+        html: choice.html,
+        correct: Boolean(choice.correct),
+        ...(choice.feedback_html && { feedback_html: choice.feedback_html }),
+      })),
+      explanation_html: question.explanation_html,
+      answer,
+      ok: answer !== null && isCorrectSelection(question.choices, answer),
+    });
+  });
+  return {
+    review,
+    me: { name: participant.name, score: scoreOf(session, participant), answered: participant.answers.size },
+  };
+}
+
 /** Ce qu'un participant a le droit de voir : jamais les réponses justes avant la correction. */
 function participantState(session, participant) {
   const state = baseState(session);
+  if (session.phase === 'review') return { ...state, ...participantRecap(session, participant) };
   const question = session.questions[session.index];
   if (question && session.phase !== 'lobby' && session.phase !== 'ended') {
     state.question = publicQuestion(question);
@@ -242,19 +279,26 @@ function participantState(session, participant) {
 function hostState(session) {
   const state = baseState(session);
   const connected = connectedParticipants(session);
-  const question = session.questions[session.index];
+  const reviewing = session.phase === 'review';
+  // Pendant le bilan, la question affichée est celle que l'on revoit, pas celle du déroulé.
+  const focus = reviewing ? session.reviewIndex : session.index;
+  const question = focus === null ? null : session.questions[focus];
   if (question) {
     state.question = publicQuestion(question);
-    state.correction = correction(session, session.index);
-    state.stats = questionStats(session, session.index);
+    state.correction = correction(session, focus);
+    state.stats = questionStats(session, focus);
   }
+  state.reviewIndex = reviewing ? session.reviewIndex : null;
+  state.asked = session.asked.size;
   state.connected = connected.size;
-  state.outline = session.questions.map((item, index) => ({
-    title: item.title,
-    rank: item.rank,
-    of: item.of,
-    done: session.revealed.has(index),
-  }));
+  state.outline = session.questions.map((item, index) => {
+    const entry = { title: item.title, rank: item.rank, of: item.of, done: session.revealed.has(index), asked: session.asked.has(index) };
+    if (reviewing) {
+      const { answered, correct } = questionStats(session, index);
+      Object.assign(entry, { answered, correct });
+    }
+    return entry;
+  });
   state.roster = [...session.participants.values()].map((participant) => ({
     name: participant.name,
     score: scoreOf(session, participant),
@@ -325,9 +369,13 @@ export function createSession({ title = '', questions }) {
     maxParticipants: bounds.maxParticipants,
     questions,
     index: -1,
-    /** 'lobby' → 'open' → 'closed' → 'revealed' → … → 'ended' */
+    /** 'lobby' → 'open' → 'closed' → 'revealed' → … → 'review' (bilan) → 'ended' */
     phase: 'lobby',
+    /** Questions ouvertes au moins une fois : celles que la classe a vues. */
+    asked: new Set(),
     revealed: new Set(),
+    /** Pendant le bilan : question revue (null : vue d'ensemble). */
+    reviewIndex: null,
     participants: new Map(),
     streams: new Set(),
     statsTimer: null,
@@ -406,30 +454,35 @@ export function submitAnswer(code, participantToken, questionIndex, selection) {
  * - open   : ouvre (ou rouvre) les réponses à la question en cours ; depuis l'accueil, lance la première
  * - close  : clôt les réponses, la répartition devient visible
  * - reveal : montre la correction à tous
- * - next / prev / goto : change de question, réponses ouvertes
- * - end    : termine la session
+ * - next / prev / goto : change de question, réponses ouvertes ; depuis le bilan, reprend le déroulé
+ * - review : bilan ; corrige toutes les questions posées, puis revoit la question `index`
+ *            (sans index : vue d'ensemble). La session reste ouverte.
+ * - end    : termine la session ; chaque participant garde sa revue
  */
 export function control(code, hostToken, action, index) {
   const session = getSession(code);
   if (!isHost(session, hostToken)) throw new ClasseError(403, 'interdit', 'Réservé à la personne qui anime la session.');
   session.lastActivity = Date.now();
   const last = session.questions.length - 1;
+  const wasReviewing = session.phase === 'review';
   const goTo = (target) => {
     session.index = Math.min(last, Math.max(0, target));
     session.phase = session.revealed.has(session.index) ? 'revealed' : 'open';
+    session.asked.add(session.index);
   };
 
   switch (action) {
     case 'open':
       if (session.index < 0) goTo(0);
       else session.phase = 'open';
+      session.asked.add(session.index);
       session.revealed.delete(session.index);
       break;
     case 'close':
       if (session.phase === 'open') session.phase = 'closed';
       break;
     case 'reveal':
-      if (session.index >= 0) {
+      if (session.index >= 0 && !wasReviewing) {
         session.phase = 'revealed';
         session.revealed.add(session.index);
       }
@@ -444,6 +497,14 @@ export function control(code, hostToken, action, index) {
       if (!Number.isInteger(index)) throw new ClasseError(400, 'action', 'Question inconnue.');
       goTo(index);
       break;
+    case 'review':
+      if (session.asked.size === 0) throw new ClasseError(409, 'bilan', "Aucune question n'a encore été posée.");
+      if (index !== undefined && index !== null && !Number.isInteger(index)) throw new ClasseError(400, 'action', 'Question inconnue.');
+      session.phase = 'review';
+      session.reviewIndex = Number.isInteger(index) ? Math.min(last, Math.max(0, index)) : null;
+      // Le bilan vaut correction de tout ce qui a été posé.
+      for (const asked of session.asked) session.revealed.add(asked);
+      break;
     case 'end': {
       const results = sessionResults(session);
       closeSession(session, 'fin');
@@ -452,7 +513,9 @@ export function control(code, hostToken, action, index) {
     default:
       throw new ClasseError(400, 'action', 'Commande inconnue.');
   }
-  broadcast(session);
+  // Feuilleter le bilan ne change rien pour les participants, qui ont déjà leur revue.
+  if (wasReviewing && session.phase === 'review') broadcastHost(session);
+  else broadcast(session);
   return { ended: false };
 }
 
@@ -465,6 +528,7 @@ export function sessionResults(session) {
       rank: question.rank,
       of: question.of,
       correct: correctIndexes(question.choices),
+      asked: session.asked.has(index),
       stats: questionStats(session, index),
     })),
     participants: [...session.participants.values()].map((participant) => ({

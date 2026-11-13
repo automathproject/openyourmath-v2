@@ -79,8 +79,21 @@ Il n'y a **aucun compte** et rien n'est conservé.
    la correction**. La répartition reste cachée tant que les réponses sont
    ouvertes, pour ne pas orienter la classe ; chacun peut changer sa réponse
    jusqu'à la clôture.
-4. À la fin, l'enseignant voit le bilan par participant et par question, et
-   peut le télécharger en CSV. Il n'existe que sur sa page.
+4. Après la dernière correction, **« Voir le bilan »** (ou l'onglet « Bilan »
+   à tout moment) passe la session en phase de bilan, qui vaut correction de
+   toutes les questions posées. La session reste ouverte :
+   - l'écran projeté donne la réussite par question ; un clic sur une question
+     la remontre avec ses réponses justes, la répartition et les explications,
+     et « Revoir les questions une à une » les fait défiler ;
+   - chaque participant voit sur son téléphone sa revue : son score, puis
+     chaque question corrigée avec sa réponse, les réponses justes et les
+     explications ;
+   - « Reprendre les questions » revient au déroulé.
+5. « Terminer » ferme la session. Le participant garde sa revue à l'écran (elle
+   part avec le message de fin) ; l'enseignant garde le tableau par participant
+   et par question, téléchargeable en CSV, qui n'existe que sur sa page. Les
+   scores se comptent sur les questions posées : une question jamais ouverte
+   n'entre pas au dénominateur.
 
 ### Fonctionnement
 
@@ -99,6 +112,9 @@ Il n'y a **aucun compte** et rien n'est conservé.
 - Les réponses justes ne quittent le serveur qu'au moment de la correction : le
   flux d'un participant ne contient ni `correct`, ni statistiques, ni liste des
   autres participants.
+  Sa revue (bilan, message de fin) ne contient que les questions corrigées.
+  Feuilleter le bilan côté enseignant n'envoie rien aux participants : leur
+  revue part une fois, à l'entrée dans le bilan.
 
 | Route | Rôle |
 |---|---|
@@ -107,7 +123,7 @@ Il n'y a **aucun compte** et rien n'est conservé.
 | `POST /api/classe/<code>` | entrer avec un pseudonyme |
 | `GET /api/classe/<code>/flux` | flux d'état (`?role=hote` pour l'enseignant) |
 | `POST /api/classe/<code>/reponse` | répondre à la question en cours |
-| `POST /api/classe/<code>/pilotage` | `open`, `close`, `reveal`, `next`, `prev`, `goto`, `end` |
+| `POST /api/classe/<code>/pilotage` | `open`, `close`, `reveal`, `next`, `prev`, `goto`, `review` (bilan, `index` facultatif), `end` |
 | `GET /api/classe/<code>/resultats` | bilan (`?format=csv`) |
 
 ### Plafonds de charge

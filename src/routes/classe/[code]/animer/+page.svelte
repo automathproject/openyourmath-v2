@@ -2,13 +2,15 @@
      Écran de l'enseignant, fait pour être projeté : il montre comment
      rejoindre, la question en cours, combien ont répondu, puis la répartition
      des réponses et la correction. La répartition reste cachée tant que les
-     réponses sont ouvertes, pour ne pas orienter la classe. -->
+     réponses sont ouvertes, pour ne pas orienter la classe. À la fin, le
+     bilan donne la réussite par question et permet de revoir chacune avec
+     ses réponses justes ; la session reste ouverte jusqu'à « Terminer ». -->
 <script>
   import { onDestroy, onMount } from 'svelte';
   import MathRenderer from '$lib/components/MathRenderer.svelte';
   import QcmChoices from '$lib/components/qcm/QcmChoices.svelte';
   import { post, subscribe } from '$lib/qcm/liveClient.js';
-  import { lettersOf, questionLabel, resultsToCsv } from '$lib/qcm/results.js';
+  import { askedCount, lettersOf, participantScore, questionLabel, resultsToCsv } from '$lib/qcm/results.js';
 
   export let data;
 
@@ -48,7 +50,7 @@
   }
 
   function endSession() {
-    if (confirm('Terminer la session ? Les participants seront déconnectés et le bilan ne sera plus disponible une fois cette page fermée.')) {
+    if (confirm("Terminer la session ? Les participants ne pourront plus répondre mais gardent leur bilan à l'écran. Le vôtre ne sera plus disponible une fois cette page fermée.")) {
       command('end');
     }
   }
@@ -62,17 +64,28 @@
     URL.revokeObjectURL(link.href);
   }
 
+  const rateOf = (correct, answered) => (answered > 0 ? Math.round((100 * correct) / answered) : 0);
+
   $: phase = state.phase;
+  $: reviewing = phase === 'review';
+  $: overview = reviewing && state.reviewIndex === null;
+  $: focus = reviewing ? state.reviewIndex : state.index;
   $: question = state.question;
   $: stats = state.stats;
   $: isLast = state.index >= state.total - 1;
-  $: showDistribution = phase === 'closed' || phase === 'revealed';
-  $: marks = phase === 'revealed' && question
+  $: outline = state.outline ?? [];
+  $: focusAsked = outline[focus]?.asked !== false;
+  // Feuilleter le bilan ne passe que par les questions posées.
+  $: askedIndexes = outline.flatMap((item, index) => (item.asked ? [index] : []));
+  $: prevAsked = askedIndexes.filter((index) => index < focus).at(-1) ?? null;
+  $: nextAsked = askedIndexes.find((index) => index > focus) ?? null;
+  $: totals = outline.reduce((sum, item) => ({ answered: sum.answered + (item.answered || 0), correct: sum.correct + (item.correct || 0) }), { answered: 0, correct: 0 });
+  $: showDistribution = phase === 'closed' || phase === 'revealed' || (reviewing && focusAsked);
+  $: marks = (phase === 'revealed' || reviewing) && question
     ? question.choices.map((_, index) => (state.correction.correct.includes(index) ? 'correct' : ''))
     : null;
-  $: successRate = stats && stats.answered > 0 ? Math.round((100 * stats.correct) / stats.answered) : 0;
+  $: successRate = stats ? rateOf(stats.correct, stats.answered) : 0;
   $: roster = [...(state.roster ?? [])].sort((a, b) => b.score - a.score || a.name.localeCompare(b.name, 'fr'));
-  $: scoreOf = (participant) => participant.answers.filter((answer) => answer?.correct).length;
 </script>
 
 <svelte:head>
@@ -97,7 +110,7 @@
               <tr>
                 <th scope="col">Participant</th>
                 {#each results.questions as item, index}
-                  <th scope="col" title={questionLabel(item, index)}>Q{index + 1}</th>
+                  <th scope="col" class:muted={item.asked === false} title="{questionLabel(item, index)}{item.asked === false ? ' (non posée)' : ''}">Q{index + 1}</th>
                 {/each}
                 <th scope="col">Score</th>
               </tr>
@@ -115,7 +128,7 @@
               </tr>
             </thead>
             <tbody>
-              {#each [...results.participants].sort((a, b) => scoreOf(b) - scoreOf(a)) as participant}
+              {#each [...results.participants].sort((a, b) => participantScore(b) - participantScore(a)) as participant}
                 <tr>
                   <th scope="row">{participant.name}</th>
                   {#each participant.answers as answer}
@@ -123,7 +136,7 @@
                       {#if answer}{lettersOf(answer.selection) || '∅'}{:else}<span class="muted">—</span>{/if}
                     </td>
                   {/each}
-                  <td class="score">{scoreOf(participant)}/{results.questions.length}</td>
+                  <td class="score">{participantScore(participant)}/{askedCount(results)}</td>
                 </tr>
               {/each}
             </tbody>
@@ -152,7 +165,7 @@
       </div>
     </header>
 
-    {#if phase === 'lobby' || !question}
+    {#if phase === 'lobby' || (!question && !reviewing)}
       <section class="panel center">
         <p class="lobby">En attente des participants…</p>
         {#if state.participants >= state.maxParticipants}
@@ -162,15 +175,63 @@
           Lancer la première question
         </button>
       </section>
+    {:else if overview}
+      <section class="panel">
+        <div class="question-head">
+          <h2 class="review-title">Bilan de la session</h2>
+          <p class="phase phase--review" role="status">Bilan</p>
+        </div>
+        <p class="muted review-sub">
+          {state.asked} question{state.asked > 1 ? 's' : ''} posée{state.asked > 1 ? 's' : ''} sur {state.total}
+          · {state.participants} participant{state.participants > 1 ? 's' : ''}.
+          Les participants voient sur leur téléphone leurs réponses et les réponses justes.
+        </p>
+        <ol class="review-list">
+          {#each outline as item, index}
+            {@const rate = rateOf(item.correct, item.answered)}
+            <li>
+              <button type="button" class="review-row" class:review-row--skipped={!item.asked} disabled={busy} on:click={() => command('review', index)}>
+                <span class="review-num">Q{index + 1}</span>
+                <span class="review-label">{item.title}{#if item.of > 1}<span class="muted"> ({item.rank}/{item.of})</span>{/if}</span>
+                {#if item.asked}
+                  <span class="review-bar" aria-hidden="true"><span style="width: {rate}%" class:low={rate < 50}></span></span>
+                  <span class="review-rate">{item.answered ? `${rate} %` : 'aucune réponse'}{#if item.answered}<span class="muted"> · {item.correct}/{item.answered}</span>{/if}</span>
+                {:else}
+                  <span class="review-bar review-bar--empty" aria-hidden="true"></span>
+                  <span class="review-rate muted">non posée</span>
+                {/if}
+              </button>
+            </li>
+          {/each}
+        </ol>
+      </section>
+
+      <section class="controls" aria-label="Pilotage du bilan">
+        <div class="meter" role="status">
+          <span class="meter-value">{rateOf(totals.correct, totals.answered)} %</span>
+          <span class="meter-label">de bonnes réponses</span>
+        </div>
+        <div class="buttons">
+          <button type="button" class="btn" disabled={busy} on:click={() => command('goto', state.index)}>← Reprendre les questions</button>
+          <a class="btn" href="/api/classe/{data.code}/resultats?format=csv" download="qcm-{data.code}.csv">Télécharger (CSV)</a>
+          <button type="button" class="btn btn--primary" disabled={busy || askedIndexes.length === 0} on:click={() => command('review', askedIndexes[0])}>
+            Revoir les questions une à une →
+          </button>
+          <button type="button" class="btn btn--danger" disabled={busy} on:click={endSession}>Terminer la session</button>
+        </div>
+        {#if actionError}<p class="error" role="alert">{actionError}</p>{/if}
+      </section>
     {:else}
       <section class="panel question">
         <div class="question-head">
           <p class="progress">
-            Question {state.index + 1} / {state.total}
+            {#if reviewing}<span class="kicker-inline">Revue ·</span>{/if}
+            Question {focus + 1} / {state.total}
             {#if question.of > 1}<span class="serie">série « {question.title} », partie {question.rank}/{question.of}</span>{/if}
           </p>
-          <p class="phase phase--{phase}" role="status">
-            {#if phase === 'open'}Réponses ouvertes
+          <p class="phase phase--{reviewing ? (focusAsked ? 'revealed' : 'skipped') : phase}" role="status">
+            {#if reviewing}{focusAsked ? 'Correction' : 'Non posée'}
+            {:else if phase === 'open'}Réponses ouvertes
             {:else if phase === 'closed'}Réponses closes
             {:else}Correction{/if}
           </p>
@@ -190,7 +251,7 @@
           prerendered
         />
 
-        {#if phase === 'revealed' && state.correction?.explanation_html}
+        {#if (phase === 'revealed' || reviewing) && state.correction?.explanation_html}
           <div class="explanation">
             <p class="explanation-title">Explications</p>
             <MathRenderer content={state.correction.explanation_html} prerendered />
@@ -200,13 +261,26 @@
 
       <section class="controls" aria-label="Pilotage de la session">
         <div class="meter" role="status">
-          <span class="meter-value">{stats?.answered ?? 0} / {state.participants}</span>
-          <span class="meter-label">ont répondu</span>
-          {#if phase === 'revealed' && stats?.answered}
-            <span class="meter-rate">{successRate} % de réussite</span>
+          {#if reviewing && !focusAsked}
+            <span class="meter-label">Question non posée à la classe</span>
+          {:else}
+            <span class="meter-value">{stats?.answered ?? 0} / {state.participants}</span>
+            <span class="meter-label">ont répondu</span>
+            {#if (phase === 'revealed' || reviewing) && stats?.answered}
+              <span class="meter-rate">{successRate} % de réussite</span>
+            {/if}
           {/if}
         </div>
 
+        {#if reviewing}
+          <div class="buttons">
+            <button type="button" class="btn" disabled={busy || prevAsked === null} on:click={() => command('review', prevAsked)}>← Précédente</button>
+            <button type="button" class="btn" class:btn--primary={nextAsked === null} disabled={busy} on:click={() => command('review')}>Vue d'ensemble</button>
+            {#if nextAsked !== null}
+              <button type="button" class="btn btn--primary" disabled={busy} on:click={() => command('review', nextAsked)}>Suivante →</button>
+            {/if}
+          </div>
+        {:else}
         <div class="buttons">
           <button type="button" class="btn" disabled={busy || state.index <= 0} on:click={() => command('prev')}>← Précédente</button>
           {#if phase === 'open'}
@@ -216,34 +290,44 @@
             <button type="button" class="btn btn--primary" disabled={busy} on:click={() => command('reveal')}>Afficher la correction</button>
           {:else if !isLast}
             <button type="button" class="btn btn--primary" disabled={busy} on:click={() => command('next')}>Question suivante →</button>
+          {:else}
+            <button type="button" class="btn btn--primary" disabled={busy} on:click={() => command('review')}>Voir le bilan →</button>
           {/if}
           {#if phase !== 'revealed' && !isLast}
             <button type="button" class="btn" disabled={busy} on:click={() => command('next')}>Passer →</button>
           {/if}
-          <button type="button" class="btn btn--danger" class:btn--primary-end={phase === 'revealed' && isLast} disabled={busy} on:click={endSession}>
-            Terminer
-          </button>
+          <button type="button" class="btn btn--danger" disabled={busy} on:click={endSession}>Terminer</button>
         </div>
+        {/if}
         {#if actionError}<p class="error" role="alert">{actionError}</p>{/if}
       </section>
     {/if}
 
     <section class="aside">
-      {#if state.outline}
+      {#if state.outline && phase !== 'lobby'}
         <nav class="outline" aria-label="Questions de la session">
-          {#each state.outline as item, index}
+          {#each outline as item, index}
             <button
               type="button"
               class="outline-item"
-              class:outline-item--current={index === state.index}
+              class:outline-item--current={index === focus}
               class:outline-item--done={item.done}
               disabled={busy}
               title="{item.title}{item.of > 1 ? ` (${item.rank}/${item.of})` : ''}"
-              on:click={() => command('goto', index)}
+              on:click={() => command(reviewing ? 'review' : 'goto', index)}
             >
               {index + 1}{#if item.done}<span aria-hidden="true"> ✓</span>{/if}
             </button>
           {/each}
+          <button
+            type="button"
+            class="outline-item outline-item--bilan"
+            class:outline-item--current={overview}
+            disabled={busy || !state.asked}
+            on:click={() => command('review')}
+          >
+            Bilan
+          </button>
         </nav>
       {/if}
 
@@ -564,10 +648,111 @@
     border-color: #fca5a5;
   }
 
-  .btn--primary-end {
-    background: #b91c1c;
-    border-color: #b91c1c;
-    color: #fff;
+  a.btn {
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .phase--review {
+    background: #e0e7ff;
+    color: #3730a3;
+  }
+
+  .phase--skipped {
+    background: #f3f4f6;
+    color: #4b5563;
+  }
+
+  .kicker-inline {
+    color: var(--color-brand-700);
+    margin-right: 0.25rem;
+  }
+
+  .review-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #111827;
+  }
+
+  .review-sub {
+    margin: -0.5rem 0 1rem;
+  }
+
+  .review-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .review-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr) minmax(6rem, 14rem) 9rem;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.6rem;
+    background: #fff;
+    text-align: left;
+    font-size: 1rem;
+    color: #111827;
+    cursor: pointer;
+  }
+
+  .review-row:hover:not(:disabled) {
+    border-color: var(--color-brand-500);
+    background: var(--color-brand-50);
+  }
+
+  .review-row--skipped {
+    color: #6b7280;
+  }
+
+  .review-num {
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .review-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .review-bar {
+    height: 0.6rem;
+    border-radius: 999px;
+    background: #f3f4f6;
+    overflow: hidden;
+  }
+
+  .review-bar span {
+    display: block;
+    height: 100%;
+    background: #22c55e;
+  }
+
+  .review-bar span.low {
+    background: #f59e0b;
+  }
+
+  .review-bar--empty {
+    background: repeating-linear-gradient(45deg, #f3f4f6 0 6px, #fff 6px 12px);
+  }
+
+  .review-rate {
+    text-align: right;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .outline-item--bilan {
+    font-weight: 700;
+    color: var(--color-brand-700);
   }
 
   .error {
@@ -724,6 +909,14 @@
 
     .stem {
       font-size: 1.1rem;
+    }
+
+    .review-row {
+      grid-template-columns: 2.5rem minmax(0, 1fr) auto;
+    }
+
+    .review-bar {
+      display: none;
     }
   }
 </style>
