@@ -17,6 +17,8 @@
   import StarsRating from '$lib/components/StarsRating.svelte';
   import QRCode from 'qrcode';
   import LiveSessionButton from '$lib/components/qcm/LiveSessionButton.svelte';
+  import FichesCatalogue from '$lib/components/fiches/FichesCatalogue.svelte';
+  import FichesPanel from '$lib/components/fiches/FichesPanel.svelte';
   import { immersiveMode } from '$lib/stores/uiStore.ts';
   import {
     exerciseList,
@@ -616,14 +618,48 @@
   // seconde suppression ferait réapparaître l'exercice retiré.
   afterNavigate(({ type }) => {
     if (type !== 'popstate' && type !== 'link') return;
+    syncFromData();
+  });
+
+  function syncFromData() {
     listTitle = data.title || '';
     ficheSource = readFicheSource();
     const dataUuids = (data.exercises ?? []).map((exercise) => exercise.uuid).join(',');
     if (dataUuids === $exerciseList.map((exercise) => exercise.uuid).join(',')) return;
     if (data.exercises?.length) showDataList();
     else listActions.clearList();
-  });
-  
+  }
+
+  // Panneau « Fiches » d'une liste remplie (l'état vide, lui, montre le
+  // catalogue directement : ses liens chargent la fiche comme un lien ordinaire).
+  let showFichesPanel = false;
+
+  async function replaceWithFiche(fiche) {
+    await goto(`/exercise/list?fiche=${encodeURIComponent(fiche.slug)}`);
+    // afterNavigate écarte les `goto` de la page : on resynchronise ici.
+    syncFromData();
+  }
+
+  // La fiche ajoutée se repère d'un coup d'œil dans la liste : ses sections
+  // portent son nom en tête (« Suites — Convergence »), une fiche plate devient
+  // une section à son nom. La liste n'affiche que `section`, pas le chemin.
+  async function appendFiche(fiche) {
+    const response = await fetch(`/api/fiches/${encodeURIComponent(fiche.slug)}`);
+    if (!response.ok) throw new Error('La fiche n\'a pas pu être chargée.');
+    const { exercises } = await response.json();
+    const firstAdded = $exerciseList.length;
+    exerciseList.update((list) => [
+      ...list,
+      ...exercises.map((exercise) => {
+        const sectionPath = [fiche.title, ...(exercise.sectionPath ?? [])];
+        const section = exercise.section ? `${fiche.title} — ${exercise.section}` : fiche.title;
+        return { ...exercise, sectionPath, section };
+      })
+    ]);
+    updateUrl();
+    await listActions.selectExercise(firstAdded);
+  }
+
   // Synchroniser la classe body avec le mode présentation
   $: if (typeof document !== 'undefined') {
     document.body.classList.toggle('presentation-mode', isPresentationMode);
@@ -1060,6 +1096,9 @@
     // les touches sont comparées en minuscules.
     if (event.ctrlKey || event.metaKey || event.altKey) return;
 
+    // Le panneau Fiches a ses propres touches (Échap, saisie du filtre).
+    if (showFichesPanel) return;
+
     // L'éditeur CodeMirror n'est ni un INPUT ni un TEXTAREA : toute touche
     // doit lui revenir, sans quoi taper « f » ou « p » lancerait la présentation.
     if (mode === 'editer') return;
@@ -1259,7 +1298,20 @@
         {/if}
 
         {#if $hasExercises}
-          <button 
+          <button
+            on:click={() => (showFichesPanel = true)}
+            class="list-action-btn list-action-btn--fiches"
+            class:list-action-btn--fiches-active={showFichesPanel}
+            aria-label="Ajouter ou ouvrir une fiche"
+            title="Ajouter ou ouvrir une fiche"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3H8a2 2 0 00-2 2v12a2 2 0 002 2h9a2 2 0 002-2V7l-4-4z M15 3v4h4 M3 7v12a2 2 0 002 2h9" />
+            </svg>
+            <span class="list-action-btn__label">Fiches</span>
+          </button>
+
+          <button
             on:click={clearList}
             class="list-action-btn list-action-btn--danger"
             aria-label="Vider la liste d'exercices"
@@ -1275,6 +1327,18 @@
     </svelte:fragment>
 
     <svelte:fragment slot="menu-actions">
+      {#if $hasExercises && mode === 'preparer' && sharedButtonsVisible}
+        <button
+          on:click={() => (showFichesPanel = true)}
+          class="list-action-btn list-action-btn--fiches"
+          aria-label="Ajouter ou ouvrir une fiche"
+          title="Fiches"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3H8a2 2 0 00-2 2v12a2 2 0 002 2h9a2 2 0 002-2V7l-4-4z M15 3v4h4 M3 7v12a2 2 0 002 2h9" />
+          </svg>
+        </button>
+      {/if}
       {#if $hasExercises}
         <button
           on:click={clearList}
@@ -1290,6 +1354,13 @@
     </svelte:fragment>
   </SeanceModeBar>
 {/if}
+
+<FichesPanel
+  bind:open={showFichesPanel}
+  currentCount={$exerciseList.length}
+  onappend={appendFiche}
+  onreplace={replaceWithFiche}
+/>
 
 {#if mode === 'preparer'}
 <div class="exercise-list-page" class:presentation-mode={isPresentationMode} class:full-presentation={isFullPresentation}>
@@ -1642,32 +1713,32 @@
 
   {#if !$hasExercises}
     <!-- État vide -->
-    <div class="empty-state">
-      <div class="empty-state-content">
-        <div class="empty-state-icon">
-          <svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
-        </div>
-        
-        <h2 class="empty-state-title">Aucun exercice dans cette liste</h2>
-        <p class="empty-state-description">
-          Ajoutez des exercices à votre liste en utilisant la recherche, ou utilisez le bouton "UUIDs" ci-dessus pour coller des identifiants d'exercices.
+    <!-- État vide : partir d'une fiche, ou composer sa liste -->
+    <div class="empty-start">
+      <section class="empty-start-fiches" aria-labelledby="empty-start-title">
+        <h2 id="empty-start-title" class="empty-start-title">Partir d'une fiche</h2>
+        <p class="empty-start-lead">
+          Des listes prêtes à présenter, partager ou exporter. Vous pourrez les modifier ensuite.
         </p>
-        
-        <div class="empty-state-actions">
-          <a 
-            href="/"
-            class="btn btn--primary"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-            Commencer la recherche
-          </a>
-        </div>
-        
-        <div class="empty-state-help">
+        <FichesCatalogue variant="cards" />
+      </section>
+
+      <div class="empty-start-compose">
+        <span class="empty-start-compose-label">Ou composer votre liste :</span>
+        <a href="/" class="empty-start-btn">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          Rechercher
+        </a>
+        <a href="/browse?vue=prepa" class="empty-start-btn">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z" />
+          </svg>
+          Parcourir les programmes
+        </a>
+
+        <div class="empty-start-help">
           <details class="help-details">
             <summary class="help-summary">Format d'URL accepté</summary>
             <div class="help-content">
@@ -2948,6 +3019,10 @@
   .list-action-btn--danger { @apply bg-error-500 text-white; }
   .list-action-btn--danger:hover { @apply bg-error-600; }
 
+  .list-action-btn--fiches { @apply bg-interface-bg-white text-interface-text-secondary border-interface-border-primary; }
+  .list-action-btn--fiches:hover,
+  .list-action-btn--fiches-active { @apply border-brand-500 text-brand-700; }
+
   /* Panneau de partage */
   .share-panel {
     position: absolute;
@@ -3282,13 +3357,19 @@
   }
 
   /* Empty state (scoped to list page) */
-  .exercise-list-page .empty-state { display:flex; align-items:center; justify-content:center; min-height:60vh; padding:2rem; }
-  .exercise-list-page .empty-state-content { text-align:center; max-width:28rem; }
-  .exercise-list-page .empty-state-icon { margin:0 auto 1.5rem; @apply text-interface-text-disabled; }
-  .exercise-list-page .empty-state-title { font-size:1.25rem; font-weight:600; margin:0 0 0.5rem; @apply text-interface-text-secondary; }
-  .exercise-list-page .empty-state-description { margin:0 0 2rem; line-height:1.6; @apply text-interface-text-secondary; }
-  .exercise-list-page .empty-state-actions { margin-bottom:2rem; }
-  .exercise-list-page .empty-state-help { padding-top:1.5rem; @apply border-t border-interface-border-primary; }
+  /* État vide : le catalogue des fiches d'abord, la composition ensuite. */
+  .empty-start { max-width:64rem; margin:0 auto; padding:2rem 1.25rem 3rem; display:flex; flex-direction:column; gap:1.75rem; }
+  .empty-start-title { font-size:1.25rem; font-weight:600; margin:0 0 0.25rem; @apply text-interface-text-primary; }
+  .empty-start-lead { margin:0 0 1rem; font-size:0.9rem; line-height:1.5; @apply text-interface-text-secondary; }
+  .empty-start-compose { display:flex; flex-wrap:wrap; align-items:center; gap:0.6rem; padding-top:1.25rem; @apply border-t border-interface-border-primary; }
+  .empty-start-compose-label { font-size:0.875rem; margin-right:0.25rem; @apply text-interface-text-secondary; }
+  .empty-start-btn { display:inline-flex; align-items:center; gap:0.4rem; padding:0.45rem 0.85rem; border-radius:0.5rem; font-size:0.875rem; font-weight:500; text-decoration:none; transition:border-color 0.15s, color 0.15s; @apply bg-interface-bg-white text-interface-text-primary border border-interface-border-primary; }
+  .empty-start-btn:hover { @apply border-brand-500 text-brand-700; }
+  .empty-start-help { margin-left:auto; }
+  @media (max-width: 640px) {
+    .empty-start { padding:1.25rem 1rem 2rem; }
+    .empty-start-help { margin-left:0; flex-basis:100%; }
+  }
   .exercise-list-page .help-details { text-align:left; }
   .exercise-list-page .help-summary { cursor:pointer; font-size:0.875rem; @apply text-interface-text-secondary; }
   .help-content { margin-top:0.5rem; padding:1rem; border-radius:0.375rem; font-size:0.875rem; @apply bg-interface-bg-secondary; }
@@ -3564,6 +3645,7 @@
     }
 
     .list-actions .list-action-btn--presentation,
+    .list-actions .list-action-btn--fiches,
     .list-actions .list-action-btn--danger {
       display: none;
     }

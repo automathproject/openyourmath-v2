@@ -43,3 +43,21 @@ test.describe('Accueil sur mobile', () => {
     expect(await piste.evaluate(el => el.scrollLeft)).toBe(avant);
   });
 });
+
+test.describe('En-tête sur mobile', () => {
+  test('les rubriques passent dans un menu qui se referme en changeant de page', async ({ page }) => {
+    await page.goto('/browse');
+    await expect(page.locator('.app-nav')).toBeHidden();
+
+    const menu = page.getByRole('button', { name: 'Menu' });
+    // Un clic avant l'hydratation ne fait rien : on recommence jusqu'à l'ouverture.
+    await expect(async () => {
+      if (await menu.getAttribute('aria-expanded') !== 'true') await menu.click();
+      await expect(menu).toHaveAttribute('aria-expanded', 'true', { timeout: 500 });
+    }).toPass();
+    await page.locator('.app-menu-panel').getByRole('link', { name: /Créer/ }).click();
+
+    await expect(page).toHaveURL(/\/create$/);
+    await expect(page.locator('.app-menu-panel')).toHaveCount(0);
+  });
+});
