@@ -1,7 +1,7 @@
 <!-- src/routes/+page.svelte -->
 <script>
   import { onMount } from 'svelte';
-  import { beforeNavigate, goto } from '$app/navigation';
+  import { beforeNavigate } from '$app/navigation';
   import { get } from 'svelte/store';
   import { browser } from '$app/environment';
   import ExercisePreview from '$lib/components/ExercisePreview.svelte';
@@ -14,7 +14,7 @@
   import MobileExercisePreview from '$lib/components/search/MobileExercisePreview.svelte';
   import RandomExercisesCarousel from '$lib/components/search/RandomExercisesCarousel.svelte';
   import { listActions } from '$lib/stores/listStore.js';
-  import { openExercise, isModifiedClick } from '$lib/utils/exerciseLink.js';
+  import { openExercise } from '$lib/utils/exerciseLink.js';
 
   import {
     searchQuery,
@@ -60,38 +60,8 @@
   const popularQueries = [
     'intégrale par parties',
     'suites récurrentes',
-    'espaces vectoriels',
-    'probabilités conditionnelles',
     'séries entières'
   ];
-
-  // Accès par classification. Les deux classifications du corpus : universitaire
-  // (niveau) et programmes de CPGE (filière).
-  const niveaux = ['L1', 'L2', 'L3'];
-  const filieres = ['MPSI', 'MP2I', 'PCSI', 'PTSI', 'BCPST', 'MP', 'MPI', 'PC', 'PSI', 'PT'];
-
-  // Les puces sont de vrais liens (clic milieu, copier l'adresse). Le clic simple
-  // écrit d'abord l'URL, puis ouvre la recherche : SearchSemantic, monté à ce
-  // moment, lit les filtres dans l'URL et lance la requête. L'adresse reste ainsi
-  // partageable et survit à un rechargement. Pas d'entrée d'historique en plus,
-  // comme pour les autres changements de la recherche (SearchSemantic.syncUrl).
-  async function openFilteredSearch(filterKey, value) {
-    await goto(`/?${filterKey}=${encodeURIComponent(value)}`, { replaceState: true, noScroll: true });
-    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'instant' });
-    searchInterfaceOpened = true;
-  }
-
-  function handleBrowseChip(event, filterKey, value) {
-    if (isModifiedClick(event)) return;
-    event.preventDefault();
-    return openFilteredSearch(filterKey, value);
-  }
-
-  // Téléphone : les dix filières tiennent dans une liste déroulante, sur une seule ligne.
-  function handleFiliereSelect(event) {
-    const value = event.currentTarget.value;
-    if (value) openFilteredSearch('filiere', value);
-  }
 
   function handleLandingSearch() {
     // Validation explicite (Entrée ou bouton) : on part en recherche quelle que
@@ -404,99 +374,55 @@
 >
   {#if isLanding}
     <!-- ── Landing hero ──────────────────────────────────────────── -->
+    <!-- L'accueil s'adresse à qui découvre le site : le nom, ce qu'on y trouve,
+         la recherche. Le reste (classes, programmes) passe par Parcourir, et
+         la recherche depuis les autres pages par sa fenêtre (Ctrl K). -->
     <section class="landing-hero">
-      <div class="landing-hero-inner">
-        <div class="landing-hero-layout">
-          <picture class="landing-logo-picture">
-            <source media="(max-width: 640px)" srcset="/img/logo_big.png" />
-            <img
-              class="landing-logo"
-              src="/img/logo_illustration.png"
-              alt="OpenYourMath"
-              width="990"
-              height="950"
+      <div class="landing-content">
+        <h1 class="landing-title">
+          <span class="sr-only">OpenYourMath.org</span>
+          <img
+            class="landing-title-logo"
+            src="/img/logo_wordmark.png"
+            alt=""
+            width="1145"
+            height="220"
+            aria-hidden="true"
+          />
+        </h1>
+        <p class="landing-subtitle">Plus de 8 000 exercices de mathématiques, libres et sans compte</p>
+
+        <div class="landing-search-box">
+          <div class="landing-input-wrap">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" class="landing-search-icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input
+              type="search"
+              bind:value={localLandingQuery}
+              on:input={handleLandingInput}
+              on:keydown={(e) => { if (e.key === 'Enter') handleLandingSearch(); }}
+              bind:clientWidth={landingInputWidth}
+              placeholder={compactPlaceholder ? 'Un exercice, une notion…' : 'Un exercice, une notion, un théorème…'}
+              aria-label="Rechercher des exercices"
+              use:focusInput
             />
-          </picture>
-          <div class="landing-content">
-            <div class="landing-copy">
-              <h1 class="landing-title">
-                <span class="sr-only">OpenYourMath.org</span>
-                <img
-                  class="landing-title-logo"
-                  src="/img/logo_wordmark.png"
-                  alt=""
-                  width="1145"
-                  height="220"
-                  aria-hidden="true"
-                />
-              </h1>
-              <p class="landing-subtitle">Plus de 8 000 exercices de mathématiques, librement accessibles</p>
-              <!-- Ce que la page n'exige pas, et ce qu'on y trouve : trois faits, pas plus. -->
-              <p class="landing-facts">
-                <span>Sans compte</span>
-                <span>Licences libres</span>
-                <span>Plus de 4 000 corrigés</span>
-              </p>
-            </div>
-
-            <div class="landing-search-box">
-              <div class="landing-input-wrap">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" class="landing-search-icon">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-                <input
-                  type="search"
-                  bind:value={localLandingQuery}
-                  on:input={handleLandingInput}
-                  on:keydown={(e) => { if (e.key === 'Enter') handleLandingSearch(); }}
-                  bind:clientWidth={landingInputWidth}
-                  placeholder={compactPlaceholder ? 'Un exercice, une notion…' : 'Cherche un exercice, une notion, un théorème…'}
-                  aria-label="Rechercher des exercices"
-                  use:focusInput
-                />
-              </div>
-              <button class="landing-search-btn" on:click={handleLandingSearch}>
-                <svg class="landing-search-btn-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-                <span class="landing-search-btn-label">Rechercher</span>
-              </button>
-            </div>
-
-            <div class="popular-row">
-              <span class="popular-label">Populaires :</span>
-              {#each popularQueries as pq}
-                <button class="popular-chip" on:click={() => handlePopularQuery(pq)}>{pq}</button>
-              {/each}
-            </div>
-
-            <nav class="browse-rows" aria-label="Parcourir par classification">
-              <div class="popular-row">
-                <span class="popular-label">Université :</span>
-                {#each niveaux as niveau}
-                  <a class="popular-chip" href="/?level={niveau}" on:click={(e) => handleBrowseChip(e, 'level', niveau)}>{niveau}</a>
-                {/each}
-              </div>
-              <div class="popular-row prepa-chips">
-                <span class="popular-label">Prépa :</span>
-                {#each filieres as filiere}
-                  <a class="popular-chip" href="/?filiere={filiere}" on:click={(e) => handleBrowseChip(e, 'filiere', filiere)}>{filiere}</a>
-                {/each}
-                <a class="browse-all" href="/browse?vue=prepa">Voir les programmes →</a>
-              </div>
-              <div class="prepa-select-row">
-                <label class="popular-label" for="landing-filiere">Prépa :</label>
-                <select id="landing-filiere" class="prepa-select" on:change={handleFiliereSelect}>
-                  <option value="">Filière…</option>
-                  {#each filieres as filiere}
-                    <option value={filiere}>{filiere}</option>
-                  {/each}
-                </select>
-                <a class="browse-all" href="/browse?vue=prepa">Programmes →</a>
-              </div>
-            </nav>
           </div>
+          <button class="landing-search-btn" on:click={handleLandingSearch}>
+            <svg class="landing-search-btn-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <span class="landing-search-btn-label">Rechercher</span>
+          </button>
         </div>
+
+        <div class="popular-row" aria-label="Recherches populaires" role="group">
+          {#each popularQueries as pq}
+            <button class="popular-chip" on:click={() => handlePopularQuery(pq)}>{pq}</button>
+          {/each}
+        </div>
+
+        <a class="browse-all" href="/browse">Parcourir par classe ou par programme →</a>
       </div>
     </section>
 
@@ -808,56 +734,21 @@
   .landing-hero {
     background: var(--color-interface-bg-white);
     border-bottom: 1px solid var(--color-interface-border-primary);
-    padding: 72px 24px 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .landing-hero-inner {
-    max-width: 860px;
-    width: 100%;
-  }
-
-  .landing-hero-layout {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  .landing-logo-picture {
-    display: block;
-    flex: 0 0 auto;
-  }
-
-  .landing-logo {
-    display: block;
-    width: clamp(9.5rem, 18vw, 14rem);
-    height: auto;
-    border-radius: 1.75rem;
-    filter: drop-shadow(0 18px 32px rgba(13, 60, 77, 0.12));
+    padding: 64px 24px 48px;
   }
 
   .landing-content {
-    min-width: 0;
-    flex: 1 1 34rem;
+    max-width: 38rem;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    gap: 1.25rem;
-  }
-
-  .landing-copy {
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-    text-align: left;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
   }
 
   .landing-title {
-    width: min(100%, 34rem);
+    width: min(100%, 26rem);
     margin: 0;
   }
 
@@ -869,22 +760,8 @@
 
   .landing-subtitle {
     font-size: 1rem;
-    margin: 0;
+    margin: -0.25rem 0 0.5rem;
     @apply text-interface-text-secondary;
-  }
-
-  .landing-facts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.15rem 0.6rem;
-    margin: 0;
-    font-size: 0.85rem;
-    @apply text-interface-text-secondary;
-  }
-
-  .landing-facts span + span::before {
-    content: '·';
-    margin-right: 0.6rem;
   }
 
   .landing-search-box {
@@ -903,6 +780,10 @@
     border-radius: 0.75rem;
     gap: 0.5rem;
     @apply border border-interface-border-primary bg-interface-bg-white;
+  }
+
+  .landing-input-wrap:focus-within {
+    @apply border-brand-500;
   }
 
   .landing-search-icon {
@@ -963,15 +844,10 @@
     gap: 0.5rem;
   }
 
-  .popular-label {
-    font-size: 0.875rem;
-    @apply text-interface-text-secondary;
-  }
-
   .popular-chip {
-    padding: 0.35rem 0.8rem;
+    padding: 0.3rem 0.8rem;
     border-radius: 9999px;
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     cursor: pointer;
     transition: background-color 0.15s, color 0.15s, border-color 0.15s;
     @apply border border-interface-border-primary bg-interface-bg-white text-interface-text-secondary;
@@ -981,64 +857,15 @@
     @apply bg-brand-50 border-brand-200 text-brand-700;
   }
 
-  a.popular-chip {
-    text-decoration: none;
-  }
-
-  .browse-rows {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
   .browse-all {
     font-size: 0.875rem;
-    text-decoration: underline;
+    font-weight: 500;
+    text-decoration: none;
     @apply text-brand-700;
   }
 
-  /* Liste déroulante des filières : réservée au téléphone (voir plus bas). */
-  .prepa-select-row {
-    display: none;
-  }
-
-  .prepa-select {
-    padding: 0.35rem 0.8rem;
-    border-radius: 9999px;
-    font-size: 1rem;
-    @apply border border-interface-border-primary bg-interface-bg-white text-interface-text-secondary;
-  }
-
-  /* Téléphone : dix filières et cinq requêtes en rangées qui se replient
-     occupaient la moitié de l'écran et repoussaient le carrousel hors de vue.
-     Les requêtes tiennent sur une ligne qui défile (le dégradé à droite signale
-     la suite ; le padding laisse la dernière puce le franchir) et les filières
-     passent dans une liste déroulante. */
-  @media (max-width: 640px) {
-    .prepa-chips {
-      display: none;
-    }
-    .prepa-select-row {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .popular-row {
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-      overflow-x: auto;
-      padding-right: 1.5rem;
-      scrollbar-width: none;
-      -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.5rem), transparent);
-      mask-image: linear-gradient(to right, #000 calc(100% - 1.5rem), transparent);
-    }
-    .popular-row::-webkit-scrollbar {
-      display: none;
-    }
-    .popular-row > * {
-      flex-shrink: 0;
-      white-space: nowrap;
-    }
+  .browse-all:hover {
+    text-decoration: underline;
   }
 
   .landing-discover {
@@ -1047,56 +874,17 @@
 
   @media (max-width: 640px) {
     .landing-hero {
-      padding: 24px 20px 18px;
-    }
-    .landing-hero-layout {
-      flex-direction: column;
-      gap: 0.65rem;
-    }
-    .landing-logo {
-      width: 8.25rem;
-      border-radius: 1.25rem;
+      padding: 28px 16px 22px;
     }
     .landing-content {
-      flex: 0 1 auto;
-      width: 100%;
       gap: 0.8rem;
     }
-    .landing-copy {
-      gap: 0.35rem;
-      text-align: center;
-    }
     .landing-title {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      padding: 0;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-      white-space: nowrap;
-      border: 0;
-    }
-    .landing-title-logo {
-      display: none;
+      width: min(100%, 17rem);
     }
     .landing-subtitle {
       font-size: 0.92rem;
-    }
-    /* Sur une ou deux lignes : les points séparateurs se retrouveraient en début de ligne. */
-    .landing-facts {
-      justify-content: center;
-      column-gap: 0.9rem;
-      font-size: 0.8rem;
-    }
-    .landing-facts span + span::before {
-      content: none;
-    }
-    .landing-search-box {
-      flex-direction: row;
-    }
-    .landing-input-wrap {
-      min-width: 0;
+      margin-bottom: 0.25rem;
     }
     .landing-search-btn {
       width: 3rem;

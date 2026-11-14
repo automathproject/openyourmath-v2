@@ -4,15 +4,16 @@
 
   Deux zones :
     - à gauche, les rubriques : Parcourir, Créer ;
-    - à droite, les outils : Rechercher (Ctrl K), Rejoindre une session en
-      direct, Ma liste (avec son compteur), À propos.
+    - à droite, les outils : Rechercher (Ctrl K, ouvre la fenêtre de
+      recherche par-dessus la page), Rejoindre une session en direct, Ma liste
+      (avec son compteur), À propos.
 
   Les fiches n'ont plus d'entrée propre : Ma liste les propose quand elle est
   vide, et par son bouton « Fiches » quand elle est remplie. Sur téléphone, il
   reste Rechercher, Ma liste et un menu qui regroupe le reste.
 
   Usage dans +layout.svelte :
-    <AppHeader seanceCount={…} listHref={…} />
+    <AppHeader seanceCount={…} listHref={…} onsearch={…} />
 -->
 
 <script>
@@ -22,9 +23,18 @@
    * @typedef {Object} Props
    * @property {number} [seanceCount] - badge sur "Ma liste"
    * @property {string} [listHref] - URL de la liste courante avec ses paramètres
+   * @property {() => void} [onsearch] - ouvre la fenêtre de recherche
    */
   /** @type {Props} */
-  let { seanceCount = 0, listHref = '/exercise/list' } = $props();
+  let { seanceCount = 0, listHref = '/exercise/list', onsearch } = $props();
+
+  // Un vrai lien vers l'accueil (clic du milieu, sans JavaScript) ; le clic
+  // simple ouvre la fenêtre de recherche sans quitter la page.
+  function openSearch(event) {
+    if (!onsearch || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    onsearch();
+  }
 
   let pathname = $derived($page.url.pathname);
   let menuOpen = $state(false);
@@ -88,7 +98,7 @@
   <div class="app-header-right">
     <!-- L'accueil porte déjà la grande barre de recherche. -->
     {#if pathname !== '/'}
-      <a href="/" class="tool tool-search" aria-label="Rechercher" title="Rechercher (Ctrl K)">
+      <a href="/" class="tool tool-search" aria-label="Rechercher" title="Rechercher (Ctrl K)" aria-haspopup="dialog" onclick={openSearch}>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/>
         </svg>

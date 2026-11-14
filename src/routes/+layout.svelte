@@ -9,8 +9,8 @@
   } from '$lib/stores/listStore.js';
   import { page } from '$app/stores';
   import { onMount } from 'svelte';
-  import { goto } from '$app/navigation';
   import AppHeader from '$lib/components/AppHeader.svelte';
+  import SearchPalette from '$lib/components/search/SearchPalette.svelte';
   import { immersiveMode } from '$lib/stores/uiStore.ts';
 
   const APP_VERSION = env.PUBLIC_APP_VERSION || 'dev';
@@ -30,11 +30,27 @@
     return params.length ? `/exercise/list?${params.join('&')}` : '/exercise/list';
   }
 
+  let searchPaletteOpen = false;
+
+  // Ctrl K ouvre la fenêtre de recherche. Sur l'accueil, qui a déjà son champ,
+  // on se contente d'y placer le curseur.
+  function openSearch() {
+    if ($page.url.pathname === '/') {
+      const field = document.querySelector('.search-page input[type="search"]');
+      if (field) {
+        field.focus();
+        field.select?.();
+        return;
+      }
+    }
+    searchPaletteOpen = true;
+  }
+
   onMount(() => {
     function handleKeydown(e) {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
-        goto('/');
+        openSearch();
       }
     }
     window.addEventListener('keydown', handleKeydown);
@@ -43,8 +59,10 @@
 </script>
 
 <div class="header-shell" class:header-shell--hidden={$immersiveMode}>
-  <AppHeader seanceCount={$listCount} {listHref} />
+  <AppHeader seanceCount={$listCount} {listHref} onsearch={openSearch} />
 </div>
+
+<SearchPalette bind:open={searchPaletteOpen} />
 
 <main class="main-content" class:main-content--immersive={$immersiveMode}>
   <slot />

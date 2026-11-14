@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-// Page d'accueil sur téléphone : les accès par classification doivent tenir en
-// peu de place et rester utilisables au toucher.
+// Page d'accueil sur téléphone : la recherche et le carrousel tiennent dans le
+// premier écran, sans débordement.
 
 test.describe('Accueil sur mobile', () => {
   test('la page ne déborde pas et le carrousel est visible sans défiler', async ({ page }) => {
@@ -14,20 +14,6 @@ test.describe('Accueil sur mobile', () => {
     const titre = page.getByRole('heading', { name: 'À découvrir' });
     const boite = await titre.boundingBox();
     expect(boite.y + boite.height).toBeLessThanOrEqual(page.viewportSize().height);
-  });
-
-  test('les filières se choisissent dans une liste déroulante, sans rangée de puces', async ({ page }) => {
-    // Seuls les filtres sont vérifiés : /api/search est limité à 30 requêtes par minute.
-    await page.route('**/api/search*', route => route.abort());
-    await page.goto('/');
-    await expect(page.locator('.prepa-chips')).toBeHidden();
-    await expect(page.locator('.carousel-nav-btn').first()).toBeHidden();
-
-    // Le focus du champ prouve que la page est hydratée : sans cela, le choix ne ferait rien.
-    await expect(page.locator('.landing-input-wrap input')).toBeFocused();
-    await page.locator('#landing-filiere').selectOption('PCSI');
-    await expect(page).toHaveURL(/[?&]filiere=PCSI/);
-    await expect(page.locator('.active-filters')).toContainText('Filière : PCSI');
   });
 
   test('les cartes du carrousel gardent leur cadre et ne défilent pas seules', async ({ page }) => {

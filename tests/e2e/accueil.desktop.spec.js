@@ -25,32 +25,19 @@ test("la page d'accueil ne bascule qu'à partir de trois caractères", async ({ 
   await expect(page).toHaveURL(/q=sui/);
 });
 
-test('les puces de classification ouvrent la recherche filtrée, avec le filtre dans l’URL', async ({ page }) => {
+test('les classes et les programmes passent par Parcourir', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('link', { name: 'Parcourir par classe ou par programme' }).click();
+  await expect(page).toHaveURL(/\/browse$/);
+});
+
+test('un lien qui porte un filtre ouvre toujours la recherche filtrée', async ({ page }) => {
   // On ne vérifie ici que les filtres, pas les résultats : /api/search est limité
   // à 30 requêtes par minute et par IP, et la suite entière s'en approche déjà.
   await page.route('**/api/search*', route => route.abort());
-  await page.goto('/');
-  const puces = page.locator('.browse-rows');
-  await expect(puces).toBeVisible();
-  // Même attente d'hydratation que ci-dessus : sans elle, le clic suit le lien nu.
-  await expect(page.locator('.landing-input-wrap input')).toBeFocused();
-
-  await puces.getByRole('link', { name: 'L2', exact: true }).click();
-  await expect(page).toHaveURL(/[?&]level=L2/);
-  await expect(page.locator('.active-filters')).toContainText('L2');
-  await expect(page.locator('.landing-hero')).toHaveCount(0);
-
-  await page.goto('/');
-  await expect(page.locator('.landing-input-wrap input')).toBeFocused();
-  await page.locator('.browse-rows').getByRole('link', { name: 'PCSI', exact: true }).click();
-  await expect(page).toHaveURL(/[?&]filiere=PCSI/);
+  await page.goto('/?filiere=PCSI');
   await expect(page.locator('.active-filters')).toContainText('Filière : PCSI');
-});
-
-test('le lien « Voir les programmes » mène à la vue Prépa du catalogue', async ({ page }) => {
-  await page.goto('/');
-  await page.getByRole('link', { name: 'Voir les programmes' }).click();
-  await expect(page).toHaveURL(/\/browse\?vue=prepa/);
+  await expect(page.locator('.landing-hero')).toHaveCount(0);
 });
 
 test('un clic sur une carte du carrousel ouvre l’exercice, sans filtre implicite', async ({ page }) => {
@@ -66,9 +53,7 @@ test('un clic sur une carte du carrousel ouvre l’exercice, sans filtre implici
 
 test('la page d’accueil annonce qu’aucun compte n’est nécessaire', async ({ page }) => {
   await page.goto('/');
-  const faits = page.locator('.landing-facts');
-  await expect(faits).toContainText('Sans compte');
-  await expect(faits).toContainText('Licences libres');
+  await expect(page.locator('.landing-subtitle')).toContainText('libres et sans compte');
 });
 
 for (const largeur of [768, 700, 660]) {
