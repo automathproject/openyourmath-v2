@@ -19,6 +19,10 @@ L'ordre d'une série fait partie du contenu. Ses questions ne sont jamais des
 fichiers séparés : sur le site, une question ne s'ouvre qu'une fois la
 précédente validée, et une session en direct les joue dans l'ordre du fichier.
 
+Un qcm se rédige aussi sur le site, dans l'éditeur `/create` en mode QCM
+(voir [Éditeur de création](creation-exercice.md#créer-un-qcm)) : le `.tex`
+exporté est à déposer dans `exobase/content/qcm/<source>/`.
+
 ## Pipeline
 
 ```text

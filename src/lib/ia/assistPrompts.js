@@ -154,3 +154,195 @@ export function buildFixLatexPrompt({
   parts.push(`Texte à corriger :\n${String(content).trim()}`);
   return parts.join("\n\n");
 }
+
+// ── QCM ──────────────────────────────────────────────────────────────────────
+
+/**
+ * Consigne système des modes qcm ('qcm' et 'distractors'). Distincte de
+ * SYSTEM_PROMPT : la sortie n'est pas du LaTeX libre mais un format balisé
+ * (voir QCM_OUTPUT_FORMAT), choisi plutôt que du JSON pour que les
+ * contre-obliques du LaTeX n'aient pas à être échappées.
+ */
+export const QCM_SYSTEM_PROMPT = `Tu es un enseignant de mathématiques du supérieur, expérimenté dans la conception de QCM diagnostiques pour la plateforme OpenYourMath. Tu connais les erreurs que commettent réellement les étudiants et tu construis chaque réponse fausse à partir de l'une d'elles.
+
+Règles de rédaction impératives :
+- Rédige en français, en LaTeX compatible KaTeX. Mathématiques en ligne entre $...$ (jamais \\(...\\)), formules centrées entre \\[...\\].
+- Seules les formules sont en mode mathématique : une phrase s'écrit en texte courant, jamais dans \\text{...} à l'intérieur d'une formule. Exemple : « Si $(u_n)$ converge, alors $(u_n)$ est bornée. »
+- N'utilise JAMAIS de Markdown (ni **gras**, ni titres #, ni puces, ni \`code\`) ni d'environnement enumerate ou itemize.
+- Aucune macro personnelle : écris \\mathbb{R}, \\mathbb{N}, \\mathbb{Z}, \\mathbb{Q}, \\mathbb{C}, \\mathrm{d}x.
+- Une réponse de QCM est courte et autonome : une formule, une valeur ou une phrase. Elle ne renvoie jamais à une autre réponse.
+- Respecte exactement le format de sortie demandé : mêmes balises entre crochets, mêmes noms de champ en majuscules, rien après la dernière réponse.`;
+
+/**
+ * Ce qui fait un bon distracteur. Partagé par la génération de distracteurs
+ * pour une question existante et par la génération d'une question complète.
+ */
+export const DISTRACTOR_RULES = `Un distracteur n'est pas une réponse fausse quelconque : c'est la réponse à laquelle aboutit un étudiant qui commet UNE erreur précise et fréquente. Cocher ce distracteur doit révéler cette erreur.
+
+Méthode, dans cet ordre :
+1. Résous la question toi-même, complètement, avant d'écrire la moindre réponse.
+2. Recense les erreurs que font réellement les étudiants de ce niveau sur cette question précise, par exemple : erreur de signe ou de calcul à une étape identifiable ; hypothèse oubliée ou non vérifiée ; confusion entre deux notions, deux définitions ou deux formules voisines ; réciproque fausse, implication prise pour une équivalence ; condition nécessaire prise pour suffisante ; quantificateurs intervertis ; cas particulier généralisé à tort ; règle appliquée hors de son domaine de validité (linéarité abusive, dérivée d'une composée sans la dérivée intérieure, interversion non justifiée) ; borne, indice ou constante décalés ; inégalité stricte confondue avec une inégalité large.
+3. Pour chaque erreur retenue, mène le raisonnement erroné jusqu'au bout : le distracteur est le résultat qu'obtient cet étudiant, ou l'assertion qu'il croirait vraie.
+4. Vérifie chaque distracteur avant de le livrer.
+
+Exigences pour chaque distracteur :
+- FAUX SANS AMBIGUÏTÉ. Il n'est ni égal à une réponse juste sous une autre écriture (forme factorisée, développée, simplifiée, à une constante d'intégration près), ni vrai dans le cadre de l'énoncé, ni « vrai sous une condition » que l'énoncé n'exclut pas. Pour une assertion, tu dois pouvoir citer un contre-exemple ; pour un résultat, la valeur exacte qui le contredit. Une réponse est juste ou fausse en bloc : jamais de conclusion juste assortie d'une justification fausse, ni l'inverse.
+- PLAUSIBLE. Un étudiant qui maîtrise à moitié le cours doit hésiter. Aucune réponse absurde ou hors sujet. Avant de retenir un distracteur, demande-toi si un étudiant attentif peut l'écarter sans faire le calcul : valeur négative pour l'intégrale d'une fonction positive, probabilité hors de $[0,1]$, ordre de grandeur, parité ou nature de l'objet incompatibles avec l'énoncé. Si oui, abandonne-le et vise une autre erreur.
+- FIDÈLE À SON ERREUR. La réponse est exactement ce que donne le raisonnement erroné annoncé, mené jusqu'au bout avec les données de l'énoncé : refais ce calcul, ne l'estime pas.
+- UNE ERREUR DISTINCTE PAR DISTRACTEUR. Pas deux écritures d'une même valeur, pas deux variantes de la même erreur, pas de variante d'une réponse fausse déjà présente.
+- INDISCERNABLE PAR LA FORME. Même nature d'objet, même type d'écriture, même degré de simplification, longueur et précision comparables à celles des réponses justes. Aucun indice de formulation : pas de « toujours » ou « jamais » réservés aux réponses fausses, pas de réponse nettement plus longue, plus vague ou plus détaillée que les autres.
+- AUTONOME. Jamais « aucune des réponses », « toutes les réponses », ni de renvoi à une autre réponse : l'ordre des réponses peut changer.
+- L'ERREUR VISÉE EST MATHÉMATIQUE. Pas de piège de lecture, de formulation ambiguë ni de coquille déguisée.
+
+Si la question demande de reconnaître des assertions vraies, chaque distracteur est une assertion fausse du même thème, obtenue en altérant un énoncé vrai là où les étudiants se trompent (hypothèse retirée, réciproque, quantificateur, inégalité stricte ou large, borne).
+
+Si la question n'admet pas autant d'erreurs plausibles que demandé, livre moins de distracteurs : deux bons distracteurs valent mieux que quatre dont deux de remplissage.`;
+
+const DISTRACTOR_FIELDS = `ERREUR : l'erreur de l'étudiant qui mène à cette réponse, en une phrase précise (à destination de l'auteur du QCM)
+CALCUL : le raisonnement erroné de cet étudiant, mené jusqu'au résultat avec les données de l'énoncé
+REPONSE : le distracteur lui-même, en LaTeX, tel qu'il sera affiché ; c'est le résultat du champ CALCUL
+VERIFICATION : la preuve que cette réponse est fausse (contre-exemple, ou valeur exacte qui la contredit), et la raison pour laquelle on ne peut pas l'écarter sans calcul
+VALIDE : oui si la réponse est fausse, distincte des autres, fidèle à l'erreur annoncée et non éliminable sans calcul ; non sinon
+FEEDBACK : une ou deux phrases adressées à l'étudiant qui a coché cette réponse ; elles nomment son erreur et le point de cours à revoir, sans se borner à dire que c'est faux`;
+
+/**
+ * Format de sortie des distracteurs. La section [ANALYSE] donne au modèle la
+ * place de résoudre la question avant de répondre ; elle n'est pas lue.
+ */
+export const DISTRACTOR_OUTPUT_FORMAT = `Format de sortie, à respecter exactement :
+
+[ANALYSE]
+Résolution brève de la question, puis liste des erreurs d'étudiants retenues (dix lignes au plus).
+
+[DISTRACTEUR]
+${DISTRACTOR_FIELDS}
+
+Répète le bloc [DISTRACTEUR] pour chaque distracteur. Un champ par ligne, le nom du champ en majuscules suivi de deux-points. Un distracteur dont la vérification échoue reçoit « VALIDE : non » : il sera écarté.`;
+
+export const DISTRACTOR_TASK = `Rédige les distracteurs (réponses fausses) de la question de QCM ci-dessous.
+
+${DISTRACTOR_RULES}`;
+
+export const QCM_QUESTION_TASK = `Rédige des questions de QCM complètes : énoncé, réponses justes, distracteurs et correction.
+
+Exigences pour chaque question :
+- L'énoncé est autonome : il pose toutes les données, les notations et les hypothèses, et demande une seule chose. On doit pouvoir y répondre sans lire les réponses proposées.
+- Il appelle naturellement le nombre de réponses demandé : résultat d'un calcul, valeur, objet ou propriété à identifier. Pas de question fermée en oui/non, qui n'admet qu'un seul distracteur.
+- Il évalue une compréhension ou une technique du cours, pas la mémorisation d'un détail ni une lecture piégeuse. Pas de tournure négative (« laquelle n'est pas… ») sauf nécessité.
+- Les réponses justes le sont sans discussion, les réponses fausses le sont sans ambiguïté.
+- Toutes les réponses d'une même question ont la même forme.
+
+Les réponses fausses sont des distracteurs, construits ainsi :
+
+${DISTRACTOR_RULES}`;
+
+export const QCM_OUTPUT_FORMAT = `Format de sortie, à respecter exactement :
+
+[QUESTION]
+ENONCE : l'énoncé de la question, en LaTeX
+RESOLUTION : la correction rédigée pour l'étudiant, qui établit les réponses justes (elle est écrite avant les réponses : c'est elle qui les détermine)
+[JUSTE]
+REPONSE : une réponse juste, en LaTeX
+[FAUX]
+${DISTRACTOR_FIELDS}
+
+Répète [JUSTE] et [FAUX] autant que nécessaire, puis recommence à [QUESTION] pour la question suivante. Un champ par ligne, le nom du champ en majuscules suivi de deux-points. L'ordre des réponses n'a pas d'importance : elles seront mélangées. Une réponse fausse dont la vérification échoue reçoit « VALIDE : non » : elle sera écartée, prévois-en donc une de remplacement.`;
+
+const QCM_TYPE_DESCRIPTIONS = {
+  onlyone: "une seule réponse juste (l'étudiant en choisit une)",
+  truefalse: "une seule réponse juste (l'étudiant en choisit une)",
+  onetoall:
+    "une ou plusieurs réponses justes (l'étudiant doit cocher toutes les réponses justes, et elles seules)",
+  zerotoall:
+    "zéro, une ou plusieurs réponses justes (l'étudiant coche toutes les réponses justes, s'il y en a)",
+};
+
+const bulletList = (items) =>
+  items.map((item) => `- ${String(item).trim()}`).join("\n");
+
+/**
+ * Consigne de génération de distracteurs pour une question déjà rédigée.
+ *
+ * @param {Object} options
+ * @param {{ stem: string, type?: string, choices?: Array<{latex: string, correct: boolean}>, explanation?: string }} options.question
+ * @param {number} [options.count]        — nombre de distracteurs souhaités
+ * @param {string} [options.instruction]  — précision libre de l'auteur
+ * @returns {string}
+ */
+export function buildDistractorPrompt({
+  question,
+  count = 3,
+  instruction = "",
+} = {}) {
+  const choices = (question?.choices || []).filter((choice) =>
+    String(choice?.latex ?? "").trim(),
+  );
+  const correct = choices
+    .filter((choice) => choice.correct)
+    .map((choice) => choice.latex);
+  const wrong = choices
+    .filter((choice) => !choice.correct)
+    .map((choice) => choice.latex);
+
+  const parts = [
+    DISTRACTOR_TASK,
+    `Question :\n${String(question?.stem ?? "").trim()}`,
+    `Type de question : ${QCM_TYPE_DESCRIPTIONS[question?.type] || QCM_TYPE_DESCRIPTIONS.onlyone}.`,
+    correct.length
+      ? `Réponses justes fournies par l'auteur :\n${bulletList(correct)}`
+      : "L'auteur n'a pas encore indiqué de réponse juste : détermine-la toi-même dans l'analyse.",
+  ];
+  if (wrong.length) {
+    parts.push(
+      `Réponses fausses déjà présentes (n'en propose ni copie ni variante) :\n${bulletList(wrong)}`,
+    );
+  }
+  if (String(question?.explanation ?? "").trim()) {
+    parts.push(
+      `Correction rédigée par l'auteur :\n${String(question.explanation).trim()}`,
+    );
+  }
+  if (String(instruction).trim()) {
+    parts.push(`Précision de l'auteur : ${String(instruction).trim()}`);
+  }
+  parts.push(`Nombre de distracteurs attendus : ${count} au plus.`);
+  parts.push(DISTRACTOR_OUTPUT_FORMAT);
+  return parts.join("\n\n");
+}
+
+/**
+ * Consigne de génération de questions de QCM complètes à partir d'un brief.
+ *
+ * @param {Object} options
+ * @param {string} [options.instruction]   — brief de l'auteur
+ * @param {number} [options.questionCount] — nombre de questions
+ * @param {number} [options.answerCount]   — nombre de réponses par question
+ * @param {string} [options.type]          — 'onlyone' | 'onetoall'
+ * @returns {string}
+ */
+export function buildQcmPrompt({
+  instruction = "",
+  questionCount = 1,
+  answerCount = 4,
+  type = "onlyone",
+} = {}) {
+  const single = type === "onlyone" || type === "truefalse";
+  const parts = [QCM_QUESTION_TASK];
+  if (String(instruction).trim()) {
+    parts.push(`Demande de l'auteur : ${String(instruction).trim()}`);
+  }
+  parts.push(
+    [
+      "Contraintes :",
+      questionCount > 1
+        ? `- Exactement ${questionCount} questions, qui forment une série ordonnée : elles partagent le contexte déjà fourni, se jouent dans cet ordre, et chacune peut s'appuyer sur les précédentes sans les répéter.`
+        : "- Exactement une question, indépendante et lisible seule.",
+      `- Type : ${QCM_TYPE_DESCRIPTIONS[type] || QCM_TYPE_DESCRIPTIONS.onlyone}.`,
+      single
+        ? `- ${answerCount} réponses par question : une seule juste et ${answerCount - 1} distracteurs.`
+        : `- ${answerCount} réponses par question, dont au moins une juste et au moins un distracteur ; fais varier le nombre de réponses justes d'une question à l'autre.`,
+    ].join("\n"),
+  );
+  parts.push(QCM_OUTPUT_FORMAT);
+  return parts.join("\n\n");
+}

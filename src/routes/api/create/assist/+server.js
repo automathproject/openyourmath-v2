@@ -1,6 +1,8 @@
 // src/routes/api/create/assist/+server.js
 // Assistant IA de rédaction d'exercices : génère une question, une indication,
 // une solution ou un texte d'introduction via l'API Albert (openai/gpt-oss-120b).
+// Pour un qcm : une question complète (mode 'qcm') ou les distracteurs d'une
+// question déjà rédigée (mode 'distractors').
 
 import { json, error } from "@sveltejs/kit";
 import {
@@ -19,7 +21,11 @@ import {
   META_TASKS,
   REVISION_TASK,
   LINEAR_STRUCTURE_RETRY_TASK,
+  QCM_SYSTEM_PROMPT,
+  buildDistractorPrompt,
+  buildQcmPrompt,
 } from "$lib/ia/assistPrompts.js";
+import { parseDistractorOutput, parseQcmOutput } from "$lib/ia/qcmAssist.js";
 import { getChapterStructure } from "$lib/db/queries.js";
 import {
   limitedSequenceLatex,
@@ -35,7 +41,35 @@ const VALID_MODES = new Set([
   "reponse",
   "metadata",
   "fixlatex",
+  "qcm",
+  "distractors",
 ]);
+
+const QCM_MODES = new Set(["qcm", "distractors"]);
+const QCM_TYPES = new Set(["onlyone", "onetoall", "zerotoall", "truefalse"]);
+
+/** Entier borné, ou la valeur par défaut. */
+function boundedInt(value, min, max, fallback) {
+  const number = Number(value);
+  return Number.isInteger(number) && number >= min && number <= max
+    ? number
+    : fallback;
+}
+
+/** Question de qcm reçue du client, réduite à ce que la consigne utilise. */
+function sanitizeQcmQuestion(question) {
+  return {
+    stem: String(question?.stem ?? "").slice(0, 6000),
+    type: QCM_TYPES.has(question?.type) ? question.type : "onlyone",
+    explanation: String(question?.explanation ?? "").slice(0, 4000),
+    choices: (Array.isArray(question?.choices) ? question.choices : [])
+      .slice(0, 12)
+      .map((choice) => ({
+        latex: String(choice?.latex ?? "").slice(0, 1500),
+        correct: Boolean(choice?.correct),
+      })),
+  };
+}
 
 // ── Taxonomie existante (pour ancrer les suggestions de métadonnées) ─────────
 
@@ -338,6 +372,10 @@ export async function POST(event) {
     taskPrompt = "",
     field = "",
     questionCount = null,
+    qcmQuestion = null,
+    count = null,
+    answerCount = null,
+    qcmType = "",
   } = payload || {};
   if (!VALID_MODES.has(mode)) {
     throw error(400, { message: `Mode invalide : ${mode}` });
@@ -354,6 +392,17 @@ export async function POST(event) {
       message: "targetLatex requis pour ce mode",
     });
   }
+  const targetQuestion =
+    mode === "distractors" ? sanitizeQcmQuestion(qcmQuestion) : null;
+  if (mode === "distractors" && !targetQuestion.stem.trim()) {
+    throw error(400, { message: "Énoncé de la question requis" });
+  }
+  const qcmOptions = {
+    count: boundedInt(count, 1, 6, 3),
+    questionCount: boundedInt(questionCount, 1, 8, 1),
+    answerCount: boundedInt(answerCount, 2, 6, 4),
+    type: QCM_TYPES.has(qcmType) ? qcmType : "onlyone",
+  };
   if (mode === "revise" && !String(instruction).trim()) {
     throw error(400, { message: "Modification à répercuter requise" });
   }
@@ -387,6 +436,19 @@ export async function POST(event) {
         content: String(targetLatex).slice(0, 8000),
         instruction: String(instruction),
       });
+  } else if (mode === "distractors") {
+    task = buildDistractorPrompt({
+      question: targetQuestion,
+      count: qcmOptions.count,
+      instruction: String(instruction),
+    });
+  } else if (mode === "qcm") {
+    task = buildQcmPrompt({
+      instruction: String(instruction),
+      questionCount: qcmOptions.questionCount,
+      answerCount: qcmOptions.answerCount,
+      type: qcmOptions.type,
+    });
   } else if (String(taskPrompt).trim()) {
     task = String(taskPrompt).trim();
   } else {
@@ -420,18 +482,31 @@ export async function POST(event) {
               timeoutMs: 90_000,
               jsonMode: true,
             }
-          : {
-              model: MODELS.chatLarge,
-              temperature: 0.3,
-              maxTokens: 2000,
-              timeoutMs: 90_000,
-            };
+          : QCM_MODES.has(mode)
+            ? {
+                // Le modèle résout la question et vérifie chaque distracteur
+                // avant de répondre : le budget couvre cette analyse.
+                model: MODELS.chatLarge,
+                temperature: 0.4,
+                maxTokens: mode === "qcm" ? 6000 : 3500,
+                timeoutMs: 120_000,
+              }
+            : {
+                model: MODELS.chatLarge,
+                temperature: 0.3,
+                maxTokens: 2000,
+                timeoutMs: 90_000,
+              };
 
   trackAlbertChat();
 
   try {
     const systemPrompt =
-      mode === "fixlatex" ? FIX_LATEX_SYSTEM_PROMPT : SYSTEM_PROMPT;
+      mode === "fixlatex"
+        ? FIX_LATEX_SYSTEM_PROMPT
+        : QCM_MODES.has(mode)
+          ? QCM_SYSTEM_PROMPT
+          : SYSTEM_PROMPT;
     const baseMessages = [
       { role: "system", content: systemPrompt },
       {
@@ -442,6 +517,58 @@ export async function POST(event) {
     const callModel = (messages) =>
       withRetry(() => chatMessages(messages, generation), { maxAttempts: 2 });
     const raw = await callModel(baseMessages);
+
+    if (QCM_MODES.has(mode)) {
+      // Trait d'union insécable (U+2011), fréquent dans les réponses du
+      // modèle et absent des polices de pdflatex : ramené au trait d'union.
+      const clean = (text) =>
+        stripMarkdownArtifacts(String(text).replace(/‑/g, "-").trim());
+      const result =
+        mode === "distractors"
+          ? {
+              distractors: parseDistractorOutput(raw, {
+                existing: targetQuestion.choices.map((choice) => choice.latex),
+                count: qcmOptions.count,
+                clean,
+              }),
+            }
+          : {
+              questions: parseQcmOutput(raw, {
+                type: qcmOptions.type,
+                count: qcmOptions.questionCount,
+                answerCount: qcmOptions.answerCount,
+                clean,
+              }),
+            };
+      const items = result.distractors ?? result.questions;
+      console.log(
+        JSON.stringify({
+          ts: new Date().toISOString(),
+          type: "create-assist",
+          mode,
+          latencyMs: Date.now() - t0,
+          items: items.length,
+          outputChars: String(raw).length,
+          ip: ip.slice(0, 7) + "…",
+        }),
+      );
+      if (!items.length) {
+        console.error(
+          "[create/assist] QCM : réponse sans élément exploitable.\nRéponse brute (tronquée):",
+          String(raw).slice(0, 2000),
+        );
+        return json(
+          {
+            error:
+              mode === "distractors"
+                ? "L'IA n'a proposé aucun distracteur exploitable, réessayez (éventuellement en précisant l'erreur à viser)."
+                : "L'IA n'a produit aucune question exploitable, réessayez (éventuellement en précisant la demande).",
+          },
+          { status: 502 },
+        );
+      }
+      return json({ ...result, model: generation.model });
+    }
 
     let revisionBlocks = null;
     if (mode === "revise") {

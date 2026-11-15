@@ -5,6 +5,9 @@
   à droite le rendu tel qu'il apparaîtra sur le site.
   Export .tex au format des sources de content/exercises/.
 
+  L'éditeur compose aussi des qcm (bascule Exercice / QCM) : les blocs cèdent
+  alors la place à QcmEditor, et l'export suit le format de content/qcm/.
+
   La page porte l'état et la logique métier (blocs, IA, import, export) ;
   chaque section de l'UI est déléguée à un composant dédié sous
   $lib/components/create/ (MetaFields, AiSequencePanel, RevisionPanel,
@@ -21,9 +24,23 @@
   import BlockCard from '$lib/components/create/BlockCard.svelte';
   import BlockAddRow from '$lib/components/create/BlockAddRow.svelte';
   import PreviewPane from '$lib/components/create/PreviewPane.svelte';
+  import QcmEditor from '$lib/components/create/QcmEditor.svelte';
   import LatexCompiler from '$lib/components/LatexCompiler.svelte';
   import LatexContentOptions from '$lib/components/LatexContentOptions.svelte';
-  import { blocksToPreviewContent } from '$lib/latex/texPreview.js';
+  import { blocksToPreviewContent, latexToPreviewHtml } from '$lib/latex/texPreview.js';
+  import {
+    buildQcmTex,
+    emptyQcmDraft,
+    filledQuestions,
+    isQcmSource,
+    newQcmChoice,
+    newQcmQuestion,
+    qcmDraftFromSource,
+    qcmFragments,
+    qcmHasContent,
+    qcmToBlocks,
+    reviveQcmDraft,
+  } from '$lib/qcm/editor.js';
   import {
     buildExerciseTex,
     parseExerciseTex,
@@ -71,6 +88,13 @@
   // ── État ──────────────────────────────────────────────────────────────────
   let meta = $state(emptyMeta());
   let blocks = $state([newBlock('text'), newBlock('question')]);
+  // Nature du contenu en cours : un exercice (blocs) ou un qcm (questions à cocher).
+  let kind = $state('exercise'); // 'exercise' | 'qcm'
+  let qcm = $state(emptyQcmDraft());
+  let qcmInstruction = $state('');
+  let qcmQuestionCount = $state(1);
+  let qcmAnswerCount = $state(4);
+  let qcmGeneratedType = $state('onlyone');
 
   let rightTab = $state('preview'); // 'preview' | 'source'
   let finalPreview = $state(null);
@@ -106,9 +130,9 @@
   let importedDrafts = $state([]);
   let activeImportedDraftId = $state(null);
 
-  // Champ actif pour l'assistant LaTeX
+  // Champ actif pour l'assistant LaTeX, et la façon d'y écrire
   let activeTextarea = null;
-  let activeBlockId = null;
+  let activeWrite = null;
 
   let restored = false;
 
@@ -137,12 +161,24 @@
     return [...result, ...blocks.filter((b) => !included.has(b.id))];
   }
 
+  /** Blocs { type, latex } du contenu en cours, exercice ou qcm : contexte de l'IA et export papier. */
+  function contentBlocks() {
+    return kind === 'qcm'
+      ? qcmToBlocks(qcm).map((b) => ({ type: b.type, latex: b.latex }))
+      : documentBlocks().map((b) => ({ type: b.type, latex: b.latex }));
+  }
+
+  let hasContent = $derived(kind === 'qcm' ? qcmHasContent(qcm) : blocks.some((b) => b.latex.trim()));
+
   // ── Aperçu (debounce 300 ms) ──────────────────────────────────────────────
   let previewContent = $state([]);
   $effect(() => {
+    const qcmSnapshot = kind === 'qcm' ? $state.snapshot(qcm) : null;
     const snapshot = documentBlocks().map((b) => ({ id: b.id, type: b.type, latex: b.latex }));
     const timer = setTimeout(() => {
-      previewContent = blocksToPreviewContent(snapshot);
+      previewContent = qcmSnapshot
+        ? qcmToBlocks(qcmSnapshot, latexToPreviewHtml)
+        : blocksToPreviewContent(snapshot);
     }, 300);
     return () => clearTimeout(timer);
   });
@@ -150,22 +186,26 @@
   // Le rendu Pandoc est une vérification ponctuelle : toute modification le
   // rend obsolète et ramène automatiquement à l'aperçu instantané.
   $effect(() => {
-    documentBlocks().map((block) => `${block.type}:${block.latex}`);
+    if (kind === 'qcm') JSON.stringify(qcm);
+    else documentBlocks().map((block) => `${block.type}:${block.latex}`);
     finalPreview = null;
     finalPreviewError = '';
   });
 
   let previewExercise = $derived({
     ...meta,
+    ...(kind === 'qcm' && { content_type: 'qcm' }),
     difficulty: meta.difficulty ? Number(meta.difficulty) : null,
     artifacts: {},
   });
 
   let texSource = $derived(
-    buildExerciseTex(
-      meta,
-      documentBlocks().map((b) => ({ type: b.type, latex: b.latex }))
-    )
+    kind === 'qcm'
+      ? buildQcmTex(meta, qcm)
+      : buildExerciseTex(
+          meta,
+          documentBlocks().map((b) => ({ type: b.type, latex: b.latex }))
+        )
   );
 
   // Le format OpenYourMath exporté ci-dessus est volontairement un format de
@@ -177,11 +217,7 @@
     exercises: [{
       uuid: meta.uuid || 'exercice',
       title: meta.title || 'Exercice',
-      content: documentBlocks().map((block, index) => ({
-        type: block.type,
-        latex: block.latex,
-        order: index + 1,
-      })),
+      content: contentBlocks().map((block, index) => ({ ...block, order: index + 1 })),
     }],
     title: meta.title || 'Exercice',
     // L'éditeur nomme le document d'après l'uuid, pas d'après le titre.
@@ -192,7 +228,11 @@
   let latexDocumentSource = $derived(latexExport.source);
   let latexDocumentFilename = $derived(latexExport.texFileName);
 
-  let questionCount = $derived(blocks.filter((b) => b.type === 'question' && b.latex.trim()).length);
+  let questionCount = $derived(
+    kind === 'qcm'
+      ? filledQuestions(qcm).length
+      : blocks.filter((b) => b.type === 'question' && b.latex.trim()).length
+  );
   // Liste affichée (ordre pédagogique) : figée une fois par rendu pour que
   // le repère "dernier bloc d'un groupe de question" (docBlocks[i+1]) reste
   // cohérent avec ce qui est effectivement affiché.
@@ -249,6 +289,8 @@
         const draft = JSON.parse(raw);
         if (draft?.meta && Array.isArray(draft?.blocks)) {
           meta = { ...emptyMeta(), ...draft.meta };
+          kind = draft.kind === 'qcm' ? 'qcm' : 'exercise';
+          if (draft.qcm) qcm = reviveQcmDraft(draft.qcm);
           let lastQuestionId = null;
           blocks = draft.blocks.map((b) => {
             const type = b.type || 'text';
@@ -288,6 +330,8 @@
     const payload = JSON.stringify({
       meta: { ...meta },
       blocks: blocks.map((b) => ({ type: b.type, latex: b.latex, questionId: b.questionId || null })),
+      kind,
+      qcm,
     });
     if (!restored) return;
     const timer = setTimeout(() => {
@@ -419,19 +463,26 @@
 
   // ── Assistant LaTeX ───────────────────────────────────────────────────────
   function registerFocus(event, blockId) {
+    registerFieldFocus(event, (value) => {
+      const block = blocks.find((b) => b.id === blockId);
+      if (block) block.latex = value;
+    });
+  }
+
+  /** Champ quelconque (ceux d'un qcm) : `write` range la nouvelle valeur dans l'état. */
+  function registerFieldFocus(event, write) {
     activeTextarea = event.currentTarget;
-    activeBlockId = blockId;
+    activeWrite = write;
   }
 
   function insertSnippet({ before, after }) {
     const ta = activeTextarea;
-    const block = blocks.find((b) => b.id === activeBlockId);
-    if (!ta || !block) return;
+    if (!ta || !activeWrite || !ta.isConnected) return;
 
     const start = ta.selectionStart ?? ta.value.length;
     const end = ta.selectionEnd ?? ta.value.length;
     const selected = ta.value.slice(start, end);
-    block.latex = ta.value.slice(0, start) + before + selected + after + ta.value.slice(end);
+    activeWrite(ta.value.slice(0, start) + before + selected + after + ta.value.slice(end));
 
     tick().then(() => {
       ta.focus();
@@ -443,20 +494,31 @@
   }
 
   async function verifyFinalPreview() {
-    if (finalPreviewBusy || !blocks.some((block) => block.latex.trim())) return;
+    if (finalPreviewBusy || !hasContent) return;
     finalPreviewBusy = true;
     finalPreviewError = '';
     try {
+      // Un qcm se vérifie fragment par fragment (énoncés, réponses,
+      // commentaires), puis ses blocs sont recomposés autour du HTML obtenu.
+      const qcmSnapshot = kind === 'qcm' ? $state.snapshot(qcm) : null;
+      const fragments = qcmSnapshot ? qcmFragments(qcmSnapshot) : null;
       const res = await fetch('/api/create/preview', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          blocks: documentBlocks().map((block) => ({ type: block.type, latex: block.latex })),
+          blocks: fragments
+            ? fragments.map((latex) => ({ type: 'text', latex }))
+            : documentBlocks().map((block) => ({ type: block.type, latex: block.latex })),
         }),
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data?.error || `Erreur ${res.status}`);
-      finalPreview = data.content;
+      if (!res.ok) throw new Error(data?.error || data?.message || `Erreur ${res.status}`);
+      if (fragments) {
+        const rendered = new Map(fragments.map((latex, index) => [latex, data.content[index]?.html ?? '']));
+        finalPreview = qcmToBlocks(qcmSnapshot, (latex) => rendered.get(latex) ?? '');
+      } else {
+        finalPreview = data.content;
+      }
       rightTab = 'preview';
     } catch (err) {
       finalPreviewError = err.message;
@@ -466,24 +528,95 @@
   }
 
   // ── Assistant IA (API Albert) ─────────────────────────────────────────────
-  async function callAssist(mode, { targetLatex = '', instruction = '', taskPrompt = '', field = '', questionCount = null } = {}) {
+  async function postAssist(body) {
     const res = await fetch('/api/create/assist', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        mode,
-        meta: { ...meta },
-        blocks: documentBlocks().map((b) => ({ type: b.type, latex: b.latex })),
-        targetLatex,
-        instruction,
-        taskPrompt,
-        field,
-        questionCount,
-      }),
+      body: JSON.stringify({ meta: { ...meta }, blocks: contentBlocks(), ...body }),
     });
     const data = await res.json().catch(() => ({}));
-    if (!res.ok) throw new Error(data?.error || `Erreur ${res.status}`);
+    if (!res.ok) throw new Error(data?.error || data?.message || `Erreur ${res.status}`);
+    return data;
+  }
+
+  async function callAssist(mode, { targetLatex = '', instruction = '', taskPrompt = '', field = '', questionCount = null } = {}) {
+    const data = await postAssist({ mode, targetLatex, instruction, taskPrompt, field, questionCount });
     return data.latex;
+  }
+
+  // ── Assistant IA des qcm ──────────────────────────────────────────────────
+  /** Génère une ou plusieurs questions complètes à partir du brief. */
+  async function aiGenerateQcm() {
+    if (aiBusyBlockId) return;
+    if (!qcmInstruction.trim() && !qcmHasContent(qcm) && !meta.chapter && !meta.title) {
+      aiError = 'Décrivez la question souhaitée : notion évaluée, type de calcul, erreurs à repérer.';
+      return;
+    }
+    aiError = '';
+    aiBusyBlockId = '__new__';
+    aiBusyKind = 'qcm';
+    try {
+      const count = Math.max(1, Math.min(8, Number(qcmQuestionCount) || 1));
+      const answers = Math.max(3, Math.min(6, Number(qcmAnswerCount) || 4));
+      qcmQuestionCount = count;
+      qcmAnswerCount = answers;
+      const data = await postAssist({
+        mode: 'qcm',
+        instruction: qcmInstruction,
+        questionCount: count,
+        answerCount: answers,
+        qcmType: qcmGeneratedType,
+      });
+      // Les questions laissées vides cèdent la place au contenu généré.
+      const kept = new Set(filledQuestions(qcm).map((question) => question.id));
+      qcm.questions = [
+        ...qcm.questions.filter((question) => kept.has(question.id)),
+        ...data.questions.map((question) => newQcmQuestion(question)),
+      ];
+    } catch (err) {
+      aiError = err.message;
+    } finally {
+      aiBusyBlockId = null;
+      aiBusyKind = null;
+    }
+  }
+
+  /** Propose des distracteurs pour une question déjà rédigée, ajoutés à la suite de ses réponses. */
+  async function aiGenerateDistractors(question, { count = 3, instruction = '' } = {}) {
+    if (aiBusyBlockId) return;
+    if (!question.stem.trim()) {
+      aiError = 'Rédigez d’abord l’énoncé de la question.';
+      return;
+    }
+    aiError = '';
+    aiBusyBlockId = question.id;
+    aiBusyKind = 'distractors';
+    try {
+      const data = await postAssist({
+        mode: 'distractors',
+        // Contexte : l'énoncé commun et les autres questions de la série.
+        blocks: qcmToBlocks(qcm)
+          .filter((block) => block.id !== question.id && block.id !== `${question.id}-reponse`)
+          .map((block) => ({ type: block.type, latex: block.latex })),
+        qcmQuestion: {
+          stem: question.stem,
+          type: question.type,
+          explanation: question.explanation,
+          choices: question.choices.map((choice) => ({ latex: choice.latex, correct: choice.correct })),
+        },
+        count,
+        instruction,
+      });
+      question.choices = [
+        ...question.choices.filter((choice) => choice.latex.trim() || choice.correct),
+        ...data.distractors.map((distractor) => newQcmChoice(distractor)),
+      ];
+    } catch (err) {
+      aiError = err.message;
+    } finally {
+      aiBusyBlockId = null;
+      aiBusyKind = null;
+    }
   }
 
   async function requestRevision() {
@@ -541,7 +674,7 @@
   /** Suggère la valeur d'un champ de métadonnée à partir du contenu. */
   async function aiFillMeta(field) {
     if (aiMetaBusy) return;
-    if (!blocks.some((b) => b.latex.trim())) {
+    if (!hasContent) {
       aiError = 'Rédigez d’abord le contenu de l’exercice : les suggestions de métadonnées s’appuient dessus.';
       return;
     }
@@ -792,6 +925,25 @@
   // ── Import ────────────────────────────────────────────────────────────────
   function handleImported(texSources, sourceLabel) {
     const candidates = texSources.map((tex, index) => {
+      if (isQcmSource(tex)) {
+        const { meta: parsedMeta, draft } = qcmDraftFromSource(tex);
+        if (!qcmHasContent(draft)) return null;
+        return {
+          id: crypto.randomUUID(),
+          selected: true,
+          label: parsedMeta.title || `QCM ${index + 1}`,
+          kind: 'qcm',
+          meta: {
+            ...emptyMeta(),
+            ...parsedMeta,
+            uuid: parsedMeta.uuid || generateShortUuid(),
+            created_at: parsedMeta.created_at || today(),
+          },
+          qcm: draft,
+          // Blocs à plat : le panneau d'import y compte les questions.
+          blocks: qcmToBlocks(draft).map((b) => ({ type: b.type, latex: b.latex })),
+        };
+      }
       const { meta: parsedMeta, blocks: parsedBlocks } = parseExerciseTex(tex);
       if (parsedBlocks.length === 0) return null;
       const meta = {
@@ -827,12 +979,17 @@
   }
 
   function openImportedDraft(draft, askConfirmation = true) {
-    const hasContent = blocks.some((b) => b.latex.trim()) || meta.title;
-    if (askConfirmation && hasContent && !confirm('Remplacer l’exercice en cours par ce brouillon importé ?')) {
+    if (askConfirmation && (hasContent || meta.title) && !confirm('Remplacer le contenu en cours par ce brouillon importé ?')) {
       return;
     }
     meta = { ...emptyMeta(), ...draft.meta };
-    blocks = cloneBlocks(draft.blocks);
+    if (draft.kind === 'qcm') {
+      kind = 'qcm';
+      qcm = reviveQcmDraft(draft.qcm);
+    } else {
+      kind = 'exercise';
+      blocks = cloneBlocks(draft.blocks);
+    }
     activeImportedDraftId = draft.id;
     try {
       localStorage.setItem(ACTIVE_IMPORTED_DRAFT_KEY, draft.id);
@@ -874,7 +1031,7 @@
 
   // ── Export ────────────────────────────────────────────────────────────────
   function exportTex() {
-    downloadTexFile(texSource, meta.uuid || meta.title || 'exercice');
+    downloadTexFile(texSource, meta.uuid || meta.title || (kind === 'qcm' ? 'qcm' : 'exercice'));
   }
 
   async function copyTex() {
@@ -888,9 +1045,10 @@
   }
 
   function resetAll() {
-    if (!confirm('Effacer l’exercice en cours et le brouillon enregistré ?')) return;
+    if (!confirm('Effacer le contenu en cours et le brouillon enregistré ?')) return;
     meta = emptyMeta();
     blocks = [newBlock('text'), newBlock('question')];
+    qcm = emptyQcmDraft();
     importNotice = '';
     aiError = '';
     try {
@@ -909,7 +1067,11 @@
 <div class="create-page">
   <div class="create-subheader">
     <div class="create-subheader-left">
-      <h1>Créer un exercice</h1>
+      <h1>{kind === 'qcm' ? 'Créer un QCM' : 'Créer un exercice'}</h1>
+      <div class="create-kind" role="group" aria-label="Type de contenu">
+        <button type="button" class:is-active={kind === 'exercise'} aria-pressed={kind === 'exercise'} onclick={() => (kind = 'exercise')}>Exercice</button>
+        <button type="button" class:is-active={kind === 'qcm'} aria-pressed={kind === 'qcm'} onclick={() => (kind = 'qcm')}>QCM</button>
+      </div>
       <span class="create-beta" title="Fonctionnalité en période de test : signalez tout problème via la page Contact.">bêta</span>
       <span class="create-counter">{questionCount} question{questionCount > 1 ? 's' : ''}</span>
     </div>
@@ -920,7 +1082,7 @@
       <button
         type="button"
         class="editor-btn-primary"
-        disabled={!blocks.some((b) => b.latex.trim()) && !compileMode}
+        disabled={!hasContent && !compileMode}
         onclick={() => (compileMode = !compileMode)}
       >
         {compileMode ? '← Revenir à l’éditeur' : '▣ Compiler le PDF'}
@@ -928,7 +1090,7 @@
       <button type="button" class="editor-btn-secondary" onclick={copyTex}>
         {copied ? '✅ Copié' : '⧉ Copier le .tex'}
       </button>
-      <button type="button" class="editor-btn-primary" onclick={exportTex} disabled={!blocks.some((b) => b.latex.trim())}>
+      <button type="button" class="editor-btn-primary" onclick={exportTex} disabled={!hasContent}>
         ⬇ Exporter .tex
       </button>
       <button type="button" class="btn-ghost-danger" onclick={resetAll} title="Tout effacer">
@@ -968,6 +1130,24 @@
         </p>
       {/if}
 
+      {#if kind === 'qcm'}
+        <QcmEditor
+          bind:draft={qcm}
+          {meta}
+          bind:instruction={qcmInstruction}
+          bind:questionCount={qcmQuestionCount}
+          bind:answerCount={qcmAnswerCount}
+          bind:generatedType={qcmGeneratedType}
+          {aiBusyBlockId}
+          {aiBusyKind}
+          onGenerate={aiGenerateQcm}
+          onDistractors={aiGenerateDistractors}
+          onFocus={registerFieldFocus}
+        />
+        <div class="editor-toolbar-sticky">
+          <LatexToolbar oninsert={insertSnippet} />
+        </div>
+      {:else}
       <AiSequencePanel
         {meta}
         bind:aiInstruction
@@ -1040,6 +1220,7 @@
         {/each}
         <span class="editor-add-hint">Ajoutez les indications et solutions depuis la question concernée.</span>
       </div>
+      {/if}
       </section>
 
       <!-- ── Colonne droite : rendu ─────────────────────────────────────── -->
@@ -1051,7 +1232,7 @@
         {finalPreviewBusy}
         {finalPreviewError}
         {texSource}
-        hasContent={blocks.some((b) => b.latex.trim())}
+        {hasContent}
         bind:showHint
         bind:showSolution
         onVerify={verifyFinalPreview}
@@ -1111,6 +1292,18 @@
 
   .create-counter {
     @apply text-xs text-gray-500;
+  }
+
+  .create-kind {
+    @apply inline-flex self-center rounded-md border border-gray-300 bg-white overflow-hidden;
+  }
+
+  .create-kind button {
+    @apply px-2.5 py-1 text-xs font-semibold text-gray-600 hover:bg-gray-50 transition-colors;
+  }
+
+  .create-kind button.is-active {
+    @apply bg-brand-600 text-white hover:bg-brand-600;
   }
 
   .create-beta {
