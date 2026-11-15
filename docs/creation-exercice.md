@@ -14,10 +14,15 @@ les images, reconstruire la base et publier l'exercice.
 src/routes/create/+page.svelte          Page éditeur (double fenêtre)
 src/lib/components/create/
   LatexToolbar.svelte                   Assistant LaTeX (palette de snippets)
+  QcmEditor.svelte                      Édition d'un qcm (questions, réponses, distracteurs IA)
   ImportDropzone.svelte                 Glisser-déposer PDF / image / .tex
 src/lib/latex/
   exerciseTex.js                        buildExerciseTex / parseExerciseTex (format source du site)
   texPreview.js                         LaTeX → HTML côté client pour l'aperçu (maths laissées à KaTeX)
+src/lib/qcm/editor.js                   Brouillon de qcm : export / relecture au format content/qcm, blocs d'aperçu
+src/lib/ia/
+  assistPrompts.js                      Consignes envoyées à l'IA (exercices et qcm)
+  qcmAssist.js                          Lecture des réponses de l'IA pour les qcm
 src/routes/api/create/
   assist/+server.js                     Assistant IA de rédaction (Albert, openai/gpt-oss-120b)
   import/+server.js                     Restructuration PDF/image → .tex (Albert, Mistral-Small-3.2 vision)
@@ -59,7 +64,58 @@ src/routes/api/create/
   qualité (`pnpm check:tex`) — métadonnées dans l'ordre des sources, questions
   multiples dans un `enumerate` avec `\item`.
 - **Brouillon** : l'exercice en cours est sauvegardé dans `localStorage`
-  (`oym-create-draft-v1`) et restauré à l'ouverture de la page.
+  (`oym-create-draft-v1`) et restauré à l'ouverture de la page. L'exercice et
+  le qcm en cours y sont conservés côte à côte, avec le mode actif.
+
+## Créer un qcm
+
+La bascule **Exercice / QCM** en tête de page change la nature du contenu. En
+mode QCM, les blocs cèdent la place à des cartes de question : énoncé, type
+(`\qtype`), réponses marquées justes ou fausses, commentaire par réponse
+(`\feedback`) et explications. L'export suit le format de `content/qcm/`
+(voir [QCM](qcm.md)) : une question par fichier dans le cas général ; plusieurs
+questions font une série ordonnée, et `\serie{ordonnee}` est alors écrit
+automatiquement. L'aperçu joue la question avec le composant du site, et un
+encart « À corriger avant publication » signale ce que le contrôle des sources
+refuserait (réponse juste absente, réponses identiques, accolades, `%`).
+Un `.tex` de qcm déposé dans l'import s'ouvre directement dans ce mode.
+
+### Distracteurs
+
+Deux actions IA (`/api/create/assist`, modes `distractors` et `qcm`) :
+
+- **✨ Distracteurs (IA)**, sur une question dont l'énoncé est rédigé : propose
+  jusqu'à cinq réponses fausses, ajoutées à la suite des réponses. L'auteur
+  peut préciser l'erreur à viser.
+- **Générer la question**, depuis le panneau de tête : énoncé, réponses,
+  distracteurs et correction à partir d'un brief.
+
+La consigne (`DISTRACTOR_RULES` dans `assistPrompts.js`) repose sur un
+principe : un distracteur est la réponse qu'obtient un étudiant qui commet
+*une* erreur précise et fréquente. Le modèle doit résoudre la question,
+recenser ces erreurs, mener chaque raisonnement erroné jusqu'au bout, puis
+vérifier que le résultat est faux sans ambiguïté, plausible, distinct des
+autres, de même forme que la réponse juste et non éliminable sans calcul.
+Mieux vaut moins de distracteurs que du remplissage : la consigne le dit, et
+le serveur n'exige pas le nombre demandé.
+
+Le modèle répond dans un format balisé (`[DISTRACTEUR]`, puis `ERREUR`,
+`CALCUL`, `REPONSE`, `VERIFICATION`, `VALIDE`, `FEEDBACK`) plutôt qu'en JSON,
+pour que les contre-obliques du LaTeX n'aient pas à être échappées. Les champs
+de raisonnement précèdent la réponse à dessein. `qcmAssist.js` en tire :
+
+- la réponse et son commentaire (`\feedback`, montré à l'étudiant à la
+  correction) ;
+- l'**erreur visée**, affichée à l'auteur sous la réponse et jamais exportée :
+  c'est elle qui permet de juger le distracteur d'un coup d'œil ;
+- un filtre : sont écartés les distracteurs que le modèle invalide lui-même
+  (`VALIDE : non`), les doublons et les réponses déjà présentes, à l'écriture
+  près.
+
+Les réponses d'une question générée sont mélangées (le modèle écrit la réponse
+juste en premier) ; le bouton **Mélanger** fait de même à la demande. Rien de
+tout cela ne dispense de relire : la fausseté d'une réponse n'est pas vérifiée
+par le code.
 
 ## Garde-fous serveur
 
