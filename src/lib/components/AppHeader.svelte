@@ -13,7 +13,7 @@
   reste Rechercher, Ma liste et un menu qui regroupe le reste.
 
   Usage dans +layout.svelte :
-    <AppHeader seanceCount={…} listHref={…} onsearch={…} />
+    <AppHeader seanceCount={…} listHref={…} version={…} onsearch={…} />
 -->
 
 <script>
@@ -23,10 +23,14 @@
    * @typedef {Object} Props
    * @property {number} [seanceCount] - badge sur "Ma liste"
    * @property {string} [listHref] - URL de la liste courante avec ses paramètres
+   * @property {string} [version] - version de l'application, affichée près du logo
    * @property {() => void} [onsearch] - ouvre la fenêtre de recherche
    */
   /** @type {Props} */
-  let { seanceCount = 0, listHref = '/exercise/list', onsearch } = $props();
+  let { seanceCount = 0, listHref = '/exercise/list', version = '', onsearch } = $props();
+
+  // « 2.13.0 » devient « v2.13.0 » ; « dev » reste tel quel.
+  let versionLabel = $derived(/^\d/.test(version) ? `v${version}` : version);
 
   // Un vrai lien vers l'accueil (clic du milieu, sans JavaScript) ; le clic
   // simple ouvre la fenêtre de recherche sans quitter la page.
@@ -77,6 +81,11 @@
       </span>
       <span class="sr-only">OpenYourMath</span>
     </a>
+    {#if versionLabel}
+      <span class="app-version" title="Version {version}">
+        <span class="sr-only">Version </span>{versionLabel}
+      </span>
+    {/if}
 
     <nav class="app-nav" aria-label="Navigation principale">
       <a href="/browse" class:is-active={isActive('/browse')}>
@@ -228,6 +237,21 @@
 
   .app-brand-name-accent { color: var(--color-brand-500); }
 
+  /* Version : accolée au logo, plus près que les rubriques. */
+  .app-version {
+    margin-left: -14px;
+    padding: 2px 7px;
+    border: 1px solid var(--color-interface-border-primary);
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.4;
+    white-space: nowrap;
+    color: var(--color-interface-text-secondary);
+    background: var(--color-interface-bg-secondary);
+  }
+
   /* Rubriques (gauche) et outils (droite) partagent le même lien de base. */
   .app-nav {
     display: flex;
@@ -369,6 +393,7 @@
   @media (max-width: 900px) {
     .app-brand-name { display: none; }
     .app-header-left { gap: 16px; }
+    .app-version { margin-left: -8px; }
     .tool-search { min-width: 0; }
     .tool-search-kbd { display: none; }
   }

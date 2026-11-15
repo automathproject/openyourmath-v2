@@ -59,7 +59,7 @@
 </script>
 
 <div class="header-shell" class:header-shell--hidden={$immersiveMode}>
-  <AppHeader seanceCount={$listCount} {listHref} onsearch={openSearch} />
+  <AppHeader seanceCount={$listCount} {listHref} version={APP_VERSION} onsearch={openSearch} />
 </div>
 
 <SearchPalette bind:open={searchPaletteOpen} />
@@ -112,7 +112,6 @@
           </a>
           <div class="footer-tech">
             <p>Hébergement OVH (FR) · HTTPS Caddy</p>
-            <p>Version {APP_VERSION}</p>
           </div>
         </div>
 
