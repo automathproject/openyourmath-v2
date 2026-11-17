@@ -90,18 +90,56 @@ function openPlayer(host, name, caption) {
   standalone.href = `/animation/${encodeURIComponent(name)}`;
   standalone.target = '_blank';
   standalone.rel = 'noopener';
-  bar.append(...embedButton(host, name, caption), fullscreen, standalone);
+  const close = element('button', 'oym-animation__action', 'Fermer');
+  close.type = 'button';
+  close.title = "Refermer l'animation";
+  bar.append(...embedButton(host, name, caption), fullscreen, standalone, close);
 
   host.replaceChildren(frame, bar, element('figcaption', 'oym-animation__caption', caption));
   host.classList.add('oym-animation--open');
+
+  const release = () => {
+    window.removeEventListener('message', onMessage);
+    observer.disconnect();
+  };
   // L'emplacement quitte le document avec son contenu : on retire l'écouteur.
   const observer = new MutationObserver(() => {
-    if (!host.isConnected) {
-      window.removeEventListener('message', onMessage);
-      observer.disconnect();
-    }
+    if (!host.isConnected) release();
   });
   observer.observe(document.body, { childList: true, subtree: true });
+
+  // Refermer décharge l'iframe et rend la vignette, qui reprend le focus.
+  close.addEventListener('click', () => {
+    release();
+    host.classList.remove('oym-animation--open');
+    renderClosed(host, name, caption);
+    host.querySelector('.oym-animation__play')?.focus();
+  });
+}
+
+// Vignette de l'animation fermée : un bouton et, s'il y en a une, l'image fixe.
+function renderClosed(host, name, caption) {
+  const play = element('button', 'oym-animation__play');
+  play.type = 'button';
+  play.append(element('span', 'oym-animation__icon', '▶\uFE0E'));
+  const label = element('span', 'oym-animation__label');
+  label.append(element('strong', null, 'Animation interactive'), element('span', null, caption));
+  play.append(label);
+  play.addEventListener('click', () => openPlayer(host, name, caption));
+  host.replaceChildren(play);
+
+  // L'image fixe de l'animation, quand la source en donne une, sert de
+  // vignette : un clic dessus ouvre aussi l'animation. Elle double la légende,
+  // d'où un texte alternatif vide.
+  if (host.dataset.poster) {
+    const poster = element('img', 'oym-animation__poster');
+    poster.src = host.dataset.poster;
+    poster.alt = '';
+    poster.loading = 'lazy';
+    poster.decoding = 'async';
+    poster.addEventListener('click', () => openPlayer(host, name, caption));
+    host.prepend(poster);
+  }
 }
 
 /** Rend interactifs les emplacements d'animation sous `root`, une seule fois chacun. */
@@ -111,27 +149,6 @@ export function mountAnimations(root) {
     host.dataset.enhanced = '';
     const name = host.dataset.animation;
     const caption = host.dataset.caption || 'Animation interactive';
-
-    const play = element('button', 'oym-animation__play');
-    play.type = 'button';
-    play.append(element('span', 'oym-animation__icon', '▶\uFE0E'));
-    const label = element('span', 'oym-animation__label');
-    label.append(element('strong', null, 'Animation interactive'), element('span', null, caption));
-    play.append(label);
-    play.addEventListener('click', () => openPlayer(host, name, caption));
-    host.replaceChildren(play);
-
-    // L'image fixe de l'animation, quand la source en donne une, sert de
-    // vignette : un clic dessus ouvre aussi l'animation. Elle double la légende,
-    // d'où un texte alternatif vide.
-    if (host.dataset.poster) {
-      const poster = element('img', 'oym-animation__poster');
-      poster.src = host.dataset.poster;
-      poster.alt = '';
-      poster.loading = 'lazy';
-      poster.decoding = 'async';
-      poster.addEventListener('click', () => openPlayer(host, name, caption));
-      host.prepend(poster);
-    }
+    renderClosed(host, name, caption);
   }
 }
