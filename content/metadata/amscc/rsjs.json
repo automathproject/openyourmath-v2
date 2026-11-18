@@ -1,22 +1,22 @@
 {
   "uuid": "rsjs",
   "source_path": "amscc/rsjs.tex",
-  "summary": "L'exercice demande de formuler un problème de régression quadratique comme un problème d'optimisation quadratique, en explicitant la matrice et le vecteur associés. Il aborde ensuite l'existence et l'unicité des solutions en fonction des propriétés de la matrice, avec une discussion sur les conditions nécessaires et suffisantes pour que la matrice soit définie positive.",
+  "summary": "L'exercice demande de formuler un problème de régression quadratique comme un problème d'optimisation quadratique, en explicitant la matrice et le vecteur associés. Il aborde ensuite l'existence et l'unicité des solutions en fonction des propriétés de la matrice, avec une interprétation géométrique.",
   "concepts": [
     "optimisation quadratique",
     "régression par moindres carrés",
     "matrice définie positive",
-    "semi-définie positive",
     "projection orthogonale",
-    "valeurs propres",
     "sous-espace vectoriel",
-    "inversibilité"
+    "valeurs propres",
+    "coercivité",
+    "convexité stricte"
   ],
   "methods": [
     "minimisation de la somme des carrés des écarts",
     "calcul de la matrice de Gram",
-    "analyse des valeurs propres",
     "résolution des équations normales",
+    "analyse des valeurs propres",
     "projection sur un sous-espace"
   ],
   "objects": [
@@ -26,7 +26,7 @@
     "parabole",
     "fonctionnelle quadratique"
   ],
-  "content_hash": "a96f6d9083202cfd375254b8ac20ec6709eed79e6c3379a01cb5ded6e0225227",
+  "content_hash": "b0eb25b4d235c3c12655b4f94f4db5d34edccad911399db9d21521019c4e0edb",
   "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-11-18T15:36:39.580Z"
+  "indexed_at": "2026-11-18T19:54:06.239Z"
 }
