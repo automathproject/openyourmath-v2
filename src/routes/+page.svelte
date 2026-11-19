@@ -569,6 +569,11 @@
                       résultat{($searchMeta?.pagination?.totalCount || $results.length) > 1 ? 's' : ''} trouvé{($searchMeta?.pagination?.totalCount || $results.length) > 1 ? 's' : ''}
                     {/if}
                   </h2>
+                  {#if $searchMeta?.relaxed && !isHybridSearchMode}
+                    <p class="results-relaxed-note">
+                      Aucun exercice ne contient tous les mots : les plus proches sont en tête.
+                    </p>
+                  {/if}
                   {#if canLoadMore}
                     <button
                       type="button"
@@ -1358,6 +1363,14 @@
     font-weight: 600;
     min-width: fit-content;
     @apply text-interface-text-primary;
+  }
+
+  .results-relaxed-note {
+    flex-basis: 100%;
+    order: 10;
+    margin: 0;
+    font-size: 0.85rem;
+    @apply text-interface-text-muted;
   }
 
   .results-title-total {

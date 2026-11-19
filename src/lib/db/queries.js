@@ -3,32 +3,9 @@ import { qcmFilterClause } from './contentType.js';
 import Database from 'better-sqlite3';
 import path from 'path';
 import { cpgeFilterClauses } from './cpge.js';
+import { resolveFtsQuery } from './ftsQuery.js';
 
 const DB_PATH = path.resolve('data/exercises.sqlite');
-
-function prepareSearchQuery(query) {
-  if (!query || query.trim() === '') return '';
-
-  const tokens = query
-    .trim()
-    .toLowerCase()
-    .split(/\s+/)
-    .map((t) => t.replace(/["']/g, ''))
-    // Nettoyer les caractères spéciaux qui cassent la syntaxe MATCH (parenthèses, etc.)
-    .map((t) => t.replace(/[^\p{L}\p{N}]+/gu, ''))
-    .filter(Boolean);
-
-  // Même les termes courts passent par FTS5 : son tokenizer unicode61 gère la
-  // casse Unicode, contrairement à UPPER()/LIKE de SQLite (ASCII seulement).
-  // Cela évite par exemple que « ÉT » et « ét » produisent des résultats
-  // différents dans le mode rapide.
-  if (tokens.length === 0) return null;
-
-  // Construire une requête FTS en AND (ordre libre), préfixe sur TOUS les mots
-  // En FTS5, les espaces équivalent à AND
-  const parts = tokens.map((t) => `${t}*`);
-  return parts.join(' ');
-}
 
 function escapeLikePattern(value) {
   return value.replace(/[%_\\]/g, (ch) => `\\${ch}`);
@@ -183,9 +160,11 @@ function buildOrganizationFilterClause(organizationValue, tableAlias = 'e', incl
   };
 }
 
-function buildSearchContext(query = '', filters = {}, sortOption = null) {
+function buildSearchContext(db, query = '', filters = {}, sortOption = null) {
   const trimmedQuery = (query || '').trim();
-  const ftsQuery = prepareSearchQuery(trimmedQuery);
+  const resolved = trimmedQuery ? resolveFtsQuery(db, trimmedQuery) : null;
+  const ftsQuery = resolved ? resolved.match : (trimmedQuery ? null : '');
+  const relaxed = Boolean(resolved?.relaxed);
   const useFts = Boolean(ftsQuery);
   const useFallback = Boolean(trimmedQuery) && ftsQuery === null;
 
@@ -370,7 +349,8 @@ function buildSearchContext(query = '', filters = {}, sortOption = null) {
     params,
     orderClause,
     useFts,
-    useFallback
+    useFallback,
+    relaxed
   };
 }
 
@@ -383,7 +363,7 @@ export async function searchExercises(query = '', filters = {}, options = {}) {
     db = new Database(DB_PATH, { readonly: true });
 
     const { limit = 20, offset = 0, sort = '' } = options;
-    const context = buildSearchContext(query, filters, sort);
+    const context = buildSearchContext(db, query, filters, sort);
 
     const sql = `
       ${context.selectClause}
@@ -480,7 +460,7 @@ export async function getExerciseCount(query = '', filters = {}) {
   try {
     db = new Database(DB_PATH, { readonly: true });
 
-    const context = buildSearchContext(query, filters);
+    const context = buildSearchContext(db, query, filters);
     const sql = `
       SELECT COUNT(*) as count
       ${context.fromClause}
@@ -749,7 +729,7 @@ export async function getChapterStructureFiltered(query = '', filters = {}) {
         hasFts = !!row;
       } catch (_) { hasFts = false; }
 
-      const sq = prepareSearchQuery(query);
+      const sq = hasFts ? resolveFtsQuery(db, query)?.match : null;
       if (sq && hasFts) {
         baseWhere += ` AND e.uuid IN (SELECT uuid FROM fts_exercises WHERE fts_exercises MATCH ?)`;
         params.push(sq);
@@ -942,7 +922,7 @@ export async function getFilterCounts(query = '', filters = {}) {
   try {
     db = new Database(DB_PATH, { readonly: true });
 
-    const context = buildSearchContext(query, filters);
+    const context = buildSearchContext(db, query, filters);
 
     const baseFromWhere = `
       ${context.fromClause}
@@ -1022,7 +1002,7 @@ export async function getSuggestions(type = 'all', limit = 10, context = {}) {
 
     const contextualTypes = new Set(['authors', 'organizations', 'modules', 'levels', 'difficulties']);
     if (contextualTypes.has(type) && (context.query || Object.values(context.filters || {}).some(Boolean))) {
-      const searchContext = buildSearchContext(context.query || '', context.filters || {});
+      const searchContext = buildSearchContext(db, context.query || '', context.filters || {});
 
       switch (type) {
         case 'authors':
@@ -1315,7 +1295,7 @@ export async function getContextualFilterCounts(query = '', filters = {}) {
       delete contextFilters[excludeFilter];
 
       // Construire le contexte de recherche sans ce filtre
-      const context = buildSearchContext(query, contextFilters);
+      const context = buildSearchContext(db, query, contextFilters);
 
       let countQuery = '';
       let groupBy = '';
@@ -1573,4 +1553,22 @@ export function getTypeaheadSuggestions(term, limit = 8) {
   return scored
     .slice(0, Math.max(1, Math.min(limit, 20)))
     .map(({ entry }) => ({ kind: entry.kind, value: entry.value, count: entry.count }));
+}
+
+/**
+ * Indique si la recherche plein texte a dû relâcher la requête (OU au lieu de ET)
+ * parce qu'aucun exercice ne contient tous les mots.
+ */
+export async function isRelaxedSearch(query = '') {
+  const trimmed = String(query ?? '').trim();
+  if (!trimmed) return false;
+  let db;
+  try {
+    db = new Database(DB_PATH, { readonly: true });
+    return Boolean(resolveFtsQuery(db, trimmed)?.relaxed);
+  } catch {
+    return false;
+  } finally {
+    if (db) db.close();
+  }
 }

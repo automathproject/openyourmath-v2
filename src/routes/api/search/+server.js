@@ -1,6 +1,6 @@
 // src/routes/api/search/+server.js
 import { json, error } from '@sveltejs/kit';
-import { searchExercises, getExerciseCount, getContextualFilterCounts, detectAuthorIntent } from '$lib/db/queries.js';
+import { searchExercises, getExerciseCount, getContextualFilterCounts, detectAuthorIntent, isRelaxedSearch } from '$lib/db/queries.js';
 import { hybridSearch } from '$lib/db/hybridSearch.js';
 import { checkRateLimit } from '$lib/server/rateLimiter.js';
 import { trackAlbertEmbed, trackAlbertRerank, isEmbedThrottled, isRerankThrottled } from '$lib/server/albertQuota.js';
@@ -161,12 +161,19 @@ export async function GET(event) {
 
   // ── Rate limiting ─────────────────────────────────────────────────────────
   const ip         = getClientIp(event);
+  // Un compteur par mode : les requêtes plein texte émises pendant la frappe
+  // ne doivent pas épuiser le quota hybride (sinon une requête longue,
+  // tapée lentement, se voit refuser la recherche intelligente).
   const rateLimit  = semantic ? 10 : 30;
-  const rl         = checkRateLimit(ip, rateLimit);
+  const rl         = checkRateLimit(`search-${semantic ? 'hybrid' : 'fts'}:${ip}`, rateLimit);
   if (!rl.allowed) {
     setHeaders({ 'Retry-After': String(rl.retryAfter) });
     return json(
-      { error: 'Trop de requêtes', retryAfter: rl.retryAfter },
+      {
+        error: 'Trop de requêtes',
+        message: `Trop de recherches en peu de temps. Réessayez dans ${rl.retryAfter} s.`,
+        retryAfter: rl.retryAfter
+      },
       { status: 429 }
     );
   }
@@ -175,6 +182,7 @@ export async function GET(event) {
   const mode = rerankEnabled ? 'hybrid+rerank' : semantic ? 'hybrid' : 'fts';
   let results, totalCount = null, filterCounts = null;
   let fallback = false;
+  let relaxed = false;
   const timing = {};
 
   try {
@@ -210,6 +218,9 @@ export async function GET(event) {
       results = await searchExercises(q, filters, { limit: limit + 1, offset, sort });
       if (debugMode) timing.hydrateMs = Date.now() - t1;
 
+      if (q) {
+        try { relaxed = await isRelaxedSearch(q); } catch { /* non bloquant */ }
+      }
       if (offset === 0) {
         try { totalCount = await getExerciseCount(q, filters); } catch { /* non bloquant */ }
         try { filterCounts = await getContextualFilterCounts(q, filters); } catch { /* non bloquant */ }
@@ -268,6 +279,7 @@ export async function GET(event) {
               totalCount
             },
             filterCounts,
+            relaxed:   relaxed || undefined,
             timestamp: new Date().toISOString()
           }
       )

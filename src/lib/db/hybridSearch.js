@@ -7,6 +7,7 @@ import { embed } from '../ia/albert.js';
 import { cosineTopK, loadVectorStore } from './vectorStore.js';
 import { rerankDocuments } from '../ia/rerank.js';
 import { cpgeFilterClauses } from './cpge.js';
+import { resolveFtsQuery } from './ftsQuery.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const DEFAULT_DB_PATH = path.resolve(__dirname, '../../../data/exercises.sqlite');
@@ -34,23 +35,6 @@ const QUERY_SUPPORT_TERMS = [
 function openDb() {
   const dbPath = process.env.DATABASE_PATH || DEFAULT_DB_PATH;
   return new Database(dbPath, { readonly: true, fileMustExist: true });
-}
-
-// Dupliqué depuis queries.js où elle n'est pas exportée
-function prepareSearchQuery(query) {
-  if (!query || query.trim() === '') return null;
-  const tokens = query
-    .trim()
-    .toLowerCase()
-    .split(/\s+/)
-    .map(t => t.replace(/["']/g, ''))
-    .map(t => t.replace(/[^\p{L}\p{N}]+/gu, ''))
-    .filter(Boolean);
-  // FTS5 unicode61 garantit une recherche insensible à la casse, y compris
-  // pour les caractères accentués. Ne pas basculer les termes courts vers
-  // SQLite LIKE, qui ne sait replier que la casse ASCII.
-  if (tokens.length === 0) return null;
-  return tokens.map(t => `${t}*`).join(' ');
 }
 
 function escapeLike(v) {
@@ -346,7 +330,7 @@ export async function hybridSearch({
     loadVectorStore(); // idempotent
 
     const trimmedQuery = (query || '').trim();
-    const ftsQuery = prepareSearchQuery(trimmedQuery);
+    const ftsQuery = resolveFtsQuery(db, trimmedQuery)?.match ?? null;
 
     // Query vide ou ne contenant aucun token → résultats par filtres SQL uniquement
     if (!ftsQuery) {
