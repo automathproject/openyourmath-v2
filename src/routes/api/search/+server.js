@@ -2,6 +2,7 @@
 import { json, error } from '@sveltejs/kit';
 import { searchExercises, getExerciseCount, getContextualFilterCounts, detectAuthorIntent, isRelaxedSearch } from '$lib/db/queries.js';
 import { hybridSearch } from '$lib/db/hybridSearch.js';
+import { interpretQuery, filterValueForServer } from '$lib/search/queryIntent.js';
 import { checkRateLimit } from '$lib/server/rateLimiter.js';
 import { trackAlbertEmbed, trackAlbertRerank, isEmbedThrottled, isRerankThrottled } from '$lib/server/albertQuota.js';
 
@@ -132,12 +133,36 @@ export async function GET(event) {
     }
   }
 
-  const interpretedQuery = await detectAuthorIntent(q, filters);
-  if (interpretedQuery?.type === 'author') {
-    filters.author = interpretedQuery.author;
+  // ── Interprétation de la requête ──────────────────────────────────────────
+  // Mots-filtres (niveau, filière, qcm, corrigé…) : seulement sur demande du
+  // client (validation), jamais pendant la frappe, pour ne pas retirer du champ
+  // un mot en cours de saisie. L'auteur, qui couvre toute la requête, reste
+  // détecté dans tous les cas.
+  const originalQuery = q;
+  const applied = [];
+  if (q && parseBool(url.searchParams.get('interpret'))) {
+    const interp = interpretQuery(q, filters);
+    for (const { key, value, token } of interp.applied) {
+      filters[key] = filterValueForServer(key, value);
+      applied.push({ key, value, token });
+    }
+    if (interp.applied.length > 0) {
+      q = interp.remainingQuery;
+      offset = 0;
+    }
+  }
+
+  const authorIntent = await detectAuthorIntent(q, filters);
+  if (authorIntent?.type === 'author') {
+    filters.author = authorIntent.author;
+    applied.push({ key: 'author', value: authorIntent.author, token: q });
     q = '';
     offset = 0;
   }
+
+  const interpretation = applied.length > 0
+    ? { originalQuery, remainingQuery: q, applied }
+    : null;
 
   const hasEffectiveFilters = Object.keys(filters).some((key) => key !== 'sort');
   if (!q && !hasEffectiveFilters) {
@@ -254,7 +279,7 @@ export async function GET(event) {
       semantic:  semantic && !fallback,
       rerank:    rerankEnabled && !fallback,
       fallback:  fallback || undefined,
-      interpretedQuery: interpretedQuery || undefined,
+      interpretation: interpretation || undefined,
       latencyMs,
       ...(semantic && !fallback
         ? {

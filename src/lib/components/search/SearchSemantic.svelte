@@ -25,7 +25,8 @@
     searchActions,
     suggestionActions,
     previewActions,
-    searchSession
+    searchSession,
+    applyQueryInterpretation
   } from '$lib/stores/searchStore.js';
   import { useDebounce } from '$lib/hooks/useDebounce.js';
 
@@ -56,7 +57,7 @@
   $: debugMode = $page.url.searchParams.get('debug') === 'true';
 
   // ── Construction des paramètres URL vers l'API ─────────────────────────────
-  function buildParams({ semantic = false, rerank = false, debug = false, limit = 20 } = {}) {
+  function buildParams({ semantic = false, rerank = false, debug = false, limit = 20, interpret = false } = {}) {
     const rawQ = get(searchQuery).trim();
     const f = get(filters);
     const q = isQueryCoveredByAuthor(rawQ, f.author) ? '' : rawQ;
@@ -96,6 +97,8 @@
     if (semantic) p.set('semantic', 'true');
     if (rerank)   p.set('rerank',   'true');
     if (debug)    p.set('debug',    'true');
+    // Mots-filtres (niveau, filière, qcm, corrigé…) : seulement à la validation.
+    if (interpret && q) p.set('interpret', '1');
     return p;
   }
 
@@ -151,20 +154,6 @@
       .every((token) => authorTokens.has(token));
   }
 
-  function applyInterpretedQuery(meta) {
-    const interpreted = meta?.interpretedQuery;
-    if (interpreted?.type !== 'author' || !interpreted.author) return false;
-
-    filters.update((currentFilters) => ({
-      ...currentFilters,
-      author: currentFilters.author || interpreted.author
-    }));
-
-    searchQuery.set('');
-
-    return true;
-  }
-
   // ── Synchronisation URL ────────────────────────────────────────────────────
   function syncUrl() {
     const f = get(filters);
@@ -176,7 +165,7 @@
     if (mode === 'hybrid') u.searchParams.set('mode', 'hybrid');
     else                   u.searchParams.delete('mode');
 
-    for (const key of ['level', 'module', 'chapter', 'subchapter', 'author', 'organization', 'difficulty', 'filiere', 'cpge', 'prepa']) {
+    for (const key of ['level', 'module', 'chapter', 'subchapter', 'author', 'organization', 'difficulty', 'filiere', 'cpge', 'prepa', 'hasSolution', 'hasIndication', 'hasVideo', 'qcm']) {
       if (f[key]) u.searchParams.set(key, f[key]);
       else        u.searchParams.delete(key);
     }
@@ -185,7 +174,7 @@
   }
 
   // ── Mode FTS (rapide) ──────────────────────────────────────────────────────
-  async function runFts() {
+  async function runFts({ interpret = false } = {}) {
     const q = get(searchQuery).trim();
     const hasFilters = hasEffectiveFilterCriteria(get(filters));
 
@@ -209,10 +198,10 @@
     error.set(null);
 
     try {
-      const res = await fetch(`/api/search?${buildParams()}`, { signal });
+      const res = await fetch(`/api/search?${buildParams({ interpret })}`, { signal });
       if (res.ok) {
         const data = await res.json();
-        applyInterpretedQuery(data.meta);
+        applyQueryInterpretation(data.meta);
         results.set(data.results || []);
         searchMeta.set(data.meta || null);
         if (data.meta?.filterCounts) filterCounts.set(data.meta.filterCounts);
@@ -252,6 +241,9 @@
 
   // ── Mode hybride (intelligent) ─────────────────────────────────────────────
   async function runHybrid(targetLimit = hybridLimit) {
+    // Une recherche rapide encore en attente (Entrée tapée moins de 250 ms
+    // après la dernière touche) annulerait celle-ci en partant.
+    debouncedFts.cancel();
     const q = get(searchQuery).trim();
     if (!q) {
       mode = 'fts';
@@ -264,6 +256,7 @@
     const cacheKey = q + '|' + JSON.stringify(get(filters)) + '|' + targetLimit;
     if (hybridCache.has(cacheKey)) {
       const c = hybridCache.get(cacheKey);
+      applyQueryInterpretation(c.meta);
       results.set(c.results);
       searchMeta.set(c.meta);
       filterCounts.set(deriveFilterCounts(c.results));
@@ -286,7 +279,7 @@
 
     try {
       const res = await fetch(
-        `/api/search?${buildParams({ semantic: true, rerank: true, debug: debugMode, limit: targetLimit })}`,
+        `/api/search?${buildParams({ semantic: true, rerank: true, debug: debugMode, limit: targetLimit, interpret: true })}`,
         { signal }
       );
 
@@ -296,7 +289,7 @@
 
       if (res.ok) {
         const data = await res.json();
-        const interpreted = applyInterpretedQuery(data.meta);
+        const interpreted = applyQueryInterpretation(data.meta);
 
         if (interpreted && data.meta?.mode === 'fts') {
           results.set(data.results || []);
@@ -469,9 +462,14 @@
     const filiere    = u.searchParams.get('filiere')    || '';
     const cpge       = u.searchParams.get('cpge')       || '';
     const prepa      = u.searchParams.get('prepa')      ? '1' : '';
-    const hasUrlFilters = Boolean(level || chapter || subchapter || module_ || author || organization || difficulty || filiere || cpge || prepa);
+    const flag = (name) => (['0', '1'].includes(u.searchParams.get(name)) ? u.searchParams.get(name) : '');
+    const hasSolution   = flag('hasSolution');
+    const hasIndication = flag('hasIndication');
+    const hasVideo      = flag('hasVideo');
+    const qcm           = flag('qcm');
+    const hasUrlFilters = Boolean(level || chapter || subchapter || module_ || author || organization || difficulty || filiere || cpge || prepa || hasSolution || hasIndication || hasVideo || qcm);
     if (hasUrlFilters) {
-      filters.update(f => ({ ...f, level, chapter, subchapter, module: module_, author, organization, difficulty, filiere, cpge, prepa }));
+      filters.update(f => ({ ...f, level, chapter, subchapter, module: module_, author, organization, difficulty, filiere, cpge, prepa, hasSolution, hasIndication, hasVideo, qcm }));
     }
 
     // Retour arrière : on repose l'état affiché au lieu de relancer la requête,
@@ -488,7 +486,9 @@
     const effectiveQ = urlQ || storeQ;
     if (effectiveQ || hasUrlFilters) {
       if (urlMode === 'hybrid') runHybrid();
-      else                      runFts();
+      // Requête venue de l'URL : validée, on l'interprète. Venue de l'accueil
+      // (store), l'utilisateur est peut-être encore en train de taper.
+      else                      runFts({ interpret: Boolean(urlQ) });
     }
   });
 

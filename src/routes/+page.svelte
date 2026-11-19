@@ -110,7 +110,7 @@
       }
       // Un lien qui ne porte qu'un filtre (?cpge=…, ?level=L1) ouvre aussi la
       // recherche : c'est SearchSemantic, monté avec elle, qui lit les filtres.
-      const URL_FILTERS = ['level', 'module', 'chapter', 'subchapter', 'author', 'organization', 'difficulty', 'filiere', 'cpge', 'prepa'];
+      const URL_FILTERS = ['level', 'module', 'chapter', 'subchapter', 'author', 'organization', 'difficulty', 'filiere', 'cpge', 'prepa', 'hasSolution', 'hasIndication', 'hasVideo', 'qcm'];
       if (URL_FILTERS.some(key => urlParams.get(key))) {
         searchInterfaceOpened = true;
       }

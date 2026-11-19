@@ -10,7 +10,7 @@ import { writable } from 'svelte/store';
 export function useDebounce(callback, delay = 300) {
   let timeoutId = null;
 
-  return function debouncedFunction(...args) {
+  function debouncedFunction(...args) {
     // Annuler le timeout précédent
     if (timeoutId) {
       clearTimeout(timeoutId);
@@ -18,9 +18,18 @@ export function useDebounce(callback, delay = 300) {
 
     // Créer un nouveau timeout
     timeoutId = setTimeout(() => {
+      timeoutId = null;
       callback.apply(this, args);
     }, delay);
+  }
+
+  /** Annule l'appel en attente, s'il y en a un. */
+  debouncedFunction.cancel = () => {
+    if (timeoutId) clearTimeout(timeoutId);
+    timeoutId = null;
   };
+
+  return debouncedFunction;
 }
 
 /**

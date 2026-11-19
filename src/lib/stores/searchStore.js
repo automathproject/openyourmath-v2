@@ -1,5 +1,6 @@
 // src/lib/stores/searchStore.js
 import { writable, derived, get } from 'svelte/store';
+import { goto } from '$app/navigation';
 import { previewPanelOpen, uiActions } from '$lib/stores/uiStore.ts';
 
 // État de base de la recherche
@@ -199,20 +200,35 @@ function resetPreviewState() {
 function clearSearchUrl() {
   if (typeof window === 'undefined') return;
 
+  // goto plutôt que history.replaceState : sinon $page.url garde l'ancienne
+  // URL, et SearchSemantic, à son prochain montage, y relit les filtres
+  // qu'on vient d'effacer.
   const nextUrl = `${window.location.pathname}${window.location.hash || ''}`;
-  window.history.replaceState(window.history.state, '', nextUrl);
+  goto(nextUrl, { replaceState: true, noScroll: true, keepFocus: true });
 }
 
-function syncInterpretedQuery(meta) {
-  const interpreted = meta?.interpretedQuery;
-  if (interpreted?.type !== 'author' || !interpreted.author) return;
+/**
+ * Applique l'interprétation renvoyée par l'API (meta.interpretation) : les mots
+ * reconnus comme filtres (niveau, filière, qcm, corrigé, auteur…) quittent le
+ * champ et deviennent des filtres, que l'utilisateur retire par leur pastille.
+ * Ignorée si le champ a changé entre l'envoi et la réponse, pour ne pas
+ * écraser une saisie en cours. Un filtre déjà choisi n'est jamais remplacé.
+ * @returns {boolean} true si quelque chose a été appliqué
+ */
+export function applyQueryInterpretation(meta) {
+  const interp = meta?.interpretation;
+  if (!interp?.applied?.length) return false;
+  if (get(searchQuery).trim() !== String(interp.originalQuery ?? '').trim()) return false;
 
-  filters.update((currentFilters) => ({
-    ...currentFilters,
-    author: currentFilters.author || interpreted.author
-  }));
-
-  searchQuery.set('');
+  filters.update((currentFilters) => {
+    const next = { ...currentFilters };
+    for (const { key, value } of interp.applied) {
+      if (next[key] === undefined || next[key] === null || next[key] === '') next[key] = value;
+    }
+    return next;
+  });
+  searchQuery.set(interp.remainingQuery ?? '');
+  return true;
 }
 
 // Comptages hiérarchiques dérivés des résultats courants (compatibles hybride et FTS).
@@ -491,7 +507,7 @@ export const searchActions = {
       if (response.ok) {
         const data = await response.json();
         const nextResults = data.results || [];
-        syncInterpretedQuery(data.meta);
+        applyQueryInterpretation(data.meta);
         results.set(nextResults);
         searchMeta.set(data.meta || null);
         
@@ -611,7 +627,7 @@ export const searchActions = {
       if (response.ok) {
         const data = await response.json();
         const newResults = data.results || [];
-        syncInterpretedQuery(data.meta);
+        applyQueryInterpretation(data.meta);
         
         // Pour loadMore, on garde les filterCounts existants du premier appel
         // car les comptages contextuels ne changent pas avec la pagination
