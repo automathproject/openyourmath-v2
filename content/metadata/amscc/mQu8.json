@@ -1,0 +1,31 @@
+{
+  "uuid": "mQu8",
+  "source_path": "amscc/mQu8.tex",
+  "summary": "Comparaison de deux proportions de présence à une visite de contrôle selon deux formats de convocation (A et B), à partir de 40 000 lignes de données. Test d'hypothèse et intervalle de confiance pour juger si le gain du format B, statistiquement significatif, atteint le seuil d'intérêt pratique fixé à l'avance.",
+  "concepts": [
+    "test d'hypothèse",
+    "intervalle de confiance",
+    "approximation normale",
+    "différence de proportions",
+    "statistique de test",
+    "p-valeur",
+    "taille de l'effet"
+  ],
+  "methods": [
+    "test de comparaison de deux proportions",
+    "intervalle de confiance d'une différence de proportions",
+    "construction d'un tableau croisé",
+    "analyse de sous-échantillon",
+    "étude de l'effet de la taille d'échantillon"
+  ],
+  "objects": [
+    "taux de présence",
+    "différence de proportions",
+    "tableau de contingence 2x2",
+    "seuil d'intérêt pratique",
+    "sous-échantillon aléatoire"
+  ],
+  "content_hash": "f8718f612e718d34da4516c5664f6c8bf481cfee4285a07fde70475cf8458f72",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-20T14:12:25.167Z"
+}

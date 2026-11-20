@@ -1,0 +1,38 @@
+{
+  "uuid": "uu7o",
+  "source_path": "amscc/uu7o.tex",
+  "summary": "L'exercice demande de choisir le test statistique approprié pour différentes situations en identifiant le paramètre testé, les hypothèses H0 et H1, la statistique de test et sa loi de référence, ainsi que les conditions de validité. Il aborde des contextes variés comme le contrôle de qualité, la mesure de résistance, la comparaison de groupes, etc.",
+  "concepts": [
+    "test d'hypothèses",
+    "proportion",
+    "moyenne",
+    "variance",
+    "loi de distribution",
+    "indépendance statistique",
+    "théorème central limite",
+    "test paramétrique"
+  ],
+  "methods": [
+    "test binomial",
+    "test de Student",
+    "test approché d'une moyenne",
+    "test de Welch",
+    "test de Fisher",
+    "test d'adéquation du khi-deux",
+    "test d'indépendance du khi-deux",
+    "comparaison de proportions"
+  ],
+  "objects": [
+    "proportion de pièces défectueuses",
+    "charge de rupture",
+    "masse moyenne de colis",
+    "notes d'examen",
+    "précision d'appareils de mesure",
+    "équilibre d'un dé",
+    "liaison entre filières et options",
+    "nombre d'appels téléphoniques"
+  ],
+  "content_hash": "aa64db492cd7b67b6d530c8ef55473f0cc73026e278131c47a10ff287f7fe69c",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-20T14:14:47.605Z"
+}

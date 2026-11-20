@@ -1,0 +1,34 @@
+{
+  "uuid": "4KJ2",
+  "source_path": "amscc/4KJ2.tex",
+  "summary": "Comparaison des consommations moyennes de chauffage entre deux régions A et B à partir d'échantillons indépendants. Analyse descriptive et tests statistiques pour déterminer si l'écart observé est significatif au seuil de 5%.",
+  "concepts": [
+    "test d'hypothèses",
+    "intervalle de confiance",
+    "loi de Student",
+    "test de Fisher",
+    "test de Welch",
+    "approximation normale",
+    "variance corrigée",
+    "coefficient de variation"
+  ],
+  "methods": [
+    "analyse descriptive",
+    "test bilatéral",
+    "calcul de statistique de Student",
+    "estimation des degrés de liberté de Welch-Satterthwaite",
+    "calcul de p-valeur",
+    "construction d'intervalle de confiance"
+  ],
+  "objects": [
+    "échantillons indépendants",
+    "moyennes de populations",
+    "variances de populations",
+    "statistique de Student",
+    "degrés de liberté",
+    "intervalle de confiance"
+  ],
+  "content_hash": "327dabe6e705f1e9fd3671669532489e6ab33273209a18d40a4a03b7137c1ef1",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-20T14:10:39.518Z"
+}

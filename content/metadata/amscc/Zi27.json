@@ -1,0 +1,31 @@
+{
+  "uuid": "Zi27",
+  "source_path": "amscc/Zi27.tex",
+  "summary": "L'exercice demande d'analyser un fichier de données d'enquête pour tester l'indépendance entre la classe d'âge des répondants et leur opinion sur le sida, en utilisant un test du chi-deux. Il faut construire un tableau de contingence, puis réaliser des tests d'indépendance et de comparaison de distributions entre classes d'âge spécifiques.",
+  "concepts": [
+    "test du chi-deux de Pearson",
+    "tableau de contingence",
+    "hypothèse d'indépendance",
+    "effectifs observés et attendus",
+    "distribution de chi-deux",
+    "p-valeur",
+    "test d'homogénéité"
+  ],
+  "methods": [
+    "calcul des effectifs attendus",
+    "calcul de la statistique de Pearson",
+    "comparaison de distributions conditionnelles",
+    "approximation par la loi du chi-deux",
+    "calcul des contributions au chi-deux"
+  ],
+  "objects": [
+    "tableau de contingence",
+    "effectifs observés",
+    "effectifs attendus",
+    "statistique de Pearson",
+    "distribution de réponses"
+  ],
+  "content_hash": "f64c99f9db3e3be0129c00d8d1662038ca1fd75f99247b703eed3bcdcd3527a6",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-20T14:08:43.843Z"
+}

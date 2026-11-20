@@ -1,0 +1,33 @@
+{
+  "uuid": "C6t6",
+  "source_path": "amscc/C6t6.tex",
+  "summary": "L'exercice demande d'analyser un échantillon de 400 mesures d'épaisseur de pièces métalliques pour vérifier si la moyenne observée est conforme à l'objectif de 5 mm. Il s'agit de calculer des statistiques descriptives, de réaliser un test d'hypothèse bilatéral au seuil de 1%, et d'analyser la proportion de pièces hors tolérance.",
+  "concepts": [
+    "test d'hypothèse bilatéral",
+    "intervalle de confiance",
+    "approximation normale de la moyenne",
+    "variance corrigée",
+    "écart-type corrigé",
+    "risque de première espèce",
+    "p-valeur",
+    "statistique de test"
+  ],
+  "methods": [
+    "calcul de la moyenne échantillonnale",
+    "calcul de la variance corrigée",
+    "standardisation",
+    "approximation gaussienne",
+    "calcul de p-valeur",
+    "dénombrement des pièces hors tolérance"
+  ],
+  "objects": [
+    "échantillon de variables indépendantes",
+    "moyenne observée",
+    "variance corrigée",
+    "écart-type corrigé",
+    "intervalle de tolérance"
+  ],
+  "content_hash": "37fca7f5e9c55b4cfc71e5bcb6ff77cd91a475532d8f6643c9fbf6ab601ce7bd",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-20T14:04:51.742Z"
+}

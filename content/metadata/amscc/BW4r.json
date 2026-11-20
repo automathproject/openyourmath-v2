@@ -1,0 +1,29 @@
+{
+  "uuid": "BW4r",
+  "source_path": "amscc/BW4r.tex",
+  "summary": "L'exercice demande d'étudier la liaison entre le tabagisme (définition précise) et le cancer de la gorge à partir d'un fichier de données. Il s'agit de construire un tableau de contingence et de réaliser un test de Pearson d'indépendance au seuil de 5%.",
+  "concepts": [
+    "test d'indépendance de Pearson",
+    "tableau de contingence",
+    "hypothèse nulle",
+    "risque de première espèce",
+    "loi du chi-deux",
+    "probabilité conditionnelle",
+    "effectifs observés et attendus"
+  ],
+  "methods": [
+    "construction de tableau croisé dynamique",
+    "calcul d'effectifs attendus sous hypothèse d'indépendance",
+    "calcul de la statistique de Pearson",
+    "approximation par la loi du chi-deux"
+  ],
+  "objects": [
+    "tableau de contingence 2x2",
+    "effectifs observés",
+    "effectifs attendus",
+    "statistique de Pearson"
+  ],
+  "content_hash": "ff9f0c0ff41fefcc8a3aa19102761e79e2f8731b944940cb4255e97c0bb70321",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-20T14:06:44.749Z"
+}
