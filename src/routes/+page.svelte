@@ -208,6 +208,46 @@
       : '↓';
   $: currentSortLabel = sortOptions.find((option) => option.value === sortSelection)?.label ?? 'Pertinence';
   $: isHybridSearchMode = Boolean($searchMeta?.semantic || String($searchMeta?.mode || '').startsWith('hybrid'));
+
+  // ── État vide : filtres qu'on peut retirer un par un ──────────────────────
+  // Un filtre trop restrictif (souvent tiré de la requête, comme « qcm ») est
+  // la cause la plus fréquente d'une liste vide : on propose de le retirer et
+  // de relancer, plutôt que de tout effacer.
+  const FLAG_LABELS = {
+    qcm: { '1': 'QCM', '0': 'Sans les QCM' },
+    hasSolution: { '1': 'Avec solution', '0': 'Sans solution' },
+    hasIndication: { '1': 'Avec indication', '0': 'Sans indication' },
+    hasVideo: { '1': 'Avec vidéo', '0': 'Sans vidéo' }
+  };
+  $: removableFilters = (() => {
+    const f = $filters || {};
+    const entries = [];
+    for (const key of ['qcm', 'hasSolution', 'hasIndication', 'hasVideo']) {
+      const label = FLAG_LABELS[key][String(f[key] ?? '')];
+      if (label) entries.push({ key, label });
+    }
+    if (f.filiere) entries.push({ key: 'filiere', label: `Filière ${f.filiere}` });
+    if (f.cpge) entries.push({ key: 'cpge', label: 'Programme CPGE' });
+    if (f.level) entries.push({ key: 'level', label: `Niveau ${f.level}` });
+    if (f.subchapter) entries.push({ key: 'subchapter', label: f.subchapter });
+    else if (f.chapter) entries.push({ key: 'chapter', label: f.chapter });
+    else if (f.module) entries.push({ key: 'module', label: f.module });
+    if (f.difficulty) entries.push({ key: 'difficulty', label: 'Difficulté' });
+    if (f.author) entries.push({ key: 'author', label: f.author });
+    if (f.organization) entries.push({ key: 'organization', label: f.organization });
+    return entries;
+  })();
+  $: emptyTitle = $filters?.qcm === '1' ? 'Aucun QCM trouvé' : 'Aucun exercice trouvé';
+  $: emptySubtitle = $searchMeta?.noRelevantResult && $searchQuery.trim()
+    ? `Aucun ${$filters?.qcm === '1' ? 'QCM' : 'exercice'} ne correspond vraiment à « ${$searchQuery.trim()} »${removableFilters.length ? ' avec ces filtres' : ''}.`
+    : "Essayez d'ajuster les filtres ou votre requête.";
+
+  function retryWithoutFilter(key) {
+    searchActions.updateFilter(key, '');
+    if (key === 'module') searchActions.updateFilter('chapter', '');
+    if (key === 'module' || key === 'chapter') searchActions.updateFilter('subchapter', '');
+    searchActions.search();
+  }
   $: activeFilterCount = [
     $filters.level,
     $filters.module,
@@ -675,18 +715,25 @@
               <p class="results-keyboard-hint">↑↓ naviguer · Entrée ouvrir · A ajouter · Échap fermer</p>
             {:else if $hasSearched}
               <EmptyState
-                title="Aucun exercice trouvé"
-                subtitle="Essayez d'ajuster les filtres ou votre requête."
+                title={emptyTitle}
+                subtitle={emptySubtitle}
               >
                 <div slot="action" class="empty-state-actions">
-                  {#if $searchQuery}
+                  {#each removableFilters.slice(0, 3) as rf (rf.key)}
+                    <button type="button" on:click={() => retryWithoutFilter(rf.key)} class="btn btn-primary">
+                      Chercher sans « {rf.label} »
+                    </button>
+                  {/each}
+                  {#if $searchQuery && !isHybridSearchMode}
                     <button type="button" on:click={() => searchActions.search('hybrid')} class="btn btn-primary">
                       Essayer la recherche intelligente
                     </button>
                   {/if}
-                  <button type="button" on:click={searchActions.clearAllFilters} class="btn btn-secondary">
-                    Effacer tous les filtres
-                  </button>
+                  {#if removableFilters.length > 1 || !$searchQuery}
+                    <button type="button" on:click={searchActions.clearAllFilters} class="btn btn-secondary">
+                      Effacer tous les filtres
+                    </button>
+                  {/if}
                 </div>
               </EmptyState>
             {/if}

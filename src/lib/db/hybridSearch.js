@@ -406,7 +406,14 @@ export async function hybridSearch({
     const supported = lowConfidence
       ? scoreFiltered.filter(r => hasQuerySupport(r, supportTerms))
       : [];
-    const filtered = supported.length > 0 ? supported : scoreFiltered;
+    // Faible confiance et aucun candidat ne contient les mots de la requête :
+    // le rerank juge tout hors sujet (cas typique : un filtre qui exclut les
+    // seuls contenus pertinents, comme « qcm statistique inférentielle »).
+    // Mieux vaut ne rien montrer et le dire que lister 50 résultats au hasard.
+    const filtered = supported.length > 0
+      ? supported
+      : (lowConfidence ? [] : scoreFiltered);
+    const noRelevantResult = lowConfidence && filtered.length === 0;
 
     console.log(`[rerank] top=${topScore?.toFixed(4) ?? 'null'} seuil=${threshold?.toFixed(4) ?? 'null'}${lowConfidence ? ' low-confidence' : ''} (${filtered.length}/${reranked.length} retenus)`);
     reranked.forEach((r, i) => {
@@ -417,7 +424,9 @@ export async function hybridSearch({
     const t0 = Date.now();
     const results = hydrate(db, filtered.slice(0, limit));
     if (_timing) _timing.hydrateMs = Date.now() - t0;
-    return withTotal ? { results, totalCount: filtered.length } : results;
+    return withTotal
+      ? { results, totalCount: filtered.length, noRelevantResult }
+      : results;
   } finally {
     db.close();
   }

@@ -208,6 +208,7 @@ export async function GET(event) {
   let results, totalCount = null, filterCounts = null;
   let fallback = false;
   let relaxed = false;
+  let noRelevantResult = false;
   const timing = {};
 
   try {
@@ -229,6 +230,7 @@ export async function GET(event) {
         });
         results = hybridResult.results;
         totalCount = hybridResult.totalCount;
+        noRelevantResult = Boolean(hybridResult.noRelevantResult);
       } catch (hybridErr) {
         // Fallback FTS5 si l'embed échoue (timeout, quota dépassé, etc.)
         console.error('[search] hybridSearch échoué, fallback FTS5:', hybridErr.message);
@@ -286,6 +288,7 @@ export async function GET(event) {
             count: finalResults.length,
             hasMore,
             limit,
+            noRelevantResult: noRelevantResult || undefined,
             pagination: {
               limit,
               offset,
