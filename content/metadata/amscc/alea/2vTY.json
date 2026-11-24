@@ -1,0 +1,25 @@
+{
+  "uuid": "2vTY",
+  "source_path": "amscc/alea/2vTY.tex",
+  "summary": "Calculer la probabilité qu'une variable aléatoire suivant une loi normale d'espérance 10 et d'écart-type 2 soit inférieure ou égale à 13, en utilisant la standardisation.",
+  "concepts": [
+    "loi normale",
+    "standardisation",
+    "fonction de répartition",
+    "variable aléatoire",
+    "espérance",
+    "écart-type"
+  ],
+  "methods": [
+    "standardisation",
+    "calcul de probabilité par fonction de répartition"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "fonction de répartition",
+    "probabilité"
+  ],
+  "content_hash": "1810d54e0ecda77dce9a479f85c6d6ae32035741012fa4389e8228f673edb904",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-24T21:12:45.560Z"
+}

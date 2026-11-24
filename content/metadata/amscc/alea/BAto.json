@@ -1,0 +1,23 @@
+{
+  "uuid": "BAto",
+  "source_path": "amscc/alea/BAto.tex",
+  "summary": "Calculer le moment d'ordre 2 d'une variable aléatoire X connaissant son espérance et sa variance, en utilisant la formule de König-Huygens.",
+  "concepts": [
+    "variance",
+    "espérance mathématique",
+    "moment d'ordre 2",
+    "formule de König-Huygens",
+    "variable aléatoire"
+  ],
+  "methods": [
+    "application de la formule de König-Huygens"
+  ],
+  "objects": [
+    "espérance",
+    "variance",
+    "moment d'ordre 2"
+  ],
+  "content_hash": "bb2b322ce12369767e33f5d5c0f1a85f072748017065ee34115830018a8a321f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-24T21:12:54.669Z"
+}

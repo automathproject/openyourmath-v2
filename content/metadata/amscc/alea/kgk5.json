@@ -1,0 +1,27 @@
+{
+  "uuid": "kgk5",
+  "source_path": "amscc/alea/kgk5.tex",
+  "summary": "L'exercice demande d'identifier les affirmations correctes concernant une variable aléatoire T modélisant une durée d'attente suivant une loi exponentielle, en utilisant son espérance et sa variance. Il s'agit de déterminer le paramètre λ de la loi exponentielle et d'évaluer des probabilités conditionnelles.",
+  "concepts": [
+    "loi exponentielle",
+    "espérance d'une variable aléatoire",
+    "variance d'une variable aléatoire",
+    "paramètre de loi exponentielle",
+    "probabilité conditionnelle",
+    "fonction de densité exponentielle"
+  ],
+  "methods": [
+    "calcul du paramètre λ à partir de l'espérance",
+    "calcul de probabilité conditionnelle pour loi exponentielle",
+    "comparaison entre variance et écart-type"
+  ],
+  "objects": [
+    "variable aléatoire exponentielle",
+    "espérance",
+    "variance",
+    "probabilité P(T > t)"
+  ],
+  "content_hash": "82c2539b06bbf3bdc73ad398aa0152845c75c141c735138b0b31edaa04f23c46",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-24T21:13:37.353Z"
+}

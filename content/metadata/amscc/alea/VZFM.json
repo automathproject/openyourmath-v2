@@ -1,0 +1,31 @@
+{
+  "uuid": "VZFM",
+  "source_path": "amscc/alea/VZFM.tex",
+  "summary": "L'exercice demande d'identifier la densité de probabilité d'une variable aléatoire continue à partir de sa fonction de répartition, puis de calculer des probabilités, l'espérance et la variance associées. Il aborde également des contre-sens courants liés à ces concepts.",
+  "concepts": [
+    "fonction de répartition",
+    "densité de probabilité",
+    "espérance",
+    "variance",
+    "médiane",
+    "intégrale de Riemann",
+    "continuité par morceaux",
+    "dérivabilité"
+  ],
+  "methods": [
+    "dérivation de la fonction de répartition",
+    "calcul d'intégrales impropres",
+    "identification du support d'une densité",
+    "calcul de probabilités à partir de la fonction de répartition"
+  ],
+  "objects": [
+    "variable aléatoire continue",
+    "fonction indicatrice",
+    "intégrale de la densité",
+    "espérance mathématique",
+    "variance"
+  ],
+  "content_hash": "3140314940d4da3c3b5d7e3f4637082b875a8ddef64298363797a9071e160b62",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-24T21:13:21.743Z"
+}

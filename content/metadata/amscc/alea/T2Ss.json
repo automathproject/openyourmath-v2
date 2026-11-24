@@ -1,0 +1,25 @@
+{
+  "uuid": "T2Ss",
+  "source_path": "amscc/alea/T2Ss.tex",
+  "summary": "Calculer la probabilité qu'une variable aléatoire suivant une loi normale centrée réduite prenne ses valeurs dans un intervalle symétrique autour de son espérance, en utilisant la fonction de répartition de la loi normale standard.",
+  "concepts": [
+    "loi normale",
+    "standardisation",
+    "fonction de répartition",
+    "probabilité continue",
+    "intervalle centré",
+    "variable aléatoire gaussienne"
+  ],
+  "methods": [
+    "standardisation",
+    "calcul de probabilité par fonction de répartition"
+  ],
+  "objects": [
+    "variable aléatoire normale",
+    "fonction de répartition",
+    "intervalle de probabilité"
+  ],
+  "content_hash": "85e63e380730cb3851bf1c5b479a14bf42ce6dcfedb381c9048c299be3c06f1f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-24T21:13:13.061Z"
+}

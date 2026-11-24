@@ -1,0 +1,25 @@
+{
+  "uuid": "F91t",
+  "source_path": "amscc/alea/F91t.tex",
+  "summary": "L'exercice demande de calculer la probabilité conditionnelle P(X > 5 | X > 3) pour une variable aléatoire exponentielle X de paramètre λ, et de l'identifier parmi plusieurs propositions.",
+  "concepts": [
+    "loi exponentielle",
+    "probabilité conditionnelle",
+    "absence de mémoire",
+    "fonction de survie",
+    "propriété de mémoire exponentielle"
+  ],
+  "methods": [
+    "calcul de probabilité conditionnelle",
+    "utilisation de la propriété d'absence de mémoire",
+    "simplification d'expressions exponentielles"
+  ],
+  "objects": [
+    "variable aléatoire exponentielle",
+    "probabilité conditionnelle",
+    "fonction de survie"
+  ],
+  "content_hash": "4fafce0c70913a7808f3fb0b748a568fe51eeab0890a1ab3f06a1ba2b6851f0c",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-24T21:13:03.419Z"
+}

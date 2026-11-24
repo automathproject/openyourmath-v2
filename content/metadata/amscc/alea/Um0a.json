@@ -1,0 +1,27 @@
+{
+  "uuid": "Um0a",
+  "source_path": "amscc/alea/Um0a.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant l'espérance de transformations d'une variable aléatoire uniforme sur [0,1]. Il porte sur les propriétés de l'espérance et l'application du théorème de transfert.",
+  "concepts": [
+    "théorème de transfert",
+    "espérance d'une variable aléatoire",
+    "loi uniforme",
+    "intégrale de Riemann",
+    "fonction affine",
+    "densité de probabilité"
+  ],
+  "methods": [
+    "calcul d'espérance par intégration",
+    "application du théorème de transfert",
+    "comparaison de transformations d'espérance"
+  ],
+  "objects": [
+    "variable aléatoire uniforme",
+    "espérance",
+    "fonction de transformation",
+    "intégrale"
+  ],
+  "content_hash": "5fa24ba8e265cc996269cc743e1298e25b0b4a3c32ed8ce4ff3dce6823cbcdb8",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-24T21:13:18.719Z"
+}

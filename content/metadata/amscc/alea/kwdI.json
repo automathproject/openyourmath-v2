@@ -1,0 +1,27 @@
+{
+  "uuid": "kwdI",
+  "source_path": "amscc/alea/kwdI.tex",
+  "summary": "L'exercice demande de déterminer quelles affirmations sont vraies concernant l'espérance, la médiane et la probabilité d'une variable aléatoire suivant une loi exponentielle de paramètre 2.",
+  "concepts": [
+    "loi exponentielle",
+    "espérance d'une variable aléatoire",
+    "médiane d'une variable aléatoire",
+    "fonction de répartition",
+    "mode d'une variable aléatoire",
+    "probabilité conditionnelle"
+  ],
+  "methods": [
+    "calcul de l'espérance pour une loi exponentielle",
+    "calcul de la médiane par résolution d'équation",
+    "utilisation de la fonction de répartition"
+  ],
+  "objects": [
+    "variable aléatoire exponentielle",
+    "espérance",
+    "médiane",
+    "fonction de répartition"
+  ],
+  "content_hash": "1475a165402c07d0ea085c4b78c8fc091bb07c40ca1c2958649fb06d0f23d682",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-24T21:13:40.052Z"
+}

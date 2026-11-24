@@ -1,0 +1,26 @@
+{
+  "uuid": "TKyQ",
+  "source_path": "amscc/alea/TKyQ.tex",
+  "summary": "L'exercice demande d'identifier parmi plusieurs fonctions proposées celles qui sont des densités de probabilité sur ℝ, en vérifiant les propriétés de positivité et de normalisation.",
+  "concepts": [
+    "densité de probabilité",
+    "positivité",
+    "normalisation",
+    "intégrale de fonction",
+    "support d'une fonction",
+    "fonction indicatrice"
+  ],
+  "methods": [
+    "intégration sur un intervalle",
+    "vérification de positivité",
+    "calcul d'intégrale impropre"
+  ],
+  "objects": [
+    "fonction indicatrice",
+    "fonction exponentielle",
+    "fonction polynomiale"
+  ],
+  "content_hash": "089d76eb6ca09261f14ec028310648c23e584f00fa7df49fde6aa77d5e89ee8d",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-24T21:13:16.201Z"
+}

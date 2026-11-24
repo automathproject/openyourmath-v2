@@ -1,0 +1,27 @@
+{
+  "uuid": "cOi9",
+  "source_path": "amscc/alea/cOi9.tex",
+  "summary": "L'exercice demande de déterminer quelles égalités sont vraies pour la probabilité d'un intervalle d'une variable aléatoire continue, en comparant différentes formulations impliquant la fonction de répartition et la densité de probabilité.",
+  "concepts": [
+    "variable aléatoire continue",
+    "fonction de répartition",
+    "densité de probabilité",
+    "probabilité d'un intervalle",
+    "continuité des variables aléatoires",
+    "mesure de Lebesgue"
+  ],
+  "methods": [
+    "calcul de probabilité par intégrale",
+    "utilisation de la fonction de répartition",
+    "comparaison des bornes d'intervalles"
+  ],
+  "objects": [
+    "variable aléatoire à densité",
+    "fonction de répartition F",
+    "densité de probabilité f",
+    "intervalle [a, b]"
+  ],
+  "content_hash": "130ee5aab8114ab82c20f9a56df4073ff2966ba70cd1ea853b212a5ae76c6c19",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-24T21:13:29.373Z"
+}

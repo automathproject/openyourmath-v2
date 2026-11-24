@@ -1,0 +1,24 @@
+{
+  "uuid": "jTB5",
+  "source_path": "amscc/alea/jTB5.tex",
+  "summary": "Déterminer la constante de normalisation c > 0 pour que la fonction f(x) = c x 1_{[0,1]}(x) soit une densité de probabilité sur [0,1]. L'exercice teste la compréhension de la condition d'intégration à 1 pour les densités.",
+  "concepts": [
+    "densité de probabilité",
+    "intégrale d'une fonction",
+    "condition de normalisation",
+    "fonction indicatrice",
+    "probabilité continue"
+  ],
+  "methods": [
+    "calcul d'intégrale",
+    "résolution d'équation"
+  ],
+  "objects": [
+    "fonction indicatrice",
+    "densité de probabilité",
+    "constante de normalisation"
+  ],
+  "content_hash": "e0e5f9a3eeb2cedd1f7d07a51d59d9b2925695452be83953cda35bd19e75fd52",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-24T21:13:34.352Z"
+}

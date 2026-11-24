@@ -1,0 +1,28 @@
+{
+  "uuid": "EyOj",
+  "source_path": "amscc/alea/EyOj.tex",
+  "summary": "L'exercice demande d'analyser la fonction de répartition d'une variable aléatoire réelle pour déterminer si elle est discrète, à densité, ou mixte, et de calculer des probabilités ponctuelles ou d'intervalle. Il aborde aussi des propriétés générales des variables aléatoires réelles.",
+  "concepts": [
+    "fonction de répartition",
+    "variable aléatoire mixte",
+    "variable aléatoire discrète",
+    "variable aléatoire à densité",
+    "probabilité ponctuelle",
+    "continuité de la fonction de répartition",
+    "saut de la fonction de répartition"
+  ],
+  "methods": [
+    "calcul de probabilité à partir de la fonction de répartition",
+    "analyse des propriétés de la fonction de répartition",
+    "calcul de limite à gauche"
+  ],
+  "objects": [
+    "fonction de répartition",
+    "variable aléatoire réelle",
+    "probabilité ponctuelle",
+    "probabilité d'intervalle"
+  ],
+  "content_hash": "c932bad057587cb7326521cc8a3c30371738cfb72ea86ff15f3235a076aad564",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-24T21:13:00.949Z"
+}

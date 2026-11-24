@@ -1,0 +1,28 @@
+{
+  "uuid": "H5av",
+  "source_path": "amscc/alea/H5av.tex",
+  "summary": "L'exercice demande de vérifier des affirmations concernant une variable aléatoire X suivant une loi uniforme sur l'intervalle [2;6]. Il porte sur la densité, l'espérance, la variance et des probabilités ponctuelles ou cumulées de X.",
+  "concepts": [
+    "loi uniforme",
+    "densité de probabilité",
+    "espérance",
+    "variance",
+    "probabilité conditionnelle",
+    "fonction indicatrice"
+  ],
+  "methods": [
+    "calcul de l'espérance d'une loi uniforme",
+    "calcul de la variance d'une loi uniforme",
+    "calcul de probabilité pour une loi uniforme"
+  ],
+  "objects": [
+    "variable aléatoire continue",
+    "densité de probabilité",
+    "espérance",
+    "variance",
+    "probabilité"
+  ],
+  "content_hash": "aefb36136902207b66216aa2eeeb17b9377b3b9f267c5425866780d4f2ff3c6f",
+  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+  "indexed_at": "2026-11-24T21:13:08.418Z"
+}
