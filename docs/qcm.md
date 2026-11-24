@@ -59,7 +59,12 @@ Conséquences :
   imprime un qcm comme une question à cases, avec son corrigé ;
 - les UUID sont tirés dans le même espace que ceux des exercices. Un doublon
   est écarté par `build-db.js`, et refusé en amont par
-  `exobase/tools/validate/check_qcm_sources.py`.
+  `exobase/tools/validate/check_qcm_sources.py` ;
+- `pnpm check:tex` contrôle aussi `content/qcm/` (`pnpm check:tex -- content/qcm/<source>/<fichier>.tex`
+  pour un seul) : mêmes règles que le contrôle d'exobase, avec la ligne de
+  chaque problème (codes `qcm-…`), plus le texte que le parseur perdrait
+  (`qcm-text-in-answers`, `qcm-text-after-answers`) et l'unicité des UUID entre
+  exercices et qcm.
 
 L'affichage interactif est dans `src/lib/components/qcm/` (`QcmQuestion`,
 `QcmChoices`) ; `ExerciseContent` s'en sert dès qu'un bloc porte `qcm`. Une

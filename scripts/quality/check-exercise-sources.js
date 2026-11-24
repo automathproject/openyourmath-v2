@@ -1,16 +1,20 @@
 #!/usr/bin/env node
 
 import fs from 'fs/promises';
+import { existsSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { resolveImagePath } from '../utils/image-artifacts.js';
 import { analyzeDisplayMath, analyzeInlineMath, findDisplayMath, findInlineMath } from './latex-math-layout.js';
+import { QCM_TYPES } from '../../src/lib/qcm/source.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT = path.resolve(__dirname, '../..');
 
 const DEFAULT_INPUT = path.join(ROOT, 'content/exercises');
+// Contenus qcm (format exo7qcm, voir content/qcm/FORMAT.md dans exobase).
+const QCM_INPUT = path.join(ROOT, 'content/qcm');
 const DEFAULT_MAX_ERRORS = 200;
 const CSV_COLUMNS = ['file', 'line', 'column', 'code', 'message'];
 
@@ -39,6 +43,10 @@ const TOP_LEVEL_COMMANDS = new Set([
 ]);
 
 const CONTENT_COMMANDS = new Set(['texte', 'question', 'indication', 'reponse']);
+
+// En-tête d'un qcm : celui des exercices, plus trois champs propres aux qcm.
+const QCM_TOP_LEVEL_COMMANDS = new Set([...TOP_LEVEL_COMMANDS, 'licence', 'serie', 'exo7qcmid']);
+const QCM_REQUIRED_METADATA = ['uuid', 'titre', 'auteur', 'organisation', 'datecreate', 'niveau', 'module', 'chapitre'];
 
 const IGNORED_CONTENT_ENVIRONMENTS = new Set([
   'center',
@@ -434,7 +442,7 @@ export function validateUuidUniqueness(sources) {
  */
 export async function validateImageReferences(sources, { contentRoot = path.join(ROOT, 'content') } = {}) {
   const issues = [];
-  const includegraphics = /\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}/g;
+  const includegraphics = /\\(includegraphics|qimage)(?:\[[^\]]*\])?\{([^}]+)\}/g;
 
   for (const entry of sources) {
     // Préserver les positions pour fournir une ligne/colonne exacte tout en
@@ -443,12 +451,12 @@ export async function validateImageReferences(sources, { contentRoot = path.join
     let match;
 
     while ((match = includegraphics.exec(cleanSource)) !== null) {
-      const imagePath = match[1].trim();
+      const imagePath = match[2].trim();
       if (!imagePath) continue;
 
       const resolvedPath = await resolveImagePath({
         imagePath,
-        sourceFilePath: entry.sourceFilePath || path.resolve(ROOT, entry.filePath),
+        sourceFilePath: imageLookupPath(entry.sourceFilePath || path.resolve(ROOT, entry.filePath)),
         contentRoot,
         logger: null
       });
@@ -461,7 +469,7 @@ export async function validateImageReferences(sources, { contentRoot = path.join
         line,
         column,
         code: 'missing-image',
-        message: `Image introuvable pour \\includegraphics{${imagePath}} dans content/images/.`
+        message: `Image introuvable pour \\${match[1]}{${imagePath}} dans content/images/.`
       });
     }
   }
@@ -604,7 +612,235 @@ export function validateMathLayout(source, filePath = '<source>') {
   return warnings;
 }
 
+/**
+ * Chemin à partir duquel chercher les images d'une source. Un qcm range ses
+ * images comme un exercice de la même source (content/images/<source>/) : on
+ * le traite comme content/exercises/<source>/<fichier>, ainsi que le fait
+ * scripts/parse-qcm.js.
+ */
+function imageLookupPath(sourceFilePath) {
+  const relative = path.relative(QCM_INPUT, sourceFilePath);
+  if (relative.startsWith('..') || path.isAbsolute(relative)) return sourceFilePath;
+  return path.join(DEFAULT_INPUT, relative.split(path.sep)[0], path.basename(sourceFilePath));
+}
+
+/**
+ * Une source est un qcm si elle est rangée sous content/qcm/ ou si son contenu
+ * suit la syntaxe exo7qcm (environnement question), absente des exercices.
+ */
+export function isQcmSource(source, filePath = '') {
+  if (/(^|[\\/])content[\\/]qcm[\\/]/.test(filePath)) return true;
+  return /\\begin\s*\{question\}/.test(stripCommentsPreserveLength(source));
+}
+
+function reportTextOutsideContenu(issues, source, filePath, cleanSource, topLevelCalls) {
+  const topLevelMask = cleanSource.split('');
+  for (const call of topLevelCalls) blankRange(topLevelMask, call.start, call.end);
+  for (const block of findEnvironmentBlocks(cleanSource, 'SaveVerbatim')) {
+    blankRange(topLevelMask, block.start, block.end);
+  }
+  const outsideText = topLevelMask.join('');
+  const outsideRegex = /[A-Za-zÀ-ÖØ-öø-ÿ0-9][^\n]*/g;
+  let outsideMatch;
+  while ((outsideMatch = outsideRegex.exec(outsideText)) !== null) {
+    addIssue(
+      issues,
+      source,
+      filePath,
+      outsideMatch.index,
+      'text-outside-contenu',
+      `Texte hors \\contenu{...}: "${summarizeChunk(outsideMatch[0])}".`
+    );
+  }
+}
+
+/** Texte restant une fois retirés les commandes de mise en page et l'espace. */
+function leftoverText(fragment) {
+  return fragment
+    .replace(/\\(?:vskip\s*-?[\d.]+\s*[a-z]{2}|vspace\*?\{[^}]*\}|(?:small|med|big)skip\b|noindent\b)/g, '')
+    .trim();
+}
+
+/**
+ * Vérifie un contenu qcm : en-tête, \contenu{} au format exo7qcm, et pour
+ * chaque question un bloc answers de \good{}/\bad{} cohérent avec \qtype{}.
+ * Reprend les règles de tools/validate/check_qcm_sources.py d'exobase, avec la
+ * position de chaque problème.
+ *
+ * @param {string} source
+ * @param {string} [filePath]
+ * @returns {{ filePath: string, line: number, column: number, code: string, message: string }[]}
+ */
+export function validateQcmSource(source, filePath = '<source>') {
+  const issues = [];
+  const cleanSource = stripCommentsPreserveLength(source);
+  const topLevelCalls = findCommandCalls(cleanSource, QCM_TOP_LEVEL_COMMANDS);
+  const contenuCalls = topLevelCalls.filter(call => call.name === 'contenu');
+  const firstCall = name => topLevelCalls.find(call => call.name === name && !call.malformed);
+  const report = (index, code, message) => addIssue(issues, source, filePath, index, code, message);
+
+  for (const call of topLevelCalls) {
+    if (call.malformed) {
+      report(call.start, 'malformed-command', `La commande \\${call.name}{...} n'est pas fermée correctement.`);
+    }
+  }
+
+  for (const name of QCM_REQUIRED_METADATA) {
+    const call = firstCall(name);
+    if (!call || !call.body.trim()) {
+      report(call ? call.start : 0, 'missing-metadata', `Métadonnée manquante ou vide : \\${name}{...}.`);
+    }
+  }
+
+  const uuidCall = firstCall('uuid');
+  const fileStem = path.basename(filePath, '.tex');
+  const namedByUuid = /(^|[\\/])content[\\/]qcm[\\/]/.test(filePath);
+  if (namedByUuid && uuidCall && uuidCall.body.trim() && uuidCall.body.trim() !== fileStem) {
+    report(uuidCall.start, 'uuid-filename-mismatch', `\\uuid{${uuidCall.body.trim()}} ne correspond pas au nom du fichier (${fileStem}.tex).`);
+  }
+
+  const difficultyCall = firstCall('difficulte');
+  const difficulty = difficultyCall?.body.trim();
+  if (difficulty && !['1', '2', '3'].includes(difficulty)) {
+    report(difficultyCall.start, 'invalid-difficulty', `\\difficulte{${difficulty}} hors de 1 à 3.`);
+  }
+
+  reportTextOutsideContenu(issues, source, filePath, cleanSource, topLevelCalls);
+
+  const contenu = contenuCalls.find(call => !call.malformed);
+  if (!contenu) {
+    if (contenuCalls.length === 0) report(0, 'missing-contenu', 'Le fichier doit contenir un bloc \\contenu{...}.');
+    return issues;
+  }
+
+  const body = contenu.body;
+  const offset = contenu.bodyStart;
+
+  let balanced = true;
+  for (const environment of ['question', 'answers', 'explanations']) {
+    const opened = (body.match(new RegExp(`\\\\begin\\s*\\{${environment}\\}`, 'g')) || []).length;
+    const closed = (body.match(new RegExp(`\\\\end\\s*\\{${environment}\\}`, 'g')) || []).length;
+    if (opened !== closed) {
+      balanced = false;
+      report(offset, 'unbalanced-environment', `Environnement ${environment} : ${opened} ouverture(s) pour ${closed} fermeture(s).`);
+    }
+  }
+
+  const questions = [];
+  const questionRegex = /\\begin\s*\{question\}(?:\[[^\]]*\])?([\s\S]*?)\\end\s*\{question\}/dg;
+  for (const match of body.matchAll(questionRegex)) {
+    questions.push({
+      start: offset + match.index,
+      end: offset + match.index + match[0].length,
+      bodyStart: offset + match.indices[1][0],
+      body: match[1]
+    });
+  }
+
+  if (questions.length === 0) {
+    report(contenu.start, 'missing-question', 'Le contenu doit contenir au moins un environnement question.');
+  }
+
+  const serieCall = firstCall('serie');
+  const ordered = serieCall?.body.trim() === 'ordonnee';
+  if (ordered && questions.length < 2) {
+    report(serieCall.start, 'qcm-serie', '\\serie{ordonnee} sur un contenu d\'une seule question.');
+  }
+  if (!ordered && questions.length > 1) {
+    report(questions[1].start, 'qcm-serie', `${questions.length} questions sans \\serie{ordonnee}.`);
+  }
+
+  // Tout le texte du contenu est dans \texte{} ou dans une question. Un
+  // environnement mal fermé est déjà signalé : son texte n'est pas repris ici.
+  const contenuMask = body.split('');
+  for (const call of findCommandCalls(body, new Set(['texte']))) blankRange(contenuMask, call.start, call.end);
+  for (const question of questions) blankRange(contenuMask, question.start - offset, question.end - offset);
+  const leftover = contenuMask.join('').replace(/\\(?:begin|end)\s*\{[^}]+\}/g, m => ' '.repeat(m.length));
+  const leftoverRegex = /[A-Za-zÀ-ÖØ-öø-ÿ0-9][\s\S]*?(?=(?:\n\s*\n)|$)/g;
+  let leftoverMatch;
+  while (balanced && (leftoverMatch = leftoverRegex.exec(leftover)) !== null) {
+    report(
+      offset + leftoverMatch.index,
+      'untyped-content-text',
+      `Texte dans \\contenu{...} hors \\texte{} et des environnements question: "${summarizeChunk(leftoverMatch[0])}".`
+    );
+  }
+
+  questions.forEach((question, rank) => {
+    const where = `Question ${rank + 1}`;
+    const answersRegex = /\\begin\s*\{answers\}([\s\S]*?)\\end\s*\{answers\}/dg;
+    const answersBlocks = [...question.body.matchAll(answersRegex)];
+    if (answersBlocks.length !== 1) {
+      report(question.start, 'qcm-answers-block', `${where} : ${answersBlocks.length} bloc(s) answers, un seul attendu.`);
+      return;
+    }
+    const answersBlock = answersBlocks[0];
+    const answersBody = answersBlock[1];
+    const answersStart = question.bodyStart + answersBlock.indices[1][0];
+    const answersAt = question.bodyStart + answersBlock.index;
+
+    const typeMatch = /\\qtype\s*\{([^}]*)\}/.exec(question.body);
+    const type = typeMatch ? typeMatch[1].trim() : 'onetoall';
+    if (!QCM_TYPES.includes(type)) {
+      report(question.bodyStart + typeMatch.index, 'qcm-unknown-type', `${where} : \\qtype{${type}} non pris en charge (${QCM_TYPES.join(', ')}).`);
+    }
+
+    const answers = [];
+    const answersMask = answersBody.split('');
+    for (const call of findCommandCalls(answersBody, new Set(['good', 'bad']))) {
+      if (call.malformed) {
+        report(answersStart + call.start, 'malformed-command', `La commande \\${call.name}{...} n'est pas fermée correctement.`);
+        blankRange(answersMask, call.start, answersBody.length);
+        continue;
+      }
+      answers.push({ ...call, correct: call.name === 'good' });
+      blankRange(answersMask, call.start, call.end);
+    }
+    // Une ponctuation après \good{...} (fréquente dans l'import exo7) est
+    // perdue sans dommage ; un mot ou une formule, non.
+    const strayText = leftoverText(answersMask.join(''));
+    if (/[A-Za-zÀ-ÖØ-öø-ÿ0-9$\\]/.test(strayText)) {
+      report(answersAt, 'qcm-text-in-answers', `${where} : texte dans answers hors \\good{} et \\bad{}: "${summarizeChunk(strayText)}".`);
+    }
+
+    for (const answer of answers) {
+      const text = answer.body.replace(/\\feedback\s*\{[\s\S]*\}/, '').trim();
+      if (!text) report(answersStart + answer.start, 'qcm-empty-answer', `${where} : réponse \\${answer.name}{} vide.`);
+    }
+
+    const good = answers.filter(answer => answer.correct).length;
+    if (answers.length < 2) {
+      report(answersAt, 'qcm-too-few-answers', `${where} : ${answers.length} réponse(s), au moins deux attendues.`);
+    }
+    if (good === 0 && type !== 'zerotoall') {
+      report(answersAt, 'qcm-no-correct-answer', `${where} : aucune réponse \\good{} (ajouter \\qtype{zerotoall} si c'est voulu).`);
+    }
+    if ((type === 'onlyone' || type === 'truefalse') && good !== 1) {
+      report(answersAt, 'qcm-type-mismatch', `${where} : \\qtype{${type}} avec ${good} réponses \\good{}, une seule attendue.`);
+    }
+
+    const stem = question.body
+      .slice(0, answersBlock.index)
+      .replace(/\\q(?:tags|classification|type|id|num|author|tolerance)\s*\{[^}]*\}/g, '')
+      .replace(/\\q(?:keeporder|oneline|multicols|idontknow)\b/g, '');
+    if (!leftoverText(stem)) report(question.start, 'qcm-empty-stem', `${where} : énoncé vide.`);
+
+    const afterIndex = answersBlock.index + answersBlock[0].length;
+    const after = question.body
+      .slice(afterIndex)
+      .replace(/\\begin\s*\{explanations\}[\s\S]*?\\end\s*\{explanations\}/g, '');
+    const afterText = leftoverText(after);
+    if (afterText) {
+      report(question.bodyStart + afterIndex, 'qcm-text-after-answers', `${where} : texte après les réponses, hors explanations: "${summarizeChunk(afterText)}".`);
+    }
+  });
+
+  return issues;
+}
+
 export function validateSource(source, filePath = '<source>') {
+  if (isQcmSource(source, filePath)) return validateQcmSource(source, filePath);
+
   const issues = [];
   const cleanSource = stripCommentsPreserveLength(source);
   const topLevelCalls = findCommandCalls(cleanSource, TOP_LEVEL_COMMANDS);
@@ -639,24 +875,7 @@ export function validateSource(source, filePath = '<source>') {
     }
   }
 
-  const topLevelMask = cleanSource.split('');
-  for (const call of topLevelCalls) blankRange(topLevelMask, call.start, call.end);
-  for (const block of findEnvironmentBlocks(cleanSource, 'SaveVerbatim')) {
-    blankRange(topLevelMask, block.start, block.end);
-  }
-  const outsideText = topLevelMask.join('');
-  const outsideRegex = /[A-Za-zÀ-ÖØ-öø-ÿ0-9][^\n]*/g;
-  let outsideMatch;
-  while ((outsideMatch = outsideRegex.exec(outsideText)) !== null) {
-    addIssue(
-      issues,
-      source,
-      filePath,
-      outsideMatch.index,
-      'text-outside-contenu',
-      `Texte hors \\contenu{...}: "${summarizeChunk(outsideMatch[0])}".`
-    );
-  }
+  reportTextOutsideContenu(issues, source, filePath, cleanSource, topLevelCalls);
 
   for (const contenuCall of contenuCalls) {
     const typedCallsInContenu = contentCalls.filter(call => call.start >= contenuCall.bodyStart && call.end <= contenuCall.bodyEnd);
@@ -724,8 +943,11 @@ async function main() {
 
   if (!Number.isFinite(maxErrors) || maxErrors < 0) maxErrors = DEFAULT_MAX_ERRORS;
 
-  const input = path.resolve(inputArg || DEFAULT_INPUT);
-  const files = (await listTexFiles(input)).sort();
+  // Sans argument : les exercices et les qcm. Les deux partagent l'espace des
+  // UUID (listes mixtes), d'où un seul registre pour le contrôle d'unicité.
+  const registryRoots = [DEFAULT_INPUT, QCM_INPUT].filter(root => existsSync(root));
+  const inputs = inputArg ? [path.resolve(inputArg)] : registryRoots;
+  const files = (await Promise.all(inputs.map(listTexFiles))).flat().sort();
   const allIssues = [];
   const allWarnings = [];
   const sources = [];
@@ -741,14 +963,17 @@ async function main() {
     allWarnings.push(...validateMathLayout(source, relativePath));
   }
 
-  // Lorsqu'un seul fichier sous content/exercises est contrôlé, il doit tout de
-  // même être comparé au référentiel complet pour éviter une collision à
-  // l'ajout. Les autres fichiers ne reçoivent pas d'erreur dans ce mode ciblé.
-  const relativeToExercises = path.relative(DEFAULT_INPUT, input);
-  const inputIsInsideExercises = !relativeToExercises.startsWith('..') && !path.isAbsolute(relativeToExercises);
-  if (inputIsInsideExercises && input !== DEFAULT_INPUT) {
-    const registryFiles = (await listTexFiles(DEFAULT_INPUT)).sort();
+  // Lorsqu'une partie seulement des exercices ou des qcm est contrôlée, elle
+  // doit tout de même être comparée au registre complet pour éviter une
+  // collision à l'ajout. Les autres fichiers ne reçoivent pas d'erreur dans ce
+  // mode ciblé.
+  const isInside = (root, target) => {
+    const relative = path.relative(root, target);
+    return !relative.startsWith('..') && !path.isAbsolute(relative);
+  };
+  if (inputArg && registryRoots.some(root => isInside(root, inputs[0]))) {
     const knownPaths = new Set(files.map(filePath => path.resolve(filePath)));
+    const registryFiles = (await Promise.all(registryRoots.map(listTexFiles))).flat().sort();
     for (const filePath of registryFiles) {
       if (knownPaths.has(path.resolve(filePath))) continue;
       sources.push({

@@ -6,6 +6,7 @@ import {
   loadCpgeNodeIds,
   validateCpgeReferences,
   validateImageReferences,
+  validateQcmSource,
   validateSource,
   validateUuidUniqueness
 } from '../../scripts/quality/check-exercise-sources.js';
@@ -201,5 +202,117 @@ def f(x):
     }]);
 
     expect(issues).toEqual([]);
+  });
+  describe('qcm', () => {
+    const header = String.raw`\uuid{qc01}
+\titre{Un qcm}
+\auteur{Auteur}
+\organisation{AMSCC}
+\datecreate{2026-11-24}
+\niveau{L2}
+\module{Probabilité}
+\chapitre{Probabilité continue}
+\difficulte{2}
+`;
+    const qcm = (body, extra = '') => `${header}${extra}\\contenu{\n${body}\n}`;
+    const qcmCodes = source => validateQcmSource(source, 'content/qcm/amscc/qc01.tex').map(issue => issue.code);
+    const question = (answers, before = 'Quelle est la bonne réponse ?', after = '') => String.raw`\begin{question}
+${before}
+\begin{answers}
+${answers}
+\end{answers}
+\begin{explanations}
+Parce que.
+\end{explanations}
+${after}
+\end{question}`;
+
+    it('routes qcm sources to the qcm validator', () => {
+      const source = qcm(question(String.raw`\good{$1$}
+\bad{$2$}`));
+      expect(validateSource(source, 'sample.tex')).toEqual([]);
+      expect(validateSource(source, 'content/qcm/amscc/qc01.tex')).toEqual([]);
+    });
+
+    it('accepts an ordered series with a shared statement and \qtype', () => {
+      const one = question(String.raw`\good{$1$}
+\bad{$2$}`, String.raw`\qtype{onlyone}
+\qkeeporder
+Première question.`);
+      const two = question(String.raw`\bad{$1$}
+\good{$2$ \feedback{Bien vu.}}.`, 'Seconde question.');
+      const source = qcm(String.raw`\texte{Énoncé commun avec $X$.}
+
+${one}
+
+${two}`, '\\serie{ordonnee}\n\\licence{CC BY 4.0}\n');
+      expect(qcmCodes(source)).toEqual([]);
+    });
+
+    it('reports answer consistency problems', () => {
+      expect(qcmCodes(qcm(question(String.raw`\bad{$1$}
+\bad{$2$}`)))).toEqual(['qcm-no-correct-answer']);
+      expect(qcmCodes(qcm(question(String.raw`\bad{$1$}
+\bad{$2$}`, String.raw`\qtype{zerotoall}
+Rien de juste ?`)))).toEqual([]);
+      expect(qcmCodes(qcm(question(String.raw`\good{$1$}
+\good{$2$}`, String.raw`\qtype{onlyone}
+Une seule ?`)))).toEqual(['qcm-type-mismatch']);
+      expect(qcmCodes(qcm(question(String.raw`\good{$1$}`)))).toEqual(['qcm-too-few-answers']);
+      expect(qcmCodes(qcm(question(String.raw`\good{$1$}
+\bad{ }`)))).toEqual(['qcm-empty-answer']);
+      expect(qcmCodes(qcm(question(String.raw`\good{$1$}
+\bad{$2$}`, String.raw`\qtype{multiple}
+Type ?`)))).toEqual(['qcm-unknown-type']);
+    });
+
+    it('reports text lost by the qcm parser', () => {
+      expect(qcmCodes(qcm(question(String.raw`\good{$1$}
+Une réponse sans commande
+\bad{$2$}`)))).toEqual(['qcm-text-in-answers']);
+      expect(qcmCodes(qcm(question(String.raw`\good{$1$}
+\bad{$2$}`, undefined, 'Commentaire oublié.')))).toEqual(['qcm-text-after-answers']);
+      expect(qcmCodes(qcm(question(String.raw`\good{$1$}
+\bad{$2$}`, '\\qclassification{121.02}')))).toEqual(['qcm-empty-stem']);
+      expect(qcmCodes(qcm(`Texte libre.\n\n${question(String.raw`\good{$1$}
+\bad{$2$}`)}`))).toEqual(['untyped-content-text']);
+    });
+
+    it('reports structural and metadata problems with their position', () => {
+      const unclosed = qcm(String.raw`\begin{question}
+Énoncé.
+\begin{answers}
+\good{$1$}
+\bad{$2$}
+\end{answers}`);
+      expect(qcmCodes(unclosed)).toEqual(['unbalanced-environment', 'missing-question']);
+
+      const two = qcm(`${question(String.raw`\good{$1$}
+\bad{$2$}`)}\n${question(String.raw`\good{$1$}
+\bad{$2$}`)}`);
+      expect(qcmCodes(two)).toEqual(['qcm-serie']);
+
+      const noDate = qcm(question(String.raw`\good{$1$}
+\bad{$2$}`)).replace('\\datecreate{2026-11-24}', '\\datecreate{}');
+      expect(qcmCodes(noDate)).toEqual(['missing-metadata']);
+      expect(validateQcmSource(noDate, 'content/qcm/amscc/autre.tex').map(issue => issue.code))
+        .toEqual(['missing-metadata', 'uuid-filename-mismatch']);
+
+      const issues = validateQcmSource(qcm(question(String.raw`\good{$1$}
+\good{$2$}`, String.raw`\qtype{truefalse}
+Vrai ?`)), 'content/qcm/amscc/qc01.tex');
+      expect(issues).toHaveLength(1);
+      expect(issues[0]).toMatchObject({ code: 'qcm-type-mismatch', line: 14, column: 1 });
+    });
+
+    it('resolves \qimage like the qcm parser', async () => {
+      const issues = await validateImageReferences([{
+        source: String.raw`\qimage{images/png/absente-1.png}`,
+        filePath: 'content/qcm/exo7/lot/nouveau.tex',
+        sourceFilePath: path.join(ROOT, 'content/qcm/exo7/lot/nouveau.tex')
+      }]);
+      expect(issues).toHaveLength(1);
+      expect(issues[0].message).toContain('\\qimage{images/png/absente-1.png}');
+    });
   });
 });
