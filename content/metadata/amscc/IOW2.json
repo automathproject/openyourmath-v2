@@ -1,32 +1,33 @@
 {
   "uuid": "IOW2",
   "source_path": "amscc/IOW2.tex",
-  "summary": "L'exercice étudie les propriétés de la loi log-normale, notamment sa relation avec la loi normale via la transformation logarithmique. Il aborde la réciprocité entre ces lois, la loi du produit de variables log-normales indépendantes, le calcul de probabilités et l'espérance d'une variable log-normale.",
+  "summary": "L'exercice étudie les propriétés de la loi log-normale, notamment les transformations inverses, les produits de variables log-normales et le calcul de probabilités. Il demande de montrer des équivalences de lois et de déterminer des paramètres de distributions.",
   "concepts": [
     "loi log-normale",
     "loi normale",
-    "transformation logarithmique",
-    "fonction de répartition",
-    "espérance d'une variable aléatoire",
-    "somme de variables aléatoires indépendantes",
     "changement de variable",
+    "théorème d'identification",
+    "théorème de transfert",
+    "fonction de répartition",
+    "espérance mathématique",
     "complétion du carré"
   ],
   "methods": [
-    "changement de variable",
     "standardisation",
-    "calcul d'espérance",
-    "intégration par parties",
+    "changement de variable",
+    "théorème d'identification",
+    "théorème de transfert",
+    "calcul de l'espérance",
     "complétion du carré"
   ],
   "objects": [
     "variable aléatoire log-normale",
     "variable aléatoire normale",
     "produit de variables aléatoires",
-    "fonction de répartition",
-    "espérance"
+    "espérance d'une variable aléatoire",
+    "fonction de répartition"
   ],
-  "content_hash": "0c5ac9d753adb498e42916f610d4698f880027ee9d0d56f776a40d7f853cf122",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-10-19T11:40:36.929Z"
+  "content_hash": "f506cd7444909086ede664e386fbb1ef03d7fa2f5450a67e67c5b39814f68ead",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-25T09:33:59.322Z"
 }
