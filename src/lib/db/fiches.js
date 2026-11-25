@@ -18,7 +18,7 @@ const DB_PATH = path.resolve('data/exercises.sqlite');
 // ce qui rend supportables les fiches de plusieurs milliers d'exercices.
 const ITEM_COLUMNS = `
   e.uuid, e.title, e.chapter, e.subchapter, e.theme, e.level, e.difficulty,
-  e.module, e.author, e.organization, e.hasIndication, e.hasSolution
+  e.module, e.author, e.organization, e.hasIndication, e.hasSolution, e.summary
 `;
 
 function parseSectionPath(value) {

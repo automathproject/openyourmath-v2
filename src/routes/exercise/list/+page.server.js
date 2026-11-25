@@ -105,6 +105,8 @@ export async function load({ url }) {
         theme: result.exercise.theme,
         author: result.exercise.author,
         difficulty: result.exercise.difficulty,
+        // Sert de libellé au sommaire de Consulter quand le titre est générique.
+        summary: result.exercise.summary,
         // Inclure le contenu complet pour le premier exercice (optimisation)
         content: result.exercise.content,
         fullExercise: result.exercise

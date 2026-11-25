@@ -22,6 +22,9 @@
     compactMobile = false,
     // Rattachements aux programmes de CPGE (src/lib/db/cpge.js), un badge par programme.
     cpge = [],
+    // Pastilles à taire ('level', 'module', 'chapter') : une liste qui les
+    // partage toutes les affiche une seule fois, pas devant chaque exercice.
+    masquer = [],
   } = $props();
 
   // Le badge mène à la section du premier rattachement dans la vue Prépa de /browse.
@@ -214,13 +217,13 @@
         </div>
       {:else}
         <div class="lecture-metadata lecture-metadata--immersive">
-          {#if exercise?.level}
+          {#if exercise?.level && !masquer.includes('level')}
             <span class="chip chip-teal-solid">{exercise.level}</span>
           {/if}
-          {#if exercise?.module}
+          {#if exercise?.module && !masquer.includes('module')}
             <span class="chip chip-soft">{exercise.module}</span>
           {/if}
-          {#if exercise?.chapter}
+          {#if exercise?.chapter && !masquer.includes('chapter')}
             <span class="chip chip-soft">{exercise.chapter}</span>
           {/if}
           {#if difficulty > 0}

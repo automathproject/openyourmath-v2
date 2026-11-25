@@ -487,7 +487,7 @@ export async function getExerciseByUuid(uuid) {
       SELECT 
         uuid, content_type, title, chapter, subchapter, theme, level, difficulty, module,
         author, organization, license_code, license_url,
-        video_id, created_at, updated_at, preview,
+        video_id, created_at, updated_at, preview, summary,
         hasIndication, hasSolution,
         content_json, source_path
       FROM exercises 

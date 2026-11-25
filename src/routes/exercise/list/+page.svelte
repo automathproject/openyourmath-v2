@@ -92,6 +92,42 @@
     consulterVisited = new Set(consulterVisited).add(index);
   }
 
+  // 82 % du corpus s'intitule « exo7 N » : un sommaire de tels titres ne dit
+  // rien de ce qu'on va lire.
+  function titreGenerique(title) {
+    return !title || /^exo7\s+\d+$/i.test(title.trim());
+  }
+
+  // Le résumé est rédigé pour la recherche et sa suite évoque parfois
+  // l'indication ou la solution (550 exercices) : seule la première phrase
+  // sert, et pas si elle en parle, la vue élève ne devant rien dévoiler.
+  function premierePhrase(summary) {
+    const phrase = (summary ?? '').trim().split(/(?<=[.!?])\s+/)[0] ?? '';
+    if (/indication|solution|corrig/i.test(phrase)) return '';
+    // « L'exercice demande de démontrer… » ouvre plus de 4 000 résumés : sur
+    // deux lignes de sommaire, seul le verbe qui suit renseigne.
+    const utile = phrase.replace(
+      /^(?:l['’]exercice|cet exercice)\s+(?:demande|propose|consiste)\s+(?:de\s+|d['’]|à\s+)/i,
+      ''
+    );
+    return utile.charAt(0).toUpperCase() + utile.slice(1);
+  }
+
+  function libelleSommaire(exercise, index) {
+    const title = exercise?.title;
+    if (!titreGenerique(title)) return { texte: title, resume: false };
+    const resume = premierePhrase(exercise?.summary ?? exercise?.fullExercise?.summary);
+    return resume
+      ? { texte: resume, resume: true }
+      : { texte: title || `Exercice ${index + 1}`, resume: false };
+  }
+
+  function champExercice(exercise, cle) {
+    return exercise?.[cle] ?? exercise?.fullExercise?.[cle] ?? null;
+  }
+
+  const CHAMPS_COMMUNS = ['level', 'module', 'chapter'];
+
   // Presenter view state
   let presenterQIdx = 0;
   let presenterShowInd = false;
@@ -513,11 +549,28 @@
 
   $: consulterFilterActive = consulterFilter.trim().length > 0;
   $: consulterEntries = $exerciseList
-    .map((exercise, index) => ({ exercise, index }))
-    .filter(({ exercise, index }) =>
+    .map((exercise, index) => ({ exercise, index, libelle: libelleSommaire(exercise, index) }))
+    .filter(({ exercise, index, libelle }) =>
       !consulterFilterActive ||
-      foldText(exercise.title || `Exercice ${index + 1}`).includes(foldText(consulterFilter))
+      [exercise.title || `Exercice ${index + 1}`, libelle.texte, exercise.section]
+        .some((texte) => foldText(texte).includes(foldText(consulterFilter)))
     );
+
+  // Niveau, module et chapitre partagés par toute la liste : dits une fois en
+  // tête du sommaire plutôt que répétés devant chaque exercice.
+  $: consulterCommuns = $exerciseList.length > 1
+    ? CHAMPS_COMMUNS
+        .map((cle) => ({ cle, valeur: champExercice($exerciseList[0], cle) }))
+        .filter(({ cle, valeur }) =>
+          valeur && $exerciseList.every((exercise) => champExercice(exercise, cle) === valeur)
+        )
+    : [];
+  $: consulterMasquer = consulterCommuns.map(({ cle }) => cle);
+  $: consulterSectionCourante = $exerciseList[consulterIndexCourant]?.section ?? '';
+  $: consulterSuivant = $exerciseList[$selectedExerciseIndex + 1];
+  $: consulterLibelleSuivant = consulterSuivant && !titreGenerique(consulterSuivant.title)
+    ? (consulterSuivant.title.length > 28 ? consulterSuivant.title.slice(0, 28) + '…' : consulterSuivant.title)
+    : 'Suivant';
 
   // Garder l'item sélectionné dans le champ du sommaire : au clavier, sur une
   // fiche longue, la sélection sortait sinon de la zone visible.
@@ -2091,6 +2144,13 @@
           </button>
         {/if}
       </div>
+      {#if consulterCommuns.length}
+        <div class="consulter-communs">
+          {#each consulterCommuns as { cle, valeur } (cle)}
+            <span class="chip {cle === 'level' ? 'chip-teal-solid' : 'chip-soft'}">{valeur}</span>
+          {/each}
+        </div>
+      {/if}
       <div class="consulter-progress">
         <div
           class="consulter-progress-track"
@@ -2122,9 +2182,15 @@
 
       <div class="consulter-list">
         <!-- Clé = rang, pas uuid : une fiche peut reprendre un exercice (fic00007). -->
-        {#each consulterEntries as { exercise: e, index: i } (i)}
+        {#each consulterEntries as { exercise: e, index: i, libelle }, k (i)}
           {@const isSel = i === consulterIndexCourant}
           {@const isVisited = consulterVisited.has(i)}
+          <!-- Même découpage qu'en Préparer : une section ouvre un intertitre. -->
+          {#if e.section && e.section !== consulterEntries[k - 1]?.exercise.section}
+            <div class="consulter-section" role="presentation">
+              <MathRenderer content={e.section} inline={true} />
+            </div>
+          {/if}
           <button
             class="consulter-item"
             class:is-selected={isSel}
@@ -2134,8 +2200,13 @@
           >
             <span class="consulter-num" class:is-selected={isSel}>{String(i + 1).padStart(2, '0')}</span>
             <div class="consulter-item-body">
-              <div class="consulter-item-title" class:is-selected={isSel}>
-                <MathRenderer content={e.title || `Exercice ${i+1}`} inline={true} />
+              <div
+                class="consulter-item-title"
+                class:is-selected={isSel}
+                class:consulter-item-title--resume={libelle.resume}
+                title={libelle.resume ? libelle.texte : undefined}
+              >
+                <MathRenderer content={libelle.texte} inline={true} />
               </div>
               <div style="display:flex; align-items:center; gap:6px">
                 {#if (e.content_type ?? e.fullExercise?.content_type) === 'qcm'}<span class="consulter-item-qcm">QCM</span>{/if}
@@ -2194,7 +2265,11 @@
       <div class="consulter-controls" class:consulter-controls--collee={consulterRouleau}>
         <span class="consulter-pos">
           <strong style="font-family:var(--font-mono, monospace)">{consulterIndexCourant + 1} / {$exerciseList.length}</strong>
-          {#if listTitle} · {listTitle}{/if}
+          <!-- Le titre de la liste est déjà dans la barre de séance : la
+               section en cours renseigne davantage. -->
+          {#if consulterSectionCourante}
+            · <MathRenderer content={consulterSectionCourante} inline={true} />
+          {/if}
         </span>
         <span style="flex:1"></span>
         {#if consulterRouleau}
@@ -2216,19 +2291,24 @@
           {/if}
         {/if}
         {#if consulterRouleauPossible}
-          <button
-            class="btn btn-secondary btn-sm consulter-btn-rouleau"
-            class:is-active={consulterRouleau}
-            aria-pressed={consulterRouleau}
-            disabled={consulterRouleauChargement}
-            on:click={toggleRouleau}
-          >
-            {#if consulterRouleauChargement}
-              Chargement…
-            {:else}
-              {consulterRouleau ? 'Un par un' : 'Tout afficher'}
-            {/if}
-          </button>
+          <!-- « Tout afficher » se confondait avec « Tout révéler » du rail :
+               un sélecteur à deux positions dit qu'il s'agit de la disposition. -->
+          <div class="consulter-disposition" role="group" aria-label="Disposition des exercices">
+            <button
+              type="button"
+              class:is-active={!consulterRouleau}
+              aria-pressed={!consulterRouleau}
+              disabled={consulterRouleauChargement}
+              on:click={() => consulterRouleau && toggleRouleau()}
+            >Un par un</button>
+            <button
+              type="button"
+              class:is-active={consulterRouleau}
+              aria-pressed={consulterRouleau}
+              disabled={consulterRouleauChargement}
+              on:click={() => !consulterRouleau && toggleRouleau()}
+            >{consulterRouleauChargement ? 'Chargement…' : 'Continu'}</button>
+          </div>
         {/if}
       </div>
       {/if}
@@ -2239,10 +2319,18 @@
       {:else if consulterRendus.length}
         <div class="consulter-body consulter-body--immersive" class:consulter-body--rouleau={consulterRouleau}>
           {#each consulterRendus as { exercise, index } (index)}
+            {@const section = $exerciseList[index]?.section}
             <div
               class="exercise-page-shell exercise-page-shell--immersive"
               bind:this={consulterRouleauEls[index]}
             >
+              <!-- Dans la shell, pour que le saut depuis le sommaire montre aussi
+                   l'intertitre de la section qu'il ouvre. -->
+              {#if consulterRouleau && section && section !== $exerciseList[index - 1]?.section}
+                <h2 class="consulter-rouleau-section">
+                  <MathRenderer content={section} inline={true} />
+                </h2>
+              {/if}
               <LectureSubheader
                 exercise={exercise}
                 mode="immersive"
@@ -2255,6 +2343,7 @@
                 showPrimaryAction={false}
                 showRevealControls={false}
                 compactMobile={isMobile}
+                masquer={consulterMasquer}
               />
 
               <div class="exercise-reading-layout">
@@ -2287,11 +2376,7 @@
                       <span style="flex:1"></span>
                       {#if $currentPosition.hasNext}
                         <button class="btn btn-primary" on:click={nextConsulterExercise}>
-                          {$exerciseList[$selectedExerciseIndex + 1]?.title
-                            ? ($exerciseList[$selectedExerciseIndex + 1].title.length > 28
-                              ? $exerciseList[$selectedExerciseIndex + 1].title.slice(0, 28) + '…'
-                              : $exerciseList[$selectedExerciseIndex + 1].title)
-                            : 'Suivant'} →
+                          {consulterLibelleSuivant} →
                         </button>
                       {/if}
                     </div>
@@ -4194,6 +4279,33 @@
   }
   .consulter-item.is-selected .consulter-item-title { font-weight: 700; color: var(--color-brand-800); }
   .consulter-item-time { font-size: 10px; color: var(--color-interface-text-muted); }
+  /* Résumé tenant lieu de titre générique : du texte courant, pas un titre. */
+  .consulter-item-title--resume {
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-interface-text-secondary);
+  }
+  .consulter-item.is-selected .consulter-item-title--resume {
+    font-weight: 500;
+    color: var(--color-brand-800);
+  }
+  .consulter-communs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .consulter-section {
+    margin: 10px 0 0;
+    padding: 0 4px 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-brand-700);
+    border-bottom: 1px solid var(--color-interface-border-primary);
+  }
+  .consulter-section:first-child { margin-top: 0; }
   .consulter-main {
     flex: 1;
     overflow-y: auto;
@@ -4221,10 +4333,50 @@
     z-index: 5;
     background: #fbf8ef;
   }
-  .consulter-btn-rouleau.is-active {
-    background: var(--color-brand-50) !important;
-    border-color: var(--color-brand-200) !important;
-    color: var(--color-brand-700) !important;
+  .consulter-disposition {
+    display: inline-flex;
+    padding: 2px;
+    gap: 2px;
+    border: 1px solid var(--color-interface-border-primary);
+    border-radius: var(--radius-pill);
+    background: var(--color-interface-bg-white);
+  }
+  .consulter-disposition button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    color: var(--color-interface-text-secondary);
+    cursor: pointer;
+  }
+  .consulter-disposition button:hover:not(.is-active):not(:disabled) {
+    background: var(--color-interface-bg-tertiary);
+  }
+  .consulter-disposition button.is-active {
+    background: var(--color-brand-50);
+    color: var(--color-brand-700);
+    font-weight: 600;
+  }
+  .consulter-disposition button:disabled { cursor: progress; }
+  .consulter-disposition button:focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 1px;
+  }
+  /* Aligné sur le bloc d'exercice, centré dans la colonne. */
+  .consulter-rouleau-section {
+    width: min(820px, calc(100% - 2 * var(--consulter-gutter)));
+    margin: 0 auto;
+    padding: 28px 0 0;
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-brand-700);
   }
   /* Une séparation franche entre exercices, sinon le rouleau se lit comme un
      seul énoncé interminable. */
@@ -4278,6 +4430,13 @@
   }
   .consulter-body--immersive :global(.lecture-title-inner) {
     max-width: 820px;
+  }
+  /* En continu il n'y a pas de rail : sans cela sa colonne restait vide. */
+  .consulter-body--immersive.consulter-body--rouleau .exercise-reading-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .consulter-body--immersive.consulter-body--rouleau :global(.lecture-title-band) {
+    padding-right: var(--consulter-gutter);
   }
   .consulter-body--immersive .exercise-reading-column {
     min-width: 0;
