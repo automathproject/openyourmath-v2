@@ -20,7 +20,7 @@
   import LiveSessionButton from '$lib/components/qcm/LiveSessionButton.svelte';
   import FichesCatalogue from '$lib/components/fiches/FichesCatalogue.svelte';
   import FichesPanel from '$lib/components/fiches/FichesPanel.svelte';
-  import { immersiveMode } from '$lib/stores/uiStore.ts';
+  import { immersiveMode, footerHidden } from '$lib/stores/uiStore.ts';
   import {
     exerciseList,
     selectedExerciseIndex,
@@ -587,6 +587,17 @@
   $: selectedQuestionCount = getQuestionCount(selectedContent);
   $: isFullscreenMode = mode === 'presenter' || isFullPresentation;
   $: immersiveMode.set(isFullscreenMode);
+  $: footerHidden.set(mode === 'consulter');
+
+  // Consulter occupe exactement la hauteur sous les barres : un `100vh - 80px`
+  // fixe ignorait la barre de séance et faisait déborder la page de 30 à 70px.
+  let modeConsulterEl;
+  let consulterHaut = 0;
+  function mesurerConsulter() {
+    if (!modeConsulterEl || typeof window === 'undefined') return;
+    consulterHaut = Math.round(modeConsulterEl.getBoundingClientRect().top + window.scrollY);
+  }
+  $: if (mode === 'consulter' && modeConsulterEl) tick().then(mesurerConsulter);
   
   // État pour le champ UUID
   let uuidInputValue = '';
@@ -739,6 +750,7 @@
       document.body.classList.remove('presenter-active');
     }
     immersiveMode.set(false);
+    footerHidden.set(false);
     stopPresenterScroll();
   });
 
@@ -1259,7 +1271,7 @@
   <meta name="description" content="Liste personnalisée de {$exerciseList.length} exercices de mathématiques" />
 </svelte:head>
 
-<svelte:window on:keydown={(e) => { handleKeydown(e); handlePresenterKey(e); }} on:resize={checkMobile} />
+<svelte:window on:keydown={(e) => { handleKeydown(e); handlePresenterKey(e); }} on:resize={() => { checkMobile(); mesurerConsulter(); }} />
 
 {#if sharedButtonsVisible || mode === 'partager'}
   <SeanceModeBar
@@ -1267,6 +1279,7 @@
     title={listTitle || "Liste d'exercices"}
     subtitle="{$exerciseList.length} exercice{$exerciseList.length !== 1 ? 's' : ''}"
     compactMobile={mode === 'consulter' || mode === 'presenter'}
+    compact={mode === 'consulter'}
     canEdit={studentMode === 'normal'}
     canShare={studentMode === 'normal'}
   >
@@ -2156,7 +2169,11 @@
 
 {:else if mode === 'consulter'}
 <!-- ────────── MODE CONSULTER ────────── -->
-<div class="mode-consulter">
+<div
+  class="mode-consulter"
+  bind:this={modeConsulterEl}
+  style:--consulter-haut={consulterHaut ? `${consulterHaut}px` : null}
+>
   {#if !$hasExercises}
     <div class="empty-state" style="margin: 4rem auto">
       <div class="empty-state-icon">📚</div>
@@ -2385,6 +2402,7 @@
                 showRevealControls={false}
                 compactMobile={isMobile}
                 masquer={consulterMasquer}
+                showUuid={true}
               />
 
               <div class="exercise-reading-layout">
@@ -4191,7 +4209,7 @@
   /* ── MODE CONSULTER ──────────────────────────────────────────────────────── */
   .mode-consulter {
     display: flex;
-    height: calc(100vh - 80px);
+    height: calc(100dvh - var(--consulter-haut, 80px));
     background: var(--color-interface-bg-primary);
   }
   .consulter-toc {
@@ -4378,7 +4396,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 24px;
+    padding: 6px 24px;
     border-bottom: 1px solid var(--color-interface-border-primary);
   }
   /* En rouleau, la barre porte les seules commandes de révélation : elle doit
@@ -4491,9 +4509,14 @@
   }
   /* Le bandeau de titre s'aligne sur la colonne de lecture, pas sur le panneau :
      mêmes gouttières, plus la largeur du rail à droite. */
+  /* L'en-tête d'exercice garde ses marges de page de lecture (32 et 28px) sur
+     la page d'un exercice seul ; dans une liste, il n'est qu'un intertitre et
+     l'énoncé doit monter. */
   .consulter-body--immersive :global(.lecture-title-band) {
-    padding-left: var(--consulter-gutter);
-    padding-right: calc(300px + var(--consulter-gutter));
+    padding: 16px calc(300px + var(--consulter-gutter)) 12px var(--consulter-gutter);
+  }
+  .consulter-body--immersive :global(.lecture-metadata--immersive) {
+    margin-bottom: 4px;
   }
   .consulter-body--immersive :global(.lecture-title-inner) {
     max-width: 820px;
@@ -4507,7 +4530,7 @@
   }
   .consulter-body--immersive .exercise-reading-column {
     min-width: 0;
-    padding: 40px var(--consulter-gutter) 80px;
+    padding: 20px var(--consulter-gutter) 32px;
     background: #fffdf8;
   }
   .consulter-body--immersive .exercise-block {
@@ -4538,8 +4561,8 @@
     align-items: center;
     gap: 12px;
     max-width: 820px;
-    margin: 40px auto 0;
-    padding-top: 18px;
+    margin: 24px auto 0;
+    padding-top: 14px;
     border-top: 1px solid var(--color-interface-border-primary);
   }
   /* Le rail n'apparaît que si la colonne de lecture garde au moins sa largeur
@@ -4627,7 +4650,7 @@
     .mode-consulter {
       display: block;
       height: auto;
-      min-height: calc(100dvh - 72px);
+      min-height: calc(100dvh - var(--consulter-haut, 72px));
     }
 
     .consulter-toc {
@@ -4652,8 +4675,11 @@
       transform: translateX(0);
     }
 
+    /* La réserve de 88px pour la barre Précédent/Suivant fixe est comptée
+       dans la hauteur minimale, sans quoi un exercice court défilait. */
     .consulter-main {
-      min-height: calc(100dvh - 72px);
+      box-sizing: border-box;
+      min-height: calc(100dvh - var(--consulter-haut, 72px));
       overflow: visible;
       padding: 0 0 88px;
     }
@@ -4724,9 +4750,8 @@
       background: transparent;
     }
 
-    .consulter-body--immersive .exercise-page-shell {
-      min-height: calc(100dvh - 129px);
-    }
+    /* Pas de hauteur minimale propre : le panneau (.consulter-main) remplit
+       déjà l'écran, et une seconde réserve faisait défiler un exercice court. */
 
     .consulter-mobile-nav {
       position: fixed;

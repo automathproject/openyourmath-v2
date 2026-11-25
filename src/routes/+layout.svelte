@@ -11,7 +11,7 @@
   import { onMount } from 'svelte';
   import AppHeader from '$lib/components/AppHeader.svelte';
   import SearchPalette from '$lib/components/search/SearchPalette.svelte';
-  import { immersiveMode } from '$lib/stores/uiStore.ts';
+  import { immersiveMode, footerHidden } from '$lib/stores/uiStore.ts';
 
   const APP_VERSION = env.PUBLIC_APP_VERSION || 'dev';
   const currentYear = new Date().getFullYear();
@@ -68,7 +68,7 @@
   <slot />
 </main>
 
-<footer class="footer print-hidden" class:footer--hidden={$immersiveMode}>
+<footer class="footer print-hidden" class:footer--hidden={$immersiveMode || $footerHidden}>
     <div class="footer-content">
       <div class="footer-grid">
 

@@ -25,7 +25,24 @@
     // Pastilles à taire ('level', 'module', 'chapter') : une liste qui les
     // partage toutes les affiche une seule fois, pas devant chaque exercice.
     masquer = [],
+    // Identifiant dans la ligne de métadonnées, cliquable pour le copier : dans
+    // une liste, c'est lui qu'on recopie pour composer ou signaler.
+    showUuid = false,
   } = $props();
+
+  let uuidCopie = $state(false);
+  let uuidTimer;
+  async function copierUuid() {
+    if (!exercise?.uuid || !navigator?.clipboard) return;
+    try {
+      await navigator.clipboard.writeText(exercise.uuid);
+      uuidCopie = true;
+      clearTimeout(uuidTimer);
+      uuidTimer = setTimeout(() => (uuidCopie = false), 1400);
+    } catch {
+      // Presse-papiers refusé : l'identifiant reste lisible et sélectionnable.
+    }
+  }
 
   // Le badge mène à la section du premier rattachement dans la vue Prépa de /browse.
   function lienCpge(programme) {
@@ -235,6 +252,16 @@
             <span class="t-caption lecture-facts">
               {timeAndCount.join(' · ')}
             </span>
+          {/if}
+          {#if showUuid && exercise?.uuid}
+            <button
+              type="button"
+              class="lecture-uuid"
+              class:lecture-uuid--copie={uuidCopie}
+              title="Copier l'identifiant"
+              aria-label={uuidCopie ? 'Identifiant copié' : `Copier l'identifiant ${exercise.uuid}`}
+              onclick={copierUuid}
+            >{uuidCopie ? 'copié' : exercise.uuid}</button>
           {/if}
         </div>
       {/if}
@@ -458,6 +485,34 @@
 
   .lecture-facts {
     color: var(--color-interface-text-muted);
+  }
+
+  .lecture-uuid {
+    appearance: none;
+    border: 1px solid transparent;
+    background: transparent;
+    padding: 0 5px;
+    border-radius: 4px;
+    font-family: var(--font-mono, monospace);
+    font-size: 11px;
+    line-height: 17px;
+    min-width: 4.5ch;
+    color: var(--color-interface-text-muted);
+    cursor: copy;
+    user-select: all;
+  }
+  .lecture-uuid:hover,
+  .lecture-uuid:focus-visible {
+    border-color: var(--color-interface-border-primary);
+    background: var(--color-interface-bg-white);
+    color: var(--color-interface-text-secondary);
+  }
+  .lecture-uuid:focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 1px;
+  }
+  .lecture-uuid--copie {
+    color: var(--color-brand-700);
   }
 
   .lecture-title {

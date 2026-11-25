@@ -24,6 +24,9 @@
   export let title = '';
   export let subtitle = '';
   export let compactMobile = false;
+  // Barre resserrée pour les modes de lecture : l'en-tête de la séance n'y est
+  // qu'un repère, chaque pixel gagné remonte l'énoncé.
+  export let compact = false;
   export let canEdit = true;
   export let canShare = true;
   let isModeMenuOpen = false;
@@ -50,7 +53,11 @@
   }
 </script>
 
-<div class="seance-mode-bar" class:seance-mode-bar--compact-mobile={compactMobile}>
+<div
+  class="seance-mode-bar"
+  class:seance-mode-bar--compact-mobile={compactMobile}
+  class:seance-mode-bar--compact={compact}
+>
   <div class="seance-mode-bar-meta">
     <slot name="title">
       {#if title}
@@ -169,6 +176,21 @@
   }
 
   .seance-mode-bar-meta { min-width: 0; flex: 1; }
+
+  /* 93px → 56px : le titre suffit, le nombre d'exercices est déjà en tête du
+     sommaire. */
+  .seance-mode-bar--compact {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .seance-mode-bar--compact .seance-subtitle { display: none; }
+  .seance-mode-bar--compact .seance-mode-bar-meta :global(.list-title) {
+    font-size: 1.125rem;
+  }
+  .seance-mode-bar--compact .seance-mode-tab {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
 
   /* La page fournit son propre titre dans l'emplacement, qui échappe donc aux
      règles de .seance-title : sans cela il se replie sur trois lignes dès que

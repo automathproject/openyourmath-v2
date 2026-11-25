@@ -2,6 +2,11 @@ import { writable, type Writable } from 'svelte/store';
 
 export const immersiveMode = writable(false);
 
+// Pied de page masqué sans toucher à l'en-tête : pour les vues qui occupent
+// toute la hauteur restante (Consulter), le pied ne s'atteignait qu'en faisant
+// défiler la page entière sous le panneau de lecture.
+export const footerHidden = writable(false);
+
 // Clé versionnée : jusqu'ici la valeur `false` était écrite par des chemins qui
 // n'étaient pas des choix de l'utilisateur (vider le champ de recherche, fermer
 // la prévisualisation sur téléphone). Les préférences enregistrées avant la
