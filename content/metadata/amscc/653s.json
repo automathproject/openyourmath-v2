@@ -1,31 +1,32 @@
 {
   "uuid": "653s",
   "source_path": "amscc/653s.tex",
-  "summary": "L'exercice demande de décrire la fonction réalisée par un réseau de neurones multicouches à deux couches, avec trois neurones dans la première couche et un neurone dans la seconde. Le réseau prend en entrée deux variables x et y et produit une sortie binaire F(x,y) en fonction de combinaisons linéaires et de seuils.",
+  "summary": "L'exercice demande de décrire la fonction réalisée par un réseau de neurones multicouches avec une couche cachée de trois neurones et une couche de sortie. Le réseau utilise des fonctions de Heaviside pour segmenter le plan en régions selon des conditions linéaires.",
   "concepts": [
+    "fonction de Heaviside",
     "réseau de neurones multicouches",
-    "fonction d'activation",
-    "combinaison linéaire",
-    "seuil de décision",
-    "partition de l'espace",
-    "neurone formel",
-    "fonction booléenne",
-    "classification binaire"
+    "propagation avant",
+    "segmentation du plan",
+    "fonction logique ET",
+    "géométrie du plan",
+    "inégalités linéaires",
+    "région convexe"
   ],
   "methods": [
-    "analyse des poids synaptiques",
-    "interprétation géométrique des hyperplans",
-    "combinaison de fonctions affines",
-    "évaluation de la sortie du réseau"
+    "analyse des conditions de seuil",
+    "combinaison de fonctions de Heaviside",
+    "représentation graphique de régions",
+    "identification de domaines de validité"
   ],
   "objects": [
-    "réseau de neurones à deux couches",
-    "neurones formels",
-    "fonction de sortie binaire",
-    "hyperplans de séparation",
-    "variables d'entrée x et y"
+    "réseau de neurones",
+    "fonction de sortie",
+    "demi-plans",
+    "triangle fermé",
+    "inégalités linéaires",
+    "points de sommets"
   ],
-  "content_hash": "8fd4552175362a0e333df059d4648c712e671bea874315e259ffa6c63123f668",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-04-25T21:22:30.851Z"
+  "content_hash": "b0c7d0aae1c1ed43027b43ea62e7bc012116ac998274bd237f1d40ff63c7333d",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-25T09:16:22.654Z"
 }

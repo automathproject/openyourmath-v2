@@ -1,37 +1,36 @@
 {
   "uuid": "XxlS",
   "source_path": "amscc/XxlS.tex",
-  "summary": "L'exercice demande de démontrer que la fonctionnelle quadratique J(v) = (1/2)<Av,v> - <b,v> est de classe C^1, de calculer son gradient, puis d'établir sa stricte convexité, sa coercivité et l'existence d'un unique minimum. Il s'agit ensuite de prouver des inégalités sur le gradient et d'analyser la convergence géométrique de la méthode du gradient sous certaines conditions sur le pas.",
+  "summary": "L'exercice demande de montrer que la fonctionnelle quadratique J est de classe C^1, de calculer son gradient, de prouver sa stricte convexité et sa coercivité, puis d'établir des inégalités liées à ses valeurs propres. Enfin, il s'agit de démontrer la convergence géométrique de la méthode du gradient sous certaines conditions sur les pas d'itération.",
   "concepts": [
     "fonctionnelle quadratique",
-    "gradient",
     "classe C^1",
+    "gradient",
     "stricte convexité",
     "coercivité",
-    "existence et unicité du minimum",
-    "valeurs propres d'une matrice",
-    "inégalités de Lipschitz",
-    "convergence géométrique"
+    "valeurs propres",
+    "convergence géométrique",
+    "méthode du gradient"
   ],
   "methods": [
-    "calcul de la différentielle",
-    "utilisation de la symétrie d'une matrice",
+    "calcul de gradient",
+    "utilisation de la symétrie de matrice",
     "inégalité de Cauchy-Schwarz",
-    "analyse de la convergence d'une suite récurrente",
-    "majoration d'erreur",
-    "utilisation du quotient de Rayleigh"
+    "quotient de Rayleigh",
+    "analyse de convergence",
+    "majoration d'erreur"
   ],
   "objects": [
     "fonctionnelle quadratique",
     "matrice symétrique définie positive",
-    "gradient",
+    "vecteur",
     "suite récurrente",
-    "erreur d'itération",
-    "valeurs propres"
+    "gradient",
+    "erreur d'itération"
   ],
-  "content_hash": "cf52bcb2c80f229b064ad6d7223b5b904db219860f8babad39b9a00db1d1c529",
-  "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
-  "indexed_at": "2026-08-25T12:28:56.132Z",
+  "content_hash": "4b5dc4deeecdb2e61ce5d6e8de2347ce43717e345f8222445c8e49a5cf483f32",
+  "model": "mistral-small3.2:24b",
+  "indexed_at": "2026-11-25T09:18:13.413Z",
   "previous_content_hash": "a7d9e83a8fbde4d185d126384c2f4a4fe81f037554a6c32bff703309864a2fb2",
   "revalidated_at": "2026-11-24T20:54:44.856Z"
 }
