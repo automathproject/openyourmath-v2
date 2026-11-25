@@ -15,6 +15,7 @@
   import SeanceLatexEditor from '$lib/components/SeanceLatexEditor.svelte';
   import MathRenderer from '$lib/components/MathRenderer.svelte';
   import StarsRating from '$lib/components/StarsRating.svelte';
+  import { titresNouveaux, cheminExercice } from '$lib/listSections.js';
   import QRCode from 'qrcode';
   import LiveSessionButton from '$lib/components/qcm/LiveSessionButton.svelte';
   import FichesCatalogue from '$lib/components/fiches/FichesCatalogue.svelte';
@@ -566,7 +567,13 @@
         )
     : [];
   $: consulterMasquer = consulterCommuns.map(({ cle }) => cle);
-  $: consulterSectionCourante = $exerciseList[consulterIndexCourant]?.section ?? '';
+  $: consulterSectionCourante = cheminExercice($exerciseList[consulterIndexCourant]).join(' · ');
+  // Le style d'un intertitre suit son niveau dans la liste, pas sa place dans
+  // son propre chemin : une partie sans sous-section reste un titre de partie.
+  $: consulterProfondeur = $exerciseList.reduce(
+    (max, exercise) => Math.max(max, cheminExercice(exercise).length),
+    0
+  );
   $: consulterSuivant = $exerciseList[$selectedExerciseIndex + 1];
   $: consulterLibelleSuivant = consulterSuivant && !titreGenerique(consulterSuivant.title)
     ? (consulterSuivant.title.length > 28 ? consulterSuivant.title.slice(0, 28) + '…' : consulterSuivant.title)
@@ -934,7 +941,26 @@
     }
   }
 
+  // Un saut depuis le sommaire défile en douceur à travers les exercices
+  // intermédiaires : sans ce verrou, aller au 8e les marquait tous consultés
+  // et faisait courir la sélection le long du sommaire.
+  let consulterSautEnCours = false;
+  let consulterSautTimer = 0;
+
+  function finirSaut() {
+    if (!consulterSautEnCours) return;
+    consulterSautEnCours = false;
+    clearTimeout(consulterSautTimer);
+    consulterMainEl?.removeEventListener('scrollend', finirSaut);
+  }
+
   function onRouleauScroll() {
+    if (consulterSautEnCours) {
+      // Navigateurs sans « scrollend » : la fin du défilement lève le verrou.
+      clearTimeout(consulterSautTimer);
+      consulterSautTimer = setTimeout(finirSaut, 150);
+      return;
+    }
     if (!consulterRouleau || consulterScrollRaf || typeof window === 'undefined') return;
     consulterScrollRaf = requestAnimationFrame(() => {
       consulterScrollRaf = 0;
@@ -962,6 +988,12 @@
     const decalage = barre ? barre.getBoundingClientRect().height : 0;
     const delta =
       cible.getBoundingClientRect().top - consulterMainEl.getBoundingClientRect().top - decalage;
+    if (behavior === 'smooth' && Math.abs(delta) > 1) {
+      consulterSautEnCours = true;
+      consulterMainEl.addEventListener('scrollend', finirSaut, { once: true });
+      clearTimeout(consulterSautTimer);
+      consulterSautTimer = setTimeout(finirSaut, 1500);
+    }
     consulterMainEl.scrollTo({ top: consulterMainEl.scrollTop + delta, behavior });
   }
 
@@ -2185,12 +2217,17 @@
         {#each consulterEntries as { exercise: e, index: i, libelle }, k (i)}
           {@const isSel = i === consulterIndexCourant}
           {@const isVisited = consulterVisited.has(i)}
-          <!-- Même découpage qu'en Préparer : une section ouvre un intertitre. -->
-          {#if e.section && e.section !== consulterEntries[k - 1]?.exercise.section}
-            <div class="consulter-section" role="presentation">
-              <MathRenderer content={e.section} inline={true} />
+          <!-- Une section ouvre un intertitre ; ses parents (partie d'une fiche,
+               fiche ajoutée en Préparer) s'affichent au-dessus quand ils changent aussi. -->
+          {#each titresNouveaux(e, consulterEntries[k - 1]?.exercise) as titre (titre.niveau)}
+            <div
+              class="consulter-section"
+              class:consulter-section--parent={titre.niveau < consulterProfondeur - 1}
+              role="presentation"
+            >
+              <MathRenderer content={titre.titre} inline={true} />
             </div>
-          {/if}
+          {/each}
           <button
             class="consulter-item"
             class:is-selected={isSel}
@@ -2319,17 +2356,21 @@
       {:else if consulterRendus.length}
         <div class="consulter-body consulter-body--immersive" class:consulter-body--rouleau={consulterRouleau}>
           {#each consulterRendus as { exercise, index } (index)}
-            {@const section = $exerciseList[index]?.section}
             <div
               class="exercise-page-shell exercise-page-shell--immersive"
               bind:this={consulterRouleauEls[index]}
             >
               <!-- Dans la shell, pour que le saut depuis le sommaire montre aussi
                    l'intertitre de la section qu'il ouvre. -->
-              {#if consulterRouleau && section && section !== $exerciseList[index - 1]?.section}
-                <h2 class="consulter-rouleau-section">
-                  <MathRenderer content={section} inline={true} />
-                </h2>
+              {#if consulterRouleau}
+                {#each titresNouveaux($exerciseList[index], $exerciseList[index - 1]) as titre (titre.niveau)}
+                  <h2
+                    class="consulter-rouleau-section"
+                    class:consulter-rouleau-section--parent={titre.niveau < consulterProfondeur - 1}
+                  >
+                    <MathRenderer content={titre.titre} inline={true} />
+                  </h2>
+                {/each}
               {/if}
               <LectureSubheader
                 exercise={exercise}
@@ -4306,6 +4347,21 @@
     border-bottom: 1px solid var(--color-interface-border-primary);
   }
   .consulter-section:first-child { margin-top: 0; }
+  /* Titre de partie (niveau supérieur d'une fiche, fiche ajoutée) : il coiffe
+     les sections qui suivent, sans soulignement pour ne pas doubler le leur. */
+  .consulter-section--parent {
+    margin-top: 16px;
+    padding-bottom: 0;
+    border-bottom: 0;
+    font-family: var(--font-heading);
+    font-size: 13px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--color-brand-800);
+  }
+  .consulter-section--parent + .consulter-section {
+    margin-top: 4px;
+  }
   .consulter-main {
     flex: 1;
     overflow-y: auto;
@@ -4377,6 +4433,17 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--color-brand-700);
+  }
+  .consulter-rouleau-section--parent {
+    padding-top: 40px;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.2px;
+    text-transform: none;
+    color: var(--color-brand-800);
+  }
+  .consulter-rouleau-section--parent + .consulter-rouleau-section {
+    padding-top: 10px;
   }
   /* Une séparation franche entre exercices, sinon le rouleau se lit comme un
      seul énoncé interminable. */
