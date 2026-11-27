@@ -12,6 +12,7 @@
   import SignalementErreur from '$lib/components/SignalementErreur.svelte';
   import { exerciceEnRetour } from '$lib/signalement/retour.js';
   import SeanceModeBar from '$lib/components/SeanceModeBar.svelte';
+  import { buildPresenterSlides, getPresenterSlideCount, getPresenterBlockContent } from '$lib/seance/presenterSlides.js';
   import SeanceLatexEditor from '$lib/components/SeanceLatexEditor.svelte';
   import MathRenderer from '$lib/components/MathRenderer.svelte';
   import StarsRating from '$lib/components/StarsRating.svelte';
@@ -134,6 +135,9 @@
   let presenterShowInd = false;
   let presenterShowSol = false;
   let presenterDarkMode = false;
+  // Rappel de l'énoncé sur les diapos qui suivent la première : ouvert par
+  // défaut, l'enseignant le replie pour toute la projection s'il gêne.
+  let presenterRappelOuvert = true;
   let presenterRoot;
   let presenterSlideEl;
   let presenterProgressEl;
@@ -170,93 +174,11 @@
     presenterScrollRaf = null;
   }
 
-  const presenterQuestionTypes = new Set(['question', 'enonce']);
-  const presenterStandaloneStatementTypes = new Set(['texte', 'text', 'statement']);
-  const presenterHintTypes = new Set(['hint', 'indication']);
-  const presenterSolutionTypes = new Set(['reponse', 'solution', 'answer']);
-
-  function getPresenterBlockContent(block) {
-    if (!block) return '';
-    if (block.html) return block.html;
-    if (block.latex) return block.latex;
-    if (block.content) return block.content;
-    if (block.body) return block.body;
-    if (block.text) return `<p>${block.text}</p>`;
-    return '';
-  }
-
   function resetPresenterRevealState() {
     presenterShowInd = false;
     presenterShowSol = false;
     if (presenterSlideEl) presenterSlideEl.scrollTop = 0;
     if (typeof requestAnimationFrame !== 'undefined') requestAnimationFrame(checkPresenterOverflow);
-  }
-
-  function buildPresenterSlides(content = []) {
-    const sortedBlocks = [...content].sort((a, b) => (a?.order || 0) - (b?.order || 0));
-    const hasExplicitQuestions = sortedBlocks.some((block) => presenterQuestionTypes.has(block?.type || 'text'));
-    const slides = [];
-    let currentSlide = null;
-    let pendingContext = [];
-
-    for (const block of sortedBlocks) {
-      const type = block?.type || 'text';
-
-      if (presenterQuestionTypes.has(type)) {
-        if (currentSlide) slides.push(currentSlide);
-        currentSlide = {
-          question: block,
-          context: slides.length === 0 ? pendingContext : [],
-          hints: [],
-          solutions: []
-        };
-        pendingContext = [];
-      } else if (presenterHintTypes.has(type)) {
-        if (currentSlide) currentSlide.hints.push(block);
-      } else if (presenterSolutionTypes.has(type)) {
-        if (!hasExplicitQuestions && !currentSlide && pendingContext.length) {
-          currentSlide = {
-            question: pendingContext.pop(),
-            context: pendingContext,
-            hints: [],
-            solutions: []
-          };
-          pendingContext = [];
-        }
-        if (currentSlide) currentSlide.solutions.push(block);
-      } else {
-        if (!hasExplicitQuestions && !currentSlide && presenterStandaloneStatementTypes.has(type) && pendingContext.length === 0) {
-          currentSlide = {
-            question: block,
-            context: [],
-            hints: [],
-            solutions: []
-          };
-        } else if (currentSlide) {
-          slides.push(currentSlide);
-          currentSlide = null;
-          pendingContext.push(block);
-        } else {
-          pendingContext.push(block);
-        }
-      }
-    }
-
-    if (currentSlide) slides.push(currentSlide);
-    if (!slides.length && pendingContext.length) {
-      slides.push({
-        question: pendingContext[pendingContext.length - 1],
-        context: pendingContext.slice(0, -1),
-        hints: [],
-        solutions: []
-      });
-    }
-    return slides;
-  }
-
-  function getPresenterSlideCount(exercise) {
-    const fullExercise = exercise?.fullExercise || exercise;
-    return Math.max(buildPresenterSlides(fullExercise?.content || []).length, 1);
   }
 
   $: presenterExo = $selectedExercise;
@@ -336,6 +258,8 @@
     else if (e.key === 'ArrowUp') { e.preventDefault(); presenterPrevExo(); }
     else if ((e.key === 'i' || e.key === 'I') && canSeeHints && presenterSlides[presenterQIdx]?.hints?.length) presenterShowInd = !presenterShowInd;
     else if ((e.key === 's' || e.key === 'S') && canSeeSolutions && presenterSlides[presenterQIdx]?.solutions?.length) presenterShowSol = !presenterShowSol;
+    else if ((e.key === 'e' || e.key === 'E') && presenterSlides[presenterQIdx]?.rappel?.length) presenterRappelOuvert = !presenterRappelOuvert;
+    else if (e.key === 'f' || e.key === 'F') { e.preventDefault(); togglePresenterFullscreen(); }
     else if (/^[1-9]$/.test(e.key)) { listActions.selectExercise(parseInt(e.key) - 1); presenterQIdx = 0; resetPresenterRevealState(); }
   }
 
@@ -1200,6 +1124,11 @@
     // doit lui revenir, sans quoi taper « f » ou « p » lancerait la présentation.
     if (mode === 'editer') return;
 
+    // Le mode Présenter a ses propres touches (handlePresenterKey) : F y met
+    // la projection en plein écran, au lieu d'ouvrir en silence le mode
+    // présentation de Préparer, invisible derrière la diapo.
+    if (mode === 'presenter') return;
+
     const isTyping = event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA';
 
     // Raccourcis F / P pour basculer le mode présentation
@@ -1208,8 +1137,6 @@
       togglePresentationMode();
       return;
     }
-
-    if (mode === 'presenter') return;
 
     if (isPresentationMode) {
       if (event.key === 'ArrowLeft' && $currentPosition.hasPrevious) {
@@ -2533,7 +2460,7 @@
             {presenterDarkMode ? 'Mode clair' : 'Mode sombre'}
           </button>
           <button class="presenter-topbar-btn" type="button" on:click={togglePresenterFullscreen}>
-            ⛶ Plein écran
+            ⛶ Plein écran <span class="presenter-kbd">F</span>
           </button>
           <button
             class="presenter-topbar-btn presenter-mobile-theme-toggle"
@@ -2570,7 +2497,7 @@
           {@const q = slide?.question}
           <div class="presenter-slide-inner presenter-slide-inner--structured">
             <div class="presenter-body">
-              <div class="presenter-slide-heading">
+              <div class="presenter-slide-heading" class:presenter-slide-heading--suite={presenterQIdx > 0}>
                 <div class="presenter-slide-kicker">
                   <span>Exercice {$selectedExerciseIndex + 1}</span>
                   <span class="presenter-heading-line"></span>
@@ -2592,9 +2519,35 @@
                 </div>
               </div>
 
-              {#if slide?.context?.length}
+              {#if slide?.rappel?.length}
+                <section class="presenter-rappel" class:is-replie={!presenterRappelOuvert} aria-label="Rappel de l'énoncé">
+                  <button
+                    type="button"
+                    class="presenter-rappel-toggle"
+                    aria-expanded={presenterRappelOuvert}
+                    disabled={!sharedButtonsVisible}
+                    on:click={() => (presenterRappelOuvert = !presenterRappelOuvert)}
+                  >
+                    <span class="presenter-rappel-label">Rappel de l'énoncé</span>
+                    {#if sharedButtonsVisible}
+                      <span class="presenter-rappel-action">
+                        {presenterRappelOuvert ? 'Replier' : 'Déplier'}
+                        <span class="presenter-kbd-hint">E</span>
+                      </span>
+                    {/if}
+                  </button>
+                  {#if presenterRappelOuvert}
+                    <div class="presenter-rappel-body">
+                      {#each slide.rappel as rappelBlock}
+                        <MathRenderer content={getPresenterBlockContent(rappelBlock)} inline={false} />
+                      {/each}
+                    </div>
+                  {/if}
+                </section>
+              {/if}
+              {#if slide?.contexte?.length}
                 <div class="presenter-context">
-                  {#each slide.context as contextBlock}
+                  {#each slide.contexte as contextBlock}
                     <MathRenderer content={getPresenterBlockContent(contextBlock)} inline={false} />
                   {/each}
                 </div>
@@ -2607,6 +2560,16 @@
               {#if getPresenterBlockContent(q)}
                 <div class="presenter-q-body">
                   <MathRenderer content={getPresenterBlockContent(q)} inline={false} />
+                  {#each slide.complements as complement}
+                    <MathRenderer content={getPresenterBlockContent(complement)} inline={false} />
+                  {/each}
+                </div>
+              {/if}
+              {#if slide?.suite?.length}
+                <div class="presenter-context presenter-context--suite">
+                  {#each slide.suite as suiteBlock}
+                    <MathRenderer content={getPresenterBlockContent(suiteBlock)} inline={false} />
+                  {/each}
                 </div>
               {/if}
               {#if sharedButtonsVisible && (canSeeHints || canSeeSolutions)}
@@ -5080,6 +5043,67 @@
     font-size: 20px;
     line-height: 1.65;
   }
+  /* À partir de la 2e question, le titre est connu de la salle : l'en-tête se
+     resserre et rend sa place au rappel de l'énoncé. */
+  .presenter-slide-heading--suite { margin-bottom: 18px; }
+  .presenter-slide-heading--suite .presenter-slide-kicker { margin-bottom: 12px; font-size: 15px; }
+  .presenter-slide-heading--suite .presenter-main-title { font-size: clamp(22px, 2.4vw, 30px); }
+  .presenter-slide-heading--suite .presenter-question-chip { margin-top: 0; }
+  .presenter-rappel-body :global(p + p) { margin-top: 0.4em; }
+  .presenter-context--suite {
+    margin: 0 0 22px;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  /* Rappel de l'énoncé : le texte déjà projeté revient sur chaque question,
+     en retrait (plus petit, plus pâle, encadré en pointillé) pour que l'œil
+     aille d'abord à la question et n'y revienne qu'au besoin. */
+  .presenter-rappel {
+    margin: 0 0 22px;
+    padding: 10px 18px 14px;
+    border: 1px dashed rgba(255,252,242,0.24);
+    border-radius: 7px;
+    background: rgba(255,252,242,0.04);
+  }
+  .presenter-rappel.is-replie { padding-bottom: 10px; }
+  .presenter-rappel-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+    text-align: left;
+  }
+  .presenter-rappel-toggle:disabled { cursor: default; }
+  .presenter-rappel-label {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,252,242,0.6);
+  }
+  .presenter-rappel-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: rgba(255,252,242,0.6);
+  }
+  .presenter-rappel-toggle:hover:not(:disabled) .presenter-rappel-action { color: #fffdf5; }
+  .presenter-rappel-body {
+    max-height: 30vh;
+    overflow-y: auto;
+    margin-top: 8px;
+    color: rgba(255,252,242,0.74);
+    font-size: 17px;
+    line-height: 1.55;
+  }
   .presenter-q-title {
     font-family: var(--font-heading);
     font-size: 24px;
@@ -5365,6 +5389,20 @@
   .mode-presenter.is-light .presenter-context {
     border-color: rgba(11, 66, 80, 0.18);
   }
+  .mode-presenter.is-light .presenter-rappel {
+    border-color: rgba(11, 66, 80, 0.24);
+    background: rgba(11, 66, 80, 0.03);
+  }
+  .mode-presenter.is-light .presenter-rappel-label,
+  .mode-presenter.is-light .presenter-rappel-action {
+    color: rgba(11, 51, 64, 0.62);
+  }
+  .mode-presenter.is-light .presenter-rappel-toggle:hover:not(:disabled) .presenter-rappel-action {
+    color: #082b36;
+  }
+  .mode-presenter.is-light .presenter-rappel-body {
+    color: rgba(8, 43, 54, 0.76);
+  }
   .mode-presenter.is-light .presenter-q-body {
     border-left-color: #0b8f96;
     background: #fffaf0;
@@ -5446,6 +5484,8 @@
       padding-left: 12px;
       font-size: 15px;
     }
+    .presenter-rappel { margin-bottom: 12px; padding: 8px 12px 10px; }
+    .presenter-rappel-body { font-size: 14px; max-height: 24vh; }
     .presenter-q-body {
       padding: 16px 14px;
       font-size: 17px;
